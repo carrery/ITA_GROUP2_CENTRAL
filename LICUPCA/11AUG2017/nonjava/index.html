@@ -1,0 +1,136 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/> -->
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> String to be camelized </label>
+					<div class="col-sm-10">
+						<input required type="text" class="form-control" id="camelString" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input type= "button" onclick = "return camelize(document.getElementById('camelString').value)" class="btn btn-info" value="Camelize"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> Enter Year </label>
+					<div class="col-sm-10">
+						<input required  maxlength = "4" type="number" class="form-control" id="leapYear" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return leapYear(document.getElementById('leapYear').value)" class="btn btn-info" value="Check if leap year"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> String to be reversed </label>
+					<div class="col-sm-10">
+						<input required type="text" class="form-control" id="reverseString" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return reverseString(document.getElementById('reverseString').value)" class="btn btn-info" value="Reverse"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> Enter number to get factorial </label>
+					<div class="col-sm-10">
+						<input required  maxlength = "4" type="number" class="form-control" id="factorial" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return window.alert(factorial(document.getElementById('factorial').value))" class="btn btn-info" value="Check factorial"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> Enter string to get all possible strings </label>
+					<div class="col-sm-10">
+						<input required  maxlength = "4" type="text" class="form-control" id="allstring" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return allStringPossible(document.getElementById('allstring').value)" class="btn btn-info" value="Get all possible strings"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> Enter characters to check if numeric </label>
+					<div class="col-sm-10">
+						<input required  maxlength = "4" type="text" class="form-control" id="numericcheck" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return is_Numeric(document.getElementById('numericcheck').value)" class="btn btn-info" value="Check if Numeric"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> Enter numbers to check prime </label>
+					<div class="col-sm-10">
+						<input required  maxlength = "4" type="number" class="form-control" id="prime" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return primeFactors(document.getElementById('prime').value)" class="btn btn-info" value="Check prime numbers"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> Get area of triangle that has 5 cm, 6cm, and 7cm sides. </label>
+					<div class="col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return triangleArea()" class="btn btn-info" value="Check triangle area"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 control-label"> Get current date </label>
+					<div class="col-sm-10">
+						<input id = "withdraw" type= "button" onclick = "return getCurrentDay()" class="btn btn-info" value="Check date"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
