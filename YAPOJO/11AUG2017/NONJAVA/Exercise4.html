@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function Reverse() {
+    
+    var str = document.getElementById("a").value;
+	var count=str.length;
+	var stroutput="";
+	
+	for(var ctr=0; ctr<str.length; ctr++) {
+		stroutput += str.substring(count-1,count);
+		count-=1;
+	}
+
+	return stroutput;
+	
+}
+    
+</script>    
+<center>
+<h1>Reverse String</h1>
+    
+<h3>Enter String: </h3><input type="text" id="a"><br>
+
+<br>
+<button type="button" onclick='alert(Reverse())'>
+Reverse
+</button>
+</center>
+ 
+
+</body>
+</html> 

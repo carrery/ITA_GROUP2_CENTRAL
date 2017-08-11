@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function Camel() {
+    
+	var a  = document.getElementById("a").value;
+	var stroutput = a.split(" ");
+	var strresult = "";
+
+	for(var x=0; x<stroutput.length; x++){
+		strresult += stroutput[x].substring(0,1).toUpperCase() + stroutput[x].substring(1,a.length);
+	}
+
+	return strresult 
+	
+}
+    
+</script>    
+<center>
+<h1>Camelization</h1>
+    
+<h3>Enter String: </h3><input type="text" id="a"><br>
+
+<br>
+<button type="button" onclick= 'alert(Camel())'>
+Generate
+</button>
+</center>
+ 
+
+</body>
+</html> 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function Primes() {
+    
+	var a= document.getElementById("a").value;
+	var output = "";
+	var flag;
+	for(var y=0 ; y<=a; y++){
+		for (var x = 2; x < y; x++) {
+        		if (y % x == 0 && x != y) {
+         			flag = false;
+			}
+    		}
+    	if(flag){
+     		if (y > 1){
+     		output += y + " "; 
+     	}
+  	}
+   	flag =  true;
+}
+
+	return output;
+	
+}
+    
+</script>    
+<center>
+<h1>Prime Numbers</h1>
+    
+<h3>Enter Number: </h3><input type="number" id="a"><br>
+
+<br>
+<button type="button" onclick= 'alert(Primes())'>
+Generate
+</button>
+</center>
+ 
+
+</body>
+</html> 

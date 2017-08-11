@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function LeapYear() {
+    
+    var a = document.getElementById("a").value;
+	var c = parseInt(a)%4;
+	if (c==0) {
+		return a + " is a Leap Year";
+	} else {
+		return a + " is not a Leap Year";
+	}
+}
+    
+</script>    
+<center>
+<h1>Leap Year</h1>
+    
+<h3>Enter Number: </h3><input type="number" id="a"><br>
+
+<br>
+<button type="button" onclick= 'alert(LeapYear())'>
+Leap Year Check
+</button>
+</center>
+ 
+
+</body>
+</html> 
