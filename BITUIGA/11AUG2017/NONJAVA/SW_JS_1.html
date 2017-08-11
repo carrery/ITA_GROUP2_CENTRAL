@@ -1,0 +1,190 @@
+<HTML>
+
+<HEAD>
+<SCRIPT LANGUAGE = "Javascript">
+// document.firstline = "Welcome to this page"
+</SCRIPT>
+
+<TITLE>Practice Exercises</TITLE>
+
+
+<BODY>
+<center>
+
+<!-- <label id="currDatelbl">Chestnut Leather</label>  -->
+<br>=====================================================================================<br>
+<br><br>Enter Number:<br>
+  <input type="text" name="baseNum" id="baseNum"><br>
+
+
+<br><br><input id="computeBt" type="button" value="Compute for Factorial" onclick="computeNum();" >
+
+<br>=====================================================================================<br>
+<br><br>Enter Year:<br>
+  <input type="text" name="yearInput" id="yearInput"><br>
+
+
+<br><br><input id="getIfLeap" type="button" value="See if it is a Leap Year" onclick="getIfLeap();" >
+<br>=====================================================================================<br>
+ <br><br>Enter Word:<br>
+  <input type="text" name="inputStr" id="inputStr"><br>
+
+
+<br><br><input id="getStrings" type="button" value="Magic!" onclick="getStrings();" >
+<br>=====================================================================================<br>
+<br><br>Enter Word to reverse:<br>
+  <input type="text" name="inputWord" id="inputWord"><br>
+
+
+<br><br><input id="reverseWord" type="button" value="Reverse!" onclick="reverseWord();" >
+
+<br>=====================================================================================<br>
+
+<br><br>Get all prime up to:<br>
+  <input type="text" name="maxPrime" id="maxPrime"><br>
+
+
+<br><br><input id="getPrimeNumbers" type="button" value="Show Prime Numbers!" onclick="getPrimeNumbers();" >
+<br>=====================================================================================<br>
+<br><br>Input a number:<br>
+  <input type="text" name="ifNum" id="ifNum"><br>
+
+
+<br><br><input id="ifNummmm" type="button" value="See if it is a number!" onclick="seeIfNumber();" >
+<br>=====================================================================================<br>
+<br><br>Input String for Camel Case:<br>
+  <input type="text" name="camWord" id="camWord"><br>
+
+
+<br><br><input id="camWordBt" type="button" value="Camelize!" onclick="camelThis();" >
+<br>=====================================================================================<br>
+<br><br><input id="areaTri" type="button" value="Show area of a Triangle!" onclick="getAreaTriangle();" >
+<br>=====================================================================================<br>
+<br><br><input id="currDate" type="button" value="Show Date Today!" onclick="getCurrentDate();" >
+<br>=====================================================================================<br>
+</center>
+
+<SCRIPT>
+computeNum = function(events, args){
+	var baseNum = document.getElementById("baseNum").value;
+	var facNum = 1; 
+	if (baseNum < 0) {
+		alert("Negative values cannot have Factorial");
+	}
+	else if (baseNum > 0) {
+		for (var i = baseNum; i > 0; i--) {
+			facNum = parseInt(facNum) * parseInt(i);
+		}
+		alert("Factorial of " + baseNum + " is " + facNum);
+	}
+	else if (baseNum == 0) {
+		alert("Factorial of " + baseNum + " is " + facNum);
+	}
+}
+getIfLeap = function(events, args){
+	var yearInput = document.getElementById("yearInput").value;
+	
+	if(parseInt(yearInput)%4 == 0){
+		alert(yearInput + " is a Leap Year");
+	}
+	else {
+		alert(yearInput + " is not a Leap Year");
+	}
+}
+getStrings = function(events, args){
+	var inputStr = document.getElementById("inputStr").value;
+	var strOutput = [];
+	for (var i = 0; i <= inputStr.length; i++) {
+		for (var j = 0; j < i; j++) {
+			strOutput.push(inputStr.substr(j,i));
+		};
+	};
+	alert(strOutput);
+}
+reverseWord = function(events, args){
+	var inputWord = document.getElementById("inputWord").value;
+	var charArray = inputWord.split('');
+	var newWord = charArray.reverse();
+	newWord = newWord.join('');
+	alert(newWord);
+}
+getAreaTriangle = function(events, args){
+	var sides = [5,6,7];
+	var area = (parseInt(sides[0]) + parseInt(sides[1]) + parseInt(sides[2])) / 2 ;
+	alert("Area of a triangle is " + area);
+}
+getPrimeNumbers = function(events, args){
+	var max = document.getElementById("maxPrime").value;
+    var initialArr = [], i, j, outputPrime = [];
+    for (i = 2; i <= max; ++i) {
+        if (!initialArr[i]) {
+            outputPrime.push(i);
+            for (j = i << 1; j <= max; j += i) {
+                initialArr[j] = true;
+            }
+        }
+    }
+    alert(outputPrime);
+}
+getCurrentDate = function(events, args){
+	var now = new Date();
+	var day = now.toString();
+	var timee = day.substr(16,8);
+	day = day.substr(0,3);
+	alert("Today is " + getDay(day) + "\nCurrent time is " + timee);
+}
+seeIfNumber = function(events , args){
+	var ifNum = document.getElementById('ifNum').value;
+	var patterrn = /^[0-9\s]*$/; 
+	if(ifNum.match(patterrn)) {
+		alert (ifNum + " is a number");
+	}
+	else {
+		alert (ifNum + " is not a number");
+	} 
+}
+camelThis = function(events , args){
+	var camWord = document.getElementById('camWord').value;
+	var worddd = camWord.split(' ');
+	var temp = "";
+	var temp2 = "";
+	var newWord = [];
+	//newWord.push(worddd[0].toUpperCase());
+	for (var i = 0; i < worddd.length; i++) {
+		temp = worddd[i].substr(0,1).toUpperCase();
+		temp2 = worddd[i].substr(1,worddd[i].length-1);
+		newWord.push(temp + temp2);
+	 }
+	 camWord = newWord.join('');
+	 alert("Camel case: " + camWord);
+}
+getDay = function(day){
+	var daay = "";
+	if (day == "Fri") {
+		daay = "Friday";
+	}
+	else if (day == "Sat") {
+		daay = "Saturday";
+	}
+	else if (day == "Sun") {
+		daay = "Sunday";
+	}
+	else if (day == "Mon") {
+		daay = "Monday";
+	}
+	else if (day == "Tue") {
+		daay = "Tuesday";
+	}
+	else if (day == "Wed") {
+		daay = "Wednesday";
+	}
+	else if (day == "Thu") {
+		daay = "Thursday";
+	}
+	return daay;
+}
+</SCRIPT>
+
+
+</BODY>
+</HTML>
