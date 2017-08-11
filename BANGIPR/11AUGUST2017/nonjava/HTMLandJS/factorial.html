@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Factorial!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Input Number :</label></br>
+		  <input type="text" name="number" id="number"/></br></br>
+ 
+		  <input type="button" value="Factorial" id="factorialNum" onclick="run(number.value)"/>
+		</br><br>
+
+<script>
+
+function factorial(x)
+{
+	  if(x == 0) {
+           return 1;
+       }
+       if(x < 0 ) {
+           return undefined;
+       }
+       for(var i = x; --i; ) {
+           x *= i;
+       }
+       return x;
+
+
+}
+
+function run(number) {
+
+    alert("Factorial of " + number + " is " + factorial(parseInt(number, 10)));
+
+
+}
+
+
+</script>	
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Camel Case!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Enter a word and i'll fix it :</label></br>
+		  <input type="text" name="str" id="str"/></br></br>
+ 
+		  <input type="button" value="Camel Case" id="camelize" onclick="print(str.value)"/>
+		</br><br>
+
+    <div id="revResult"> </div>
+
+<script>
+ function camelize(str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, 
+
+  	function(letter, index) {
+    return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+  }).replace(/\s+/g, '');
+
+}
+
+function print(str){
+	var res = camelize(str);
+
+	alert(res);
+}
+
+</script>	
+
+</body>
+</html>

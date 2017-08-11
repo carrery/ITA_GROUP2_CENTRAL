@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Check if Number or Not!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Input a number and I'll print the primes: </label></br>
+          <input type="text" name="num" id="num"/></br></br>
+ 
+          <input type="button" value="Add to List" id="list" onclick="print(num.value)"/>
+        </br><br>
+
+     <div id="primesList"></div>
+
+
+<script>
+
+function primes(num){
+  var catcher = [], i, j, primes = [];
+    for (i = 2; i <= num; ++i) {
+        if (!catcher[i]) {
+            primes.push(i);
+            for (j = i << 1; j <= num; j += i) {
+                catcher[j] = true;
+            }
+        }
+    }
+    return primes;
+}
+
+function print(num){
+
+      var result = document.getElementById("primesList")
+    var resultPrime = primes(num)
+
+    result.innerHTML += "Prime factors to " + num + " are " + resultPrime
+ 
+}
+
+
+</script>   
+
+</body>
+</html>

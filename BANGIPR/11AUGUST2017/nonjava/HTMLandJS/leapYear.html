@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Check if Leap Year!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Enter the year :</label></br>
+		  <input type="text" name="years" id="years"/></br></br>
+ 
+		  <input type="button" value="Check if Leap Year" id="revv" onclick="leap(years.value)"/>
+		</br><br>
+
+   
+
+<script>
+ function leap(years) {
+            
+          var  x = (years % 100 === 0) ? (years % 400 === 0) : (years % 4 === 0);
+			alert(x);
+
+
+
+}
+
+</script>	
+
+</body>
+</html>
