@@ -1,0 +1,50 @@
+
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Check if Number or Not!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Input a string of numbers or/and words and I'll guess if it's a number or word :</label></br>
+		  <input type="text" name="wordNum" id="wordNum"/></br></br>
+ 
+		  <input type="button" value="Add to List" id="list" onclick="listing(wordNum.value)"/> <input type="button" value="Check!" id="checking" onclick="run(wordNum.value)"/>
+		</br>
+
+     <div id="checkList"></div>
+
+
+<script>
+
+function listing(wordNum){
+  var result = document.getElementById("checkList")
+  result.innerHTML =""
+
+  result.innerHTML += "\n" + wordNum + "\n"
+
+ 
+}
+
+
+function run(wordNum) {
+
+var reg = new RegExp('^[0-9]+$');
+
+if(wordNum.match(reg)){
+ alert("true");
+} else{
+  alert("false");
+}
+
+
+}
+
+
+</script>	
+
+</body>
+</html>

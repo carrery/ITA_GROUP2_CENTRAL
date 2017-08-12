@@ -1,0 +1,319 @@
+<html>
+	<head>
+	<SCRIPT LANGUAGE = "Javascript">
+	</SCRIPT>
+		
+	</head>
+	
+	<body>
+		<td>
+			<h3>FACTORIAL</h3>
+			<tr>
+			<label> Input number </label>
+			<input type="text" id= "num" name="num" style="height: 20px;width:150px">
+			</tr>
+			<br>
+			</br>
+			<tr>
+			<input type="button" name="num" value = "Click" style="height: 26px;width:70px" onclick = "Factorial();">
+			<br>
+			<br>
+			</tr>
+		</td>
+		<td>
+			<tr>
+			<h3> TRIANGLE </h3>
+			<label> Input three sides </label>
+			<input type="text" id= "tri1" name="tri1" style="height: 20px;width:50px">
+			<input type="text" id= "tri2" name="tri2" style="height: 20px;width:50px">
+			<input type="text" id= "tri3" name="tri3" style="height: 20px;width:50px">
+			</tr>
+			<br>
+			</br>
+			<tr>
+			<input type="button" name="triangle" value = "Click" style="height: 26px;width:70px" onclick = "Triangle();">
+			<br>
+			<br>
+			</tr>
+		</td>
+		<td>
+			<h3> REVERSE </h3>
+			<tr>
+			<label> Input String:  </label>
+			<input type="text" id= "rev" name="rev" style="height: 20px;width:150px">
+			</tr>
+			<br>
+			<tr>
+			<label> </label>
+			</br>
+			<input type="button" name="reve" value = "Click" style="height: 26px;width:70px" onclick = "Reverse();">
+			</tr>
+		</td>
+		<td>
+			<h3> NUMERIC OR NOT </h3>
+			<tr>
+			<label> Input Number:  </label>
+			<input type="text" id= "digit" name="digit" style="height: 20px;width:150px">
+			</tr>
+			<br>
+			<tr>
+			<label> </label>
+			</br>
+			<input type="button" name="dig" value = "Click" style="height: 26px;width:70px" onclick = "Number();">
+			</tr>
+		</td>
+		<td>
+			<h3> CAMEL CASE </h3>
+			<tr>
+			<label> JavaScriptExercises:  </label>
+			<input type="text" id= "cam" name="cam" style="height: 20px;width:150px">
+			</tr>
+			<br>
+			<tr>
+			<label> </label>
+			</br>
+			<input type="button" name="camel" value = "Click" style="height: 26px;width:70px" onclick = "Camel();">
+			</tr>
+		</td>
+		<td>
+			<h3> PRIME NUMBERS </h3>
+			<tr>
+			<label> Input Number:  </label>
+			<input type="text" id= "prime" name="prime" style="height: 20px;width:150px">
+			</tr>
+			<br>
+			<tr>
+			<label> </label>
+			</br>
+			<input type="button" name="pri" value = "Click" style="height: 26px;width:70px" onclick = "Prime();">
+			</tr>
+		</td>
+		<td>
+			<h3> LEAP YEAR IN GREGORIAN </h3>
+			<tr>
+			<label> Input Number:  </label>
+			<input type="text" id= "leap" name="leap" style="height: 20px;width:150px">
+			</tr>
+			<br>
+			<tr>
+			<label> </label>
+			</br>
+			<input type="button" name="year" value = "Click" style="height: 26px;width:70px" onclick = "Leap();">
+			</tr>
+		</td>
+		<td>
+			<h3>TIME</h3>
+			<tr>
+			<input type="button" name="date" value = "Click" style="height: 26px;width:70px" onclick = "DateToday();">
+			<br>
+			<br>
+			</tr>
+		</td>
+		<td>
+			<h3> DOG </h3>
+			<tr>
+			<label> Input String:  </label>
+			<input type="text" id= "man" name="man" style="height: 20px;width:150px">
+			</tr>
+			<br>
+			<tr>
+			<label> </label>
+			</br>
+			<input type="button" name="man" value = "Click" style="height: 26px;width:70px" onclick = "Man();">
+			<input type="button" name="clear" value = "Clear" style="height: 26px;width:70px" onclick = "Clear();">
+			</tr>
+		</td>
+		<SCRIPT>
+			function Clear() {
+				var leap = document.getElementById('leap').value;
+				var cam = document.getElementById('cam').value;
+				var digit = document.getElementById('digit').value;
+				var tri1 = document.getElementById('tri1').value;
+				var tri2 = document.getElementById('tri2').value;
+				var tri3 = document.getElementById('tri3').value;
+				var prime = document.getElementById('prime').value;
+				var rev = document.getElementById('rev').value;
+				var num = document.getElementById('num').value;
+				var man = document.getElementById('man').value;
+				if(leap != "" || cam != "" || digit != "" || tri1 != "" || tri2 != "" || tri3 != "" || prime != "" || rev != "" || man != ""){
+					document.getElementById('leap').value = "";
+					document.getElementById('cam').value = "";
+					document.getElementById('digit').value = "";
+					document.getElementById('tri1').value = "";
+					document.getElementById('tri2').value = "";
+					document.getElementById('tri3').value = "";
+					document.getElementById('prime').value = "";
+					document.getElementById('rev').value = "";
+					document.getElementById('num').value = "";
+					document.getElementById('man').value = "";
+				}
+			}
+		
+			function Leap() {
+				var leap = document.getElementById('leap').value;
+				if (leap == "")
+				{
+					alert("Please input year!");
+				}
+				else {
+					if((parseInt(leap) % 400) == 0) {
+						alert (leap + " is leap year");
+				}
+					else {
+						alert (leap + " is not leap year");
+					}
+				}
+			}
+	
+			function Camel() {
+				var cam = document.getElementById('cam').value;
+				var rep = cam.split(/\s+/).join('');
+				var cam1 = rep.substr(0,4); //rep.substr(0,1).toUpperCase() + rep.substr(1);
+				var cam2 = rep.substr(4,6);
+				var cam3 = rep.substr(10,9);
+				var cam4 = cam1.substr(0,1).toUpperCase() + cam1.substr(1) ;
+				var cam5 = cam2.substr(0,1).toUpperCase() + cam2.substr(1);
+				var cam6 = cam3.substr(0,1).toUpperCase() + cam3.substr(1);
+				alert(cam4 + cam5 + cam6);
+			    console.log(cam4 + cam5 + cam6);
+
+				// + cam1.substr(0,1).toUpperCase() //+ cam1.substr(1) ; //.toUpperCase() + cam.substr(1);
+				//JavaScriptExercises				
+			}
+			
+			function DateToday() {
+				var now = new Date();	
+				var day = getDayName(now.getDay());
+				console.log(now);
+				//alert("Date today: " + day + time);
+				
+				function getDayName(day) {
+					var arr = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+					var time = now.toLocaleTimeString();
+					alert("Today is: " + arr[day] + "\n" + "Current Time is: " + time);
+				}
+			}
+		
+			function Number() {
+				var digit = document.getElementById('digit').value;
+				var letters = /^[0-9\s]*$/;
+
+				if(digit == ""){
+					alert("Please input any characters!");
+				}
+				else {
+					if(digit.match(letters)) {
+						alert (digit + " is Numeric");
+					}
+					else {
+						alert (digit + " is not Numeric");
+					}
+				}
+			}
+		
+			function Triangle() {
+				var tri1 = document.getElementById('tri1').value;
+				var tri2 = document.getElementById('tri2').value;
+				var tri3 = document.getElementById('tri3').value;
+				
+				if(tri1 == "" || tri2 == "" || tri3== "") {
+					alert("Please input the three sides of triangle");
+				}
+				else {
+					var area = (parseInt(tri1) + parseInt(tri2) + parseInt(tri3)) / 2;
+					alert("The area of triangle " + area);
+				}
+			}
+			
+			function Prime() {	
+				var prime = document.getElementById('prime').value;
+				if(prime == ""){
+					alert("Please input number!");
+				}
+				else {
+					var x=3,j,i=2,
+					Arr = [2], ifPrime;
+					for (;x<=parseInt(prime);x+=2){
+						j = parseInt( Math.sqrt (x));
+						ifPrime = true;
+					
+					for (i = 2; i <= j; i++)
+					{
+						if (x % i == 0){
+						ifPrime = false;
+						break;
+						}
+					}
+				
+					if(ifPrime == true){
+						Arr.push(x);
+					}
+				}  
+					alert("The prime numbers are: " + Arr);
+				}
+			}	
+		
+			function Reverse() {
+				var rev = document.getElementById('rev').value;
+				
+				if(rev == "") {
+					alert("Please input string to reverse!");
+				}
+				else {
+					var split = rev.split('');
+					var reversed = split.reverse();
+					alert("The reverse is: " + reversed.join(" "));
+				}
+				
+			}
+		
+		
+		function Factorial() {
+			var num = document.getElementById('num').value;
+			if(num == "") {
+				alert("Please input a number!");
+			}
+			else {
+				if(parseInt(num) == 0) {
+					alert("Factorial: 1");
+				}
+			else {
+				var fact=1;
+					for(var i=parseInt(num); i>1 ;i--) {
+						fact*=i;
+					}	
+					alert("The Factorial is " + fact);
+				}
+			}
+			
+		}
+		
+		function Man() {
+			var man = document.getElementById('man').value;
+			var str = [];
+			var string = [];
+			
+			for (var i = 0; i <= man.length; i++) {
+				for (var j = 0 ; j <= man.length; j++) {
+					
+					if(i != j) {
+						str[i] = man.substr(i, j);
+						string.push(str[i]);
+						//alert(str[i])
+						console.log(str[i]);
+					}
+					else if (i==1 && j==1) {
+						str[i] = man.substr(i, j);
+						string.push(str[i]);
+						//alert(str[i]);
+						console.log(str[i]);
+					}
+				}
+			}
+			//alert(string);
+			//var strMan = string.split(',').join(' ');
+			//alert(strMan);
+		}
+		</SCRIPT>
+	</body>
+</html>

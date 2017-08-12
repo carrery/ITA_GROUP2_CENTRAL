@@ -1,0 +1,51 @@
+
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Word Scramble!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Enter a word :</label></br>
+		  <input type="text" name="scramWord" id="scramWord"/></br></br>
+ 
+		  <input type="button" value="Scramble" id="scram" onclick="scramble(scramWord.value)"/>
+		</br><br>
+
+    <div id="scramresult"></div>
+
+<script>
+ function scramble(scramWord) {
+            var input = scramWord
+            var result = document.getElementById("scramresult")
+            result.innerHTML=""
+
+            
+            for (var i = 0 ; i < input.length; i++) {
+               
+                for (var b = 1 ; b < input.length; b++) {
+                    
+                   
+                    if(i!=b ){
+                        result.innerHTML += input.substr(i,b) + ","
+                    } else if(i == 1 && b == 1){
+                        result.innerHTML += input.substr(i,b) + ","
+                    }
+                    
+                        
+                }
+
+            }
+            result.innerHTML += scramWord
+        }
+
+
+
+
+</script>	
+
+</body>
+</html>

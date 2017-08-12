@@ -1,0 +1,45 @@
+
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Day and Time!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>What is the time and date today? </label></br>
+ 
+		  <input type="button" value="Check Time and Date" id="revv" onclick="dayTime()"/>
+	<br>
+
+    <div id="checkRes"></div>
+
+<script>
+ function dayTime() {
+           
+            var result = document.getElementById("checkRes")
+            result.innerHTML=""
+
+
+    var date = new Date();
+    var currDate = date.getDate();
+    var day  = getDayName(date.getDay());
+    var time = date.toLocaleTimeString();
+
+     result.innerHTML += "Today is " + day + "</br>" + "Current time is " + time
+
+
+}
+
+
+function getDayName(day) {
+    var ar1 = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+    return ar1[day];
+}
+
+</script>	
+
+</body>
+</html>

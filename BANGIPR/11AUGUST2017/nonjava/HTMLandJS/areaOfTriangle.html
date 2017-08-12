@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Get the Area!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Write the lengths of a triangle: </label></br>
+<p> First Side: <input type="text" name="first" id="first"/> </p>
+ <p> Second Side: <input type="text" name="second" id="second"/> </p>
+<p>Third Side: <input type="text" name="third" id="third"/></p> 
+ 
+      <input type="button" value="Get the Area" id="revv" onclick="area()"/>
+  <br>
+
+    <div id="checkRes"></div>
+
+<script>
+ function area() {
+        
+            var first = parseInt(document.getElementById("first").value)
+            var second = parseInt(document.getElementById("second").value)
+            var third = parseInt(document.getElementById("third").value)
+            var result = document.getElementById("checkRes")
+            result.innerHTML=""
+
+            var s = (first + second + third)/2;
+
+          var area = parseInt(Math.sqrt(s * (s-first) * (s - second) * (s - third)))
+
+
+          //alert("Area is: " + area)
+     result.innerHTML += "Area of the triangle is " + area
+
+
+}
+
+
+
+</script> 
+
+</body>
+</html>
