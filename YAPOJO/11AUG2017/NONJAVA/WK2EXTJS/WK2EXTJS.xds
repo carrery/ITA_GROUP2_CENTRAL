@@ -1,0 +1,40 @@
+{
+    "name": "WK2EXTJS",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "C:/Users/Marlon Brian Orga/Desktop/New folder"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "c7e45014-5013-4c3f-8501-23397e593d9a",
+            "e05a66ae-61e1-4128-bf41-1a922f404b4a",
+            "17eb2144-98e3-4268-a52d-38446c19726e"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "02bf0e36-3fbb-4e38-95e7-010d924f441e",
+            "07d617d5-37a6-41fe-bc19-1898a76037db"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
