@@ -1,0 +1,35 @@
+<html>
+<head>
+<title> HW # 2 </title>
+</head>
+
+<body>
+
+
+<canvas id="myCanvas" width="125" height="125" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+
+// Red rectangle
+ctx.beginPath();
+ctx.lineWidth = "20";
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(25, 25, 50, 50);
+ctx.stroke();
+
+// Blue rectangle
+ctx.beginPath();
+ctx.lineWidth = "20";
+ctx.fillStyle = "rgba(0,0,255,.5)";
+ctx.fillRect(50, 50, 50, 50);
+ctx.stroke();
+</script> 
+
+
+</body>
+</html>
