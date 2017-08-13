@@ -1,0 +1,42 @@
+{
+    "name": "ExtJSHW",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "C:/Users/Jag/Documents/New folder"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "b215faf7-1bbf-4524-bc28-888d24336157",
+            "f2c06610-4b51-4d18-85bf-bc9e6378f781",
+            "16fef47f-4445-4d44-be6c-00e7541c8bce"
+        ],
+        "store": [],
+        "controller": [
+            "509856c8-63fc-4d05-b457-7f0c429d900f"
+        ],
+        "model": [],
+        "resource": [
+            "f1e2c731-23c4-44b1-9329-83a9b246f677",
+            "772e15a1-f096-4dda-ba9c-76ad8cd60424"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
