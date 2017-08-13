@@ -1,0 +1,34 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|snapToGrid": 10,
+        "designer|userClassName": "MyContainer2",
+        "height": 397,
+        "layout": "absolute",
+        "width": 613
+    },
+    "designerId": "6fc44183-7ae4-48e3-bf6e-c7e0c60021ef",
+    "cn": [
+        {
+            "type": "Ext.form.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 30,
+                "layout|x": 270,
+                "layout|y": 70,
+                "text": "PAGE 2",
+                "width": 120
+            },
+            "designerId": "0a84aead-ae7c-48aa-a94e-9fd75c527452"
+        }
+    ]
+}
