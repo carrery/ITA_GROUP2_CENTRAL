@@ -1,0 +1,50 @@
+{
+    "name": "MyApp",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/MyApp/",
+        "exportPath": "D:/Sencha/Exercise/MyAppPub"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "45242eb6-eff2-4b90-ab6b-bac47c3a3226",
+            "8ec5a784-b989-4de3-bf15-e70a9a3b26e5",
+            "f0517c49-fb9a-43f8-a132-def74075dd33",
+            "db5425ca-5437-4136-9fab-3f6a701998a3"
+        ],
+        "store": [
+            "b44bb268-568e-4884-817f-33b975d884aa",
+            "7ab7f972-17c8-4c9d-87e3-094e350c2084"
+        ],
+        "controller": [
+            "f8e5f3a4-dcd3-4376-b166-340bfbd9e8a0"
+        ],
+        "model": [
+            "1bdf94a2-8e0e-495a-b1c3-371537c48b74",
+            "6a24dad0-d4da-429c-a9a5-409b4d32f3b7"
+        ],
+        "resource": [
+            "e6ae4971-70fd-482c-a056-fb0d3d19bc5b",
+            "fa62bbd0-9d24-404f-87b0-058f71d889a1",
+            "98037502-0469-4400-a697-d5999efac23f"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

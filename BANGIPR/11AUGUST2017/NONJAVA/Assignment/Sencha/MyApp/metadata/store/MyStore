@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        \"value\": 787,\r",
+            "        \"name\": \"Artemisia\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"value\": 912,\r",
+            "        \"name\": \"Elonia\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"value\": 924,\r",
+            "        \"name\": \"Sea of Desert\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"value\": 64,\r",
+            "        \"name\": \"Abysmal Cronium\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"value\": 870,\r",
+            "        \"name\": \"Crystal Kingdom\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"value\": 391,\r",
+            "        \"name\": \"Illumin\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"value\": 999,\r",
+            "        \"name\": \"Netherworld\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"value\": 292,\r",
+            "        \"name\": \"Others\"\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "MyStore",
+        "model": "MyModel",
+        "storeId": "MyStore"
+    },
+    "designerId": "b44bb268-568e-4884-817f-33b975d884aa"
+}

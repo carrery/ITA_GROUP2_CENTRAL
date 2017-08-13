@@ -1,0 +1,246 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyViewport2",
+        "id": "graphViewportID",
+        "itemId": "graphViewportID",
+        "layout": "fit"
+    },
+    "designerId": "f0517c49-fb9a-43f8-a132-def74075dd33",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "hbox",
+                "title": null,
+                "titleCollapse": true
+            },
+            "designerId": "bfdb4739-6987-4794-9fff-79be1fe43685",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "designerId": "aec516d6-39b9-4adb-90d4-bf74e5dd13bb",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "margin": 10,
+                                "style": [
+                                    "'background:transparent;border: none;'"
+                                ],
+                                "text": "Home"
+                            },
+                            "designerId": "d33dd4e8-0dd4-44fa-8772-2f2800b5b6fd",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Menu",
+                                    "reference": {
+                                        "name": "menu",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "2dfac4c5-0bdc-47d2-a1c0-399ed8fae3e1",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "id": "homeId2",
+                                                "text": "Home Page"
+                                            },
+                                            "designerId": "a7500477-cf5a-4f0e-b8d9-31e3e7fe8d29"
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "id": "gridId2",
+                                                "text": "Grid Page"
+                                            },
+                                            "designerId": "f788b045-e305-4d85-a72f-d13c60432195"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "style": [
+                                    "'background:transparent;border: none;'"
+                                ],
+                                "text": "About"
+                            },
+                            "designerId": "1d58ca26-64c8-4dff-84de-1449c58e6084"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "padding": 15
+                    },
+                    "designerId": "b9bd8d5e-d71b-41a6-b61e-3f83a4ec9fb2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<i><h3>To my darling princess,</h3></i>",
+                                "text": ""
+                            },
+                            "designerId": "812c896c-73e9-45be-99a5-1326839eee89"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 0,
+                                "html": "<i><p>Today is a special day. It is you 18th birthday and your day of liberation. I wish you could have spent this birthday as the girl I always dreamed you would be—the girl you always deserved to be—and not lost among the vast dead land and musty waters, blown by the winds and crushed under the feet of dying wanderers. I wish I could still be at your side. But things are about to change, my love. I still remember the day of your birth as the greatest day of my life. It was during a whimsical spring twilight, one of those nights where the sapphire skies drip with sweet, little, glittering raindrops; where the all other fairies and pixies flitter from place to place, giving life to the living creatures that we rule over. I was the young and immortal fairy queen, with pale and shimmering skin that reflects the moonlight and dark orbs that sees all. In those days, I knew very little about the world, having only emerged a year before from my hidden palace on the mountains, to be married to the Sun King, the dark haired Datu of the mortal land, king of the Kingdom of Thousand Islands.</p></i>",
+                                "text": null
+                            },
+                            "designerId": "f87d83d6-07bc-46fb-912a-41d37dc23938"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "readBtn",
+                                "itemId": "readBtn",
+                                "text": "Read More"
+                            },
+                            "designerId": "bb5c84a2-d512-48eb-87b5-c4dc15df5b72"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.Chart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animate": [
+                            "true"
+                        ],
+                        "height": 250,
+                        "insetPadding": 20,
+                        "layout|flex": 1,
+                        "store": "MyStore",
+                        "width": 400
+                    },
+                    "designerId": "fdc6e58b-0ed6-44c4-b128-3ab665d77756",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-line-chart",
+                    "autoName": "LineChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fields": [
+                                    "name"
+                                ],
+                                "title": "Category Axis"
+                            },
+                            "designerId": "70eb3ce4-704c-4d66-b46a-274d76937f84"
+                        },
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fields": [
+                                    "value"
+                                ],
+                                "title": "Numeric Axis"
+                            },
+                            "designerId": "4f298d6d-7ea3-4aa1-a34f-6ca632461c8e"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "smooth": 3,
+                                "xField": "name",
+                                "yField": [
+                                    "value"
+                                ]
+                            },
+                            "designerId": "b173f18e-c70f-4d16-992b-4c3d80333780"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
