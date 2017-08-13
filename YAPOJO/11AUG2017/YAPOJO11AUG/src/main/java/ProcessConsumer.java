@@ -3,7 +3,7 @@ import java.util.Scanner;
 class ProdCon{
 	boolean flag = false;
 	
-	public synchronized void Question (String threadName,String message) {
+	public synchronized void Producer(String threadName,String message) {
 		if(flag) {
 			try {
 				Thread.sleep(1000);
@@ -19,7 +19,7 @@ class ProdCon{
 		
 	}
 	
-	public synchronized void Answer (String threadName, String message) {
+	public synchronized void Consumer(String threadName, String message) {
 		if(!flag) {
 			try {
 				Thread.sleep(1000);
@@ -48,16 +48,16 @@ class Thread1 implements Runnable{
 		this.threadName = threadName;
 	}
 	
-	ProdCon a;
+	ProdCon prod;
 	public Thread1(String threadName, ProdCon a1, int y) {
-		this.a = a1;
+		this.prod = a1;
 		this.threadName = threadName;
 		this.y = y;
 		new Thread(this, "Question").start();
 	}
 	public void run() {
 		for(int i =0; i< y; i++) {
-			a.Question(threadName, ""+i);
+			prod.Producer(threadName, ""+i);
 		}
 	}
 }
@@ -71,16 +71,16 @@ class Thread2 implements Runnable{
 		this.threadName = threadName;
 	}
 
-	ProdCon a;
+	ProdCon con;
 	public Thread2(String threadName, ProdCon a1, int y) {
-		this.a = a1;
+		this.con = a1;
 		this.threadName = threadName;
 		this.y=y;
 		new Thread(this, "Answer").start();
 	}
 	public void run() {
 		for(int i =0; i< y; i++) {
-			a.Answer(threadName, ""+i);
+			con.Consumer(threadName, ""+i);
 		}
 		
 	}
