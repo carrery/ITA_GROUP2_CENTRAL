@@ -14,8 +14,8 @@ class ProdCon{
 		}
 		
 		System.out.println(threadName  + message);
-	      flag = true;
-	      notify();
+	    flag = true;
+	    notify();
 		
 	}
 	
@@ -31,8 +31,8 @@ class ProdCon{
 		}
 		
 		System.out.println(threadName + message);
-	      flag = false;
-	      notify();
+	    flag = false;
+	    notify();
 		
 	}
 	
@@ -40,17 +40,17 @@ class ProdCon{
 	
 }
 
-class Thread1 implements Runnable{
+class ProducerThread implements Runnable{
 	public int y;
 	public String threadName;
 	
-	public Thread1(String threadName){
+	public ProducerThread(String threadName){
 		this.threadName = threadName;
 	}
 	
 	ProdCon prod;
-	public Thread1(String threadName, ProdCon a1, int y) {
-		this.prod = a1;
+	public ProducerThread(String threadName, ProdCon procon, int y) {
+		this.prod = procon;
 		this.threadName = threadName;
 		this.y = y;
 		new Thread(this, "Question").start();
@@ -63,17 +63,17 @@ class Thread1 implements Runnable{
 }
 
 
-class Thread2 implements Runnable{
+class ConsumerThread implements Runnable{
 	public int y;	
 	public String threadName;
 	
-	public Thread2(String threadName){
+	public ConsumerThread(String threadName){
 		this.threadName = threadName;
 	}
 
 	ProdCon con;
-	public Thread2(String threadName, ProdCon a1, int y) {
-		this.con = a1;
+	public ConsumerThread(String threadName, ProdCon procon, int y) {
+		this.con = procon;
 		this.threadName = threadName;
 		this.y=y;
 		new Thread(this, "Answer").start();
@@ -101,8 +101,8 @@ public class ProcessConsumer {
 		
 		ProdCon pc = new ProdCon();
 		for(int j = 1; j<=x; j++) {
-			new Thread1("Producer #" + j + " put: ", pc, y);
-			new Thread2("Consumer #" + j + " got: ", pc, y);
+			new ProducerThread("Producer #" + j + " put: ", pc, y);
+			new ConsumerThread("Consumer #" + j + " got: ", pc, y);
 		}
 		
 	}
