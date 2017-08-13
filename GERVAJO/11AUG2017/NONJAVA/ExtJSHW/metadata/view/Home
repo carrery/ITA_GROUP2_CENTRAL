@@ -1,0 +1,251 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "Home",
+        "id": "homeView"
+    },
+    "designerId": "b215faf7-1bbf-4524-bc28-888d24336157",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "2cec0dba-5f7f-438c-a897-ea0c755ee6ed",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Menu"
+                    },
+                    "designerId": "e2a0b48e-1b99-4119-b53c-1e291a87c8ad",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120
+                            },
+                            "designerId": "c3db950f-2f74-4576-9a19-1a14308f727f",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Home"
+                                    },
+                                    "designerId": "8f72575b-7ceb-4226-813e-898e10f04443"
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "href": "",
+                                        "itemId": "chartItem",
+                                        "text": "Chart"
+                                    },
+                                    "designerId": "7e3ad178-ff72-4b79-9e4a-c00629ef8cce",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onChartItemClick",
+                                                "implHandler": [
+                                                    "alert('w0w');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "b92823dc-e4db-4be4-ae88-579f12ed45af"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Gallery"
+                                    },
+                                    "designerId": "8713f37c-496d-44a1-a5b7-2d14c8b900c5",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMenuitemClick1",
+                                                "implHandler": [
+                                                    "this.push(Ext.create('MyApp.view.Gallery',{title:'Gallery'}));"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "b90b7db4-8246-4d3c-910e-5215603a2edb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Grid"
+                                    },
+                                    "designerId": "c87648b0-fd12-4059-96f7-875cba2f38d0",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMenuitemClick",
+                                                "implHandler": [
+                                                    "this.push(Ext.create('MyApp.view.Grid',{title:'Grid'}));"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "ba0855d2-95b0-4551-a325-622f974f49d1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "height": 160,
+                "title": "Welcome!"
+            },
+            "designerId": "f80d2fbe-34d7-49b4-87f5-7dc7a346f22f",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "label1",
+                        "text": "Type something in the text area to display here."
+                    },
+                    "designerId": "7431e73f-504a-4964-aa5c-cf9825743a2e"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Input",
+                        "id": "textArea1",
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "f5f282d6-50cf-4f05-bfa6-27dcd42f0edd"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "displayButton",
+                        "text": "Display",
+                        "tooltip": "Click button to display text into label"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "23ee50ff-2aaa-406a-820f-d986688932e6",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDisplayButtonClick",
+                                "implHandler": [
+                                    "Ext.Msg.confirm(\"Confirmation\", \"Display Text?\", function(btnText){\r",
+                                    "                if(btnText === \"no\"){\r",
+                                    "                    Ext.Msg.alert(\"Alert\", \"You have confirmed 'No'.\");\r",
+                                    "                }\r",
+                                    "                else if(btnText === \"yes\"){\r",
+                                    "                    var textArea = Ext.getCmp('textArea1').getValue();\r",
+                                    "                    Ext.getCmp('label1').setText(textArea);\r",
+                                    "                    Ext.getCmp('textArea1').setValue('');\r",
+                                    "                }\r",
+                                    "            }, this);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "58c0e7aa-1eca-4d73-90c2-8995d9f4bdcd"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

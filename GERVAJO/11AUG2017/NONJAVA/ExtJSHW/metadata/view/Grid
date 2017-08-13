@@ -1,0 +1,121 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Grid",
+        "id": "gridView"
+    },
+    "designerId": "f2c06610-4b51-4d18-85bf-bc9e6378f781",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Main"
+            },
+            "designerId": "84a051a6-4fed-482b-9f6a-6065d4e9eb7e"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Grid Panel"
+            },
+            "designerId": "520b6714-aed2-4c79-8006-2fc976e31f7c",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "text": "Id"
+                    },
+                    "designerId": "ad8c7ed3-130e-48ba-a47d-2c543d9ed495"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "text": "Name"
+                    },
+                    "designerId": "94cac376-9d8c-4362-835b-a94d0de8eaeb"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "text": "Gender"
+                    },
+                    "designerId": "ae823ddb-5cd6-459f-9b19-0b6ac90f75dc"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "8459bd7a-fcd9-4503-92fe-50841517d50c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Return",
+                "width": 100
+            },
+            "designerId": "6255cf71-0aca-4ae4-b9ad-3371b42c9ab0",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "implHandler": [
+                            "this.push(Ext.create('MyApp.view.Home',{title:'Home'}));"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "625db6da-3997-4153-b247-e313c0aab807"
+                }
+            ]
+        }
+    ]
+}
