@@ -1,0 +1,180 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Profile"
+    },
+    "designerId": "e05a66ae-61e1-4128-bf41-1a922f404b4a",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Grid Panel"
+            },
+            "designerId": "c57030f8-ae2e-43c3-a525-e49584c0c7ac",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "text": "String"
+                    },
+                    "designerId": "84704370-ed60-4ce0-bc9a-194ebf7fd736"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "text": "Number"
+                    },
+                    "designerId": "fe52aadd-9cc8-4bce-be97-5de99468ade7"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "date",
+                        "text": "Date"
+                    },
+                    "designerId": "c8b6ad0c-cd7b-41d6-b4cb-562776ddb53e"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "bool",
+                        "text": "Boolean"
+                    },
+                    "designerId": "e75b4df2-31ea-44ae-bc16-a2be81390698"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "231d4922-c410-4e69-ba06-fe5fc412dd5c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.chart.Chart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animate": [
+                    "true"
+                ],
+                "height": 250,
+                "insetPadding": 20,
+                "width": 400
+            },
+            "designerId": "9d4e9f68-c143-40ba-961a-0a8fa6d9de13",
+            "isBuiltIn": true,
+            "iconCls": "icon-bar-chart",
+            "autoName": "BarChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "x"
+                        ],
+                        "position": "left",
+                        "title": "Category Axis"
+                    },
+                    "designerId": "766ef9b5-3185-4372-ad69-1e34b39b2a6c"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "y"
+                        ],
+                        "position": "bottom",
+                        "title": "Numeric Axis"
+                    },
+                    "designerId": "ce6ca0af-9d61-49b7-874d-1827c502a7ad"
+                },
+                {
+                    "type": "Ext.chart.series.Bar",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "axis": [
+                            "bottom"
+                        ],
+                        "label": [
+                            "{'display':'insideEnd','field':'y','color':'#333','text-anchor':'middle'}"
+                        ],
+                        "xField": "x",
+                        "yField": [
+                            "y"
+                        ]
+                    },
+                    "designerId": "8e123d99-a59f-430c-8c4d-d317a71ccde0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "About Us",
+                "tooltip": [
+                    "\"About Us\""
+                ],
+                "tooltipType": "title"
+            },
+            "designerId": "8ae40f74-adbe-460f-a207-0c175f06c64f"
+        }
+    ]
+}

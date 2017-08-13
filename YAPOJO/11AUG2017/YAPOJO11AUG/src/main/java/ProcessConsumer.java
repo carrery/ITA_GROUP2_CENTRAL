@@ -1,7 +1,9 @@
-class Chat{
+import java.util.Scanner;
+
+class ProdCon{
 	boolean flag = false;
 	
-	public synchronized void Question (String threadName,String message) {
+	public synchronized void Producer(String threadName,String message) {
 		if(flag) {
 			try {
 				Thread.sleep(1000);
@@ -12,12 +14,12 @@ class Chat{
 		}
 		
 		System.out.println(threadName  + message);
-	      flag = true;
-	      notify();
+	    flag = true;
+	    notify();
 		
 	}
 	
-	public synchronized void Answer (String threadName, String message) {
+	public synchronized void Consumer(String threadName, String message) {
 		if(!flag) {
 			try {
 				Thread.sleep(1000);
@@ -29,8 +31,8 @@ class Chat{
 		}
 		
 		System.out.println(threadName + message);
-	      flag = false;
-	      notify();
+	    flag = false;
+	    notify();
 		
 	}
 	
@@ -38,47 +40,47 @@ class Chat{
 	
 }
 
-class Thread1 implements Runnable{
-
+class ProducerThread implements Runnable{
+	public int y;
 	public String threadName;
 	
-	public Thread1(String threadName){
+	public ProducerThread(String threadName){
 		this.threadName = threadName;
 	}
 	
-	Chat a;
-	String[] convo1 = {"Hi", "How are you?", "I'm fine too","Sure. Sounds fun" ,"Bye"};
-	public Thread1(String threadName, Chat a1) {
-		this.a = a1;
+	ProdCon prod;
+	public ProducerThread(String threadName, ProdCon procon, int y) {
+		this.prod = procon;
 		this.threadName = threadName;
+		this.y = y;
 		new Thread(this, "Question").start();
 	}
 	public void run() {
-		for(int i =0; i< convo1.length; i++) {
-			a.Question(threadName, convo1[i]);
+		for(int i =0; i< y; i++) {
+			prod.Producer(threadName, ""+i);
 		}
 	}
 }
 
 
-class Thread2 implements Runnable{
+class ConsumerThread implements Runnable{
+	public int y;	
+	public String threadName;
 	
-public String threadName;
-	
-	public Thread2(String threadName){
+	public ConsumerThread(String threadName){
 		this.threadName = threadName;
 	}
 
-	Chat a;
-	String[] convo2 = {"Hello", "Fine. How are you?","Wanna watch Game of Thrones today?" ,"Bye"};
-	public Thread2(String threadName, Chat a1) {
-		this.a = a1;
+	ProdCon con;
+	public ConsumerThread(String threadName, ProdCon procon, int y) {
+		this.con = procon;
 		this.threadName = threadName;
+		this.y=y;
 		new Thread(this, "Answer").start();
 	}
 	public void run() {
-		for(int i =0; i< convo2.length; i++) {
-			a.Answer(threadName, convo2[i]);
+		for(int i =0; i< y; i++) {
+			con.Consumer(threadName, ""+i);
 		}
 		
 	}
@@ -88,11 +90,20 @@ public String threadName;
 
 public class ProcessConsumer {
 
+
 	public static void main(String[] args) {
+		System.out.print("Enter the Number of Producers and Consumers: ");
+	    Scanner input1 = new Scanner(System.in);
+	    int x = input1.nextInt();
+	    System.out.print("Enter the Value(s): ");
+	    Scanner input2 = new Scanner(System.in);
+	    int y = input2.nextInt();
 		
-		Chat a = new Chat();
-		new Thread1("Producer : ", a);
-		new Thread2("Consumer : ", a);
+		ProdCon pc = new ProdCon();
+		for(int j = 1; j<=x; j++) {
+			new ProducerThread("Producer #" + j + " put: ", pc, y);
+			new ConsumerThread("Consumer #" + j + " got: ", pc, y);
+		}
 		
 	}
 
