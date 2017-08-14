@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="ISO-8859-1" />
+  <title>2: Two Intersecting Lines</title>
+  </head>
+  <body onload="intersect();">
+  <canvas id="inter" width="150" height="150"></canvas>
+
+  <script type="text/javascript">
+	function intersect() 
+  	{
+      var inter = document.getElementById("inter");
+      if (inter.getContext)
+      {
+        var square = inter.getContext("2d");
+
+        square.fillStyle = "rgb(256,0,0)";
+        square.fillRect (15, 10, 75, 65);
+        
+        square.fillStyle = "rgba(0, 0, 200, 0.6)";
+        square.fillRect (35, 30, 75, 65);
+      	}
+  	}
+</script>
+</body>
+</html>

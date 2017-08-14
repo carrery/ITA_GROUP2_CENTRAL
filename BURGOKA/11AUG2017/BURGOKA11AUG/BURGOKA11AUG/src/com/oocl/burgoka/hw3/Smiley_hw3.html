@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>3: Smiley Face</title>
+</head>
+<body onload="smile();">
+  <canvas id="smiley" width="500" height="500"></canvas>
+  <script>
+    function smile() {
+      var canvas = document.getElementById('smiley');
+      if (canvas.getContext) {
+        var smile = canvas.getContext('2d');
+        smile.beginPath();
+        smile.arc(200, 200, 100, 0, Math.PI * 2, true); // one full circle
+        smile.moveTo(275, 200);
+        smile.arc(200, 200, 75, 0, Math.PI, false); 
+        smile.moveTo(150, 150);
+        smile.arc(170, 150, 18, 0, Math.PI * 2, true); 
+        smile.arc(230, 150, 17, 0, Math.PI * 2, true); 
+        smile.stroke(); 
+      }
+    }
+  </script>
+</body>
+</html>

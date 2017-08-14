@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="ISO-8859-1">
+  <title>1: Rectangular</title>
+  </head>
+  <body onload="rectangle();">
+  <canvas id="rect" width="150" height="150"></canvas>
+
+  <script type="text/javascript">
+	function rectangle() {
+  	var rect = document.getElementById('rect');
+  	if (rect.getContext) {
+    	var side = rect.getContext('2d');
+
+    	side.fillRect(25, 25, 100, 100);
+    	side.clearRect(45, 45, 60, 60);
+    	side.strokeRect(50, 50, 50, 50);
+  	}
+}
+</script>
+</body>
+</html>
