@@ -73,11 +73,11 @@ Ext.define('MyApp.view.MyContainer', {
     },
 
     onButtonClick: function(button, e, eOpts) {
-
+      alert("clicked page 1");
     },
 
     onButtonClick1: function(button, e, eOpts) {
-
+      alert("clicked page 2");
     },
 
     callPage1: function() {
