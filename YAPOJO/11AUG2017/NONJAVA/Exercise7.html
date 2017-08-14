@@ -7,23 +7,23 @@
 function Primes() {
     
 	var a= document.getElementById("a").value;
-	var output = "";
-	var flag;
+	var strresult = "";
+	var check;
 	for(var y=0 ; y<=a; y++){
 		for (var x = 2; x < y; x++) {
-        		if (y % x == 0 && x != y) {
-         			flag = false;
-			}
-    		}
-    	if(flag){
+            if (y % x == 0 && x != y) {
+         			check = false;
+            }
+        }
+    	if(check){
      		if (y > 1){
-     		output += y + " "; 
+     		strresult += y + " "; 
      	}
   	}
-   	flag =  true;
+   	check =  true;
 }
 
-	return output;
+	return strresult;
 	
 }
     
