@@ -46,7 +46,13 @@ Ext.define('ExtJS.view.Home', {
                             xtype: 'button',
                             text: 'Login',
                             tooltip: 'Login',
-                            tooltipType: 'title'
+                            tooltipType: 'title',
+							listeners: {
+                                click: {
+                                    fn: me.onDisplayProfile,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -60,6 +66,10 @@ Ext.define('ExtJS.view.Home', {
         });
 
         me.callParent(arguments);
-    }
+    },
+	
+	onDisplayProfile: function(item, e, eOpts) {
+        this.push(Ext.create('ExtJS.view.Profile',{title:'Profile'}));
+    } 
 
 });

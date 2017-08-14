@@ -60,55 +60,65 @@ Ext.define('ExtJS.view.Profile', {
                         }
                     ]
                 },
-                {
-                    xtype: 'chart',
-                    height: 250,
-                    width: 400,
-                    animate: true,
-                    insetPadding: 20,
-                    axes: [
-                        {
-                            type: 'Category',
-                            fields: [
-                                'x'
-                            ],
-                            position: 'left',
-                            title: 'Category Axis'
-                        },
-                        {
-                            type: 'Numeric',
-                            fields: [
-                                'y'
-                            ],
-                            position: 'bottom',
-                            title: 'Numeric Axis'
-                        }
-                    ],
-                    series: [
-                        {
-                            type: 'bar',
-                            label: {
-                                display: 'insideEnd',
-                                field: 'y',
-                                color: '#333',
-                                'text-anchor': 'middle'
-                            },
-                            axis: 'bottom',
-                            xField: 'x',
-                            yField: 'y'
-                        }
-                    ]
-                },
+//                {
+//                    xtype: 'chart',
+//                    height: 250,
+//                    width: 400,
+//                    animate: true,
+//                    insetPadding: 20,
+//                    axes: [
+//                        {
+//                            type: 'Category',
+//                            fields: [
+//                                'x'
+//                            ],
+//                            position: 'left',
+//                            title: 'Category Axis'
+//                        },
+//                        {
+//                            type: 'Numeric',
+//                            fields: [
+//                                'y'
+//                            ],
+//                            position: 'bottom',
+//                            title: 'Numeric Axis'
+//                        }
+//                    ],
+//                    series: [
+//                        {
+//                            type: 'bar',
+//                            label: {
+//                                display: 'insideEnd',
+//                                field: 'y',
+//                                color: '#333',
+//                                'text-anchor': 'middle'
+//                            },
+//                            axis: 'bottom',
+//                            xField: 'x',
+//                            yField: 'y'
+//                        }
+//                    ]
+//                },
                 {
                     xtype: 'button',
                     text: 'About Us',
                     tooltip: 'About Us',
-                    tooltipType: 'title'
+                    tooltipType: 'title',
+					listeners: {
+                        click: {
+                            fn: me.onDisplayAboutUs,
+                            scope: me
+                         }
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
-    }
+    },
+	
+	onDisplayAboutUs: function(item, e, eOpts) {
+        this.push(Ext.create('ExtJS.view.AboutUs',{title:'AboutUs'}));
+    } 
 
 });
