@@ -1,0 +1,143 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "MyWindow",
+        "height": 304,
+        "layout": "vbox",
+        "title": "My Window",
+        "width": 568
+    },
+    "designerId": "db5425ca-5437-4136-9fab-3f6a701998a3",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "layout|flex": 1
+            },
+            "designerId": "c9983e12-1807-4bcd-98ce-3d8ce168c84b",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 191,
+                        "title": "Tab 1"
+                    },
+                    "designerId": "ccfd0257-48b0-4adb-975b-a0fab0561c92",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "a779407a-31a4-4366-b51c-c90d1bc597a9"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<i><p>Our marriage was a political one to unify the Enchanted Beings and the Human kingdom, but from there emerged a deep understanding and love between me and your glorious father. Your arrival cemented our marriage; for having an heir to the kingdom meant that the unified bloodline will live. Precious soul, you were enchanting as you are dangerous. Your pearlescent skin akin to mine glowed faintly, your dark brown eyes like your father’s were huge and calculating; your raven hair was floating, like you were constantly submerged on the fours seas. It was the only indication of how powerful you are, my daughter, for only the union of the most hazardous queen and the most violent and mighty king could produce such a dangerous weapon. Yet there was nothing to me more precious in the world than my little one. How I adored you. Your father was elated, for he now has a heir to the throne of his kingdom. Your mere presence in court was commanding and explosive, with violent outburst of power and rage, scaring the humans that served your father for years. But you were young; I understood that great power is hard to control. But others did not, for you pose a threat to their plan.  </i></p>",
+                                "text": null
+                            },
+                            "designerId": "864923ea-174d-49cc-b764-ebdabc8d4dc7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Tab 2"
+                    },
+                    "designerId": "5e5af974-5cae-417b-bbab-045425f44545",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "ac80329c-a7d8-40db-8452-717376dedf2d"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<i><p>One of them was the Serpentine Warrior, your uncle with eyes like snakes, the blood-lusted brother of the formidable Sun King. An heir would only mean that he would never have the throne he coveted. You were a threat, but he cannot kill you for I knew of his plan and protected you from the scheming and cunning threats of our enemies. So he formulated a way for us to be ruined and displaced. A few whispered lies here and there; A few bribes for witnesses and naysayers; A few years of letting the lies spread throughout the kingdoms. Soon, everyone knows of how I, the fairy queen, tricked your father into believing that you were his child. To them, I used my dark magic to weave and change his memories into believing that you were his. To them, you were not the heir of the kingdom but an illegitimate daughter of the queen; the begotten child of your father’s rival, the Warlock of the South, the great Datu of the Seas.</i></p>",
+                                "text": null
+                            },
+                            "designerId": "f658a0ff-026f-4863-a58a-57736c6e6853"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Tab 3"
+                    },
+                    "designerId": "09f5fafe-5ffe-4a54-af99-a03fb64378bc",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "79605518-2219-4e94-88da-4665252d451c"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<i><p>The rumors were spreading like wildfire and were vicious. I tried to protect you from it, but the court was always a place of intrigue and scheming, for no one ever supported the union of an enchanted being to that of a human. The Serpentine Warrior whispered more cruel lies to the Sun King, with each word dripping in poison. Your father believed him, no matter how much I beg and reasoned with him. He was his brother after all, and I was a fairy, who only lived in his palace for a few years, who never belonged to interact with mortals. As punishment from my supposed infidelity, he married his brother’s daughter, the Jade Princess, with her oriental features from the land across the vast ocean, and banished us to an isolated obsidian tower in near the Abysmal Sea. The Abysmal Sea, out of all the four seas that surround and nurture the kingdom, is the most thunderous, the emptiest of souls, and the most fearsome. Surrounded by miles and miles of inhabitable land, this sea gave no life, but only death in the most agonizing way. Thunderstorms and typhoons visit with frequency, destroying all traces of civilization that has tried to stay in this land. There are only the ruins of cities, remains of roads, bones of the hallowed dead. There are so many bones, piling up after eons of wars, which the brutal sunshine has dissolved them all into a vast expanse of shining white sand dunes and is slowly eaten away by the turbulent waters.</p></i>",
+                                "text": null
+                            },
+                            "designerId": "c20ffb3e-1268-4b21-924e-d91ff6b04d64"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

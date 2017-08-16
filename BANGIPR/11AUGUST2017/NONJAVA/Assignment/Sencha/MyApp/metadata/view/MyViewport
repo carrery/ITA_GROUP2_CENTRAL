@@ -1,0 +1,368 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport",
+        "id": "homeViewport",
+        "itemId": "homeViewport",
+        "layout": "fit",
+        "style": [
+            "'background:transparent;'"
+        ]
+    },
+    "designerId": "45242eb6-eff2-4b90-ab6b-bac47c3a3226",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "container|align": "stretch",
+                "layout": "vbox",
+                "title": null,
+                "titleCollapse": true
+            },
+            "designerId": "21c64454-b6b5-40e3-ab2e-a1cd9e194fa0",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "height": 35,
+                        "layout|flex": 1
+                    },
+                    "designerId": "ca6c78a7-64f0-4a5a-bf92-5adf6d8cb670",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "margin": 10,
+                                "padding": 0,
+                                "style": [
+                                    "'background:transparent;border: none;'"
+                                ],
+                                "text": "Home"
+                            },
+                            "designerId": "163d9864-6d02-4f91-bef8-878a9e4d083d",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Menu",
+                                    "reference": {
+                                        "name": "menu",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "2bb28c15-8255-4981-a617-92a37746b1e4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "id": "gridId",
+                                                "itemId": "gridId",
+                                                "text": "Get The Grid"
+                                            },
+                                            "designerId": "27199143-6421-4a8c-8403-b65ccb8cc492"
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "id": "graphId",
+                                                "itemId": "graphId",
+                                                "text": "Graphs and Window"
+                                            },
+                                            "designerId": "2a4f14ca-9c39-4596-ac16-dff6b180531b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "padding": 0,
+                                "style": [
+                                    "'background:transparent;border: none;'"
+                                ],
+                                "text": "About"
+                            },
+                            "designerId": "567f7b37-e335-4928-950d-03d3c44e4da7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": null,
+                        "height": 195,
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "padding": "20px"
+                    },
+                    "designerId": "151dcbc3-8de2-432e-bb2c-6395440edc2c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<b><i><font size= 20px><h1>The Thousand Island Kingdom</h1></i></b></font>",
+                                "text": null,
+                                "width": null
+                            },
+                            "designerId": "04114ff4-1946-4732-a9d9-aca1d8a55ac1"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<i>Wild wind is billowing and is harsh against my face. The day has come for me to end my journey through mountains and rock. Across the vast land is the castle I once lived, the castle I once had. Anger shot through me as I imagined the life of those who tried to crush mine, inside of the castle. They’ve must live so happily and comfortably, I thought, while I trudge on an abandoned wasteland, alone. I am tired and cold and hungry, but my hunger for revenge is more powerful. With a tired sigh, I took out the letter my mother gave to me on my 18th birthday, the last day I saw her alive, and read it once more.</i>",
+                                "text": ""
+                            },
+                            "designerId": "0d07d931-77a9-4d5f-88ca-7bae29dff219"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 10,
+                        "container|padding": 10,
+                        "dock": null,
+                        "height": 283,
+                        "layout": "border",
+                        "layout|flex": 1,
+                        "padding": 10,
+                        "style": [
+                            "'background:transparent;border: none;'"
+                        ]
+                    },
+                    "designerId": "ea60bf8a-0438-4b18-90bb-ee9dc30f713a",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout": "border",
+                                "layout|flex": 1,
+                                "layout|region": "west",
+                                "padding": 10,
+                                "style": [
+                                    "'background:transparent;border: none;'"
+                                ],
+                                "width": 150
+                            },
+                            "designerId": "70ae141d-d6b8-409f-b019-f1920c26833b",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "layout|region": "center",
+                                        "src": "\\app\\images\\aurora.jpg"
+                                    },
+                                    "designerId": "064cd935-0837-4ed5-81ae-79b0b24b6fb8",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImageAfterRender",
+                                                "implHandler": [
+                                                    "Ext.create('Ext.tip.ToolTip', {\r",
+                                                    "                    target: component.getEl(),\r",
+                                                    "                    html: 'This is image 1'\r",
+                                                    "                });"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "3342e017-93c1-4004-92ba-053db0900418"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout": "border",
+                                "layout|flex": 1,
+                                "layout|region": "center",
+                                "padding": 10,
+                                "style": [
+                                    "'background:transparent;border: none;'"
+                                ]
+                            },
+                            "designerId": "4fb198c7-c415-4d22-b548-c9b9e03f6e59",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|region": "center",
+                                        "src": "\\app\\images\\clouds.gif"
+                                    },
+                                    "designerId": "322ee235-b507-4dda-9087-ffac895b3cbe",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImageAfterRender1",
+                                                "implHandler": [
+                                                    "Ext.create('Ext.tip.ToolTip', {\r",
+                                                    "                    target: component.getEl(),\r",
+                                                    "                    html: 'This is image 2'\r",
+                                                    "                });"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "105a441e-f8cb-420e-9e50-0e0f48068fa8"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout": "border",
+                                "layout|flex": 1,
+                                "layout|region": "east",
+                                "padding": 10,
+                                "style": [
+                                    "'background:transparent;border: none;'"
+                                ],
+                                "width": 150
+                            },
+                            "designerId": "74a6d8dc-01cd-41e1-b112-56c4cb9d0cdd",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|region": "center",
+                                        "src": "\\app\\images\\forest.jpg"
+                                    },
+                                    "designerId": "2340f8e8-9bea-4d48-b3c5-18ff553d1141",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImageAfterRender2",
+                                                "implHandler": [
+                                                    "Ext.create('Ext.tip.ToolTip', {\r",
+                                                    "                    target: component.getEl(),\r",
+                                                    "                    html: 'This is image 3'\r",
+                                                    "                });"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "39d349f4-b030-426c-92ca-27de63c6b624"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

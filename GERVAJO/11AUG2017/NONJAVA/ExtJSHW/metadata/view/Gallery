@@ -1,0 +1,103 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Gallery",
+        "id": "gridView1"
+    },
+    "designerId": "16fef47f-4445-4d44-be6c-00e7541c8bce",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Gallery"
+            },
+            "designerId": "da6a533d-5360-4f56-9a0e-5f6b75e23c98",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 201,
+                        "src": "img/pangasinan.jpg",
+                        "width": 201
+                    },
+                    "designerId": "165ec21f-b80b-4a73-865b-2bcb1a2f2444"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 201,
+                        "src": "img/slinky.jpg",
+                        "width": 201
+                    },
+                    "designerId": "fced48ed-6efe-4cc9-8039-5f43240d357a"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 201,
+                        "src": "img/payslip.jpg",
+                        "width": 201
+                    },
+                    "designerId": "f87099f1-8897-474e-91d7-3417bc71dfea"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Return",
+                "width": 100
+            },
+            "designerId": "f7ec5187-209a-4bc2-a347-6c43cdc1f903",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "implHandler": [
+                            "this.push(Ext.create('MyApp.view.Home',{title:'Home'}));"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "250866f4-8f19-46e8-8660-b0127ce18be9"
+                }
+            ]
+        }
+    ]
+}

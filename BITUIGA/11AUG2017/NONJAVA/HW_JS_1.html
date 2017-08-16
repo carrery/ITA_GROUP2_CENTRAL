@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<SCRIPT LANGUAGE = "Javascript">
+// document.firstline = "Welcome to this page"
+</SCRIPT>
+        <title>Javascript Homework</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="5000" height="5000">
+        </canvas>
+        <!-- 
+        <script type='text/javascript' src='script.js'></script>
+
+ -->
+
+        <SCRIPT>
+        // Set up!
+		var a_canvas = document.getElementById("myCanvas");
+		var item1_context = a_canvas.getContext("2d");
+		var item2_context = a_canvas.getContext("2d");
+		var item3_context = a_canvas.getContext("2d");
+		var item4_context = a_canvas.getContext("2d");
+
+		item3_context.beginPath();
+		item3_context.arc(95, 85, 40, 0, 2*Math.PI);
+		item3_context.closePath();
+		item3_context.stroke();
+		item3_context.lineWidth = 2;
+		item3_context.stroke();
+		item3_context.fillStyle = "black";
+		item3_context.beginPath();
+		item3_context.arc(75, 75, 5, 0, 2*Math.PI);
+		item3_context.closePath();
+		item3_context.stroke();
+		item3_context.beginPath();
+		item3_context.arc(114, 75, 5, 0, 2*Math.PI);
+		item3_context.closePath();
+		item3_context.stroke();
+		item3_context.beginPath();
+		item3_context.arc(95,90,26,0*Math.PI,Math.PI);
+		item3_context.stroke();
+		item3_context.beginPath();
+		item3_context.moveTo(75,75);
+		item3_context.lineTo(114, 75);
+		item3_context.closePath();
+		item3_context.stroke();
+
+
+		item1_context.fillStyle = 'black';
+		item1_context.fillRect(50, 200, 70, 70); 
+		item1_context.fillStyle = 'white';
+		item1_context.fillRect(60, 210, 50, 50); 
+		item1_context.fillStyle = 'black';
+		item1_context.strokeRect(65, 215, 40, 40); 
+
+
+		item2_context.fillStyle = 'red';
+		item2_context.fillRect(50, 300, 50, 50); 
+		item2_context.fillStyle = 'rgba(0,0,255,0.7)';
+		item2_context.fillRect(70, 325, 50, 50); 
+
+
+		var colors = ['#000000','#262626','#4d4d4d','#737373','#999999','#bfbfbf'];
+		var j = 5;
+
+		for (var i = 0; i < 120; i+=20) {
+			item4_context.fillStyle = colors[j];
+			item4_context.beginPath();
+			item4_context.arc(95+i,450+i,10,0,2*Math.PI);
+			item4_context.closePath();
+			item4_context.fill();
+			--j;
+		}
+
+        </SCRIPT>
+
+    </body>
+</html>

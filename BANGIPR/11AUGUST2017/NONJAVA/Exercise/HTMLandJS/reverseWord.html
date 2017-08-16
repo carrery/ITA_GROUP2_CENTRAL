@@ -1,0 +1,38 @@
+
+<html>
+<head>
+<title>JS Exercise</title>
+<h1>Reverse It!</h1>
+
+ <script language = "Javascript"></script> 
+</head>
+
+<body>
+
+ <label>Enter a word and i'll reverse it :</label></br>
+		  <input type="text" name="revWord" id="revWord"/></br></br>
+ 
+		  <input type="button" value="Reverse" id="revv" onclick="revv(revWord.value)"/>
+		</br><br>
+
+    <div id="revResult"></div>
+
+<script>
+ function revv(revWord) {
+            var input = revWord
+            var result = document.getElementById("revResult")
+            result.innerHTML=""
+
+            var arr = revWord.split('');
+
+            var rev = arr.reverse();
+
+          alert(rev.join(""));
+
+
+}
+
+</script>	
+
+</body>
+</html>

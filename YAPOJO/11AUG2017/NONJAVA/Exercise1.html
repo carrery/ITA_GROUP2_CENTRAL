@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function Factorial() {
+    
+    var a = document.getElementById("a").value;
+	var y = 1;
+	var z = 1;
+	for(var x = 0; x<a ; x++) {
+		y*=z;
+		z++;
+	}
+    return "The factorial of " + a + ": " + y;
+}
+    
+</script>    
+<center>
+<h1>Factorial</h1>
+    
+<h3>Enter Number: </h3><input type="number" id="a"><br>
+
+<br>
+<button type="button" onclick= 'alert(Factorial())'>
+Factorial
+</button>
+</center>
+ 
+
+</body>
+</html> 

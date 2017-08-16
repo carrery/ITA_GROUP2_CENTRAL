@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="ISO-8859-1">
+  <title>4: Circles</title>
+  </head>
+  <body onload="circles();">
+  <canvas id="cir" width="500" height="500"></canvas>
+
+  <script type="text/javascript">
+	function circles() 
+  	{
+    	var circle = document.getElementById("cir").getContext("2d");
+    	var cntCircle = 0;
+   		
+    	for (var i=0;i<6;i++)
+   		{
+    		for (var j=0;j<6;j++)
+    		{
+				circle.fillStyle = "rgb(" + Math.floor(255-42.5*i) + "," + Math.floor(255-42.5*i) + "," + Math.floor(255-42.5*j) + ")";
+
+   				circle.beginPath();
+   			
+   				if (i === cntCircle && j === cntCircle)
+     			{
+   					circle.arc(25+j*50, 30+i*50, 20, 0, Math.PI*2, true);
+      				circle.fill();
+      				circle.stroke();
+      			}  
+   			}
+    	cntCircle++;
+   	}
+ }
+</script>
+  </body>
+  </html>

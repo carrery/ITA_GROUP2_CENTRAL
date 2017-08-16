@@ -1,0 +1,40 @@
+{
+    "name": "HW_ExtJS_1",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": ""
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "dbf09e13-04bf-4bf1-bdad-e094d5a324f2",
+            "e14fd19e-62d1-4182-b04f-e329ab2ac0c0",
+            "6fc44183-7ae4-48e3-bf6e-c7e0c60021ef"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "bae67a9e-2e87-4e0a-ab3f-393d278b86ed",
+            "bf75125c-95b7-4937-8f0e-3448e51b5eb8"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

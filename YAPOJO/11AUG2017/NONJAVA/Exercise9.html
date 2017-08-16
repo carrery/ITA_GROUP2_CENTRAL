@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function IsNumber() {
+    
+	var a  = document.getElementById("a").value;
+	
+	return !isNaN(parseFloat(a)) && isFinite(a);
+}
+    
+</script>    
+<center>
+<h1>Is Number?</h1>
+    
+<h3>Enter Number: </h3><input type="text" id="a"><br>
+
+<br>
+<button type="button" onclick= 'alert(IsNumber())'>
+Generate
+</button>
+</center>
+ 
+
+</body>
+</html> 

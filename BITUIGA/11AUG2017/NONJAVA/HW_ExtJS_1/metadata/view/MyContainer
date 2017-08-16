@@ -1,0 +1,129 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|snapToGrid": 10,
+        "designer|userClassName": "MyContainer",
+        "height": 397,
+        "layout": "absolute",
+        "width": 613
+    },
+    "designerId": "dbf09e13-04bf-4bf1-bdad-e094d5a324f2",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "",
+                "layout|x": 150,
+                "layout|y": 140,
+                "text": "Go to Page 1"
+            },
+            "designerId": "f1f64c01-daca-449a-8b6d-23752589ea0c",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "9c21d5a2-a66b-45c6-882c-d3b7ca1848c0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|x": 370,
+                "layout|y": 140,
+                "text": "Go to Page 2"
+            },
+            "designerId": "5c2e5138-12fb-4c67-a2f2-72d47f071342",
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processGotoPage2",
+                        "implHandler": [
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "2412d3b5-626f-4a08-bdf1-98cec21461d5"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick1",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "450602db-32b4-4e99-8b86-0da86caff9e6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 30,
+                "layout|x": 270,
+                "layout|y": 70,
+                "text": "HOME PAGE",
+                "width": 120
+            },
+            "designerId": "f83192d1-c74b-4c71-8a95-c7f6aa295d95"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "callPage1",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "daf7073a-53ad-4f5a-bb8d-dc178ce70d94"
+        }
+    ]
+}

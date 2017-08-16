@@ -1,0 +1,202 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "designerId": "f8e5f3a4-dcd3-4376-b166-340bfbd9e8a0",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#graphId",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onGraphIdClick",
+                "implHandler": [
+                    "var getViewport = Ext.ComponentQuery.query('gridViewport');\r",
+                    "console.log('hannah222');\r",
+                    "var showPanel= Ext.create('MyApp.view.MyViewport2', {});\r",
+                    "\r",
+                    "showPanel.show();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "53792e89-2545-4c53-ab7d-f55825408287"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#homeId",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onHomeIdClick",
+                "implHandler": [
+                    "\r",
+                    "\r",
+                    "var getViewport = Ext.ComponentQuery.query('gridViewport');\r",
+                    "\r",
+                    "    //Ext.getCmp('gridViewport');\r",
+                    "\r",
+                    "console.log('hannahbang');\r",
+                    "//getViewport.show();\r",
+                    "var panell = Ext.create('MyApp.view.MyViewport', {});\r",
+                    "\r",
+                    "panell.show();\r",
+                    "//Ext.getCmp('homeViewport').add(panell);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "a4747f7f-2292-4271-946b-63cbe44b98f0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#graphId2",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onGraphId2Click",
+                "implHandler": [
+                    "var getViewport = Ext.ComponentQuery.query('gridViewport');\r",
+                    "console.log('hannah222');\r",
+                    "var showPanel= Ext.create('MyApp.view.MyViewport2', {});\r",
+                    "\r",
+                    "showPanel.show();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "ba5dc3aa-b9a1-4429-a2b9-76d874f2c162"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#homeId2",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onHomeId2Click",
+                "implHandler": [
+                    "\r",
+                    "\r",
+                    "var getViewport = Ext.ComponentQuery.query('gridViewport');\r",
+                    "\r",
+                    "    //Ext.getCmp('gridViewport');\r",
+                    "\r",
+                    "console.log('hannahbang');\r",
+                    "//getViewport.show();\r",
+                    "var panell = Ext.create('MyApp.view.MyViewport', {});\r",
+                    "\r",
+                    "panell.show();\r",
+                    "//Ext.getCmp('homeViewport').add(panell);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "4ffcf01f-c823-4e21-900d-88e9d0278a83"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#gridId2",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onGridId2Click",
+                "implHandler": [
+                    "var getViewport = Ext.ComponentQuery.query('gridViewport');\r",
+                    "\r",
+                    "    //Ext.getCmp('gridViewport');\r",
+                    "\r",
+                    "console.log('hannahbang');\r",
+                    "//getViewport.show();\r",
+                    "var panell = Ext.create('MyApp.view.MyViewport1', {});\r",
+                    "\r",
+                    "panell.show();\r",
+                    "//Ext.getCmp('homeViewport').add(panell);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "5ebe1d1c-5491-4f41-b11f-ae0d29cadcfc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#readBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onReadBtnClick",
+                "implHandler": [
+                    "\r",
+                    "var panell = Ext.create('MyApp.view.MyWindow', {});\r",
+                    "\r",
+                    "panell.show();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "8aff0161-8bce-49f3-9ec9-f8f7cb6a7d08"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#gridId",
+                "designer|targetType": "Ext.menu.Item",
+                "fn": "onGridIdClick",
+                "implHandler": [
+                    "console.log('hannahbang');\r",
+                    "//getViewport.show();\r",
+                    "var homePanel = Ext.create('MyApp.view.MyViewport', {});\r",
+                    "var panell = Ext.create('MyApp.view.MyViewport1', {});\r",
+                    "\r",
+                    "homePanel().removeAll(); \r",
+                    "\r",
+                    "\r",
+                    "panell.show();\r",
+                    "\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "59aaadf6-5a78-4677-808d-b2d8fafdf99f"
+        }
+    ]
+}

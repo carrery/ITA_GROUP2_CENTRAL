@@ -1,0 +1,48 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        \"firstName\": \"Russell\",\r",
+            "        \"lastName\": \"Rodriguez\",\r",
+            "        \"age\": \"20\",\r",
+            "        \"address\": \"Philippines\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"firstName\": \"May\",\r",
+            "        \"lastName\": \"Cook\",\r",
+            "        \"age\": \"22\",\r",
+            "        \"address\": \"New York\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"firstName\": \"Homer\",\r",
+            "        \"lastName\": \"Jones\",\r",
+            "        \"age\": \"21\",\r",
+            "        \"address\": \"China\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"firstName\": \"Ada\",\r",
+            "        \"lastName\": \"Nelson\",\r",
+            "        \"age\": \"26\",\r",
+            "        \"address\": \"Japan\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"firstName\": \"Martin\",\r",
+            "        \"lastName\": \"Nguyen\",\r",
+            "        \"age\": \"24\",\r",
+            "        \"address\": \"Texas\"\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "MyStore1",
+        "model": "MyModel1",
+        "storeId": "MyStore1"
+    },
+    "designerId": "7ab7f972-17c8-4c9d-87e3-094e350c2084"
+}

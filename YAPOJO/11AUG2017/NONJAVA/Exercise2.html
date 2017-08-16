@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function Substring() {
+    
+    var str = document.getElementById("a").value;
+	var stroutput = "";
+	var counter1=0;
+
+	while(counter1<=str.length){
+		for(var ctr=0; ctr<counter1; ctr++) {
+			stroutput += str.substring(ctr,counter1) + ",";
+		}
+		counter1+=1;
+	}
+
+	return stroutput;
+	
+}
+    
+</script>    
+<center>
+<h1>All Possible String Combination</h1>
+    
+<h3>Enter String: </h3><input type="text" id="a"><br>
+
+<br>
+<button type="button" onclick= 'alert(Substring())'>
+Generate
+</button>
+</center>
+ 
+
+</body>
+</html> 
