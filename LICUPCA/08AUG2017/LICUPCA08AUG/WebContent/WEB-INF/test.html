@@ -1,0 +1,23 @@
+<html>
+<body>
+<center>
+<p class ='default'>If you're having a bad day, be blessed by this beautiful human being</p>
+<nobr><img src ='D:\img.jpg' height ='400px'/></nobr>
+</center>
+	<script type="text/javascript" src="testingscript.js"></script>
+	No1: <input type="number" id="x" />
+	No2: <input type="number" id="y" />
+	<input type="button" onclick = "return add()" value="Deposit" class = "btn btn-primary btn-large"/>
+</body>
+</html>
+<link href="http://cdn.layoutit.com/css/app.min-ca32f0280e.css" rel="stylesheet">
+
+<script type = "text/javascript">
+function add(){
+	var x = document.getElementById("x").value;
+	var y = document.getElementById("y").value;
+	while(y-->0)
+		++x;
+	window.alert(x);
+}
+</script>
