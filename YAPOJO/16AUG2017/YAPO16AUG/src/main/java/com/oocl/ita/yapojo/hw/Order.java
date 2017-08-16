@@ -1,6 +1,6 @@
 package com.oocl.ita.yapojo.hw;
 
-public class Order extends ClassA{
+public class Order{
 	
 	private String item;
 	private String price;

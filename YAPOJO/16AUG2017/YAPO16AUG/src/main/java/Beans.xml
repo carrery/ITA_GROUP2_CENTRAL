@@ -47,5 +47,10 @@
          <bean id = "emp" class = "com.oocl.ita.yapojo.hw.Employee"/>
       </property>
    </bean>
+   
+   <bean id ="networkManager" class="com.oocl.ita.yapojo.hw.NetworkManager" init-method="init" destroy-method="destroy">
+		<property name="netMan" value="Hey dude!"/>
+	</bean>
+   
 	
 </beans>
