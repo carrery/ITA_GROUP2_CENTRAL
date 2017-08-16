@@ -1,0 +1,66 @@
+<HTML>
+
+<HEAD>
+<SCRIPT LANGUAGE = "Javascript">
+// document.firstline = "Welcome to this page" 
+//<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+//<link rel="stylesheet" href="./tryCSS.css" type="text/css" media="all"/>
+</SCRIPT>
+
+<TITLE>Online Banking</TITLE>
+
+  <bottom><center>Amount:<br>
+  <input type="text" name="amount" id="amount" style="align-center"><br>
+
+
+<br><br><input id="depoButton" type="button" value="Deposit Amount" onclick="depoMoney();" >
+<br><br><input id="withButton" type="button" value="Withdraw Amount" onclick="withMoney();" >
+<br><br><input id="showButton" type="button" value="Show Balance" onclick="showMoney();" >
+</center></bottom>
+</HEAD>
+<BODY>
+
+<SCRIPT>
+
+var remBalance = 5000;
+var svcCharge = 15;
+
+depoMoney = function(events, args){
+	var inputMoney = document.getElementById("amount").value;
+	var sum = 0;
+	if(inputMoney >= 0){
+		sum = parseInt(inputMoney) - parseInt(svcCharge);
+		remBalance = parseInt(remBalance) + parseInt(sum);	
+		alert("Successfully added " + inputMoney + " to your account. ");
+	}
+	else{
+		alert("Please enter amount. ");
+	}
+}
+
+showMoney = function(events, args){	
+	
+	alert("Your remaining balance is " + remBalance + " . ");
+}
+
+withMoney = function(events, args){
+	var inputMoney = document.getElementById("amount").value;
+	var sum = 0;
+	if(remBalance <= inputMoney ){
+		alert("Sorry Insufficient funds. ");
+	}
+	else{
+		sum = parseInt(inputMoney) + parseInt(svcCharge);
+		remBalance = parseInt(remBalance) - parseInt(sum);
+		alert("Successfully withdrew " + inputMoney + " from your account. ");
+	}	
+}
+
+</SCRIPT>
+
+<link rel="stylesheet" href="./css/style.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="./css/bootstrap-theme.min.css" type="text/css" media="all"/>
+
+</BODY>
+</HTML>
