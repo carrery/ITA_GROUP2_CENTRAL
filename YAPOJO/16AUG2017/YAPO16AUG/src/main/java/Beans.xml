@@ -42,14 +42,24 @@
 		<property name="count" value="10"/>
 	</bean>
 	
-	<bean id="company" class="com.oocl.ita.yapojo.hw.Company">
-      <property name = "employee">
-         <bean id = "emp" class = "com.oocl.ita.yapojo.hw.Employee"/>
-      </property>
-   </bean>
-   
-   <bean id ="networkManager" class="com.oocl.ita.yapojo.hw.NetworkManager" init-method="init" destroy-method="destroy">
-		<property name="netMan" value="Hey dude!"/>
+	<bean id="company" class="com.oocl.ita.yapojo.hw.Employee">
+		<property name="company" value="OOCL"/>
+	</bean>
+	
+    <bean id = "emp1" parent="company" class = "com.oocl.ita.yapojo.hw.Employee">
+    	<property name="name" value="John Albert Yapo"/>
+    	<property name="role" value="Programmer"/>
+    </bean>
+    
+    <bean id = "emp2" parent="company" class = "com.oocl.ita.yapojo.hw.Employee">
+    	<property name="name" value="Jb Yapo"/>
+    	<property name="role" value="Associate Programmer"/>
+    </bean>
+
+  	<bean id ="networkManager" class="com.oocl.ita.yapojo.hw.NetworkManager" init-method="init" destroy-method="destroy">
+		<property name="httpConnection">
+			<bean id="connection" class="com.oocl.ita.yapojo.hw.HttpConnection"/>
+		</property>
 	</bean>
    
 	

@@ -12,8 +12,12 @@ public class Main6 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		Company emp = (Company) context.getBean("company");
-		System.out.println(emp.getCompanyName());
+		Employee emp1 = (Employee) context.getBean("emp1");
+		emp1.getDetails();
+		
+		Employee emp2 = (Employee) context.getBean("emp2");
+		emp2.getDetails();
+		
 	}
 
 }
