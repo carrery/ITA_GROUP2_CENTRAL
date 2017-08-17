@@ -7,8 +7,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext ("Beans.xml");
-		Order orders = (Order) context.getBean("order");
-		orders.getClassA();
+		OrderList orders = (OrderList) context.getBean("orderList");
+		orders.getOrder();
 
 	}
 
