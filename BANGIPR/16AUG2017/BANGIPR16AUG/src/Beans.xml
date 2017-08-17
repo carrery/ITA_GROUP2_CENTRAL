@@ -34,14 +34,44 @@
    
    </bean>
    
+    <bean id="orderList" class = "com.oocl.bangipr.hw1.OrderList">
+		<property name = "order" ref="order">
+			
+		 </property>
+	</bean>
+   
    <bean id="order" class = "com.oocl.bangipr.hw1.Order">
-		<property name = "order">
-   			<bean class="com.oocl.bangipr.hw1.ClassA">
    				<property name = "item" value= "Burger"/>
    				<property name = "price" value = "$10"/>
    				<property name = "address" value = "Philippines"/>
-   			</bean>
+	</bean>
+	
+	
+  	<bean id ="networkManager" class="com.oocl.bangipr.hw2.NetworkManager" init-method="init" destroy-method="destroy">
+		<property name="httpConnection">
+			<bean id="connection" class="com.oocl.bangipr.hw2.Http"/>
 		</property>
 	</bean>
+	
+	
+	<bean id="parent" class="com.oocl.bangipr.hw3" abstract="true">
+        <property name="company" value="OOCL" />
+    </bean>
+    <bean id="emp1" parent="parent" class="com.oocl.bangipr.hw3.Employee">
+        <property name="name" value="Hannah"></property>
+		<property name="role" value="Programmer"></property>
+		<property name="employeeId" value="100021"></property>
+    </bean>
+    <bean id="emp2" parent="parent" class="com.oocl.bangipr.hw3.Employee">
+        <property name="name" value="Maverick"></property>
+		<property name="role" value="Software Quality Engineer"></property>
+		<property name="employeeId" value="100045"></property>
+    </bean>
+     <bean id="emp3" parent="parent" class="com.oocl.bangipr.hw3.Employee">
+        <property name="name" value="Cen"></property>
+		<property name="role" value="Accountant"></property>
+		<property name="employeeId" value="100087"></property>
+    </bean>
+	
 
 </beans>   
