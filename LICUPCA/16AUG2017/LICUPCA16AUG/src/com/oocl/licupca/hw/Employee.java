@@ -38,7 +38,7 @@ public class Employee{
 
 	public void getDetails() {
 		
-		System.out.println("Name: " + this.name + "\nCompany: " + this.company +  "\nRole: " + this.role);
+		System.out.println("\nName: " + this.name + "\nCompany: " + this.company +  "\nRole: " + this.role);
 	}
 
 }

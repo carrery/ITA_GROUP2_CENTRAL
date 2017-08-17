@@ -11,7 +11,11 @@
 
 	<bean id="employee_pedro" class="com.oocl.licupca.hw.Employee" parent = "company">
 		<property name="name" value="Pedro" />
-		<!--<property name="company" value="OOCL"/> -->
 		<property name="role" value="Associate Programmer" />
+	</bean>
+	
+	<bean id="employee_juan" class="com.oocl.licupca.hw.Employee" parent = "company">
+		<property name="name" value="Juan" />
+		<property name="role" value="Business Analyst" />
 	</bean>
 </beans>
