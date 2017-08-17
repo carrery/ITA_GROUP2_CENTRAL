@@ -1,8 +1,11 @@
 package com.oocl.licupca.hw;
 
+import org.springframework.beans.factory.annotation.*;
+
 public class Employee{
 
 	private String name;
+//	@Required
 	private String company;
 	private String role;
 	
@@ -10,6 +13,7 @@ public class Employee{
 		return name;
 	}
 
+//	@Required
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -18,6 +22,7 @@ public class Employee{
 		return company;
 	}
 
+	@Required
 	public void setCompany(String company) {
 		this.company = company;
 	}
@@ -25,14 +30,15 @@ public class Employee{
 	public String getRole() {
 		return role;
 	}
-
+	
+//	@Required
 	public void setRole(String role) {
 		this.role = role;
 	}
 
 	public void getDetails() {
 		
-		System.out.println("Company: " + this.company + "\nName: " + this.name + "\nRole: " + this.role);
+		System.out.println("Name: " + this.name + "\nCompany: " + this.company +  "\nRole: " + this.role);
 	}
 
 }
