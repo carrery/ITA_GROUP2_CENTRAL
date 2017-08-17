@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="fries" class="com.oocl.licupca.hw.ClassA">
+		<property name="order">
+			<bean class ="com.oocl.licupca.hw.Order">
+				<property name="item" value="fries"/>
+				<property name="price" value="50.00"/>
+				<property name="address" value="Manila"/>
+			</bean>
+		</property>
+	</bean>
+	
+		<bean id="chicken" class="com.oocl.licupca.hw.ClassA">
+		<property name="order">
+			<bean class ="com.oocl.licupca.hw.Order">
+				<property name="item" value="chicken"/>
+				<property name="price" value="100.00"/>
+				<property name="address" value="Cebu"/>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

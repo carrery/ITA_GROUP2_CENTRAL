@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+    
+    
+	<bean id ="helloSpring" class="com.oocl.ita.yapojo.sw.HelloSpringTest">
+		<property name="message" value="Hey dude!"/>
+	</bean>
+	
+	<bean id ="helloSpring3" class="com.oocl.ita.yapojo.sw.HelloSpring_init_dest" init-method="init" destroy-method="destroy">
+		<property name="message" value="Hey dude!"/>
+	</bean>
+	
+   <bean id="shape1" class="com.oocl.ita.yapojo.sw.Shape">
+      <property name = "shape">
+         <bean id = "circle" class = "com.oocl.ita.yapojo.sw.Circle"/>
+      </property>
+   </bean>
+   
+   <bean id="shape2" class="com.oocl.ita.yapojo.sw.Shape">
+      <property name = "shape">
+         <bean id = "triangle" class = "com.oocl.ita.yapojo.sw.Triangle"/>
+      </property>
+   </bean>
+   
+   	<bean id ="employee" class="com.oocl.ita.yapojo.sw.Employee">
+		<property name="name" value="Japo Jabe"/>
+		<property name="role" value="Model"/>
+		<property name="id" value="1107"/>
+	</bean>
+	
+	<bean id ="classA" class="com.oocl.ita.yapojo.hw.ClassA">
+		<property name="order" ref="order"/>
+	</bean>
+	
+	<bean id ="order" class="com.oocl.ita.yapojo.hw.Order">
+        <property name="item" value="Cellphone"/>
+		<property name="price" value="50000"/>
+		<property name="count" value="10"/>
+	</bean>
+	
+	<bean id="company" class="com.oocl.ita.yapojo.hw.Employee">
+		<property name="company" value="OOCL"/>
+	</bean>
+	
+    <bean id = "emp1" parent="company" class = "com.oocl.ita.yapojo.hw.Employee">
+    	<property name="name" value="John Albert Yapo"/>
+    	<property name="role" value="Programmer"/>
+    </bean>
+    
+    <bean id = "emp2" parent="company" class = "com.oocl.ita.yapojo.hw.Employee">
+    	<property name="name" value="Jb Yapo"/>
+    	<property name="role" value="Associate Programmer"/>
+    </bean>
+
+  	<bean id ="networkManager" class="com.oocl.ita.yapojo.hw.NetworkManager" init-method="init" destroy-method="destroy">
+		<property name="httpConnection">
+			<bean id="connection" class="com.oocl.ita.yapojo.hw.HttpConnection"/>
+		</property>
+	</bean>
+   
+	
+</beans>
