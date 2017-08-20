@@ -1,0 +1,42 @@
+<html>
+   
+   <head>
+      <title>Assignment 2</title>
+      
+      <script type="text/javascript">
+            var fox=null;
+            
+            function declaration(){
+               fox=document.getElementById('foxImg');
+               fox.style.position= 'relative'; 
+               fox.style.left = '0px'; 
+            }
+            
+            function move(){
+               fox.style.left = parseInt(fox.style.left) + 10 + 'px';
+               animate = setTimeout(move,20);
+            }
+			
+            function pause(){
+               clearTimeout(animate);
+               fox.style.left = '0px'; 
+            }
+			
+            window.onload = declaration;
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      <form  align="center">
+         <img id="foxImg" src="http://media.giphy.com/media/1147coJiF1aZTq/giphy.gif" width="500" height="500"/>
+<br>
+         <input type="button" value="Move" onclick="move()" />
+<br>
+<br>
+		 <input type="button" value="Pause" onclick="pause()" />
+      </form>
+      
+   </body>
+</html>

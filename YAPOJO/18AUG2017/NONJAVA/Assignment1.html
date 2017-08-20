@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title> Assignment 1 </title>
+		<style type="text/css">
+			body {
+				margin: 30px;
+				}
+		</style>
+	</head>
+	<body>
+		<script>
+			function generateTable() {
+				var nRow = document.getElementById("row").value;
+				var nCol = document.getElementById("col").value;
+
+				for(var a=0;a<parseInt(nRow,10);a++) {
+					var b=document.getElementById('dynamicTable').insertRow(a);
+					for(var c=0;c<parseInt(nCol,10);c++) {
+						var d=b.insertCell(c);
+						d.innerHTML="row: "+a+", column: "+c;
+					}
+				}
+			}
+		</script>
+
+		<table id="dynamicTable" border="1">
+		</table>
+		
+			<h1>Generate Dynamic Table</h1>
+			<h3>Enter Column: </h3><input type="number" id="col"><br>
+			<h3>Enter Row: </h3><input type="number" id="row"><br>
+			<input type="button" onclick="generateTable()" value="Generate the Table">
+		
+	
+	</body>
+</html>
+	
