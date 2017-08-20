@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+   <head>
+      <br><br><br><br><br><br><br><br><br>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-neptune/resources/theme-neptune-all.css" rel="stylesheet" />
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+      <script type="text/javascript">
+         Ext.onReady(function(){
+            // {xtype: 'tbspacer', flex: 1},
+            Ext.create('Ext.Button', {
+               renderTo: Ext.getElementById('thisPanel'),
+               text: 'FIRE!',
+               listeners: {
+                  click: function() {
+                     Ext.MessageBox.alert('ALERT', 'Event Fired');  
+                  }
+               }
+            });
+         });
+      </script> 
+   </head>
+   <body>
+      <form align="center"> 
+      <div id = 'thisPanel' />  
+      </form>
+   </body>
+</html>
