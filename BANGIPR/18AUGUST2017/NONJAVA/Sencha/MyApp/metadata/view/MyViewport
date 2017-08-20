@@ -1,0 +1,180 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport",
+        "layout": "border"
+    },
+    "designerId": "e05ee5e9-6b15-4de9-80fb-085eb3729591",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "layout": "absolute",
+                "layout|region": "center",
+                "title": "My Panel"
+            },
+            "designerId": "6d44f003-e4e5-4098-a542-831ec6fecdaf",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "txt.label",
+                        "itemId": "txt.label",
+                        "layout|x": 320,
+                        "layout|y": 70,
+                        "text": "Press the Button :D"
+                    },
+                    "designerId": "80a4832a-a857-4b30-a4bf-57c8bb751add"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btn.Txt",
+                        "itemId": "btn.Txt",
+                        "layout|x": 330,
+                        "layout|y": 120,
+                        "text": "PRESS ME"
+                    },
+                    "designerId": "a00c58ed-277a-4159-bd09-75b41b270379",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "var text = Ext.getCmp('txt.label');\r",
+                                    "var img = Ext.getCmp('img.Gif');\r",
+                                    "\r",
+                                    "\r",
+                                    "//img.setDisabled(false);\r",
+                                    "img.setVisible(false);\r",
+                                    "img.show();\r",
+                                    "text.setText(\"Drag the Picture\");"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "e0d8bbaa-8c53-47ec-9632-16a0ed6bc2fa"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "draggable": true,
+                        "height": 201,
+                        "hidden": true,
+                        "id": "img.Gif",
+                        "itemId": "img.Gif",
+                        "layout|x": 240,
+                        "layout|y": 180,
+                        "src": "\\app\\images\\smol.gif",
+                        "width": 260
+                    },
+                    "designerId": "8de46654-88bc-43d8-8cb0-3bd3c6a61eaa",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImageMove",
+                                "implHandler": [
+                                    "var text = Ext.getCmp('txt.label');\r",
+                                    "var btnTxt = Ext.getCmp('btn.Txt');\r",
+                                    "var btnImg = Ext.getCmp('btn.Img');\r",
+                                    "\r",
+                                    "\r",
+                                    "text.setText(\"Click the picture\");\r",
+                                    "\r",
+                                    "btnTxt.hide();\r",
+                                    "btnImg.show();\r",
+                                    "\r",
+                                    "console.log(component.getLocalXY());"
+                                ],
+                                "name": "move",
+                                "scope": "me"
+                            },
+                            "designerId": "db1c382d-c5d9-4a88-9a7b-b88a46d38862"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Press Me",
+                        "hidden": true,
+                        "id": "btn.Img",
+                        "itemId": "btn.Img",
+                        "layout|x": 330,
+                        "layout|y": 120,
+                        "text": "PRESS ME"
+                    },
+                    "designerId": "323c9d32-17de-4756-8da4-6cd2fed05b1e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImgClick",
+                                "implHandler": [
+                                    "var panell = Ext.create('MyApp.view.MyWindow', {});\r",
+                                    "\r",
+                                    "panell.show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "119aa393-73e3-4141-aefe-6f5b41622923"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
