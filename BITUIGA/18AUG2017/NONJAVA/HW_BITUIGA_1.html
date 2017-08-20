@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<SCRIPT LANGUAGE = "Javascript">
+</SCRIPT>
+        <title>Javascript Homework</title>
+    </head>
+    <body>
+        
+    	<form align="center"> 
+    		<br><br><br><br><br><br>
+	  <input type="button" onclick="createTheTable()" value="Generate Table!">
+	  <br><br>
+	 <table id="thisTable" border=1 align="center">  </table>
+	 </form>
+
+        <SCRIPT>
+        // Set up!
+		function createTheTable()
+		{
+			rooows = window.prompt("Input number of rows", 1);
+			columnsss = window.prompt("Input number of columns",1);
+				  
+			for(var r=0;r<parseInt(rooows,10);r++)
+			{
+			   var x = document.getElementById('thisTable').insertRow(r);
+			   for(var c = 0;c < parseInt(columnsss,10);c++)  
+				{
+			 		var y = x.insertCell(c);
+				 	y.innerHTML="___"+"___"; 
+				}
+			}
+		}
+        </SCRIPT>
+
+    </body>
+</html>

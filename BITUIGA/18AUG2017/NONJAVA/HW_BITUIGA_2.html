@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <title>JavaScript Animation</title>
+      
+
+      <form>
+      	
+         <img id="myImage" src="C:\Users\User\Downloads\tenor.gif" />
+
+         <br><br>
+        <input type="button" value="Move Left" onclick="moveLeft();" />
+      	<input type="button" value="Move Right" onclick="moveRight();" />
+         
+      </form>
+
+      <script type="text/javascript">
+         <!--
+            var imgObj = null;
+            
+            function init(){
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            
+            function moveRight(){
+               imgObj.style.left = parseInt(imgObj.style.left) + 50 + 'px';
+            }
+            function moveLeft(){
+               imgObj.style.left = parseInt(imgObj.style.left) - 50 + 'px';
+            }
+            window.onload =init;
+         //-->
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      
+      
+   </body>
+</html>
