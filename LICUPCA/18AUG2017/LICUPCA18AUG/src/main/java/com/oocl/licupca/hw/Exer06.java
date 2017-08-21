@@ -53,6 +53,10 @@ public class Exer06 {
 	}
 	
 	private static void detectDeadlock() {
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+		}
 	    ThreadMXBean threadBean = ManagementFactory.getThreadMXBean();
 	    long[] threadIds = threadBean.findMonitorDeadlockedThreads();
 	    int deadlockedThreads = threadIds != null? threadIds.length : 0;

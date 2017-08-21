@@ -7,22 +7,22 @@
 
 	<bean id="fries" class="com.oocl.licupca.hw.ClassA">
 		<property name="order">
-			<bean class ="com.oocl.licupca.hw.Order">
-				<property name="item" value="fries"/>
-				<property name="price" value="50.00"/>
-				<property name="address" value="Manila"/>
+			<bean class="com.oocl.licupca.hw.Order">
+				<property name="item" value="fries" />
+				<property name="price" value="50.00" />
+				<property name="address" value="Manila" />
 			</bean>
 		</property>
 	</bean>
-	
-		<bean id="chicken" class="com.oocl.licupca.hw.ClassA">
+
+	<bean id="chicken" class="com.oocl.licupca.hw.ClassA">
 		<property name="order">
-			<bean class ="com.oocl.licupca.hw.Order">
-				<property name="item" value="chicken"/>
-				<property name="price" value="100.00"/>
-				<property name="address" value="Cebu"/>
+			<bean class="com.oocl.licupca.hw.Order">
+				<property name="item" value="chicken" />
+				<property name="price" value="100.00" />
+				<property name="address" value="Cebu" />
 			</bean>
 		</property>
 	</bean>
-	
+
 </beans>
