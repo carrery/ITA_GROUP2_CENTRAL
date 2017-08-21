@@ -1,0 +1,63 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport"
+    },
+    "designerId": "e9e6b43f-a6fb-4e30-bd97-f24f7754e4f1",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "My Panel"
+            },
+            "designerId": "23e27fa9-c799-4006-b75f-6cfb4f6b6278",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "",
+                        "dock": null,
+                        "text": "Click here",
+                        "width": null
+                    },
+                    "designerId": "7e1e939f-4646-408b-9732-5e9e9eafa552",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "Ext.Msg.alert('Alert', 'Event triggered');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "c29bed20-544b-4b3d-b7b1-a3be6b54d8ce"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

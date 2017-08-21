@@ -1,0 +1,38 @@
+{
+    "name": "ExtJS",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "C:/Users/GERVAJO/ext"
+    },
+    "xdsVersion": "3.0.2",
+    "xdsBuild": 1375,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "0e778f51-7b8e-411d-8857-04f07b4d9f8c"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "3b576367-6608-4b41-b596-c1849f419215",
+            "6565d0ce-d1f4-437e-98ff-f76cc735a3d2"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

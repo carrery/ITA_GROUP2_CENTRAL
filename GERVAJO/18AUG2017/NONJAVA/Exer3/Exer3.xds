@@ -1,0 +1,39 @@
+{
+    "name": "Exer3",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": ""
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "e9e6b43f-a6fb-4e30-bd97-f24f7754e4f1"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "f3d89573-651c-4544-ab0b-0b45cd5277c7",
+            "fdda523c-15f4-48c6-8397-6b8cb4a61f9f",
+            "81820ae7-f337-4618-aca4-255fd314def0"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport"
+    },
+    "designerId": "0d56d04d-8edf-4256-9c08-4d90b15b71f4",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "height": 250,
+                "title": "Button Clicking!",
+                "width": 400
+            },
+            "designerId": "62db340a-8fc8-46f7-8452-d690ae85bd8f",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "draggable": true,
+                        "itemId": "mybutton",
+                        "text": "Click",
+                        "width": 95
+                    },
+                    "designerId": "f6bbffd8-99e5-44ab-aeec-6e2e275bd8ec",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "Ext.Msg.alert(\"Event\", \"Event Called\");\r",
+                                    "Ext.getCmp('mybutton').hide();"
+                                ]
+                            },
+                            "designerId": "3a33c33a-e48c-4ccc-a00b-597e6bd705c8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "handle",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

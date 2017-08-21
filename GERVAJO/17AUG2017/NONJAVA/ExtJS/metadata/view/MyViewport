@@ -1,0 +1,124 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|snapToGrid": 10,
+        "designer|userClassName": "MyViewport",
+        "layout": "absolute"
+    },
+    "designerId": "0e778f51-7b8e-411d-8857-04f07b4d9f8c",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "height": 353,
+                "layout": "absolute",
+                "layout|x": 0,
+                "layout|y": 0,
+                "title": "Img Panel"
+            },
+            "designerId": "9425d826-86e3-490a-afa3-330a8f1cc901",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "focusOnToFront": false,
+                        "height": 275,
+                        "layout|x": 800,
+                        "layout|y": 30,
+                        "src": "img/gray.png",
+                        "toFrontOnShow": false,
+                        "width": 650
+                    },
+                    "designerId": "8be234de-3de9-406a-ae81-98ad6e8b5793"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 10,
+                        "height": 330,
+                        "layout": "absolute",
+                        "width": 750
+                    },
+                    "designerId": "d3602739-95c1-42a4-b102-ae9615b68e68",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "focusOnToFront": false,
+                                "height": 275,
+                                "layout|x": 40,
+                                "layout|y": 30,
+                                "src": "img/gray.png",
+                                "toFrontOnShow": false,
+                                "width": 650
+                            },
+                            "designerId": "5b4ba1d6-efdf-4c0f-ac8d-cc8bdefa47f0"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "draggable": true,
+                                "height": 100,
+                                "id": "img1",
+                                "layout|x": 50,
+                                "layout|y": 40,
+                                "src": "img/wew.png",
+                                "width": 100
+                            },
+                            "designerId": "1dc2a0bd-4689-4bca-8145-879b26abaa1d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "height": 365,
+                "layout": "absolute",
+                "layout|x": 0,
+                "layout|y": 390,
+                "title": "Drop Panel"
+            },
+            "designerId": "c8c93b0c-4024-4fe9-9405-4ef60d420ceb"
+        }
+    ]
+}
