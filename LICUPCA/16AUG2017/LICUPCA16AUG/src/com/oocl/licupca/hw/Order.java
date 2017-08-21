@@ -31,7 +31,7 @@ public class Order{
 	}
 
 	public void getDetails() {
-		System.out.println("Item: " + getItem() + "\nPrice: $" + getPrice() + "\nAddress: " + getAddress());
+		System.out.println("\nItem: " + getItem() + "\nPrice: $" + getPrice() + "\nAddress: " + getAddress());
 	}
 
 }

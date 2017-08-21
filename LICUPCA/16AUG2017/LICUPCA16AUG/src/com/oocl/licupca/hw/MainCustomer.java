@@ -15,7 +15,7 @@ public class MainCustomer {
 		ApplicationContext context = new ClassPathXmlApplicationContext("OrderConfig.xml");
 		ClassA classA = (ClassA) context.getBean("fries");
 		classA.getOrder().getDetails();
-		
+
 		classA = (ClassA) context.getBean("chicken");
 		classA.getOrder().getDetails();
 

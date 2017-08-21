@@ -1,0 +1,3 @@
+# ext-theme-crisp-a45ee234-c8f0-4405-97ae-b474a1af4476/overrides
+
+This folder contains overrides which will automatically be required by package users.
