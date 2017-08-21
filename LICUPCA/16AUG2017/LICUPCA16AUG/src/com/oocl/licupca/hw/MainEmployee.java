@@ -12,10 +12,10 @@ public class MainEmployee {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("EmployeesConfigHW.xml");
-//		Employee emp = (Employee) context.getBean("employee_juan");
-//		emp.getDetails();
+		Employee emp = (Employee) context.getBean("employee_juan");
+		emp.getDetails();
 		
-		Employee emp = (Employee) context.getBean("employee_pedro");
+		emp = (Employee) context.getBean("employee_pedro");
 		emp.getDetails();
 		
 	}
