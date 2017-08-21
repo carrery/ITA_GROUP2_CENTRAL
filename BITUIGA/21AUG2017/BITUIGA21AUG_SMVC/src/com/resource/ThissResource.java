@@ -1,42 +1,59 @@
 package com.resource;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import net.webservicex.GeoIP;
-import net.webservicex.GeoIPService;
-import net.webservicex.GeoIPServiceSoap;
-
-@Path("/hello/{ip}")
+@Path("/stringFilter")
 public class ThissResource {
 
 	public ThissResource() {
 	// TODO Auto-generated constructor stub
 	}
 	
-	@PathParam("ip") String ip;
-	
 	@GET
 	@Produces("text/plain")
-	public String hello() {
+	public String stringFilter() {
 		
-		GeoIPService ipService = new GeoIPService();
-		GeoIPServiceSoap ipServiceSoap = ipService.getGeoIPServiceSoap(); 
-		GeoIP geoIp = ipServiceSoap.getGeoIP(ip);
+		String expectedOutput = "Initial List: \n";
+		ArrayList<String> stringArray = new ArrayList<String>();
+		ArrayList<String> removeList = new ArrayList<String>();
+		int n = 0;
 		
-		String outStr ="";
+		Scanner nn = new Scanner(System.in);
+		n = nn.nextInt();
 		
-		outStr += "IP Address: " + geoIp.getIP();
-		outStr += "\n\nCountry Name: " + geoIp.getCountryName();
-		outStr += "\n\nCountry Code: " + geoIp.getCountryCode();
-//		outStr += "\n\n" + ;
+		for(int i = 0; i < n; i++ ) {
+			Scanner ss = new Scanner(System.in);
+			stringArray.add(ss.nextLine());
+			expectedOutput += ss.nextLine() + "\n";
+		}
 		
-//		System.out.println(geoIp.getCountryCode());
+		stringArray =  (ArrayList<String>)stringArray.stream().distinct().collect(Collectors.toList());
 		
+		for(String s : stringArray) {			
+			s = s.replaceAll(" ", "");
+			for(char a : s.toCharArray()) {
+				if (CharChecker.isPureAscii(a)) {
+					removeList.add(s);
+				}
+			}
+		}
 		
-		return outStr;
+		for(String a : removeList) {
+			stringArray.remove(a);
+		}
+		expectedOutput += "\nProcessed List: \n";
+		for(String a : stringArray) {
+			expectedOutput += a + "\n";
+		}
+	    
+		
+		return expectedOutput;
 	}
 
 }
