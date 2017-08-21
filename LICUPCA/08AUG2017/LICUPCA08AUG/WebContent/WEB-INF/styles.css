@@ -1,0 +1,15 @@
+<style>
+.default{
+font-family:"Segoe UI Light";
+font-size:40px;
+color:#FFFFFF
+}
+
+body{
+background-color: #CAC6C6
+}
+
+img {
+filter: grayscale(100%)
+}
+</style>
