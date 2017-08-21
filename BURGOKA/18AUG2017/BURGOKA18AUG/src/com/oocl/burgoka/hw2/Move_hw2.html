@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script language = "javascript"></script>
+<meta charset="ISO-8859-1">
+<title>Move Image</title>
+<center><h3>Move Image</h3></center>
+<center><img src="D:\baby.gif" id="drogon"> </center>
+<br>
+<!--<center><img src="D:\baby.gif" align="middle" id="drogon"> </center><br>-->
+<center><input type="submit" value="Left" onclick = "moveLeft();">
+<input type="submit" value="Right" onclick="moveRight();">
+<input type="submit" value="Stop" onclick="stopMove();"></center>
+</head>
+<body>
+<script>
+	var img = null;
+    var animate ;
+            
+            function init(){
+               img = document.getElementById('drogon');
+               img.style.position= 'relative'; 
+               img.style.left = '0px'; 
+               img.style.right = '0px'
+            }
+            
+            function moveRight(){
+               img.style.left = parseInt(img.style.left) + 5 + 'px';
+               animate = setTimeout(moveRight,30); 
+            }
+
+            function moveLeft(){
+            	img.style.left = parseInt(img.style.left) - 5 + 'px';
+                animate = setTimeout(moveLeft,30); 
+            }
+            
+            function stopMove(){
+               clearTimeout(animate);
+               imgObj.style.left = '0px'; 
+            }
+            
+            window.onload =init;
+</script>
+</body>
+</html>

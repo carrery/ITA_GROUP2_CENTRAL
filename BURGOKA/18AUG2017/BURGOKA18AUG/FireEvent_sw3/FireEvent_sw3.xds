@@ -1,0 +1,40 @@
+{
+    "name": "FireEvent_sw3",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "D:/Publish"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "0d56d04d-8edf-4256-9c08-4d90b15b71f4"
+        ],
+        "store": [],
+        "controller": [
+            "9821ce5d-13b9-4f1a-b22e-08ed162e0333"
+        ],
+        "model": [],
+        "resource": [
+            "3d65e5ad-2c36-44c1-9a07-9ee22db0ecbc",
+            "84e9b436-9ab3-4b45-bf5a-2411d3b2feee"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
