@@ -13,7 +13,7 @@ public class OpenThisFile {
 		
 		try {
 			Runtime.getRuntime().exec("notepad.exe"); 
-			Runtime.getRuntime().exec("cmd /c start \"%programfiles%\\Windows Media Player\\wmplayer.exe\" \"C:\\Users\\User\\Documents\\gitvob\\ITA-MNL_GROUP2\\BITUIGA\\18AUG2017\\BITUIGA18AUG\\src\\song.mp3\""); 
+			Runtime.getRuntime().exec("cmd /c start \"%programfiles%\\Windows Media Player\\wmplayer.exe\" \"D:\\gitvob\\ITA_G2\\ITA-MNL_GROUP2\\BITUIGA\\18AUG2017\\BITUIGA18AUG\\src\\song.mp3\""); 
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

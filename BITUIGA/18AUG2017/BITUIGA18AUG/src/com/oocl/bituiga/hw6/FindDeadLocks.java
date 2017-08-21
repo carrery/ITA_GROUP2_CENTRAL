@@ -20,9 +20,13 @@ public class FindDeadLocks {
 
 		ThreadMXBean bean = ManagementFactory.getThreadMXBean();
 		long ids[] = bean.findMonitorDeadlockedThreads();
-
+		
 		if (ids != null) {
-			System.out.println("Deadlocks Found.");
+			System.out.println("\nDeadlocks Found:");
+			for(long id : ids) {
+				System.out.println(bean.getThreadInfo(id));
+			}
+			System.out.println("Total: " + ids.length);
 		} else {
 			System.out.println("No Deadlocks.");
 		}

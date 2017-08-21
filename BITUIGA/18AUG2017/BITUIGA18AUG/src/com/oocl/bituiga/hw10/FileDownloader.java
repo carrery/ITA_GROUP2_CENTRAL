@@ -19,7 +19,7 @@ public class FileDownloader {
 		 URL url = new URL("http://www.bing.com/");
 		 URLConnection con = url.openConnection();
 		 InputStream in = con.getInputStream();
-		 String encoding = con.getContentEncoding();  // ** WRONG: should use "con.getContentType()" instead but it returns something like "text/html; charset=UTF-8" so this value must be parsed to extract the actual encoding
+		 String encoding = con.getContentEncoding(); 
 		 encoding = encoding == null ? "US-ASCII" : encoding;
 	
 		 
@@ -36,7 +36,7 @@ public class FileDownloader {
 		 WriteThisFile newWriter = new WriteThisFile("Number10.html");
 		newWriter.createNewFile();
 		newWriter.writeToFile(inputLines);
-		 
+		
 		 }
 		 catch(Exception e) {
 			 e.printStackTrace();
