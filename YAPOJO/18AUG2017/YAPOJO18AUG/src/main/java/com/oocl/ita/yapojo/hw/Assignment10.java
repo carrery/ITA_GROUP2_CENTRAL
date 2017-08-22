@@ -51,15 +51,16 @@ public class Assignment10 {
 			String contents = url.read();
 
 			if (contents != null) {
-				System.out.println(contents);
-			    byte data[] = contents.getBytes();
-			    Path path = Paths.get("C:\\Users\\yapojo\\Desktop\\Test\\Assignment10.txt");
+				byte data[] = contents.getBytes();
+				Path path = Paths.get("C:\\Users\\yapojo\\Desktop\\Test\\Assignment10.txt");
 
-			    try (OutputStream output = new BufferedOutputStream(Files.newOutputStream(path, CREATE, APPEND))) {
-			      output.write(data, 0, data.length);
-			    } catch (IOException x) {
-			      System.err.println(x);
-			    }
+				try (OutputStream output = new BufferedOutputStream(Files.newOutputStream(path, CREATE, APPEND))) {
+				  output.write(data, 0, data.length);
+				} catch (IOException x) {
+				  System.err.println(x);
+				}
+				
+				System.out.println("Content already downloaded..");
 			} else {
 				System.out.println("Error!");
 			}
