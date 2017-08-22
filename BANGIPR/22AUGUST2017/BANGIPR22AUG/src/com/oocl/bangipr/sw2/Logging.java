@@ -1,17 +1,32 @@
 package com.oocl.bangipr.sw2;
 
 
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.annotation.Before;
+import java.io.File;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class Logging {
 	
-	 @Pointcut("execution(* com.oocl.bangipr.sw2.*.*(..))")
+	InetAddress thisIp;
+	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	File logDir = new File("D:\\WSlogs");
+	File logsTxt = new File("D:\\WSlogs\\logs.txt");
+	
+	 @Pointcut("execution(* com.oocl.bangipr.sw1.*.*(..))")
 	   private void selectAll(){}
 
 	  
@@ -22,8 +37,24 @@ public class Logging {
 
 	  
 	   @After("selectAll()")
-	   public void afterAdvice(){
+	   public void afterAdvice() throws IOException{
 	      System.out.println("Calculator has acquired input");
+	      System.out.println(thisIp.getLocalHost());
+	      
+	      String text = "This is accessing your webservice " + thisIp.getLocalHost() + System.lineSeparator() + LocalDateTime.now() + System.lineSeparator() + System.lineSeparator();
+	      if (!logDir.exists()) {
+				logDir.mkdir();
+				logsTxt.createNewFile();
+				Files.write(Paths.get(logsTxt.getAbsolutePath()), text.getBytes(), StandardOpenOption.APPEND);
+			} else {
+				if (!logsTxt.exists()) {
+					logsTxt.createNewFile();
+					Files.write(Paths.get(logsTxt.getAbsolutePath()), text.getBytes(), StandardOpenOption.APPEND);
+				} else {
+					Files.write(Paths.get(logsTxt.getAbsolutePath()), text.getBytes(), StandardOpenOption.APPEND);
+				}
+			}
+	      
 	   }
 
 	   @AfterReturning(pointcut = "selectAll()", returning = "retVal")

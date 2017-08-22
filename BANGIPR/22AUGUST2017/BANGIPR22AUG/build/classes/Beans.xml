@@ -10,11 +10,8 @@
    <aop:aspectj-autoproxy/>
 
   
-   <bean id = "calcu" class = "com.oocl.bangipr.sw2.CalculatorStuff">
-      <property name = "x" value = "10" />
-      <property name = "ops" value = "+" />
-      <property name = "y"  value = "3"/>      
-   </bean>
+   <bean id = "calcu" class = "com.oocl.bangipr.sw1.NewCalculator"/>
+   
 
    <bean id = "logging" class = "com.oocl.bangipr.sw2.Logging"/> 
       

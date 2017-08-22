@@ -6,12 +6,13 @@ import javax.jws.WebService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.oocl.bangipr.sw2.CalculatorStuff;
+
 @WebService
 public class Calculator {
 	
-	CalculatorImp calc = new CalculatorImp();
+	static CalculatorImp calc = new CalculatorImp();
 	
-
 	
 	@WebMethod(operationName = "Addition")
 	public Double getSum(double  x , double y){	
@@ -38,6 +39,8 @@ public class Calculator {
 
 		return calc.getQuotient(x, y);
 	}
+	
+	
 	
 
 }

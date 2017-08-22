@@ -1,10 +1,5 @@
 package com.oocl.bangipr.sw1;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class CalculatorImp {
 	double x, y;
 
