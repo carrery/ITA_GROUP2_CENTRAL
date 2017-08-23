@@ -12,14 +12,7 @@ public class TwelveBalls {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		ArrayList<Integer> balls = new ArrayList<Integer>();
-//		balls.add(0);
-//		
-//		
-//		for(int x=1; x<12; x++) {
-//			balls.add(1);
-//		}
-		
+
 		
 		ArrayList<Integer> A = new ArrayList<Integer>();
 		ArrayList<Integer> B = new ArrayList<Integer>();
