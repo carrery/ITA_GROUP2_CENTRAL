@@ -1,4 +1,4 @@
-package com.oocl.ita.yapo.sw;
+package com.oocl.ita.yapojo.sw;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
