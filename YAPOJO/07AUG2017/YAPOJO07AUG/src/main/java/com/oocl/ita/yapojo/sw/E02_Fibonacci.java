@@ -1,4 +1,4 @@
-package com.oocl.ita.yapo.sw;
+package com.oocl.ita.yapojo.sw;
 import java.util.Arrays;
 
 class fibonacciThread1 implements Generator<Integer>, Runnable {
