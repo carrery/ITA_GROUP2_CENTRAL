@@ -7,6 +7,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.oocl.ita.yapojo.sw.CheckAccount;
+import com.oocl.ita.yapojo.sw.InsufficientFundsException;
+
 public class BankTest {
 	CheckAccount chkAccount = new CheckAccount();
 	

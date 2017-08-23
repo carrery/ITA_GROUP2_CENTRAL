@@ -7,6 +7,8 @@ import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.oocl.ita.yapojo.sw.testMavenClass;
+
 public class testMavenJUnit {
 	
 	@Test

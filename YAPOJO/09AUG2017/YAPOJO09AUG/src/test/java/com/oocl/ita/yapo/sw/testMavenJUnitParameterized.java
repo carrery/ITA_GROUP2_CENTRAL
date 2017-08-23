@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import com.oocl.ita.yapojo.sw.testMavenClass;
+
 @RunWith(Parameterized.class)
 public class testMavenJUnitParameterized {
 
