@@ -1,0 +1,13 @@
+# Empty CSS file for your own CSS
+
+@charset "ISO-8859-1";
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
