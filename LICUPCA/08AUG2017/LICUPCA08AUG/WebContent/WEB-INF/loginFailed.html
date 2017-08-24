@@ -1,0 +1,61 @@
+<head>
+<link href="http://cdn.layoutit.com/css/app.min-ca32f0280e.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h1>
+						Philippine Bank of the Philippines <small id="subheader">Login</small>
+					</h1>
+				</div>
+				<div class="alert alert-dismissable alert-danger">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-hidden="true">×</button>
+					<h4>Invalid Login</h4>
+					 Please enter correct username and password
+				</div>
+				<form class="form-horizontal" method="post" action="LoginProcess"
+					id="account-setup">
+					<div class="form-group">
+						<label for="username" class="col-sm-2 control-label">
+							Username </label>
+						<div class="col-sm-10">
+							<input required type="text" class="form-control" name="username" />
+						</div>
+					</div>
+					<div class="form-group">
+
+						<label for="password" class="col-sm-2 control-label">
+							Password </label>
+						<div class="col-sm-10">
+							<input required type="password" class="form-control"
+								name="password" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<input type="submit" class="btn btn-info" value="Login" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function add() {
+		var x = document.getElementById("x").value;
+		var y = document.getElementById("y").value;
+		while (y-->0)
+			++x;
+		window.alert(x);
+	}
+
+	function transact() {
+		document.getElementById("account-setup").style.display = 'none';
+		document.getElementById("subheader").innerHTML = 'Transact';
+	}
+</script>

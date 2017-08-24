@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Banko de Koko | Transaction</title>
+</head>
+<body bgcolor="lightblue">
+
+<script>
+
+var bal = 0;
+
+function deposit() {
+    var amount = document.getElementById("amount").value;
+    if(amount <= 0) {
+    	return "Cannot Deposit: " + amount;
+    } else {
+        bal = parseFloat(bal) + parseFloat(amount);
+        return "Deposit: " + amount;	
+    }
+}
+    
+function withdraw() {
+    var amount = document.getElementById("amount").value;
+    if(amount > bal) {
+    	return "Cannot Withdraw: " + amount;
+    } else if (amount <= 0) {
+    	return "Cannot Withdraw: " + amount;
+    } else {
+    	bal = parseFloat(bal) - parseFloat(amount)
+    	return "Withdraw: " + amount;
+    }
+}
+    
+function checkbalance() {
+    return "Balance: " + bal;
+}
+    
+</script>    
+
+<center>
+	<h1>Banko de Koko</h1>
+	
+	
+	<button type="button" onclick= 'alert(checkbalance())'>
+	Check Balance
+	</button>
+	
+	<br>
+	<h3>--------------| DEPOSIT || WITHDRAW |----------------</h3>    
+	<h2> Enter Amount: </h2><input type="number" id="amount"><br>
+	
+	<br>
+	
+	    
+	<button type="button" onclick= 'alert(deposit())'>
+	Deposit
+	</button>
+	
+	<button type="button" onclick= 'alert(withdraw())'>
+	Withdraw
+	</button>
+</center>
+
+</body>
+</html> 
