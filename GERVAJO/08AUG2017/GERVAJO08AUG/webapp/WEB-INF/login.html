@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Log in</title>
+</head>
+<body bgcolor = "#aaaaaa">
+<head>
+<script type="text/javascript">
+function validate(){
+	var uname = document.getElementById("uName").value;
+	var pass = document.getElementById("pWord").value;
+	if(uname == "admin" && pass == "admin"){
+		window.open("/TestServlet/Bank");
+	} else {
+		alert ("Invalid credentials");
+	}
+	
+}
+</script>
+</head>
+
+<h3>Login</h3>
+<form name="login">
+<p>Username: &nbsp; <input type="text" id ="uName"/> </p> 
+<p>Password: &nbsp; <input type="password" id ="pWord"/> </p> 
+<p><button type = "button" id = "login" onclick = 'validate()' > Login </button> </p>
+</form>
+</body>
+
+</body>
+</html>

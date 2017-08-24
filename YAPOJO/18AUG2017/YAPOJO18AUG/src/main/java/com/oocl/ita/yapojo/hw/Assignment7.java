@@ -26,7 +26,7 @@ public class Assignment7 {
 	    String string = input.nextLine() + "\n";
 	    
 	    byte data[] = string.getBytes();
-	    Path path = Paths.get("C:\\Users\\Marlon Brian Orga\\Desktop\\Test\\" + fileName + ".txt");
+	    Path path = Paths.get("C:\\Users\\yapojo\\Desktop\\Test\\" + fileName + ".txt");
 
 	    try (OutputStream output = new BufferedOutputStream(Files.newOutputStream(path, CREATE, APPEND))) {
 	      output.write(data, 0, data.length);
@@ -35,7 +35,7 @@ public class Assignment7 {
 	    }
 	    
 	    List<String> outputCopy = Files.readAllLines(path);
-	    Files.write(Paths.get("C:\\Users\\Marlon Brian Orga\\Desktop\\Test\\OutputCOPY.txt"), outputCopy, CREATE, APPEND);
+	    Files.write(Paths.get("C:\\Users\\yapojo\\Desktop\\Test\\Assignment7.txt"), outputCopy, CREATE, APPEND);
 	}
 
 }
