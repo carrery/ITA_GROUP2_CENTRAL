@@ -13,7 +13,7 @@ public class Assignment4 {
 		String fileNames ="\n";
 		Integer fileNum = 0;
 		
-		File directory = new File("C:\\Users\\Marlon Brian Orga\\Desktop\\NewFolder");
+		File directory = new File("C:\\Users\\yapojo\\Desktop\\DragAndDrop");
 		
 		for(File file : directory.listFiles()) {
 			if(file.isFile() && !file.isHidden()) {

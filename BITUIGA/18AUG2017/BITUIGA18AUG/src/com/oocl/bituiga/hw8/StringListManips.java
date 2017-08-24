@@ -1,7 +1,10 @@
 package com.oocl.bituiga.hw8;
 
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StringListManips {
 
@@ -9,22 +12,25 @@ public class StringListManips {
 		// TODO Auto-generated constructor stub
 	}
 	
+static CharsetEncoder asciiEncoder = Charset.forName("US-ASCII").newEncoder(); // or "ISO-8859-1" for ISO Latin 1
+	
+	public static boolean isPureAscii(String v) {
+		return asciiEncoder.canEncode(v);
+	}
+	
 	public static void main(String[] args) {
 		ArrayList<String> stringgs = new ArrayList<String>();
+		ArrayList<String> tempstringgs = new ArrayList<String>();
 		stringgs = fillList();
-		ArrayList<String> tempString = new ArrayList<String>();
-		int ctr = 0;
+		stringgs =  (ArrayList<String>)stringgs.stream().distinct().collect(Collectors.toList());
+		
 		for(String a : stringgs) {
-			ctr=0;
-			for(String b : stringgs) {
-				if(a.equals(b)) {
-					ctr++;
-				}
-			}
-			if(ctr == 1) tempString.add(a);
+			if(!isPureAscii(a)) tempstringgs.add(a);
 		}
-		stringgs.clear();
-		stringgs = tempString;
+		
+		for(String a : tempstringgs) {
+			if(!isPureAscii(a)) stringgs.remove(a);
+		}
 		
 		for(String a : stringgs) {
 			System.out.println(a);
@@ -33,9 +39,9 @@ public class StringListManips {
 	
 	static ArrayList<String> fillList(){
 		ArrayList<String> initInput = new ArrayList<>();
-		initInput.add("test");
-		initInput.add("test");
-		initInput.add("test");
+		initInput.add("国内版");
+		initInput.add("国内版");
+		initInput.add("国内版");
 		initInput.add("test");
 		initInput.add("test");
 		initInput.add("setsw");

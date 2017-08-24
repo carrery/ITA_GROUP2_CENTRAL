@@ -8,7 +8,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-@Path("/stringFilter")
+@Path("/hello")
 public class ThissResource {
 
 	public ThissResource() {
@@ -17,20 +17,22 @@ public class ThissResource {
 	
 	@GET
 	@Produces("text/plain")
-	public String stringFilter() {
+	public String hello() {
 		
 		String expectedOutput = "Initial List: \n";
 		ArrayList<String> stringArray = new ArrayList<String>();
 		ArrayList<String> removeList = new ArrayList<String>();
 		int n = 0;
-		
+		System.out.println("How many strings?");
 		Scanner nn = new Scanner(System.in);
 		n = nn.nextInt();
 		
 		for(int i = 0; i < n; i++ ) {
+			System.out.println("Please input string " + (i+1) + " : ");
 			Scanner ss = new Scanner(System.in);
-			stringArray.add(ss.nextLine());
-			expectedOutput += ss.nextLine() + "\n";
+			String e = ss.nextLine();
+			stringArray.add(e);
+			expectedOutput += e + "\n";
 		}
 		
 		stringArray =  (ArrayList<String>)stringArray.stream().distinct().collect(Collectors.toList());
@@ -38,7 +40,7 @@ public class ThissResource {
 		for(String s : stringArray) {			
 			s = s.replaceAll(" ", "");
 			for(char a : s.toCharArray()) {
-				if (CharChecker.isPureAscii(a)) {
+				if (!CharChecker.isPureAscii(a)) {
 					removeList.add(s);
 				}
 			}
@@ -52,7 +54,6 @@ public class ThissResource {
 			expectedOutput += a + "\n";
 		}
 	    
-		
 		return expectedOutput;
 	}
 

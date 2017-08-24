@@ -6,6 +6,13 @@ public class Employee {
 	private String name;
 	private String role;
 	private int id;
+<<<<<<< HEAD
+=======
+	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+>>>>>>> refs/remotes/origin/HW_EXERCISE_11AUG2017
 
 	public int getId() {
 		return id;
