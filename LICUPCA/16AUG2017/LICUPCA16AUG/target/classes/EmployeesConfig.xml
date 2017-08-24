@@ -5,20 +5,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-<<<<<<< HEAD
-	<bean id="employee_juan" class="com.oocl.licupca.hw.Employee">
-		<property name="name" value="Juan" />
-		<property name="role" value="Admin" />
-	</bean>
-
-	<bean id="employee_jose" class="com.oocl.licupca.hw.Employee">
-		<property name="name" value="Jose" />
-		<property name="role" value="Guest" />
-	</bean>
-	
-	<bean id="employee_pedro" class="com.oocl.licupca.hw.Employee">
-		<property name="name" value="Pedro" />
-=======
 	<bean id="employee_juan" class="com.oocl.licupca.sw.exercise6.Employee">
 		<property name="name" value="Juan" />
 		<property name="id" value="001" />
@@ -34,7 +20,6 @@
 	<bean id="employee_pedro" class="com.oocl.licupca.sw.exercise6.Employee">
 		<property name="name" value="Pedro" />
 		<property name="id" value="003" />
->>>>>>> refs/remotes/origin/HW_EXERCISE_11AUG2017
 		<property name="role" value="Congressman" />
 	</bean>
 </beans>
