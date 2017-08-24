@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor = "#aaaaaa">
+<head>
+<script type="text/javascript">
+var balance = 0;
+
+function withdraw(){
+	var amount = document.getElementById("amount").value;
+	if (balance > amount){
+		this.balance = parseInt(balance) - parseInt(amount);
+		return "Withdrawed amount: " + amount;
+	} else if (amount > balance) {
+		return "Amount too large";
+	}
+}
+
+function deposit(){
+	var amount = document.getElementById("amount").value;
+	if(amount > 0){
+		this.balance =  parseFloat(balance) + parseFloat(amount);
+	} else {
+		return "Invalid amount!!";
+	}
+	return "Deposited amount: " + amount;
+}
+
+function checkbalance(){
+	return "Current balance: " + parseFloat(balance);
+}
+
+</script>
+</head>
+<h3>Bank</h3>
+
+<p>Amount &nbsp; <input type = "number" id = "amount"> </p> <br>
+<p><button type = "button" id = "checkbal" onclick = 'alert(checkbalance())' > Check Balance </button> </p>
+<p><button type = "button" id = "withdraw" onclick = 'alert(withdraw())' > Withdraw </button> </p>
+<p><button type = "button" id = "deposit" onclick = 'alert(deposit())' > Deposit </button> </p>
+
+</body>
+</html>
