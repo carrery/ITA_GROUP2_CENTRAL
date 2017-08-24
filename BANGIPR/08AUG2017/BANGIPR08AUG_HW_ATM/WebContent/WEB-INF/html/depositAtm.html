@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bank Online Banking</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+ <script src="js/login.js"></script> 
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		<ul class="nav nav-pills">
+				<li>
+					<a href="javascript:home()" >Home</a>
+				</li>
+				<li>
+					<a href="#">Profile</a>
+				</li>
+				<li>
+					<a href="#">Messages</a>
+				</li>
+				<li class="dropdown pull-right">
+					 <a href="javascript:logout()">Logout</a>
+
+				</li>
+			</ul>
+		
+			<div class="jumbotron well">
+				<h2>
+					Welcome to Bank!
+				</h2>
+				<p>
+					"We Find Ways..."
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+		
+		</div>
+		<div class="col-md-4">
+			<h2>
+				Online Deposit
+			</h2>
+			 <label>Enter Amount :</label></br>
+		  <input type="text" name="depositAmt" id="depositAmt"/></br> </br>
+			<form method="get" action="ATMBalServlet">
+			<input type="submit" class="btn btn-default" onclick="deposit()">
+				
+		</form>
+		</div>
+		<div class="col-md-4">
+		
+		</div>
+	</div>
+</div>
+<script>
+<>
+  </body>
+</html>
