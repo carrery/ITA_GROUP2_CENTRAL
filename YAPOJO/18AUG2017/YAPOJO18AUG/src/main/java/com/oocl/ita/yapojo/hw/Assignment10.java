@@ -1,10 +1,18 @@
 package com.oocl.ita.yapojo.hw;
 
+import static java.nio.file.StandardOpenOption.APPEND;
+import static java.nio.file.StandardOpenOption.CREATE;
+
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Assignment10 {
 	private static final int BUFFER_SIZE = 1024 * 10;
@@ -43,12 +51,21 @@ public class Assignment10 {
 			String contents = url.read();
 
 			if (contents != null) {
-				System.out.println(contents);
+				byte data[] = contents.getBytes();
+				Path path = Paths.get("C:\\Users\\yapojo\\Desktop\\Test\\Assignment10.txt");
+
+				try (OutputStream output = new BufferedOutputStream(Files.newOutputStream(path, CREATE, APPEND))) {
+				  output.write(data, 0, data.length);
+				} catch (IOException x) {
+				  System.err.println(x);
+				}
+				
+				System.out.println("Content already downloaded..");
 			} else {
 				System.out.println("Error!");
 			}
 		} catch (MalformedURLException e) {
-			System.out.println("Check you the url!");
+			System.out.println("Check the url!");
 		}
 
 	}

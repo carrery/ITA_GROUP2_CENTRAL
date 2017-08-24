@@ -14,7 +14,7 @@ public class FileCounter {
 	
 	public static void main(String[] args) {
 		FileCounter e = new FileCounter();
-		String filepat = "C:\\Users\\User\\Desktop\\New folder";
+		String filepat = "D:\\My Documents\\New folder";
 		int countFolder = e.countFiles(filepat, true);
 		int countFile = e.countFiles(filepat, false);
 		

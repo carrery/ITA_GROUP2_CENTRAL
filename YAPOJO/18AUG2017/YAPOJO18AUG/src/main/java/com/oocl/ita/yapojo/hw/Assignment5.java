@@ -15,7 +15,7 @@ public class Assignment5 {
 	    
 	    for (final char ch : trimString.toCharArray()) {
 	        final int ascii = ch;
-	        if (((ascii >= 33) && (ascii <= 126))) {
+	        if (((ascii >= 33) && (ascii <= 126) && (ascii != 63))) {
 	            result.append(ch);
 	        }
 	    }
