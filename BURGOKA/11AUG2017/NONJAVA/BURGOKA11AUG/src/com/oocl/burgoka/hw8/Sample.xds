@@ -1,0 +1,42 @@
+{
+    "name": "Sample",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "D:/Publish"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "d2736092-6df1-4b9c-a5fe-fe93187906ca",
+            "f4abc7c6-3b50-482a-9264-ea251a018017"
+        ],
+        "store": [],
+        "controller": [
+            "4fd80645-b59b-4936-b52e-96d18cecdd5b",
+            "9cf5858e-a519-4313-b0ff-c0f5cc23c5f5"
+        ],
+        "model": [],
+        "resource": [
+            "a0b294b7-453d-45da-a667-2a8e618f1237",
+            "39dc5ecc-d4f5-4145-9db4-6404cb8309a1"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "designerId": "4fd80645-b59b-4936-b52e-96d18cecdd5b",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnShow",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnShowClick",
+                "implHandler": [
+                    "//debugger;\r",
+                    "Ext.create('Sample.view.MyWindow').show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "0b958d1e-5eb3-486e-b856-63762325533b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "btnShow",
+                "selector": "#btnShow"
+            },
+            "designerId": "52811660-2517-402b-a040-83f0d60d7b0e"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport"
+    },
+    "designerId": "d2736092-6df1-4b9c-a5fe-fe93187906ca",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "height": 86,
+                "title": "My Form"
+            },
+            "designerId": "8b49f4d1-2809-46e2-9290-4c9c634e01e8",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnShow",
+                        "itemId": "btnShow",
+                        "text": "Show"
+                    },
+                    "designerId": "657463d0-d28c-4e79-ad7b-ec6092d88425"
+                }
+            ]
+        }
+    ]
+}
