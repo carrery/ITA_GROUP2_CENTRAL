@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_wblYEIleEee4rMv2nPPiSg" name="BITUIGA25AUG_UML_ATM">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_E7OsEIlfEee4rMv2nPPiSg" name="User" useCase="_iJHikIlfEee4rMv2nPPiSg _qpIb0IlfEee4rMv2nPPiSg _jGnsoIlfEee4rMv2nPPiSg _DvQLsIlgEee4rMv2nPPiSg"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_euA4MIlgEee4rMv2nPPiSg" name="ATM">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_iJHikIlfEee4rMv2nPPiSg" name="Withdraw Money" subject="_E7OsEIlfEee4rMv2nPPiSg _PK4sEIlhEee4rMv2nPPiSg">
+      <extend xmi:type="uml:Extend" xmi:id="_bsvYMIljEee4rMv2nPPiSg" extendedCase="_U2EbUIljEee4rMv2nPPiSg" extensionLocation="_bsvYMYljEee4rMv2nPPiSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_qpIb0IlfEee4rMv2nPPiSg" name="Balance Inquiry" subject="_E7OsEIlfEee4rMv2nPPiSg _PK4sEIlhEee4rMv2nPPiSg">
+      <extend xmi:type="uml:Extend" xmi:id="_cg2VsIljEee4rMv2nPPiSg" extendedCase="_U2EbUIljEee4rMv2nPPiSg" extensionLocation="_cg28wIljEee4rMv2nPPiSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_jGnsoIlfEee4rMv2nPPiSg" name="Deposit Money" subject="_E7OsEIlfEee4rMv2nPPiSg _PK4sEIlhEee4rMv2nPPiSg">
+      <extend xmi:type="uml:Extend" xmi:id="_ZyXWMIljEee4rMv2nPPiSg" extendedCase="_U2EbUIljEee4rMv2nPPiSg" extensionLocation="_ZyhHMIljEee4rMv2nPPiSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_DvQLsIlgEee4rMv2nPPiSg" name="Transfer Funds" subject="_E7OsEIlfEee4rMv2nPPiSg _PK4sEIlhEee4rMv2nPPiSg"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_U2EbUIljEee4rMv2nPPiSg" name="Print Receipt" subject="_PK4sEIlhEee4rMv2nPPiSg">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_ZyhHMIljEee4rMv2nPPiSg" name="ExtensionPoint1"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_bsvYMYljEee4rMv2nPPiSg" name="ExtensionPoint2"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_cg28wIljEee4rMv2nPPiSg" name="ExtensionPoint3"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GNXaoIllEee4rMv2nPPiSg" name="Maintain System" subject="_80iDAIlkEee4rMv2nPPiSg"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Km0uMIllEee4rMv2nPPiSg" name="Start/Stop System" subject="_80iDAIlkEee4rMv2nPPiSg"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_cLdCkIllEee4rMv2nPPiSg" name="Login">
+      <include xmi:type="uml:Include" xmi:id="_hIj1wIllEee4rMv2nPPiSg" addition="_jGnsoIlfEee4rMv2nPPiSg"/>
+      <include xmi:type="uml:Include" xmi:id="_ikVQMIllEee4rMv2nPPiSg" addition="_iJHikIlfEee4rMv2nPPiSg"/>
+      <include xmi:type="uml:Include" xmi:id="_kOivQIllEee4rMv2nPPiSg" addition="_qpIb0IlfEee4rMv2nPPiSg"/>
+      <include xmi:type="uml:Include" xmi:id="_k7Z1QIllEee4rMv2nPPiSg" addition="_DvQLsIlgEee4rMv2nPPiSg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_PK4sEIlhEee4rMv2nPPiSg" name="Bank" useCase="_iJHikIlfEee4rMv2nPPiSg _qpIb0IlfEee4rMv2nPPiSg _jGnsoIlfEee4rMv2nPPiSg _DvQLsIlgEee4rMv2nPPiSg _U2EbUIljEee4rMv2nPPiSg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_mAZZUIljEee4rMv2nPPiSg" memberEnd="_mAaAYoljEee4rMv2nPPiSg _mAaAY4ljEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mAaAYIljEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mAaAYYljEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mAaAYoljEee4rMv2nPPiSg" name="print receipt" type="_U2EbUIljEee4rMv2nPPiSg" association="_mAZZUIljEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mAaAY4ljEee4rMv2nPPiSg" name="bank" type="_PK4sEIlhEee4rMv2nPPiSg" association="_mAZZUIljEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vA6XkIljEee4rMv2nPPiSg" memberEnd="_vA6Xk4ljEee4rMv2nPPiSg _vA6XlIljEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vA6XkYljEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vA6XkoljEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vA6Xk4ljEee4rMv2nPPiSg" name="bank" type="_PK4sEIlhEee4rMv2nPPiSg" association="_vA6XkIljEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vA6XlIljEee4rMv2nPPiSg" name="deposit money" type="_jGnsoIlfEee4rMv2nPPiSg" association="_vA6XkIljEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vsd2AIljEee4rMv2nPPiSg" memberEnd="_vsedEoljEee4rMv2nPPiSg _vsedE4ljEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vsedEIljEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vsedEYljEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vsedEoljEee4rMv2nPPiSg" name="bank" type="_PK4sEIlhEee4rMv2nPPiSg" association="_vsd2AIljEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vsedE4ljEee4rMv2nPPiSg" name="withdraw money" type="_iJHikIlfEee4rMv2nPPiSg" association="_vsd2AIljEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0Ee_IIljEee4rMv2nPPiSg" memberEnd="_0EfmMoljEee4rMv2nPPiSg _0EfmM4ljEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0EfmMIljEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0EfmMYljEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0EfmMoljEee4rMv2nPPiSg" name="bank" type="_PK4sEIlhEee4rMv2nPPiSg" association="_0Ee_IIljEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0EfmM4ljEee4rMv2nPPiSg" name="balance inquiry" type="_qpIb0IlfEee4rMv2nPPiSg" association="_0Ee_IIljEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0r16EIljEee4rMv2nPPiSg" memberEnd="_0r3IMoljEee4rMv2nPPiSg _0r3IM4ljEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0r3IMIljEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0r3IMYljEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0r3IMoljEee4rMv2nPPiSg" name="bank" type="_PK4sEIlhEee4rMv2nPPiSg" association="_0r16EIljEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0r3IM4ljEee4rMv2nPPiSg" name="transfer funds" type="_DvQLsIlgEee4rMv2nPPiSg" association="_0r16EIljEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_80iDAIlkEee4rMv2nPPiSg" name="System Admin" useCase="_GNXaoIllEee4rMv2nPPiSg _Km0uMIllEee4rMv2nPPiSg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fCCOIIllEee4rMv2nPPiSg" memberEnd="_fCC1MollEee4rMv2nPPiSg _fCC1M4llEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fCC1MIllEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fCC1MYllEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fCC1MollEee4rMv2nPPiSg" name="actor1" type="_E7OsEIlfEee4rMv2nPPiSg" association="_fCCOIIllEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fCC1M4llEee4rMv2nPPiSg" name="login" type="_cLdCkIllEee4rMv2nPPiSg" association="_fCCOIIllEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_3EQ4EIllEee4rMv2nPPiSg" memberEnd="_3ERfIollEee4rMv2nPPiSg _3ERfI4llEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ERfIIllEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ERfIYllEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3ERfIollEee4rMv2nPPiSg" name="maintain system" type="_GNXaoIllEee4rMv2nPPiSg" association="_3EQ4EIllEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3ERfI4llEee4rMv2nPPiSg" name="system admin" type="_80iDAIlkEee4rMv2nPPiSg" association="_3EQ4EIllEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_31s8EIllEee4rMv2nPPiSg" memberEnd="_31tjIIllEee4rMv2nPPiSg _31tjIYllEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_31s8EYllEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_31s8EollEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_31tjIIllEee4rMv2nPPiSg" name="start/stop system" type="_Km0uMIllEee4rMv2nPPiSg" association="_31s8EIllEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_31tjIYllEee4rMv2nPPiSg" name="system admin" type="_80iDAIlkEee4rMv2nPPiSg" association="_31s8EIllEee4rMv2nPPiSg"/>
+  </packagedElement>
+</uml:Model>

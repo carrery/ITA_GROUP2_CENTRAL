@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_n35_cIlhEee4rMv2nPPiSg" name="BITUIGA25AUG_UML_UNI">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_E3MuYIlkEee4rMv2nPPiSg" name="Student"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_2VM9MIlmEee4rMv2nPPiSg" name="Enrollment System">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_6PYTwIlmEee4rMv2nPPiSg" name="Enlist Class">
+      <include xmi:type="uml:Include" xmi:id="_B3RnUIlpEee4rMv2nPPiSg" addition="_JirCMIloEee4rMv2nPPiSg"/>
+      <include xmi:type="uml:Include" xmi:id="_F7Ok8IlpEee4rMv2nPPiSg" addition="_YW3rwIlnEee4rMv2nPPiSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_9B_lUIlmEee4rMv2nPPiSg" name="Create Class"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_-Xv3UIlmEee4rMv2nPPiSg" name="Print Student Schedule">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_STzrMIlpEee4rMv2nPPiSg" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_C8DI8IlnEee4rMv2nPPiSg" name="Check Class Availability"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_YW3rwIlnEee4rMv2nPPiSg" name="Manage Student Schedule"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_cIva4IlnEee4rMv2nPPiSg" name="Login as Student">
+      <include xmi:type="uml:Include" xmi:id="_-XHTQIloEee4rMv2nPPiSg" addition="_C8DI8IlnEee4rMv2nPPiSg"/>
+      <include xmi:type="uml:Include" xmi:id="_A4ecwIlpEee4rMv2nPPiSg" addition="_6PYTwIlmEee4rMv2nPPiSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_ppkioIlnEee4rMv2nPPiSg" name="Generate Student List"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_D48ZkIloEee4rMv2nPPiSg" name="Login as Professor">
+      <include xmi:type="uml:Include" xmi:id="_NjIxgIlpEee4rMv2nPPiSg" addition="_9B_lUIlmEee4rMv2nPPiSg"/>
+      <include xmi:type="uml:Include" xmi:id="_O7V6kIlpEee4rMv2nPPiSg" addition="_ppkioIlnEee4rMv2nPPiSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_JirCMIloEee4rMv2nPPiSg" name="Finalize Student SChedule">
+      <extend xmi:type="uml:Extend" xmi:id="_STzEIIlpEee4rMv2nPPiSg" extendedCase="_-Xv3UIlmEee4rMv2nPPiSg" extensionLocation="_STzrMIlpEee4rMv2nPPiSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_TGapUIloEee4rMv2nPPiSg" name="Login as Admin">
+      <include xmi:type="uml:Include" xmi:id="_PrPtgIlpEee4rMv2nPPiSg" addition="_ppkioIlnEee4rMv2nPPiSg"/>
+      <include xmi:type="uml:Include" xmi:id="_YydwsIlpEee4rMv2nPPiSg" addition="_-Xv3UIlmEee4rMv2nPPiSg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_2M1O4IlnEee4rMv2nPPiSg" name="Professor"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_8YRdcIlnEee4rMv2nPPiSg" name="Registrar"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bcgxkIloEee4rMv2nPPiSg" memberEnd="_bchYooloEee4rMv2nPPiSg _bchYo4loEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bchYoIloEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bchYoYloEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bchYooloEee4rMv2nPPiSg" name="login as student" type="_cIva4IlnEee4rMv2nPPiSg" association="_bcgxkIloEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bchYo4loEee4rMv2nPPiSg" name="student" type="_E3MuYIlkEee4rMv2nPPiSg" association="_bcgxkIloEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MtuMcIlpEee4rMv2nPPiSg" memberEnd="_MtuzgolpEee4rMv2nPPiSg _Mtuzg4lpEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MtuzgIlpEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MtuzgYlpEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_MtuzgolpEee4rMv2nPPiSg" name="login as professor" type="_D48ZkIloEee4rMv2nPPiSg" association="_MtuMcIlpEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Mtuzg4lpEee4rMv2nPPiSg" name="professor" type="_2M1O4IlnEee4rMv2nPPiSg" association="_MtuMcIlpEee4rMv2nPPiSg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_QQyDgIlpEee4rMv2nPPiSg" memberEnd="_QQyDg4lpEee4rMv2nPPiSg _QQyqkIlpEee4rMv2nPPiSg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QQyDgYlpEee4rMv2nPPiSg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQyDgolpEee4rMv2nPPiSg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_QQyDg4lpEee4rMv2nPPiSg" name="login as admin" type="_TGapUIloEee4rMv2nPPiSg" association="_QQyDgIlpEee4rMv2nPPiSg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_QQyqkIlpEee4rMv2nPPiSg" name="registrar" type="_8YRdcIlnEee4rMv2nPPiSg" association="_QQyDgIlpEee4rMv2nPPiSg"/>
+  </packagedElement>
+</uml:Model>
