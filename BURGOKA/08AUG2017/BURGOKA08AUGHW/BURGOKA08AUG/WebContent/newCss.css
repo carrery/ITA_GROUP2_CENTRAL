@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+h1
+{ 
+    text-align: center; 
+    background-color: #f0f8ff; 
+}
+
+p
+{
+	text-align: center; 
+    background-color: #f5f5dc; 
+}
+
+input 
+{
+	text-align: center; 
+}
