@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_HfxFYIlfEeeKk9bj0fHqHw" name="BANGIPR25AUG">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_HjKXoIlfEeeKk9bj0fHqHw" name="Interaction1"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_HkLEQIlfEeeKk9bj0fHqHw" name="Activity1"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_HkTnIIlfEeeKk9bj0fHqHw" name="Interaction2"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_Hkl7AIlfEeeKk9bj0fHqHw" name="Activity2"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_HlHfcIlfEeeKk9bj0fHqHw" name="StateMachine1">
+    <region xmi:type="uml:Region" xmi:id="_HlQCUIlfEeeKk9bj0fHqHw" name="Region1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_LyKusIlfEeeKk9bj0fHqHw" name="Customer"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_7CJ4sIlfEeeKk9bj0fHqHw" name="Bank"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_IorYwIlgEeeKk9bj0fHqHw" memberEnd="_IoyGcIlgEeeKk9bj0fHqHw _IozUkIlgEeeKk9bj0fHqHw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Iosm4IlgEeeKk9bj0fHqHw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IotN8IlgEeeKk9bj0fHqHw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_IoyGcIlgEeeKk9bj0fHqHw" name="login" type="_UtMI8IlfEeeKk9bj0fHqHw" association="_IorYwIlgEeeKk9bj0fHqHw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_IozUkIlgEeeKk9bj0fHqHw" name="customer" type="_LyKusIlfEeeKk9bj0fHqHw" association="_IorYwIlgEeeKk9bj0fHqHw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_TwYtAIlgEeeKk9bj0fHqHw" name="&lt;&lt;includes>>" client="_UtMI8IlfEeeKk9bj0fHqHw" supplier="_VuGMUIlfEeeKk9bj0fHqHw"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XRGasIlgEeeKk9bj0fHqHw" memberEnd="_XRHo0IlgEeeKk9bj0fHqHw _XRHo0YlgEeeKk9bj0fHqHw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XRHBwIlgEeeKk9bj0fHqHw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XRHBwYlgEeeKk9bj0fHqHw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_XRHo0IlgEeeKk9bj0fHqHw" name="bank" type="_7CJ4sIlfEeeKk9bj0fHqHw" association="_XRGasIlgEeeKk9bj0fHqHw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_XRHo0YlgEeeKk9bj0fHqHw" name="transaction" type="_VuGMUIlfEeeKk9bj0fHqHw" association="_XRGasIlgEeeKk9bj0fHqHw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_n2xMcIlgEeeKk9bj0fHqHw" name="ATM">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_UtMI8IlfEeeKk9bj0fHqHw" name="Login"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_VuGMUIlfEeeKk9bj0fHqHw" name="Transaction"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_xhezsIlfEeeKk9bj0fHqHw" name="Deposit"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_yKHhAIlfEeeKk9bj0fHqHw" name="Transfer Funds"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_veYTgIlfEeeKk9bj0fHqHw" name="Check Balance"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_wvGUgIlfEeeKk9bj0fHqHw" name="Withdraw"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_NzsdYIlmEeeKk9bj0fHqHw" name="invalidPin"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_8uDKEIlwEeeKk9bj0fHqHw" name="&lt;&lt;extends>>" client="_VuGMUIlfEeeKk9bj0fHqHw" supplier="_NzsdYIlmEeeKk9bj0fHqHw"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Q091AIlxEeeKk9bj0fHqHw" name="&lt;&lt;includes>>" client="_VuGMUIlfEeeKk9bj0fHqHw" supplier="_xhezsIlfEeeKk9bj0fHqHw"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_ScZs4IlxEeeKk9bj0fHqHw" name="&lt;&lt;includes>>" client="_VuGMUIlfEeeKk9bj0fHqHw" supplier="_yKHhAIlfEeeKk9bj0fHqHw"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_UKUAMIlxEeeKk9bj0fHqHw" name="&lt;&lt;includes>>" client="_VuGMUIlfEeeKk9bj0fHqHw" supplier="_veYTgIlfEeeKk9bj0fHqHw"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_VipFEIlxEeeKk9bj0fHqHw" name="&lt;&lt;includes>>" client="_VuGMUIlfEeeKk9bj0fHqHw" supplier="_wvGUgIlfEeeKk9bj0fHqHw"/>
+  </packagedElement>
+</uml:Model>
