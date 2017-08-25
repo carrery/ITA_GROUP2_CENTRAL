@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_5TwvIIldEeeT4YT2KICwPA" name="BURGOKA25AUG">
+  <packagedElement xmi:type="uml:Package" xmi:id="_mPapkIlfEeeT4YT2KICwPA" name="ATM">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_nmxeEIlfEeeT4YT2KICwPA" name="Balance Inquiry">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_C8DSgYlzEeeT4YT2KICwPA" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_pUjOgIlfEeeT4YT2KICwPA" name="Deposit">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_BvDT4YlzEeeT4YT2KICwPA" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_p7ZMEIlfEeeT4YT2KICwPA" name="Withdraw">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_-7zJIIlyEeeT4YT2KICwPA" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_8ox9oIlyEeeT4YT2KICwPA" name="Receipt">
+      <extend xmi:type="uml:Extend" xmi:id="_-7yiEIlyEeeT4YT2KICwPA" extendedCase="_p7ZMEIlfEeeT4YT2KICwPA" extensionLocation="_-7zJIIlyEeeT4YT2KICwPA"/>
+      <extend xmi:type="uml:Extend" xmi:id="_BvDT4IlzEeeT4YT2KICwPA" extendedCase="_pUjOgIlfEeeT4YT2KICwPA" extensionLocation="_BvDT4YlzEeeT4YT2KICwPA"/>
+      <extend xmi:type="uml:Extend" xmi:id="_C8DSgIlzEeeT4YT2KICwPA" extendedCase="_nmxeEIlfEeeT4YT2KICwPA" extensionLocation="_C8DSgYlzEeeT4YT2KICwPA"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_ta28kIlfEeeT4YT2KICwPA" name="User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_w7lRUIlfEeeT4YT2KICwPA" memberEnd="_w8J5EIlfEeeT4YT2KICwPA _w8WGUIlfEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_w7rX8IlfEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w7rX8YlfEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_w8J5EIlfEeeT4YT2KICwPA" name="usecase1" type="_nmxeEIlfEeeT4YT2KICwPA" association="_w7lRUIlfEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_w8WGUIlfEeeT4YT2KICwPA" name="actor1" type="_ta28kIlfEeeT4YT2KICwPA" association="_w7lRUIlfEeeT4YT2KICwPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0e8qYIlfEeeT4YT2KICwPA" memberEnd="_0fCxAolfEeeT4YT2KICwPA _0fCxA4lfEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0fCxAIlfEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0fCxAYlfEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0fCxAolfEeeT4YT2KICwPA" name="usecase2" type="_pUjOgIlfEeeT4YT2KICwPA" association="_0e8qYIlfEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0fCxA4lfEeeT4YT2KICwPA" name="actor1" type="_ta28kIlfEeeT4YT2KICwPA" association="_0e8qYIlfEeeT4YT2KICwPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1L-IcIlfEeeT4YT2KICwPA" memberEnd="_1L-Ic4lfEeeT4YT2KICwPA _1L-IdIlfEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1L-IcYlfEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1L-IcolfEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1L-Ic4lfEeeT4YT2KICwPA" name="usecase3" type="_p7ZMEIlfEeeT4YT2KICwPA" association="_1L-IcIlfEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1L-IdIlfEeeT4YT2KICwPA" name="actor1" type="_ta28kIlfEeeT4YT2KICwPA" association="_1L-IcIlfEeeT4YT2KICwPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_8rxdsIlmEeeT4YT2KICwPA" name="SeverAdmin"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_R-DIgIlnEeeT4YT2KICwPA" memberEnd="_R-DIg4lnEeeT4YT2KICwPA _R-DIhIlnEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_R-DIgYlnEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R-DIgolnEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_R-DIg4lnEeeT4YT2KICwPA" name="balance inquiry" type="_nmxeEIlfEeeT4YT2KICwPA" association="_R-DIgIlnEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_R-DIhIlnEeeT4YT2KICwPA" name="severadmin" type="_8rxdsIlmEeeT4YT2KICwPA" association="_R-DIgIlnEeeT4YT2KICwPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_WUTXEIlnEeeT4YT2KICwPA" memberEnd="_WUTXE4lnEeeT4YT2KICwPA _WUTXFIlnEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WUTXEYlnEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WUTXEolnEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_WUTXE4lnEeeT4YT2KICwPA" name="deposit" type="_pUjOgIlfEeeT4YT2KICwPA" association="_WUTXEIlnEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_WUTXFIlnEeeT4YT2KICwPA" name="severadmin" type="_8rxdsIlmEeeT4YT2KICwPA" association="_WUTXEIlnEeeT4YT2KICwPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_alwlMIlnEeeT4YT2KICwPA" memberEnd="_alwlM4lnEeeT4YT2KICwPA _alwlNIlnEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_alwlMYlnEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_alwlMolnEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_alwlM4lnEeeT4YT2KICwPA" name="withdraw" type="_p7ZMEIlfEeeT4YT2KICwPA" association="_alwlMIlnEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_alwlNIlnEeeT4YT2KICwPA" name="severadmin" type="_8rxdsIlmEeeT4YT2KICwPA" association="_alwlMIlnEeeT4YT2KICwPA"/>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_caBxcIliEeeT4YT2KICwPA" name="BURGOKA25AUG_UNIV">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_rh-A8IliEeeT4YT2KICwPA" name="Student"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_xItnAIliEeeT4YT2KICwPA" name="Student">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_7AKNQIliEeeT4YT2KICwPA" name="LogIn">
+      <include xmi:type="uml:Include" xmi:id="_ffLvEIljEeeT4YT2KICwPA" addition="_XP5ZcIljEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_g-wrcIljEeeT4YT2KICwPA" addition="_bkW4QIljEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_mQ56gIljEeeT4YT2KICwPA" addition="_j5kPsIljEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_cR3-MIlmEeeT4YT2KICwPA" addition="_YnKnAIlmEeeT4YT2KICwPA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_XP5ZcIljEeeT4YT2KICwPA" name="Curriculum Subjects">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_14lRoIlxEeeT4YT2KICwPA" name="ExtensionPoint1"/>
+      <include xmi:type="uml:Include" xmi:id="_Bw_V8IllEeeT4YT2KICwPA" addition="_NTMDQIlkEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_C3TdwIllEeeT4YT2KICwPA" addition="_Yr8rQIlkEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_GbvN0IllEeeT4YT2KICwPA" addition="_Q--_kIlkEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_HyT_MIllEeeT4YT2KICwPA" addition="_PsrDIIlkEeeT4YT2KICwPA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_bkW4QIljEeeT4YT2KICwPA" name="Grades">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_2-ETAIlxEeeT4YT2KICwPA" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_j5kPsIljEeeT4YT2KICwPA" name="Profile"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_YnKnAIlmEeeT4YT2KICwPA" name="LogOut"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_zNgzgIlmEeeT4YT2KICwPA" name="PrintVoucher">
+      <extend xmi:type="uml:Extend" xmi:id="_14kqkIlxEeeT4YT2KICwPA" extendedCase="_XP5ZcIljEeeT4YT2KICwPA" extensionLocation="_14lRoIlxEeeT4YT2KICwPA"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_1trDIIlmEeeT4YT2KICwPA" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_g_CbcIlnEeeT4YT2KICwPA" name="Print Grades">
+      <extend xmi:type="uml:Extend" xmi:id="_2-Dr8IlxEeeT4YT2KICwPA" extendedCase="_bkW4QIljEeeT4YT2KICwPA" extensionLocation="_2-ETAIlxEeeT4YT2KICwPA"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_jgBKcYlnEeeT4YT2KICwPA" name="ExtensionPoint1"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VbuGEIljEeeT4YT2KICwPA" memberEnd="_VbuGE4ljEeeT4YT2KICwPA _VbuGFIljEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VbuGEYljEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VbuGEoljEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VbuGE4ljEeeT4YT2KICwPA" name="login" type="_7AKNQIliEeeT4YT2KICwPA" association="_VbuGEIljEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VbuGFIljEeeT4YT2KICwPA" name="student" type="_rh-A8IliEeeT4YT2KICwPA" association="_VbuGEIljEeeT4YT2KICwPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_off5AIljEeeT4YT2KICwPA" name="Administrator"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_qbaMEIljEeeT4YT2KICwPA" name="University">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_xC6rkIljEeeT4YT2KICwPA" name="System Maintenance">
+      <include xmi:type="uml:Include" xmi:id="_k6WsYIllEeeT4YT2KICwPA" addition="_NTMDQIlkEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_r0Kc0IllEeeT4YT2KICwPA" addition="_Yr8rQIlkEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_13HIcIllEeeT4YT2KICwPA" addition="_Q--_kIlkEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_4-izcIllEeeT4YT2KICwPA" addition="_PsrDIIlkEeeT4YT2KICwPA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_NTMDQIlkEeeT4YT2KICwPA" name="1st year">
+      <include xmi:type="uml:Include" xmi:id="_TkohQIlmEeeT4YT2KICwPA" addition="_6zzE4IllEeeT4YT2KICwPA"/>
+      <include xmi:type="uml:Include" xmi:id="_gQLm0IlmEeeT4YT2KICwPA" addition="_8IHzgIllEeeT4YT2KICwPA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_PsrDIIlkEeeT4YT2KICwPA" name="4th year"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Q--_kIlkEeeT4YT2KICwPA" name="3rd year"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Yr8rQIlkEeeT4YT2KICwPA" name="2nd year"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_6zzE4IllEeeT4YT2KICwPA" name="EnrollSubjects"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_8IHzgIllEeeT4YT2KICwPA" name="DropSubjects"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_I5bNsIlkEeeT4YT2KICwPA" memberEnd="_I5bNs4lkEeeT4YT2KICwPA _I5bNtIlkEeeT4YT2KICwPA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I5bNsYlkEeeT4YT2KICwPA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I5bNsolkEeeT4YT2KICwPA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_I5bNs4lkEeeT4YT2KICwPA" name="system maintenance" type="_xC6rkIljEeeT4YT2KICwPA" association="_I5bNsIlkEeeT4YT2KICwPA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_I5bNtIlkEeeT4YT2KICwPA" name="administrator" type="_off5AIljEeeT4YT2KICwPA" association="_I5bNsIlkEeeT4YT2KICwPA"/>
+  </packagedElement>
+</uml:Model>
