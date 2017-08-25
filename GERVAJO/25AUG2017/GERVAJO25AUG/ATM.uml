@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_9XhNkIlfEeezN8972nSjFA" name="TestUML">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_95iVgIlfEeezN8972nSjFA" name="Customer"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ng0xoIlgEeezN8972nSjFA" name="ATM Actions">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_F6PckIlgEeezN8972nSjFA" name="Withdraw"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Mjb-IIlgEeezN8972nSjFA" name="Balance Inquiry"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_WVYZUIlgEeezN8972nSjFA" name="Deposit"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_XtMg0IlgEeezN8972nSjFA" name="Pay Bills"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Z4-b4IlgEeezN8972nSjFA" name="Transfer Funds"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_bI7n4IlgEeezN8972nSjFA" name="Change PIN"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_aC7ZYIlxEeezN8972nSjFA" name="Validate Card and PIN"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_qRq44IlxEeezN8972nSjFA" name="Print Receipt"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_exrLAIlyEeezN8972nSjFA" name="Update user's bank information"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cpLp8IlxEeezN8972nSjFA" memberEnd="_cpM4EIlxEeezN8972nSjFA _cpM4EYlxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cpMRAIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cpMRAYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_cpM4EIlxEeezN8972nSjFA" name="validate card" type="_aC7ZYIlxEeezN8972nSjFA" association="_cpLp8IlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_cpM4EYlxEeezN8972nSjFA" name="customer" type="_95iVgIlfEeezN8972nSjFA" association="_cpLp8IlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_dn7KIIlxEeezN8972nSjFA" memberEnd="_dn7xMolxEeezN8972nSjFA _dn8YQIlxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dn7xMIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dn7xMYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dn7xMolxEeezN8972nSjFA" name="withdraw" type="_F6PckIlgEeezN8972nSjFA" association="_dn7KIIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dn8YQIlxEeezN8972nSjFA" name="validate card" type="_aC7ZYIlxEeezN8972nSjFA" association="_dn7KIIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ePSFEIlxEeezN8972nSjFA" memberEnd="_ePSsIYlxEeezN8972nSjFA _ePSsIolxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ePSFEYlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ePSsIIlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ePSsIYlxEeezN8972nSjFA" name="balance inquiry" type="_Mjb-IIlgEeezN8972nSjFA" association="_ePSFEIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ePSsIolxEeezN8972nSjFA" name="validate card" type="_aC7ZYIlxEeezN8972nSjFA" association="_ePSFEIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_epacUIlxEeezN8972nSjFA" memberEnd="_epbDYolxEeezN8972nSjFA _epbqcIlxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_epbDYIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_epbDYYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_epbDYolxEeezN8972nSjFA" type="_WVYZUIlgEeezN8972nSjFA" association="_epacUIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_epbqcIlxEeezN8972nSjFA" name="validate card" type="_aC7ZYIlxEeezN8972nSjFA" association="_epacUIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fxmzcIlxEeezN8972nSjFA" memberEnd="_fxnagolxEeezN8972nSjFA _fxoBkIlxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fxnagIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fxnagYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fxnagolxEeezN8972nSjFA" name="pay bills" type="_XtMg0IlgEeezN8972nSjFA" association="_fxmzcIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fxoBkIlxEeezN8972nSjFA" name="validate card" type="_aC7ZYIlxEeezN8972nSjFA" association="_fxmzcIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_gVKzgIlxEeezN8972nSjFA" memberEnd="_gVLakYlxEeezN8972nSjFA _gVLakolxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gVKzgYlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gVLakIlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gVLakYlxEeezN8972nSjFA" name="transfer funds" type="_Z4-b4IlgEeezN8972nSjFA" association="_gVKzgIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gVLakolxEeezN8972nSjFA" name="validate card" type="_aC7ZYIlxEeezN8972nSjFA" association="_gVKzgIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hKvJkIlxEeezN8972nSjFA" memberEnd="_hKvwoolxEeezN8972nSjFA _hKvwo4lxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hKvwoIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hKvwoYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_hKvwoolxEeezN8972nSjFA" name="change pin" type="_bI7n4IlgEeezN8972nSjFA" association="_hKvJkIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_hKvwo4lxEeezN8972nSjFA" name="validate card" type="_aC7ZYIlxEeezN8972nSjFA" association="_hKvJkIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_r-XEMIlxEeezN8972nSjFA" memberEnd="_r-XrQolxEeezN8972nSjFA _r-XrQ4lxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_r-XrQIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r-XrQYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_r-XrQolxEeezN8972nSjFA" name="print receipt" type="_qRq44IlxEeezN8972nSjFA" association="_r-XEMIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_r-XrQ4lxEeezN8972nSjFA" name="withdraw" type="_F6PckIlgEeezN8972nSjFA" association="_r-XEMIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_s1mOMIlxEeezN8972nSjFA" memberEnd="_s1m1QolxEeezN8972nSjFA _s1m1Q4lxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_s1m1QIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_s1m1QYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_s1m1QolxEeezN8972nSjFA" name="print receipt" type="_qRq44IlxEeezN8972nSjFA" association="_s1mOMIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_s1m1Q4lxEeezN8972nSjFA" name="balance inquiry" type="_Mjb-IIlgEeezN8972nSjFA" association="_s1mOMIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tP_rMIlxEeezN8972nSjFA" memberEnd="_tP_rM4lxEeezN8972nSjFA _tQASQIlxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tP_rMYlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tP_rMolxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_tP_rM4lxEeezN8972nSjFA" type="_qRq44IlxEeezN8972nSjFA" association="_tP_rMIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_tQASQIlxEeezN8972nSjFA" name="deposit" type="_WVYZUIlgEeezN8972nSjFA" association="_tP_rMIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ttqeoIlxEeezN8972nSjFA" memberEnd="_ttrFsolxEeezN8972nSjFA _ttrFs4lxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ttrFsIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ttrFsYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ttrFsolxEeezN8972nSjFA" type="_qRq44IlxEeezN8972nSjFA" association="_ttqeoIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ttrFs4lxEeezN8972nSjFA" name="pay bills" type="_XtMg0IlgEeezN8972nSjFA" association="_ttqeoIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_uLSOwIlxEeezN8972nSjFA" memberEnd="_uLS10YlxEeezN8972nSjFA _uLS10olxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uLSOwYlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uLS10IlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_uLS10YlxEeezN8972nSjFA" type="_qRq44IlxEeezN8972nSjFA" association="_uLSOwIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_uLS10olxEeezN8972nSjFA" name="transfer funds" type="_Z4-b4IlgEeezN8972nSjFA" association="_uLSOwIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vQgKYIlxEeezN8972nSjFA" memberEnd="_vQhYgIlxEeezN8972nSjFA _vQhYgYlxEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vQgxcIlxEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vQgxcYlxEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vQhYgIlxEeezN8972nSjFA" name="print receipt" type="_qRq44IlxEeezN8972nSjFA" association="_vQgKYIlxEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vQhYgYlxEeezN8972nSjFA" name="change pin" type="_bI7n4IlgEeezN8972nSjFA" association="_vQgKYIlxEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_PQ4WoIlyEeezN8972nSjFA" name="Bank"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_mqQ34IlyEeezN8972nSjFA" memberEnd="_mqRe8YlyEeezN8972nSjFA _mqRe8olyEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mqQ34YlyEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mqRe8IlyEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mqRe8YlyEeezN8972nSjFA" name="update user's bank information" type="_exrLAIlyEeezN8972nSjFA" association="_mqQ34IlyEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mqRe8olyEeezN8972nSjFA" name="print receipt" type="_qRq44IlxEeezN8972nSjFA" association="_mqQ34IlyEeezN8972nSjFA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_p-zx0IlyEeezN8972nSjFA" memberEnd="_p-0_8YlyEeezN8972nSjFA _p-0_8olyEeezN8972nSjFA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_p-0Y4IlyEeezN8972nSjFA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_p-0_8IlyEeezN8972nSjFA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_p-0_8YlyEeezN8972nSjFA" name="bank" type="_PQ4WoIlyEeezN8972nSjFA" association="_p-zx0IlyEeezN8972nSjFA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_p-0_8olyEeezN8972nSjFA" name="update user's bank information" type="_exrLAIlyEeezN8972nSjFA" association="_p-zx0IlyEeezN8972nSjFA"/>
+  </packagedElement>
+</uml:Model>
