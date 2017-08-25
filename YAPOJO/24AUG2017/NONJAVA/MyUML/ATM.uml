@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ohG_YIlfEee6UpxlIaDLcQ" name="MyUML">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_BroHEIlgEee6UpxlIaDLcQ" name="Customer"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_U5pbIIlgEee6UpxlIaDLcQ" name="ATM">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_R_wc4IlgEee6UpxlIaDLcQ" name="Deposit"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_PDankIlgEee6UpxlIaDLcQ" name="Withdraw"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_ZAjmIIlgEee6UpxlIaDLcQ" name="Check Balance"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_ecMIYIlgEee6UpxlIaDLcQ" name="Update PIN or Mobile Number"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_9CRg4IlgEee6UpxlIaDLcQ" client="_U5pbIIlgEee6UpxlIaDLcQ" supplier="_p920wIlgEee6UpxlIaDLcQ"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_tRZZYIlxEee6UpxlIaDLcQ" name="Refill Money"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LjQ1YIlyEee6UpxlIaDLcQ" name="Logging"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_p920wIlgEee6UpxlIaDLcQ" name="Bank">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_pVERQIlyEee6UpxlIaDLcQ">
+      <body>System</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vthtUIlgEee6UpxlIaDLcQ" memberEnd="_vtiUYYlgEee6UpxlIaDLcQ _vtiUYolgEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vthtUYlgEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vtiUYIlgEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vtiUYYlgEee6UpxlIaDLcQ" name="check balance" type="_ZAjmIIlgEee6UpxlIaDLcQ" association="_vthtUIlgEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vtiUYolgEee6UpxlIaDLcQ" name="customer" type="_BroHEIlgEee6UpxlIaDLcQ" association="_vthtUIlgEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_2Z--QIlgEee6UpxlIaDLcQ" memberEnd="_2Z_lUYlgEee6UpxlIaDLcQ _2Z_lUolgEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2Z--QYlgEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2Z_lUIlgEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_2Z_lUYlgEee6UpxlIaDLcQ" name="customer" type="_BroHEIlgEee6UpxlIaDLcQ" association="_2Z--QIlgEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_2Z_lUolgEee6UpxlIaDLcQ" name="update details" type="_ecMIYIlgEee6UpxlIaDLcQ" association="_2Z--QIlgEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_3iEAoIlgEee6UpxlIaDLcQ" memberEnd="_3iEnsolgEee6UpxlIaDLcQ _3iEns4lgEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3iEnsIlgEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3iEnsYlgEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3iEnsolgEee6UpxlIaDLcQ" name="customer" type="_BroHEIlgEee6UpxlIaDLcQ" association="_3iEAoIlgEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3iEns4lgEee6UpxlIaDLcQ" name="withdraw" type="_PDankIlgEee6UpxlIaDLcQ" association="_3iEAoIlgEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5QtTwIlgEee6UpxlIaDLcQ" memberEnd="_5Qt60olgEee6UpxlIaDLcQ _5Quh4IlgEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Qt60IlgEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5Qt60YlgEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5Qt60olgEee6UpxlIaDLcQ" name="customer" type="_BroHEIlgEee6UpxlIaDLcQ" association="_5QtTwIlgEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5Quh4IlgEee6UpxlIaDLcQ" name="deposit" type="_R_wc4IlgEee6UpxlIaDLcQ" association="_5QtTwIlgEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_okUmQIlxEee6UpxlIaDLcQ" name="Banker"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="__pXPMIlxEee6UpxlIaDLcQ" memberEnd="__pX2QolxEee6UpxlIaDLcQ __pYdUIlxEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__pX2QIlxEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__pX2QYlxEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__pX2QolxEee6UpxlIaDLcQ" name="refill money" type="_tRZZYIlxEee6UpxlIaDLcQ" association="__pXPMIlxEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__pYdUIlxEee6UpxlIaDLcQ" name="banker" type="_okUmQIlxEee6UpxlIaDLcQ" association="__pXPMIlxEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_N1_tAIlyEee6UpxlIaDLcQ" memberEnd="_N2A7IYlyEee6UpxlIaDLcQ _N2A7IolyEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_N2AUEIlyEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N2A7IIlyEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_N2A7IYlyEee6UpxlIaDLcQ" name="usecase1" type="_LjQ1YIlyEee6UpxlIaDLcQ" association="_N1_tAIlyEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_N2A7IolyEee6UpxlIaDLcQ" name="update details" type="_ecMIYIlgEee6UpxlIaDLcQ" association="_N1_tAIlyEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VWaxgIlyEee6UpxlIaDLcQ" memberEnd="_VWb_oYlyEee6UpxlIaDLcQ _VWb_oolyEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VWbYkIlyEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VWb_oIlyEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VWb_oYlyEee6UpxlIaDLcQ" name="usecase1" type="_LjQ1YIlyEee6UpxlIaDLcQ" association="_VWaxgIlyEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VWb_oolyEee6UpxlIaDLcQ" name="withdraw" type="_PDankIlgEee6UpxlIaDLcQ" association="_VWaxgIlyEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_WJsokIlyEee6UpxlIaDLcQ" memberEnd="_WJtPoolyEee6UpxlIaDLcQ _WJtPo4lyEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WJtPoIlyEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WJtPoYlyEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_WJtPoolyEee6UpxlIaDLcQ" name="usecase1" type="_LjQ1YIlyEee6UpxlIaDLcQ" association="_WJsokIlyEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_WJtPo4lyEee6UpxlIaDLcQ" name="deposit" type="_R_wc4IlgEee6UpxlIaDLcQ" association="_WJsokIlyEee6UpxlIaDLcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_WvbL0IlyEee6UpxlIaDLcQ" memberEnd="_Wvby4IlyEee6UpxlIaDLcQ _Wvby4YlyEee6UpxlIaDLcQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WvbL0YlyEee6UpxlIaDLcQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WvbL0olyEee6UpxlIaDLcQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Wvby4IlyEee6UpxlIaDLcQ" name="usecase1" type="_LjQ1YIlyEee6UpxlIaDLcQ" association="_WvbL0IlyEee6UpxlIaDLcQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Wvby4YlyEee6UpxlIaDLcQ" name="check balance" type="_ZAjmIIlgEee6UpxlIaDLcQ" association="_WvbL0IlyEee6UpxlIaDLcQ"/>
+  </packagedElement>
+</uml:Model>
