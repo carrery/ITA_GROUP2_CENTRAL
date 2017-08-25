@@ -1,0 +1,188 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyWindow",
+        "height": 193,
+        "itemId": "winForm",
+        "title": "Form",
+        "width": 698
+    },
+    "designerId": "f4abc7c6-3b50-482a-9264-ea251a018017",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 58
+            },
+            "designerId": "0172bbfe-80dc-4b7d-ae2d-ff2b8545fda3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "cbPortId",
+                        "fieldLabel": "Name",
+                        "forceSelection": true,
+                        "itemId": "cbPortId",
+                        "width": 674
+                    },
+                    "designerId": "092f1488-692c-4966-9045-1df91f39c2d1",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processCbPortId",
+                                "implHandler": [
+                                    "//this.getCbPortId.setValue('111');\r",
+                                    "\r",
+                                    "return config;\r",
+                                    "\r",
+                                    "//var cust_type_store = new Ext.data.SimpleStore({\r",
+                                    "//fields: ['id', 'cust_type'],\r",
+                                    "//data: [['1', 'Customer'], ['2', 'Friend'], ['3', 'Family']]\r",
+                                    "//});\r",
+                                    "//Ext.getCmp('combo').setValue('2');\r",
+                                    "\r",
+                                    "//var combo = Ext.create('Ext.form.field.ComboBox', {\r",
+                                    "    //store: ['Red', 'Green', 'Blue']\r",
+                                    "//});\r",
+                                    "\r",
+                                    "Ext.create('Ext.form.field.CbPortId', {\r",
+                                    "    displayField: 'utensil',\r",
+                                    "    queryMode: 'local',\r",
+                                    "\r",
+                                    "    store: {\r",
+                                    "        fields: ['utensil'],\r",
+                                    "\r",
+                                    "        data: [\r",
+                                    "            {utensil: 'Knife'},\r",
+                                    "            {utensil: 'Fork'},\r",
+                                    "            {utensil: 'Spoon'}\r",
+                                    "        ]\r",
+                                    "    }\r",
+                                    "});\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "3b153271-a194-4142-afc5-91a5199b09d6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 35
+            },
+            "designerId": "0b948d31-8a2d-4a3a-9d80-7c56cad59491",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnSearch",
+                        "itemId": "btnSearch",
+                        "text": "Search"
+                    },
+                    "designerId": "407eca47-d9a2-4269-b88b-a87f2433ee51",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "Ext.Msg.alert(\"Hello\",\"Name\");"
+                                ]
+                            },
+                            "designerId": "6ffdfa06-a632-4d51-b903-fdbe5d364bf8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnReset",
+                        "itemId": "btnReset",
+                        "text": "Reset"
+                    },
+                    "designerId": "61a55917-c08d-416b-9b07-dbf2f5b6ab03"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 31
+            },
+            "designerId": "4dc703ef-451b-4a8e-b79c-4ac55df5a7ff",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "cbType",
+                        "fieldLabel": "Type:",
+                        "itemId": "cbType",
+                        "width": 339
+                    },
+                    "designerId": "a206fa2f-1da3-4421-b37a-5b2898441f01"
+                }
+            ]
+        }
+    ]
+}

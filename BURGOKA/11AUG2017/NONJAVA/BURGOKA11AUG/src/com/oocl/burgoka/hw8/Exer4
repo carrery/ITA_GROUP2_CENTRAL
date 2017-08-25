@@ -1,0 +1,117 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Exer4"
+    },
+    "designerId": "9cf5858e-a519-4313-b0ff-c0f5cc23c5f5",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#cbPortId",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onCbPortIdChange",
+                "implHandler": [
+                    ""
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "designerId": "3c0beda6-c03c-4601-ad80-151c7a9d0171"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "cbPortId",
+                "selector": "#cbPortId"
+            },
+            "designerId": "7e2c716e-3f82-40fe-8711-01a52056bae9"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "txtFilter",
+                "selector": "#txtFilter"
+            },
+            "designerId": "36774247-e81c-4914-9281-d380bf3f52ae"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "btnSearch",
+                "selector": "#btnSearch"
+            },
+            "designerId": "7be03d1f-47fd-4053-8155-f61d5d22d766"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "btnReset",
+                "selector": "#btnReset"
+            },
+            "designerId": "8d45fb70-b9c4-4edd-9ff6-05dbfc6b28cb"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "cbType",
+                "selector": "#cbType"
+            },
+            "designerId": "51ce1958-7acd-4ec0-81d2-432ff77bfd70"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#cbType",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onCbTypeChange",
+                "implHandler": [
+                    ""
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "designerId": "34c73292-0de8-484b-8d31-e2e7302b8305"
+        }
+    ]
+}
