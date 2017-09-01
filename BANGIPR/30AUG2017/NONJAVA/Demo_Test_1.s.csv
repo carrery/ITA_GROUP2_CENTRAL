@@ -1,0 +1,12 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"_resource","""EEC_Demo_1.xlsx"""
+,"loadSahi","""EEC_Demo_1.sah"""
+,"$data1=_readExcelFile","""EEC_Demo_1.xlsx""","_suiteInfo()[""runTimeEnv1""]"
+,"$data2=_readExcelFile","""EEC_Demo_1.xlsx""","_suiteInfo()[""runTimeEnv2""]"
+
+,"_log","_suiteInfo()[""runTimeEnv1"",""runTimeEnv2""]"
+"EECEvents","[Documentation]","My testcase description. Modify as needed"
+"//","myFunction","my argument","my argument 2"
+
+,"goFindEvents"
+,"startSearch","$data1"

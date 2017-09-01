@@ -1,0 +1,106 @@
+function login_EEC($authUser, $authPassword){
+	if(_exists(_textbox("authUser"))){
+				_setValue(_textbox("authUser"), $authUser);
+				_setValue(_password("authPassword"), $authPassword);
+				_click(_submit("Authenticate"));
+			};  
+}
+
+function goFindEvents(){
+	_mouseOver(_link("EEC"))
+	//_mouseOver(_span("menuId178-btnIconEl"));
+	_click(_link("Find Events"));
+	_selectWindow("100.330.001.004");
+}
+
+function startSearch($data){
+
+	var arr = $data.filter("searchcriterials");
+	for(var i = 0; i+1 <arr.length; i++){
+	var	$facilityCri = arr[i+1]["facilityCri"];
+	var	$Equipment_Type = arr[i+1]["Equipment_Type"];
+	var	$eqpNumCri = arr[i+1]["eqpNumCri"];
+	var	$Event_Type = arr[i+1]["Event_Type"];
+	var	$Laden_F_Empty_E = arr[i+1]["Laden_F_Empty_E"];
+	var	$Document_Type = arr[i+1]["Document_Type"];
+	var	$docRefCri = arr[i+1]["docRefCri"];
+	var	$checkptStatusAndCheckpointCri = arr[i+1]["checkptStatusAndCheckpointCri"];
+	var	$createByCri = arr[i+1]["createByCri"];
+	var $eventFrom = arr[i+1]["event_date_from"];
+	var $eventTo = arr[i+1]["event_date_to"];
+
+
+		searchEvent($facilityCri, $Equipment_Type, $eqpNumCri, $Event_Type, $Laden_F_Empty_E, $Document_Type, $docRefCri, $checkptStatusAndCheckpointCri, $createByCri, $eventFrom, $eventTo);
+	}
+ 
+}
+
+function searchEvent($facilityCri, $Equipment_Type, $eqpNumCri, $Event_Type, $Laden_F_Empty_E, $Document_Type, $docRefCri, $checkptStatusAndCheckpointCri, $createByCri, $eventFrom, $eventTo){
+
+	if($facilityCri != null){
+			_setValue(_textbox("facilityCri"), $facilityCri);
+			_click(_div($facilityCri));
+		//_wait(30000, _isVisible(_textbox("facilityCri")));
+	}
+
+	if($Equipment_Type != null){
+		_setValue(_textbox("Equipment Type:"), $Equipment_Type);
+	    _click(_div($Equipment_Type));
+	}
+
+	if($eqpNumCri !=null){
+		_setValue(_textbox("eqpNumCri"), $eqpNumCri);
+	}
+
+	if($Event_Type !=null){
+		_setValue(_textbox("Event Type:"), $Event_Type);
+	    _click(_div($Event_Type));
+	}
+
+	if($Laden_F_Empty_E != null){
+	_setValue(_textbox("Laden(F)/Empty(E):"), $Laden_F_Empty_E);
+	_click(_div($Laden_F_Empty_E));
+	}
+
+	if($Document_Type != null){
+    _setValue(_textbox("Document Type:"), $Document_Type);
+	_click(_div($Document_Type));
+	}
+
+	if($docRefCri !=null){
+		_setValue(_textbox("docRefCri"), $docRefCri);
+	}
+
+	if($checkptStatusAndCheckpointCri != null){
+	_setValue(_textbox("checkptStatusAndCheckpointCri", _in(_list(2))), $checkptStatusAndCheckpointCri);
+	_click(_div("Accepted/SHP"));
+	}
+
+	if($createByCri !=null){
+		_setValue(_textbox("createByCri"), $createByCri);
+	}
+
+	if($eventFrom !=null){
+		_setValue(_textbox("fromEventDateCri"), $eventFrom);
+	}
+
+		if($eventTo !=null){
+		_setValue(_textbox("toEventDateCri"), $eventTo);
+	}
+
+
+    _click(_cell("Search"));
+
+	openEventDetails();
+
+}
+
+function openEventDetails(){
+	_click(_link("O"));
+	_selectWindow("audittrailview101002944218422017-08-30T08:24:46.512Z");
+	_selectWindow("100.330.001.004");
+	_focusWindow("100.330.001.004"); 
+	_takeScreenShot();
+   // _wait("8000");
+	  _click(_cell("Reset"));
+}
