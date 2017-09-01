@@ -1,0 +1,57 @@
+function login($authUser, $authPassword){
+	if(_exists(_textbox("authUser"))){
+			_setValue(_textbox("authUser"), $authUser);
+			_setValue(_password("authPassword"), $authPassword);
+			_click(_submit("Authenticate"));
+		}
+}
+
+function gotoPage(){
+		_mouseOver(_span("Shipment"));
+		_mouseOver(_span("Find Shipments"));
+		_click(_link("Find Shipments"));
+		_selectWindow("Find Shipments");
+}
+
+function searchBooking($bookingNumbers, $billLading, $fromCity, $toCity, $bkgParty, $status){
+	_setValue(_textbox("bookingNumbers"), $bookingNumbers);
+	_setValue(_textbox("blNumbers"), $billLading);
+	
+	_setValue(_textbox("bookingParty"), $bkgParty);
+	var $bkg = _collect("_div", $bkgParty, _in(_div("x-form-el-com.oocl.ir4.shp.find.anyParty")))
+	for (var $i=0; $i<$bkg.length;$i++) {
+		if($visibility = _style($bkg[$i], "visibility")){
+			_click(_div($bkg[$i]))
+			_log("Something " + $bkg[$i])
+		}
+	}
+	
+	_setValue(_textbox("fromCity"), $fromCity);
+	var $fCity = _collect("_div", $fromCity, _in(_div("x-form-el-ext-comp-1039")))
+	for (var $i=0; $i<$fCity.length;$i++) {
+		if($visibility = _style($fCity[$i], "visibility")){
+			_click(_div($fCity[$i]))
+		}
+	}
+	
+	_setValue(_textbox("toCity"), $toCity);
+	var $tCity = _collect("_div", $toCity, _in(_div("x-form-el-ext-comp-1040")))
+	for (var $i=0; $i<$tCity.length;$i++) {
+		if($visibility = _style($tCity[$i], "visibility")){
+			_click(_div($tCity[$i]))
+		}
+	}
+	
+	_setValue(_textbox("bookingStatus"), $status);
+	var $stat = _collect("_div", $status, _in(_div("x-form-el-ext-comp-1053")))
+	for (var $i=0; $i<$stat.length;$i++) {
+		if($visibility = _style($stat[$i], "visibility")){
+			_click(_div($stat[$i]))
+		}
+	}
+	
+	_click(_button("Search"));
+	_wait("10000");
+}
+
+/* --Functions Above-- */
