@@ -1,0 +1,59 @@
+function login($authUser, $authPassword){
+	if(_exists(_textbox("authUser"))) {
+	_setValue(_textbox("authUser"), $authUser);
+	_setValue(_password("authPassword"), $authPassword);
+	_click(_submit("Authenticate"));
+	}
+}
+
+function findShipment(){
+	//_click(_span("menuId135-btnIconEl"));
+	_click(_span("Shipment"));
+	_click(_span("Find Shipments"));
+	_selectWindow("100.200.001.001"); 
+}
+
+function setBkgReg($bookingRegion,$bookingRegionFull){
+	_setValue(_textbox("bookingRegions"), $bookingRegion);
+	_click(_byXPath("//div[contains(@style,'visible')]//div[contains(text(),'"+$bookingRegionFull+"')]"));
+}
+
+function setToCity($toCity,$toCityFull){
+	_setValue(_textbox("toCity"), $toCity);
+	_click(_byXPath("//div[contains(@style,'visible')]//div[contains(text(),'"+$toCityFull+"')]")); 
+}
+
+function setFirstPol($fPol, $fPolName){
+	_setValue(_textbox("loadPorts"), $fPol);
+	_click(_byXPath("//div[contains(@style,'visible')]//div[contains(text(),'"+$fPolName+"')]")); 
+}
+
+function setBkgNum($bkgNum){
+	_setValue(_textbox("bookingNumbers"), $bkgNum);
+}
+
+function setBkgStatus($bkgStatus){
+	_setValue(_textbox("bookingStatus"), $bkgStatus);
+	_click(_byXPath("//div[contains(@style,'visible')]//div[contains(text(),'"+$bkgStatus+"')]")); 
+}
+
+
+function setCargoNature($cgoNature){
+	_setValue(_textbox("cargoNature"), $cgoNature);
+	_click(_byXPath("//div[contains(@style,'visible')]//div[contains(text(),'"+$cgoNature+"')]")); 
+}
+
+function setCntrType($cntrType){
+	_click(_emphasis($cntrType));
+}
+
+function search(){
+	_click(_button("Search"));
+	_wait(7000);
+}
+
+function reset(){
+	_click(_button("Reset"));
+}
+
+/* --Functions Above-- */
