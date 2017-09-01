@@ -1,0 +1,9 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"_resource","""Search_OC_data.xls"""
+,"loadSahi","""searchOceanComponent.sah"""
+,"$searchData=_readExcelFile","""Search_OC_data.xls""","_suiteInfo()[""runTimeEnv""]"
+,"_log","_suiteInfo()[""runTimeEnv""]"
+"ITA_ExerciseAUG30","[Documentation]","Search Ocean Component"
+,"login","[$searchData:login:authUser]","[$searchData:login:authPassword]"
+
+,"searchOceanComponent","$searchData"

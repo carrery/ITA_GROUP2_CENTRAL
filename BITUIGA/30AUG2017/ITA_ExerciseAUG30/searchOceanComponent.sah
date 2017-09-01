@@ -1,0 +1,57 @@
+function login($authUser, $authPassword){
+	if(_exists(_textbox("authUser"))){
+	_setValue(_textbox("authUser"), $authUser);
+	_setValue(_password("authPassword"), $authPassword);
+	_click(_submit("Authenticate"));
+	}
+}
+
+function fillCriteria($criteria){
+	// set trade
+	_click(_textbox("tradeCode"));
+	_setValue(_textbox("tradeCode"), $criteria[1]["tradeCode"]);
+	_click(_div($criteria[1]["tradeCode"]));
+	
+	// set mode
+	_check(_radio("oceanComp"));
+	
+	// set from port
+	_setValue(_textbox("fromPort"), $criteria[1]["fromPort"]);
+	_click(_div($criteria[1]["fromPort"], _under(_div("Code"))));
+	_wait("3000");
+	
+	// set to port
+	_setValue(_textbox("toPort"), $criteria[1]["toPort"]);
+	_click(_div($criteria[1]["toPort"], _under(_div("Code[1]"))));
+	
+	// set date
+	_setValue(_textbox("additionEffectiveTo"), $criteria[1]["toDate"]);	
+	
+	// set Expired to True
+	_check(_checkbox("additionIncludeExpired"));
+	
+}
+
+function checkResult(){
+	_assertNotTrue(_isVisible(_div("There is no record to display")));
+	_log("Success. Record found.");
+}
+
+function searchOceanComponent($inputData){
+	
+	// Go to Home and Go to SSO Find Ocean Component Page
+	_selectWindow("Home");
+	_wait("1000", _isVisible(_link("SSO")));
+	_mouseOver(_link("SSO"));
+	_click(_link("Find Ocean Component"));
+	
+	// Focus window 
+	_selectWindow("Find Ocean Component");
+	
+	// Fill Criteria
+	fillCriteria($inputData.filter("searchCriteria"));
+	
+	_click(_button("Search"));
+	
+	checkResult();
+}
