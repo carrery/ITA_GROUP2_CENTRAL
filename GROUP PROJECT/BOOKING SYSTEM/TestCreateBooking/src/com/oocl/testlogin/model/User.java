@@ -1,17 +1,37 @@
 package com.oocl.testlogin.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "USER_INFO")
 public class User {
+	@Id
+	@Column(name = "USERNAME")
 	private String username;
+	
+	@Column(name = "PASSWORD")
 	private String password;
+	
+	@Column(name = "ROLE")
 	private String role;
+	
+	@Column(name = "FIRSTNAME")
 	private String firstName;
+	
+	@Column(name = "LASTNAME")
 	private String lastName;
+	
+	@Column(name = "EMAIL")
 	private String email;
+	
+	@Column(name = "CONTACT_NO")
 	private String contactNo;
-	private boolean isDeleted;
+	
+	@Column(name = "IS_DELETED")
+	private int isDeleted;
 	
 	public User(String username, String password, String role, String firstName, String lastName, String email,
-			String contactNo, boolean active) {
+			String contactNo, int isDeleted) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -20,7 +40,7 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.contactNo = contactNo;
-		this.isDeleted = active;
+		this.isDeleted = isDeleted;
 	}
 	
 	public String getUsername() {
@@ -66,11 +86,11 @@ public class User {
 		this.contactNo = contactNo;
 	}
 
-	public boolean isDeleted() {
+	public int isDeleted() {
 		return isDeleted;
 	}
 
-	public void setDeleted(boolean isDeleted) {
+	public void setDeleted(int isDeleted) {
 		this.isDeleted = isDeleted;
 	}
 	

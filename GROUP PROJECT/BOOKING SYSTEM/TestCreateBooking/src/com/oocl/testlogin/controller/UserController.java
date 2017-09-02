@@ -28,7 +28,7 @@ public class UserController {
 			HttpServletRequest request) {
 		if (email.isEmpty() && password.isEmpty())
 			return false;
-		boolean result = this.userSVC.validateUser(email, password);
-		return result;
+		int result = this.userSVC.validateUser(email, password);
+		return result >= 1 ? true : false;
 	}
 }

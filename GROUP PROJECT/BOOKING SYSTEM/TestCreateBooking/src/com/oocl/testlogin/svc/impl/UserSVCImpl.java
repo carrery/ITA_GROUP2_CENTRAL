@@ -10,7 +10,7 @@ public class UserSVCImpl {
 		this.userDAO = userDAO;
 	}
 
-	public boolean validateUser(String email, String password) {
+	public int validateUser(String email, String password) {
 		return this.userDAO.validateUser(email, password);
 	}
 }
