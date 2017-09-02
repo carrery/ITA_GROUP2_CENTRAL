@@ -19,16 +19,7 @@
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/caloi/.m2/repository/org/apache/activemq/activemq-all/5.13.3/activemq-all-5.13.3.jar" sourcepath="C:/Users/caloi/.m2/repository/org/apache/activemq/activemq-all/5.13.3/activemq-all-5.13.3-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.archivename" value="activemq-all-5.13.3.jar"/>
-			<attribute name="maven.groupId" value="org.apache.activemq"/>
-			<attribute name="maven.artifactId" value="activemq-all"/>
-			<attribute name="maven.version" value="5.13.3"/>
-			<attribute name="maven.scope" value="compile"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
