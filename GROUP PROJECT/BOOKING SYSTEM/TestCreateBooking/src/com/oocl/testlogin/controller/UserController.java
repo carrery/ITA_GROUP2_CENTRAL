@@ -17,8 +17,8 @@ public class UserController {
 
 	private UserSVC userSVC;
 
-	//@Autowired(required = true)
-	//@Qualifier(value = "userService")
+	@Autowired(required = true)
+	@Qualifier(value = "userService")
 	public void setUserService(UserSVC us) {
 		this.userSVC = us;
 	}
