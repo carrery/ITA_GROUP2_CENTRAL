@@ -30,18 +30,6 @@ public class User {
 	@Column(name = "IS_DELETED")
 	private int isDeleted;
 	
-	public User(String username, String password, String role, String firstName, String lastName, String email,
-			String contactNo, int isDeleted) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.role = role;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.contactNo = contactNo;
-		this.isDeleted = isDeleted;
-	}
 	
 	public String getUsername() {
 		return username;
