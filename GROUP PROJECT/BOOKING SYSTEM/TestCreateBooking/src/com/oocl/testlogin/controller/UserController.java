@@ -23,7 +23,7 @@ public class UserController {
 		this.userSVC = us;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public boolean loginUser(@RequestParam("username") String username, @RequestParam("password") String password,
 			HttpServletRequest request) {
 		if (username.isEmpty() && password.isEmpty())

@@ -20,15 +20,15 @@
 		up static resources in the ${webappRoot}/resources directory -->
 
 	<!--<mvc:resources mapping="/resources/**" location="/resources/" /> -->
-
+	
+	<mvc:view-controller path="/" view-name="admin"/>
 	<!-- Admin page -->
 
-	<!--<mvc:resources mapping="/adminview/**" location="/admin/" /> <mvc:resources 
+
+	<mvc:resources mapping="/adminview/**" location="/admin/" /> <mvc:resources 
 		mapping="/app/**" location="/admin/app/" /> <mvc:resources mapping="/controller/**" 
-		location="/admin/app/controller/*.js" /> <mvc:resources mapping="/model/**" 
-		location="/admin/app/model/*.js" /> <mvc:resources mapping="/store/**" location="/admin/app/store/*.js" 
-		/> <mvc:resources mapping="/view/**" location="/admin/app/view/*.js" /> <mvc:resources 
-		mapping="/resources/img/**" location="/admin/resources/img/*.png" /> -->
+		location="/admin/app/controller/*.js" /> <mvc:resources mapping="/view/**" location="/admin/app/view/*.js" /> <mvc:resources 
+		mapping="/resources/img/**" location="/admin/resources/images/*.png" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
