@@ -24,14 +24,16 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-		this.session = sessionFactory.openSession();
-		this.tx = session.beginTransaction();
+		//this.session = sessionFactory.openSession();
+		//this.tx = session.beginTransaction();
 	}
 
 	@Override
 	public int validateUser(String username, String password) {
 		int validate = 0;
+		Session session = sessionFactory.openSession();
 		try {
+			tx = session.beginTransaction();
 			Query query = session.createQuery("select count(username) FROM User where username = ? and password = ? ");
 			query.setParameter(0, username);
 			query.setParameter(1, password);

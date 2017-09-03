@@ -23,12 +23,12 @@ public class UserController {
 		this.userSVC = us;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public boolean loginUser(@RequestParam("email") String email, @RequestParam("password") String password,
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public boolean loginUser(@RequestParam("username") String username, @RequestParam("password") String password,
 			HttpServletRequest request) {
-		if (email.isEmpty() && password.isEmpty())
+		if (username.isEmpty() && password.isEmpty())
 			return false;
-		int result = this.userSVC.validateUser(email, password);
+		int result = this.userSVC.validateUser(username, password);
 		return result >= 1 ? true : false;
 	}
 }
