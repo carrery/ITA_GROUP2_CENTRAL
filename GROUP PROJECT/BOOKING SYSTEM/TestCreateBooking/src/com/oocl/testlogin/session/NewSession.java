@@ -11,6 +11,6 @@ public class NewSession {
 	}
 	
 	public SessionFactory newSessionFactory() {
-		return factory = new AnnotationConfiguration().configure().buildSessionFactory();
+		return this.factory;
 	}
 }

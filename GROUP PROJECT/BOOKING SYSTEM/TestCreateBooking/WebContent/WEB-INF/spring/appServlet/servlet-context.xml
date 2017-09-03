@@ -42,9 +42,9 @@
 	<tx:annotation-driven />
 
 	<beans:bean id="userDAO" class="com.oocl.testlogin.dao.impl.UserDAOImpl">
-		<!-- <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" 
-			/> -->
+		 <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 	
 	</beans:bean>
+	
 	<beans:bean id="userService" class="com.oocl.testlogin.svc.impl.UserSVCImpl">
 		<beans:property name="userDAO" ref="userDAO"></beans:property>
 	</beans:bean>
