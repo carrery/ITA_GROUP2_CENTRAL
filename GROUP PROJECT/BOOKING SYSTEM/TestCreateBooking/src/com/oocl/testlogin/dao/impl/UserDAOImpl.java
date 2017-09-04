@@ -7,13 +7,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.oocl.testlogin.dao.inf.UserDAO;
+import com.oocl.testlogin.model.User;
 
-@Repository
-@Transactional
+@Component
 public class UserDAOImpl implements UserDAO {
 
 	@Autowired
@@ -24,31 +22,34 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-		//this.session = sessionFactory.openSession();
-		//this.tx = session.beginTransaction();
 	}
 
 	@Override
 	public int validateUser(String username, String password) {
 		int validate = 0;
 		Session session = sessionFactory.openSession();
-		try {
-			tx = session.beginTransaction();
-			Query query = session.createQuery("select count(username) FROM User where username = ? and password = ? ");
-			query.setParameter(0, username);
-			query.setParameter(1, password);
-			tx.commit();
-			validate =  Integer.parseInt(query.uniqueResult().toString());
-		} catch (HibernateException e) {
-			if (tx != null)
-				tx.rollback();
-			e.printStackTrace();
-		} finally {
-			session.close();
-			
-		}
+		tx = session.beginTransaction();
+		Query query = session.createQuery("select count(username) FROM User where username = ? and password = ? ");
+		query.setParameter(0, username);
+		query.setParameter(1, password);
+		tx.commit();
+		validate = Integer.parseInt(query.uniqueResult().toString());
+		session.close();
 		return validate;
+	}
 
+	@Override
+	public User getUserDetails(String username, String password) {
+		User user = null;
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createQuery("FROM User where username = ? and password = ? ");
+		query.setParameter(0, username);
+		query.setParameter(1, password);
+		tx.commit();
+		user = (User) query.uniqueResult();
+		session.close();
+		return user;
 	}
 
 }
