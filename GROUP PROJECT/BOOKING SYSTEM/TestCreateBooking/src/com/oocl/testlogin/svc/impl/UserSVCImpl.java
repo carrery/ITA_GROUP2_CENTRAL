@@ -27,8 +27,7 @@ public class UserSVCImpl implements UserSVC{
 	
 	@Override
 	public User getUserByEmailPassword(String email, String password) {
-//		return this.userDAO.getUser(email, password);
-		return null;
+		return this.userDAO.getUserDetails(email, password);
 	}
 	
 	@Override
@@ -37,10 +36,10 @@ public class UserSVCImpl implements UserSVC{
 			return null;
 		else
 		{
-			userResponse.currentUser = getUserByEmailPassword(username,password);
-			userResponse.isValid = 1;
+			this.userResponse.currentUser = getUserByEmailPassword(username,password);
+			this.userResponse.isValid = 1;
 		}
-		return userResponse;
+		return this.userResponse;
 	}
 	
 }
