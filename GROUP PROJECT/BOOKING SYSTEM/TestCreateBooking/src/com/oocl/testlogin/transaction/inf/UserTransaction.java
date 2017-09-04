@@ -1,6 +1,5 @@
 package com.oocl.testlogin.transaction.inf;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

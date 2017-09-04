@@ -2,7 +2,6 @@ package com.oocl.testlogin.svc.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.oocl.testlogin.dao.inf.UserDAO;
 import com.oocl.testlogin.svc.inf.UserSVC;
@@ -19,7 +18,6 @@ public class UserSVCImpl implements UserSVC{
 	}
 
 	@Override
-	@Transactional
 	public int validateUser(String email, String password) {
 		return this.userDAO.validateUser(email, password);
 	}

@@ -93,7 +93,7 @@ Ext.define('KerberosBooking.controller.Account', {
 
         //TODO: Login using server-side authentication service haha
         Ext.Ajax.request({
-            url: '/TestCreateBooking/login',
+            url: 'login',
             method: 'POST',
             params:{
                 username:   username,
