@@ -90,51 +90,42 @@ Ext.define('KerberosBooking.controller.Account', {
         var password = Ext.getCmp('passwordTxt').getValue(); // get value of password
         var loginView = Ext.getCmp('headerPanel');
 
-        // Success
-        var successCallback = function(resp, ops) {
 
-            Ext.Msg.alert("Login Success", "Logged In");
+        //TODO: Login using server-side authentication service
+        Ext.Ajax.request({
+            url: '/login',
+            method: 'POST',
+            params:{
+                username:   username,
+                password:	passowrd
+            },
+            callback: function(options, success, response) {
+                var rec=Ext.decode(response.responseText);
+                console.log(rec);
+                Ext.Msg.alert("Login Success", "Logged In");
 
-        //     this.getHeaderPanel().hide();
-        //     this.getBookingPanel().show();
-        };
+            },
+            failure : function(response) {
 
-        // Failure
-        var failureCallback = function(resp, ops) {
-
-            // Show login failure error
-
-            if(this.attempt !==0){
+                console.log("response", response);
+                if(this.attempt !==0){
+                    --this.attempt;
                 Ext.Msg.alert("Login Failure", "Wrong Username or Password");
 
             } else{
                 Ext.Msg.alert("Login Failure", "Blocked1! Please contact Admin");
             }
-
-
-        };
-
-        //TODO: Login using server-side authentication service
-        Ext.Ajax.request({
-        		url: "login",
-                method : "POST",
-        		params: {
-                    username: username,
-                    password: password
-                },
-        		success: successCallback(),
-        		failure: failureCallback()
+            }
         });
 
-//        if(username == 'admin' && password == 'admin'){
-//            successCallback();
-//        } else{
-//            --this.attempt;
-//         failureCallback();
-//
-//        }
 
         console.log(this.attempt); //checking of global variable
+
+
+
+
+
+
     },
 
     init: function(application) {
