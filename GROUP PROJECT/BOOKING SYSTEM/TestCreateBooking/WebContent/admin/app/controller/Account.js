@@ -91,30 +91,37 @@ Ext.define('KerberosBooking.controller.Account', {
         var loginView = Ext.getCmp('headerPanel');
 
 
-        //TODO: Login using server-side authentication service
+        //TODO: Login using server-side authentication service haha
         Ext.Ajax.request({
-            url: '/login',
+            url: '/TestCreateBooking/login',
             method: 'POST',
             params:{
                 username:   username,
-                password:	passowrd
+                password:	password
             },
             callback: function(options, success, response) {
-                var rec=Ext.decode(response.responseText);
-                console.log(rec);
-                Ext.Msg.alert("Login Success", "Logged In");
+                //var rec=Ext.decode(response.responseText);
+            	
+            	console.log(response.responseText);
+            	if(response.responseText === 'false'){
+            		
+            		if(this.attempt !== 0){
+            			--this.attempt;
+            			Ext.Msg.alert("Login Failure", "Wrong Username or Password");
+            		} else{
+            			Ext.Msg.alert("Login Failure", "Blocked");
+            		}
+            		
+            	} else{
+            		Ext.Msg.alert("Login Success", "Logged In");
+            	}
 
             },
             failure : function(response) {
 
-                console.log("response", response);
-                if(this.attempt !==0){
-                    --this.attempt;
-                Ext.Msg.alert("Login Failure", "Wrong Username or Password");
-
-            } else{
-                Ext.Msg.alert("Login Failure", "Blocked1! Please contact Admin");
-            }
+            	Ext.Msg.alert(response);
+                //console.log("response", response);
+                
             }
         });
 
