@@ -36,8 +36,8 @@ public class UserSVCImpl implements UserSVC{
 			return null;
 		else
 		{
-			this.userResponse.currentUser = getUserByEmailPassword(username,password);
-			this.userResponse.isValid = 1;
+			this.userResponse.setCurrentUser(getUserByEmailPassword(username,password));
+			this.userResponse.setIsValid(userDAO.validateUser(username, password));
 		}
 		return this.userResponse;
 	}
