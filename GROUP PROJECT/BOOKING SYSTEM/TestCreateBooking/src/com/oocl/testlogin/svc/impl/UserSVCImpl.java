@@ -38,7 +38,6 @@ public class UserSVCImpl implements UserSVC{
 		else
 		{			
 			userResponse.setIsUserValid(validateUser(username, password));
-			userResponse.setIsUserValid(1);
 			if(userResponse.getIsUserValid() == 1) {
 				User thisUser = getUserByEmailPassword(username,password);
 				switch(thisUser.getRole().toUpperCase()) {
