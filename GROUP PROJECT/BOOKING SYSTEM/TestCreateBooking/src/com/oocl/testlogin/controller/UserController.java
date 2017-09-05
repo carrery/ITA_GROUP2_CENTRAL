@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.oocl.testlogin.response.UserResponse;
+import com.oocl.testlogin.response.UserLoginResponse;
 import com.oocl.testlogin.svc.inf.UserSVC;
 
 @RestController
@@ -25,7 +25,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public @ResponseBody UserResponse loginUser(@RequestParam("username") String username, @RequestParam("password") String password ,
+	public @ResponseBody UserLoginResponse loginUser(@RequestParam("username") String username, @RequestParam("password") String password ,
 			HttpServletRequest request) {		
 		return userSVC.getUserLoginResponse(username, password);
 	}

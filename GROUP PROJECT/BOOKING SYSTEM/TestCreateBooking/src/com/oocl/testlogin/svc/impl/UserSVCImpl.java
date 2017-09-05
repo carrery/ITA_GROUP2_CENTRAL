@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.oocl.testlogin.dao.inf.UserDAO;
 import com.oocl.testlogin.model.User;
-import com.oocl.testlogin.response.UserResponse;
+import com.oocl.testlogin.response.UserLoginResponse;
 import com.oocl.testlogin.svc.inf.UserSVC;
 
 @Component
@@ -13,7 +13,7 @@ public class UserSVCImpl implements UserSVC{
 	
 	@Autowired
 	private UserDAO userDAO;
-	private UserResponse userResponse;
+	
 	
 	
 	public void setUserDAO(UserDAO userDAO) {
@@ -31,15 +31,41 @@ public class UserSVCImpl implements UserSVC{
 	}
 	
 	@Override
-	public UserResponse getUserLoginResponse(String username, String password) {
+	public UserLoginResponse getUserLoginResponse(String username, String password) {
+		UserLoginResponse userResponse = new UserLoginResponse();
 		if (username.isEmpty() && password.isEmpty())
 			return null;
 		else
-		{
-			this.userResponse.setCurrentUser(getUserByEmailPassword(username,password));
-			this.userResponse.setIsValid(userDAO.validateUser(username, password));
+		{			
+			userResponse.setIsUserValid(validateUser(username, password));
+			userResponse.setIsUserValid(1);
+			if(userResponse.getIsUserValid() == 1) {
+				User thisUser = getUserByEmailPassword(username,password);
+				switch(thisUser.getRole().toUpperCase()) {
+					case "CUSTOMER":
+						userResponse.setCanViewBooking(1);
+						userResponse.setCanCreateBooking(0);
+						userResponse.setCanManageUsers(0);
+						break;
+					case "CSV":
+						userResponse.setCanViewBooking(1);
+						userResponse.setCanCreateBooking(1);
+						userResponse.setCanManageUsers(0);
+						break;
+					case "ADMIN":
+						userResponse.setCanViewBooking(1);
+						userResponse.setCanCreateBooking(1);
+						userResponse.setCanManageUsers(1);
+						break;
+					default:
+						return null;
+				}
+			}
+			else {
+				return userResponse;
+			}			
 		}
-		return this.userResponse;
+		return userResponse;
 	}
 	
 }
