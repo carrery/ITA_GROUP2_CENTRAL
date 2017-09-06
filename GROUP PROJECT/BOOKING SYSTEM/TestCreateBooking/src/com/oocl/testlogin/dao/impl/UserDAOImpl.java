@@ -30,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
 		int validate = 0;
 		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();
-		Query query = session.createQuery("select count(username) FROM User where username = ? and password = ? ");
+		Query query = session.createQuery("SELECT COUNT(username) FROM User WHERE username = ? and password = ? ");
 		query.setParameter(0, username);
 		query.setParameter(1, password);
 		tx.commit();
@@ -44,7 +44,7 @@ public class UserDAOImpl implements UserDAO {
 		User user = null;
 		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM User where username = ? and password = ? ");
+		Query query = session.createQuery("FROM User WHERE username = ? and password = ? ");
 		query.setParameter(0, username);
 		query.setParameter(1, password);
 		tx.commit();
@@ -58,7 +58,7 @@ public class UserDAOImpl implements UserDAO {
 		Role role = null;
 		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM Role where role = ?");
+		Query query = session.createQuery("FROM Role WHERE role = ?");
 		query.setParameter(0, userRole);
 		tx.commit();
 		role = (Role) query.uniqueResult();
