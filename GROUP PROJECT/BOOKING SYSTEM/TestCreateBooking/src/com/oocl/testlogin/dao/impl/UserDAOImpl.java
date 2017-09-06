@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.oocl.testlogin.dao.inf.UserDAO;
+import com.oocl.testlogin.model.Role;
 import com.oocl.testlogin.model.User;
 
 @Component
@@ -50,6 +51,19 @@ public class UserDAOImpl implements UserDAO {
 		user = (User) query.uniqueResult();
 		session.close();
 		return user;
+	}
+
+	@Override
+	public Role getUserRole(String userRole) {
+		Role role = null;
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createQuery("FROM Role where role = ?");
+		query.setParameter(0, userRole);
+		tx.commit();
+		role = (Role) query.uniqueResult();
+		session.close();	
+		return role;
 	}
 
 }
