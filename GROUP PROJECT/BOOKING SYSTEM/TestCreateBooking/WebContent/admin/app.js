@@ -21,11 +21,17 @@ Ext.Loader.setConfig({
 
 Ext.application({
     views: [
-        'MainView',
-        'RegisterForm'
+    	'LoginForm',
+        'RegisterForm',
+        'bookingGrid',
+        'MyPanel',
+        'mainViewport',
+        'myTabKer',
+        'kerberosPanel',
+        'createPanel'
     ],
     controllers: [
-        'Account'
+        'HomeController'
     ],
     name: 'KerberosBooking',
 
@@ -34,7 +40,7 @@ Ext.application({
     ],
 
     launch: function() {
-        Ext.create('KerberosBooking.view.MainView');
+        Ext.create('KerberosBooking.view.mainViewport');
     }
 
 });
