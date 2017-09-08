@@ -13,4 +13,8 @@ public interface UserDAO {
 	public User getUserDetails(String username, String password);
 	
 	public Role getUserRole(String userRole);
+
+	public User getUser(String username);
+
+	int deleteUser(User user);
 }

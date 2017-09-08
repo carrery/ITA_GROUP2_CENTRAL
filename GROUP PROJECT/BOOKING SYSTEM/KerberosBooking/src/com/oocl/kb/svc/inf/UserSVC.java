@@ -9,4 +9,6 @@ public interface UserSVC {
 	User getUserByEmailPassword(String email, String password);
 
 	UserLoginResponse getUserLoginResponse(String email, String password);
+
+	public int deleteUser(String username);
 }

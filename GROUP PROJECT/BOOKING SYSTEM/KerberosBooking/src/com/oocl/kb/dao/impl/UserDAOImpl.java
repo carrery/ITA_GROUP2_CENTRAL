@@ -52,6 +52,19 @@ public class UserDAOImpl implements UserDAO {
 		session.close();
 		return user;
 	}
+	
+	@Override
+	public User getUser(String username) {
+		User user = null;
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createQuery("FROM User WHERE username = ?");
+		query.setParameter(0, username);
+		tx.commit();
+		user = (User) query.uniqueResult();
+		session.close();
+		return user;
+	}
 
 	@Override
 	public Role getUserRole(String userRole) {
@@ -64,6 +77,18 @@ public class UserDAOImpl implements UserDAO {
 		role = (Role) query.uniqueResult();
 		session.close();	
 		return role;
+	}
+
+	@Override
+	public int deleteUser(User user) {
+		user.setDeleted(1);
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		session.update(user);
+		tx.commit();
+		session.close();
+		return 0;
 	}
 
 }
