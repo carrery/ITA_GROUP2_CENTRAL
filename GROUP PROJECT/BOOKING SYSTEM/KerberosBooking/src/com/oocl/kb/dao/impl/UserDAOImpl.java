@@ -106,4 +106,26 @@ public class UserDAOImpl implements UserDAO {
 		
 		return returnList;
 	}
+	
+	@Override
+	public int updateUserByUsername(User user) {	
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		session.update(user);
+		tx.commit();
+		session.close();
+		return 0;
+	}
+
+	@Override
+	public int createUser(User user) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		session.save(user);
+		tx.commit();
+		session.close();
+		return 1;
+	}
 }

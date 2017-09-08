@@ -7,11 +7,11 @@ import com.oocl.kb.response.UserLoginResponse;
 public interface UserSVC {
 	public int validateUser(String username, String password);
 
-	User getUserByEmailPassword(String email, String password);
+	public User getUserByEmailPassword(String email, String password);
 
-	UserLoginResponse getUserLoginResponse(String email, String password);
+	public UserLoginResponse getUserLoginResponse(String email, String password);
 
 	public int deleteUser(String username);
 
-	Role getRoleByUser(String role);
+	public Role getRoleByUser(String role);
 }
