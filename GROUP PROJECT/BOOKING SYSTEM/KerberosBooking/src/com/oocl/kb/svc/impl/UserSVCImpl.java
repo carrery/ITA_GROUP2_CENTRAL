@@ -64,6 +64,43 @@ public class UserSVCImpl implements UserSVC{
 		// TODO Auto-generated method stub
 		return this.userDAO.deleteUser(this.userDAO.getUser(username));
 	}
-	// updateUserByUsername
+	
+	@Override
+	public int updateUser(String username) {
+		// TODO Auto-generated method stub
+		return this.userDAO.updateUserByUsername(this.userDAO.getUser(username));
+	}
+
+	@Override
+	public int createUser(String username, String password, String role, String firstName, String lastName,
+			String email, String contactNo, int isDeleted) {
+		// TODO Auto-generated method stub
+		return this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted));
+	}
+	
+	@Override
+	public int updateUser(String username, String password, String role, String firstName, String lastName,
+			String email, String contactNo, int isDeleted) {
+		// TODO Auto-generated method stub
+		return this.userDAO.updateUserByUsername(setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted));
+	}
+
+	@Override
+	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
+			String email, String contactNo, int isDeleted) {
+		// TODO Auto-generated method stub
+		User thisUser = new User();
+		
+		thisUser.setUsername(username);
+		thisUser.setPassword(password);
+		thisUser.setRole(role);
+		thisUser.setFirstName(firstName);
+		thisUser.setLastName(lastName);
+		thisUser.setEmail(email);
+		thisUser.setContactNo(contactNo);
+		thisUser.setDeleted(0);
+		
+		return thisUser;
+	}
 	
 }
