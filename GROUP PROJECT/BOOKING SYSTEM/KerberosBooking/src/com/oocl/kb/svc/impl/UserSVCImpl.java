@@ -66,5 +66,12 @@ public class UserSVCImpl implements UserSVC{
 		}
 		return userResponse;
 	}
+
+	@Override
+	public int deleteUser(String username) {
+		// TODO Auto-generated method stub
+		return this.userDAO.deleteUser(this.userDAO.getUser(username));
+	}
+	
 	
 }

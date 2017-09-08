@@ -44,7 +44,7 @@
 	</beans:bean>
 	
 	<!-- Beans for SVC Implementation-->
-	<beans:bean id="userSVC" class="com.oocl.kb.svc.impl.UserSVCImpl">
+	<beans:bean id="userService" class="com.oocl.kb.svc.impl.UserSVCImpl">
 		<beans:property name="userDAO" ref="userDAO"></beans:property>
 	</beans:bean>
 

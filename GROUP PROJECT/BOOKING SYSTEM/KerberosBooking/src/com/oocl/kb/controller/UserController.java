@@ -15,18 +15,19 @@ import com.oocl.kb.svc.inf.UserSVC;
 
 @RestController
 public class UserController {
-
-	private UserSVC userSVC;
-
+	
 	@Autowired(required = true)
-	@Qualifier(value = "userService")
-	public void setUserService(UserSVC us) {
-		this.userSVC = us;
-	}
+	private UserSVC userSVC;
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody UserLoginResponse loginUser(@RequestParam("username") String username, @RequestParam("password") String password ,
 			HttpServletRequest request) {		
 		return userSVC.getUserLoginResponse(username, password);
+	}
+	
+	@RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+	public @ResponseBody int deleteUser (@RequestParam("username") String username,
+			HttpServletRequest request) {		
+		return userSVC.deleteUser(username);
 	}
 }
