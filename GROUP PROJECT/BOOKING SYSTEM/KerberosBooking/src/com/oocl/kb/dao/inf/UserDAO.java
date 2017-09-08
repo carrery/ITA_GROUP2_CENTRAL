@@ -16,5 +16,8 @@ public interface UserDAO {
 	
 	public Role getUserRole(String userRole);
 
+	public User getUser(String username);
 	List<User> getAllUsersByUsername(String username);
+
+	int deleteUser(User user);
 }
