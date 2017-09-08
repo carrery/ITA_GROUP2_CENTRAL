@@ -1,5 +1,8 @@
 package com.oocl.kb.dao.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -65,5 +68,18 @@ public class UserDAOImpl implements UserDAO {
 		session.close();	
 		return role;
 	}
-
+	
+	@Override
+	public List<User> getAllUsersByUsername(String userName) {
+		
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createQuery("FROM User WHERE USERNAME LIKE ?");
+		query.setParameter(0, "%" + userName + "%");
+		tx.commit();
+		List<User> returnList = (ArrayList<User>) query.list();
+		session.close();
+		
+		return returnList;
+	}
 }

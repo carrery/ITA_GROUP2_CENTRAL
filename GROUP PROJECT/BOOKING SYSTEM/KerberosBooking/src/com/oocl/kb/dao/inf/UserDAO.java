@@ -1,5 +1,7 @@
 package com.oocl.kb.dao.inf;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 
 import com.oocl.kb.model.Role;
@@ -13,4 +15,6 @@ public interface UserDAO {
 	public User getUserDetails(String username, String password);
 	
 	public Role getUserRole(String userRole);
+
+	List<User> getAllUsersByUsername(String username);
 }
