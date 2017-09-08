@@ -53,9 +53,9 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@LAPTOP-H3UOQFPG:1521/kerberos_db" />
-		<beans:property name="username" value="SYSTEM" />
-		<beans:property name="password" value="Admin123" />
+			value="jdbc:oracle:thin:@ZHA-ITA129-W7:1521/xe" />
+		<beans:property name="username" value="user_jag" />
+		<beans:property name="password" value="admin" />
 	</beans:bean>
 
 
