@@ -42,7 +42,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
                     method: 'POST',
                     params:{
                         username:   username,
-                        password:	passowrd
+                        password:	password
                     },
                     callback: function(options, success, response) {
 
