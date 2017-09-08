@@ -66,12 +66,6 @@ public class UserSVCImpl implements UserSVC{
 	}
 	
 	@Override
-	public int updateUser(String username) {
-		// TODO Auto-generated method stub
-		return this.userDAO.updateUserByUsername(this.userDAO.getUser(username));
-	}
-
-	@Override
 	public int createUser(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo, int isDeleted) {
 		// TODO Auto-generated method stub
