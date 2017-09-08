@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "SHP_SHIPMENT")
-public class ShpShipment {
+public class Shipment {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="shpNumSeq")
@@ -64,7 +64,7 @@ public class ShpShipment {
 	
 	
 
-	public ShpShipment(String fromCity, String toCity, Timestamp fromDate, Timestamp toDate, String shipper,
+	public Shipment(String fromCity, String toCity, Timestamp fromDate, Timestamp toDate, String shipper,
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {
 		super();
 		this.fromCity = fromCity;
