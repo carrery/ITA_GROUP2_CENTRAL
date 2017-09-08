@@ -3,10 +3,20 @@ package com.oocl.kb.response;
 
 public class UserLoginResponse {
 	
+	public String errorMessage;
+	
 	public int isUserValid;
 	
 	public int getIsUserValid() {
 		return isUserValid;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public void setIsUserValid(int isUserValid) {

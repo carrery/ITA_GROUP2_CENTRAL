@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.oocl.kb.dao.inf.UserDAO;
+import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
 import com.oocl.kb.response.UserLoginResponse;
 import com.oocl.kb.svc.inf.UserSVC;
@@ -31,37 +32,28 @@ public class UserSVCImpl implements UserSVC{
 	}
 	
 	@Override
+	public Role getRoleByUser(String role) {
+		return this.userDAO.getUserRole(role);
+	}
+	
+	@Override
 	public UserLoginResponse getUserLoginResponse(String username, String password) {
 		UserLoginResponse userResponse = new UserLoginResponse();
-		if (username.isEmpty() && password.isEmpty())
-			return null;
+		if (username.isEmpty() || password.isEmpty()) {
+			userResponse.setErrorMessage("Username or Password cannot be empty!");
+		}
 		else
 		{			
 			userResponse.setIsUserValid(validateUser(username, password));
 			if(userResponse.getIsUserValid() == 1) {
 				User thisUser = getUserByEmailPassword(username,password);
-				switch(thisUser.getRole().toUpperCase()) {
-					case "CUSTOMER":
-						userResponse.setCanViewBooking(1);
-						userResponse.setCanCreateBooking(0);
-						userResponse.setCanManageUsers(0);
-						break;
-					case "CSV":
-						userResponse.setCanViewBooking(1);
-						userResponse.setCanCreateBooking(1);
-						userResponse.setCanManageUsers(0);
-						break;
-					case "ADMIN":
-						userResponse.setCanViewBooking(1);
-						userResponse.setCanCreateBooking(1);
-						userResponse.setCanManageUsers(1);
-						break;
-					default:
-						return null;
-				}
+				Role role = getRoleByUser(thisUser.getRole());
+				userResponse.setCanCreateBooking(role.getAccessCB());
+				userResponse.setCanViewBooking(role.getAccessFS());
+				userResponse.setCanManageUsers(role.getAccessUM());				
 			}
 			else {
-				return userResponse;
+				userResponse.setErrorMessage("Incorrect Username or Password.");
 			}			
 		}
 		return userResponse;
@@ -72,6 +64,6 @@ public class UserSVCImpl implements UserSVC{
 		// TODO Auto-generated method stub
 		return this.userDAO.deleteUser(this.userDAO.getUser(username));
 	}
-	
+	// updateUserByUsername
 	
 }
