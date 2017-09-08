@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
-import com.oocl.kb.model.ShpShipment;
+import com.oocl.kb.model.Shipment;
 
 public class ShipmentDAOImpl implements ShipmentDAO {
 
@@ -30,7 +30,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		Transaction tx = null;
 
 		tx = session.beginTransaction();
-		ShpShipment newShp = new ShpShipment("MNL", null, null, null, null, null, 0, 0, 0, null);
+		Shipment newShp = new Shipment("MNL", null, null, null, null, null, 0, 0, 0, null);
 		session.save(newShp);
 		tx.commit();
 
@@ -38,4 +38,5 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		System.out.println("Booking Created");
 
 	}
+	
 }

@@ -85,7 +85,6 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public int deleteUser(User user) {
 		user.setDeleted(1);
-		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();
 		session.update(user);
