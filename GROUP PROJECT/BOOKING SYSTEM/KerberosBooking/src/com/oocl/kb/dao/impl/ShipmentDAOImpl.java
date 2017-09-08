@@ -1,5 +1,6 @@
 package com.oocl.kb.dao.impl;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import org.hibernate.Query;
@@ -24,18 +25,20 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createBooking() {
+	public Long createBooking(String fromCity, String toCity, Timestamp fromDate, Timestamp toDate, String shipper,
+			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 
 		tx = session.beginTransaction();
-		Shipment newShp = new Shipment("MNL", null, null, null, null, null, 0, 0, 0, null);
-		session.save(newShp);
+		Shipment newShp = new Shipment(fromCity, toCity, null, null, shipper, consignee, 0, 0, 0, shipmentStatus);
+		Long shpNum = (Long) session.save(newShp);
 		tx.commit();
 
 		session.close();
 		System.out.println("Booking Created");
+		return shpNum;
 
 	}
 	
