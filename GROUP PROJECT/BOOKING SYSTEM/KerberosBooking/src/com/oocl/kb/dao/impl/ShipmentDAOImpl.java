@@ -31,15 +31,14 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public Long createBooking(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
-			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {
+	public Long createBooking(Shipment shp) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 
 		tx = session.beginTransaction();
-		Shipment newShp = new Shipment(fromCity, toCity, null, null, shipper, consignee, 0, 0, 0, shipmentStatus);
-		Long shpNum = (Long) session.save(newShp);
+		//Shipment newShp = new Shipment(fromCity, toCity, null, null, shipper, consignee, 0, 0, 0, shipmentStatus);
+		Long shpNum = (Long) session.save(shp);
 		tx.commit();
 
 		session.close();

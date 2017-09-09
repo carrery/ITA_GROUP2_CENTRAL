@@ -34,26 +34,18 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public Long createShipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
-			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
+	public Long createShipment(String json) {
 		// TODO Auto-generated method stub
-		return shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
-				goodCustomer, shipmentStatus);
+		Shipment shp = null;
+		return shipmentDAO.createBooking(shp);
 	}
 
 	@Override
-	public ServiceResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate,
-			String shipper, String consignee, int approveDoc, int validWeight, int goodCustomer,
-			String shipmentStatus) {
+	public ServiceResponse getCreateShipmentResponse(String json) {
 		// TODO Auto-generated method stub
 		ServiceResponse createShipmentResponse = new ServiceResponse();
-		if (fromCity.isEmpty() || toCity.isEmpty()) {
-			createShipmentResponse.setErrorMessage("Required fields must be filled");
-		} else {
-			shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
-					goodCustomer, shipmentStatus);
-		}
-
+		Shipment shp = null;
+		shipmentDAO.createBooking(shp);
 		return createShipmentResponse;
 	}
 

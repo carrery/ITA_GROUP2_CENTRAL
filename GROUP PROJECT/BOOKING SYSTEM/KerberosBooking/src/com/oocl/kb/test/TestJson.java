@@ -22,7 +22,10 @@ public class TestJson {
 		    list.add(sc);
 		}
 		
+		Long shp_num = obj.getLong("shp_num");
+		
 		System.out.println(list.get(1).getCntrNum());
+		System.out.println(shp_num);
 	}
 
 }

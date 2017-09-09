@@ -41,16 +41,16 @@ public class TestMain {
 	}
 	
 	static void test_getAllUsersByUsername() {
-		UserDAOImpl userDAO = (UserDAOImpl) ctx.getBean("userDAO");
-		List<User> testList = userDAO.getAllUsersByUsername("");
-		for(User us : testList ) {
-			System.out.println(us.getFirstName() + " " + us.getLastName());
-		}
+//		UserDAOImpl userDAO = (UserDAOImpl) ctx.getBean("userDAO");
+//		List<User> testList = userDAO.getAllUsersByUsername("");
+//		for(User us : testList ) {
+//			System.out.println(us.getFirstName() + " " + us.getLastName());
+//		}
 	}
 	
 	static void test_createShipment() {
 		ShipmentDAOImpl shpDAO = (ShipmentDAOImpl) ctx.getBean("shpDAO");
-		System.out.println(shpDAO.createBooking("MNL", "SIN", null, null, "test1", "Caloi", 0, 0, 0, "Pending"));
+		//System.out.println(shpDAO.createBooking("MNL", "SIN", null, null, "Jag", "Caloi", 0, 0, 0, "Pending"));
 	}
 
 }
