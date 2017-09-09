@@ -12,7 +12,7 @@ import com.oocl.kb.model.User;
 
 public class TestMain {
 	
-	static ApplicationContext ctx = new ClassPathXmlApplicationContext("servlet-context.xml");
+	static ApplicationContext ctx = new ClassPathXmlApplicationContext("test-servlet-context.xml");
 	
 	public static void main(String[] args) {
 		// TODO this is to test java side logic without UI

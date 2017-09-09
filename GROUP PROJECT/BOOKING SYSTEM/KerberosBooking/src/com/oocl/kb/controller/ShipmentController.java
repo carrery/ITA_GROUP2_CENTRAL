@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.oocl.kb.response.CreateShipmentResponse;
-import com.oocl.kb.response.UserLoginResponse;
+import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
-import com.oocl.kb.svc.inf.UserSVC;
 
 @RestController
 public class ShipmentController {
@@ -23,7 +21,7 @@ public class ShipmentController {
 	private ShipmentSVC shpSVC;
 
 	@RequestMapping(value = "/createBooking", method = RequestMethod.POST)
-	public @ResponseBody CreateShipmentResponse createShp(@RequestParam("fromCity") String fromCity, @RequestParam("toCity") String toCity ,
+	public @ResponseBody ServiceResponse createShp(@RequestParam("fromCity") String fromCity, @RequestParam("toCity") String toCity ,
 			@RequestParam("fromDate") Date fromDate, @RequestParam("toDate") Date toDate, @RequestParam("shipper") String shipper,
 			@RequestParam("consignee") String consignee, @RequestParam("approveDoc") int approveDoc, @RequestParam("validWeight") int validWeight,
 			@RequestParam("goodCustomer") int goodCustomer, @RequestParam("shipmentStatus") String shipmentStatus, HttpServletRequest request) {
