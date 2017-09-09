@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Shipment;
+import com.oocl.kb.model.ShipmentCargo;
 import com.oocl.kb.model.ShipmentContainer;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
@@ -52,19 +53,33 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	@Override
 	public void createShipmentContainer(JSONObject jsonShpCntr) {
 		// TODO Auto-generated method stub
-		List<ShipmentContainer> list = new ArrayList<ShipmentContainer>();
+		ArrayList<ShipmentContainer> cntrList = new ArrayList<ShipmentContainer>();
 		JSONArray array = jsonShpCntr.getJSONArray("shp_container");
 		for(int i = 0 ; i < array.length() ; i++){
 			ShipmentContainer sc = new ShipmentContainer(null, array.getJSONObject(i).getString("cntr_num"), null, null, null);
 			//sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
-		    list.add(sc);
+			cntrList.add(sc);
 		}
-		
+		this.shpDAO.createShpContainer(cntrList);
 	}
 	
 	@Override
 	public List<Shipment> getAllShipments(){
 		return this.shpDAO.getAllShipments();
+	}
+
+	@Override
+	public void createShipmentCargo(JSONObject jsonShpCgo) {
+		// TODO Auto-generated method stub
+		ArrayList<ShipmentCargo> cgoList = new ArrayList<ShipmentCargo>();
+		JSONArray array = jsonShpCgo.getJSONArray("shp_cargo");
+		for(int i = 0 ; i < array.length() ; i++){
+			//ShipmentCargo sc = new ShipmentCargo(null, array.getJSONObject(i).getString("cntr_num"), null, null, null);
+			//sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
+			//cgoList.add(sc);
+		}
+		this.shpDAO.createShpCargo(cgoList);
+		
 	}
 	
 	

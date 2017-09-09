@@ -18,6 +18,8 @@ public interface ShipmentDAO {
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus);
 	
     public void createShpContainer(ArrayList<com.oocl.kb.model.ShipmentContainer> cntrList);
+    
+    public void createShpCargo(ArrayList<com.oocl.kb.model.ShipmentCargo> cgoList);
 
 	public List<Shipment> getAllShipments();
   

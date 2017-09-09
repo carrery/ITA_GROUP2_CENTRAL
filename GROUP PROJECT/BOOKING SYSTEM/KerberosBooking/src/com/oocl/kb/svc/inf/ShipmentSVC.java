@@ -19,6 +19,8 @@ public interface ShipmentSVC {
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
 	
 	public void createShipmentContainer(JSONObject jsonShpCntr);
+	
+	public void createShipmentCargo(JSONObject jsonShpCgo);
 
 	List<Shipment> getAllShipments();
 }
