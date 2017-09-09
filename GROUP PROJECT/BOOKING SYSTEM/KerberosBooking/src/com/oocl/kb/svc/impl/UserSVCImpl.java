@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
+import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.response.UserLoginResponse;
 import com.oocl.kb.svc.inf.UserSVC;
 
@@ -42,6 +43,7 @@ public class UserSVCImpl implements UserSVC{
 		if (username.isEmpty() || password.isEmpty()) {
 			userResponse.setErrorMessage("Username or Password cannot be empty!");
 		}
+		
 		else
 		{			
 			userResponse.setIsUserValid(validateUser(username, password));
@@ -60,41 +62,52 @@ public class UserSVCImpl implements UserSVC{
 	}
 
 	@Override
-	public int deleteUser(String username) {
+	public ServiceResponse deleteUser(String username) {
 		// TODO Auto-generated method stub
-		return this.userDAO.deleteUser(this.userDAO.getUser(username));
+		ServiceResponse response = new ServiceResponse();
+		User user = this.userDAO.getUser(username);
+		user.setDeleted(1);
+		response.setServiceResult(this.userDAO.deleteUser(user));
+		return response;
 	}
 	
 	@Override
-	public int createUser(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo, int isDeleted) {
+	public ServiceResponse createUser(String username, String password, String role, String firstName, String lastName,
+			String email, String contactNo) {
 		// TODO Auto-generated method stub
-		return this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted));
+		ServiceResponse response = new ServiceResponse();
+		response.setServiceResult(this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo)));
+		return response;
 	}
 	
 	@Override
-	public int updateUser(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo, int isDeleted) {
+	public ServiceResponse updateUser(String username, String password, String role, String firstName, String lastName,
+			String email, String contactNo) {
 		// TODO Auto-generated method stub
-		return this.userDAO.updateUserByUsername(setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted));
+		ServiceResponse response = new ServiceResponse();
+		
+		if(this.userDAO.getUser(username) == null) {
+			response.setErrorMessage("No user found");
+		}
+		
+		User newUser = setupUserDetails(username,password,role,firstName,lastName,email,contactNo);
+		response.setServiceResult(this.userDAO.updateUser(newUser));	
+		
+		return response;
 	}
 
 	@Override
 	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo, int isDeleted) {
+			String email, String contactNo) {
 		// TODO Auto-generated method stub
-		User thisUser = new User();
 		
-		thisUser.setUsername(username);
-		thisUser.setPassword(password);
-		thisUser.setRole(role);
-		thisUser.setFirstName(firstName);
-		thisUser.setLastName(lastName);
-		thisUser.setEmail(email);
-		thisUser.setContactNo(contactNo);
-		thisUser.setDeleted(0);
+		User user = new User(null, password, role, firstName.toUpperCase(), lastName.toUpperCase(), email, contactNo, 0);
 		
-		return thisUser;
+		if(username != null) {
+			user.setUsername(username.toUpperCase());
+		}
+		
+		return user;
 	}
 	
 }

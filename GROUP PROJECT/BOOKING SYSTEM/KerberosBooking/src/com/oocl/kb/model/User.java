@@ -1,5 +1,7 @@
 package com.oocl.kb.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -85,5 +87,18 @@ public class User {
 		this.isDeleted = isDeleted;
 	}
 	
+	
+	public User(String username, String password, String role, String firstName, String lastName, String email,
+			String contactNo, int isDeleted) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.contactNo = contactNo;
+		this.isDeleted = isDeleted;
+	}
 	
 }

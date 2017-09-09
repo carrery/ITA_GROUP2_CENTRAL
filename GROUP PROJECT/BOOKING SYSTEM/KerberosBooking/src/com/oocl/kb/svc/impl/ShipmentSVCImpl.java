@@ -12,8 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
-import com.oocl.kb.model.ShipmentContainer;
-import com.oocl.kb.response.CreateShipmentResponse;
+import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
@@ -35,10 +34,10 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public CreateShipmentResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
+	public ServiceResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
-		CreateShipmentResponse createShipmentResponse = new CreateShipmentResponse();
+		ServiceResponse createShipmentResponse = new ServiceResponse();
 		if (fromCity.isEmpty() || toCity.isEmpty()) {
 			createShipmentResponse.setErrorMessage("Required fields must be filled");
 		} else {
