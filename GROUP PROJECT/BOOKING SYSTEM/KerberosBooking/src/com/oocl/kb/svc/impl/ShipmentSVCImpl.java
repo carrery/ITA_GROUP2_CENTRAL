@@ -1,12 +1,18 @@
 package com.oocl.kb.svc.impl;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
+import com.oocl.kb.model.ShipmentContainer;
 import com.oocl.kb.response.CreateShipmentResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
 
@@ -40,6 +46,19 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		}
 		
 		return createShipmentResponse;
+	}
+
+	@Override
+	public void createShipmentContainer(JSONObject jsonShpCntr) {
+		// TODO Auto-generated method stub
+		List<ShipmentContainer> list = new ArrayList<ShipmentContainer>();
+		JSONArray array = jsonShpCntr.getJSONArray("shp_container");
+		for(int i = 0 ; i < array.length() ; i++){
+			ShipmentContainer sc = new ShipmentContainer(null, array.getJSONObject(i).getString("cntr_num"), null, null, null);
+			//sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
+		    list.add(sc);
+		}
+		
 	}
 	
 	

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.model.Shipment;
+import com.oocl.kb.model.ShipmentContainer;
 
 public class ShipmentDAOImpl implements ShipmentDAO {
 
@@ -41,6 +42,22 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		System.out.println("Booking Created");
 		return shpNum;
 
+	}
+
+	@Override
+	public void createShpContainer(ArrayList<ShipmentContainer> cntrList) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		Transaction tx = null;
+		
+		tx = session.beginTransaction();
+		
+		for(ShipmentContainer shpCntr: cntrList) {
+			session.save(shpCntr);
+		}
+		
+		tx.commit();
+		session.close();
 	}
 	
 }

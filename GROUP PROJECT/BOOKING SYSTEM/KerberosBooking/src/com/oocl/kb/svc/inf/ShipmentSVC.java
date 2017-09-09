@@ -1,7 +1,10 @@
 package com.oocl.kb.svc.inf;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+
+import org.json.JSONObject;
 
 import com.oocl.kb.response.CreateShipmentResponse;
 import com.oocl.kb.response.UserLoginResponse;
@@ -12,4 +15,6 @@ public interface ShipmentSVC {
 	
 	public CreateShipmentResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
+	
+	public void createShipmentContainer(JSONObject jsonShpCntr);
 }

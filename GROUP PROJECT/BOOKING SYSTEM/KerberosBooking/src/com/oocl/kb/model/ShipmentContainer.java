@@ -14,21 +14,30 @@ public class ShipmentContainer {
 	@Id
 	@Column(name = "REF_NUM")
 	private String refNum;
-	@Id
+	
 	@Column(name = "SHIPMENT_NUM")
 	private String shipmentNum;
-	@Id
+	
 	@Column(name = "CNTR_NUM")
 	private String cntrNum;
-	@Id
+	
 	@Column(name = "GROSS_WT")
 	private BigDecimal grossWt;
-	@Id
+	
 	@Column(name = "NET_WT")
 	private BigDecimal netWt;
-	@Id
+	
 	@Column(name = "WT_UNIT")
 	private String wtUnit;
+	
+	public ShipmentContainer(String shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit) {
+		super();
+		this.shipmentNum = shipmentNum;
+		this.cntrNum = cntrNum;
+		this.grossWt = grossWt;
+		this.netWt = netWt;
+		this.wtUnit = wtUnit;
+	}
 	
 	public String getRefNum() {
 		return refNum;
