@@ -77,6 +77,7 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>com.oocl.kb.model.User</beans:value>
+				<beans:value>com.oocl.kb.model.Shipment</beans:value>
 				<beans:value>com.oocl.kb.model.Role</beans:value>
 				<beans:value>com.oocl.kb.model.Shipment</beans:value>
 				<beans:value>com.oocl.kb.model.ShipmentCargo</beans:value>

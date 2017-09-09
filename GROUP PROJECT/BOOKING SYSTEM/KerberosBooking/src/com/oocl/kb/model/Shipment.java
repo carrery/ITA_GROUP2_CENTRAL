@@ -86,6 +86,10 @@ public class Shipment {
 		this.goodCustomer = goodCustomer;
 		this.shipmentStatus = shipmentStatus;
 	}
+	
+	public Shipment() {
+		
+	}
 
 	public Long getShipmentNum() {
 		return shipmentNum;

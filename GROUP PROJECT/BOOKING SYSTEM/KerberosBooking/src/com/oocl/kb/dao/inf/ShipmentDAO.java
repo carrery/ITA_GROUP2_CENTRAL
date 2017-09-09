@@ -3,8 +3,11 @@ package com.oocl.kb.dao.inf;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.SessionFactory;
+
+import com.oocl.kb.model.Shipment;
 
 
 
@@ -15,5 +18,10 @@ public interface ShipmentDAO {
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus);
 	
     public void createShpContainer(ArrayList<com.oocl.kb.model.ShipmentContainer> cntrList);
+    
+    public void createShpCargo(ArrayList<com.oocl.kb.model.ShipmentCargo> cgoList);
+
+	public List<Shipment> getAllShipments();
+  
 
 }
