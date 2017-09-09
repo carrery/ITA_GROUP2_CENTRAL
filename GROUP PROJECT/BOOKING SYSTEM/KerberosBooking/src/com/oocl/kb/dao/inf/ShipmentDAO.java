@@ -22,7 +22,7 @@ public interface ShipmentDAO {
 	
 	public List<ShipmentContainer> getAllContainersByShipment(String shpNum);
 	
-	public List<ShipmentCargo> getAllCargoByContainer(String refNum);
+	public List<ShipmentCargo> getAllCargoByContainer(Long refNum);
 	
 	public String deleteContainer(ShipmentContainer container);
 	

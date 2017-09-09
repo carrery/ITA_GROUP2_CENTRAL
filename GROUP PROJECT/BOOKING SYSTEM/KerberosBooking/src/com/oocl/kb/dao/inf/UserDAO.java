@@ -25,4 +25,5 @@ public interface UserDAO {
 	public String createUser(User user);
 	
 	public String updateUser(User user);
+
 }

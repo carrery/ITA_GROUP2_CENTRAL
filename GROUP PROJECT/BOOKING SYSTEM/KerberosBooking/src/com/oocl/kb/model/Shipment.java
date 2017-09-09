@@ -35,7 +35,7 @@ public class Shipment {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="shpNumSeq")
-	@SequenceGenerator(name="shpNumSeq", sequenceName="SHP_NUM_SEQ")
+	@SequenceGenerator(name="shpNumSeq", sequenceName="SHP_NUM_SEQ",allocationSize=1)
 	@Column(name="SHIPMENT_NUM")
 	private Long shipmentNum;
 	

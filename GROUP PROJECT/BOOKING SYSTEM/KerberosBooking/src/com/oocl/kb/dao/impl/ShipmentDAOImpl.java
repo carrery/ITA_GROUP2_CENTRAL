@@ -79,7 +79,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public List<ShipmentCargo> getAllCargoByContainer(String refNum) {
+	public List<ShipmentCargo> getAllCargoByContainer(Long refNum) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();

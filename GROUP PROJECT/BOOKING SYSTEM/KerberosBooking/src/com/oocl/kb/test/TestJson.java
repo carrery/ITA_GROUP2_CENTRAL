@@ -18,7 +18,7 @@ public class TestJson {
 		for(int i = 0 ; i < array.length() ; i++){
 			ShipmentContainer sc = new ShipmentContainer(null, null, null, null, null);
 			sc.setCntrNum(array.getJSONObject(i).getString("cntr_num"));
-			sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
+			sc.setRefNum(Long.parseLong(array.getJSONObject(i).getString("ref_num")));
 		    list.add(sc);
 		}
 		

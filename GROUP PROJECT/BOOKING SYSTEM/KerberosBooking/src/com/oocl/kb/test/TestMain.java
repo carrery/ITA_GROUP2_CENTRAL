@@ -50,7 +50,7 @@ public class TestMain {
 	
 	static void test_createShipment() {
 		ShipmentDAOImpl shpDAO = (ShipmentDAOImpl) ctx.getBean("shpDAO");
-		System.out.println(shpDAO.createBooking("MNL", "SIN", null, null, "Jag", "Caloi", 0, 0, 0, "Pending"));
+		System.out.println(shpDAO.createBooking("MNL", "SIN", null, null, "test1", "Caloi", 0, 0, 0, "Pending"));
 	}
 
 }

@@ -29,15 +29,15 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
 	}
-	public void setShipmentDAO(ShipmentDAO shpDAO) {
-		this.shipmentDAO = shpDAO;
+	public void setShipmentDAO(ShipmentDAO shipmentDAO) {
+		this.shipmentDAO = shipmentDAO;
 	}
 
 	@Override
 	public Long createShipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
-		return shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
+		return shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
 				goodCustomer, shipmentStatus);
 	}
 
@@ -50,7 +50,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		if (fromCity.isEmpty() || toCity.isEmpty()) {
 			createShipmentResponse.setErrorMessage("Required fields must be filled");
 		} else {
-			shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
+			shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
 					goodCustomer, shipmentStatus);
 		}
 
@@ -60,11 +60,11 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	@Override
 	public int removeShpContainersCargoes(String shpNum) {
 		// TODO Auto-generated method stub
-		for (ShipmentContainer container : shpDAO.getAllContainersByShipment(shpNum)) {
-			for (ShipmentCargo cargo : shpDAO.getAllCargoByContainer(container.getRefNum())) {
-				shpDAO.deleteCargo(cargo);
+		for (ShipmentContainer container : shipmentDAO.getAllContainersByShipment(shpNum)) {
+			for (ShipmentCargo cargo : shipmentDAO.getAllCargoByContainer(container.getRefNum())) {
+				shipmentDAO.deleteCargo(cargo);
 			}
-			shpDAO.deleteContainer(container);
+			shipmentDAO.deleteContainer(container);
 		}
 		return 0;
 	}
@@ -94,7 +94,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
 		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
-		response.setServiceResult("Update Shipment Details: " + this.shpDAO.updateShipment(newShp, shpNum));
+		response.setServiceResult("Update Shipment Details: " + this.shipmentDAO.updateShipment(newShp, shpNum));
 		removeShpContainersCargoes(shpNum);
 		//create containers and cargoes again
 

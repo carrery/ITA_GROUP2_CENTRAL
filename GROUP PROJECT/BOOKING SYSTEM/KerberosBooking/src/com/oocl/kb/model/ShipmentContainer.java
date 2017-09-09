@@ -4,7 +4,10 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +15,10 @@ import javax.persistence.Table;
 public class ShipmentContainer {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="refNumSeq")
+	@SequenceGenerator(name="refNumSeq", sequenceName="REF_NUM_SEQ",allocationSize=1)
 	@Column(name = "REF_NUM")
-	private String refNum;
+	private Long refNum;
 	
 	@Column(name = "SHIPMENT_NUM")
 	private String shipmentNum;
@@ -31,7 +36,6 @@ public class ShipmentContainer {
 	private String wtUnit;
 	
 	public ShipmentContainer(String shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit) {
-		super();
 		this.shipmentNum = shipmentNum;
 		this.cntrNum = cntrNum;
 		this.grossWt = grossWt;
@@ -39,11 +43,10 @@ public class ShipmentContainer {
 		this.wtUnit = wtUnit;
 	}
 	
-
-	public String getRefNum() {
+	public Long getRefNum() {
 		return refNum;
 	}
-	public void setRefNum(String refNum) {
+	public void setRefNum(Long refNum) {
 		this.refNum = refNum;
 	}
 	public String getShipmentNum() {
