@@ -99,7 +99,7 @@ public class UserSVCImpl implements UserSVC{
 		User user = new User();
 		
 		if(username != null) {
-			thisUser.setUsername(username.toUpperCase());
+			user.setUsername(username.toUpperCase());
 		}
 		
 		user.setUsername(username);
@@ -108,8 +108,8 @@ public class UserSVCImpl implements UserSVC{
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 		user.setEmail(email);
-		thisUser.setFirstName(firstName.toUpperCase());
-		thisUser.setLastName(lastName.toUpperCase());
+		user.setFirstName(firstName.toUpperCase());
+		user.setLastName(lastName.toUpperCase());
 		user.setContactNo(contactNo);
 		user.setDeleted(0);
 		

@@ -30,12 +30,6 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public CreateShipmentResponse getUserLoginResponse(String email, String password) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public CreateShipmentResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
