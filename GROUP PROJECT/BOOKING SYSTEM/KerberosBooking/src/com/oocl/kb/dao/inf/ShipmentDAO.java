@@ -17,12 +17,11 @@ import com.oocl.kb.model.ShipmentContainer;
 public interface ShipmentDAO {
 	public void setSessionFactory(SessionFactory sessionFactory);
 	
-	public Long createBooking(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
-			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus);
+	public Long createBooking(Shipment shp);
 	
 	public List<ShipmentContainer> getAllContainersByShipment(String shpNum);
 	
-	public List<ShipmentCargo> getAllCargoByContainer(String refNum);
+	public List<ShipmentCargo> getAllCargoByContainer(Long refNum);
 	
 	public String deleteContainer(ShipmentContainer container);
 	

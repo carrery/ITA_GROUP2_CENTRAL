@@ -11,11 +11,9 @@ import org.json.JSONObject;
 
 
 public interface ShipmentSVC {
-	public Long createShipment(String fromCity, String tocity, Date fromDate, Date toDate, String shipper, String consignee,
-			int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
+	public Long createShipment(String json);
 	
-	public ServiceResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
-			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
+	public ServiceResponse getCreateShipmentResponse(String json);
 	
 	public void createShipmentContainer(JSONObject jsonShpCntr);
 	

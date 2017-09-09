@@ -23,16 +23,10 @@ public class ShipmentController {
 	private ShipmentSVC shpSVC;
 
 	@RequestMapping(value = "/createBooking", method = RequestMethod.POST)
-	public @ResponseBody ServiceResponse createShp(@RequestParam("fromCity") String fromCity,
-			@RequestParam("toCity") String toCity, @RequestParam("fromDate") Date fromDate,
-			@RequestParam("toDate") Date toDate, @RequestParam("shipper") String shipper,
-			@RequestParam("consignee") String consignee, @RequestParam("approveDoc") int approveDoc,
-			@RequestParam("validWeight") int validWeight, @RequestParam("goodCustomer") int goodCustomer,
-			@RequestParam("shipmentStatus") String shipmentStatus, HttpServletRequest request) {
+	public @ResponseBody ServiceResponse createShp(@RequestParam("jsonString") String json, HttpServletRequest request) {
 
 		// return null;
-		return shpSVC.getCreateShipmentResponse(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc,
-				validWeight, goodCustomer, shipmentStatus);
+		return shpSVC.getCreateShipmentResponse(json);
 	}
 
 	@RequestMapping(value = "/getAllShipments", method = RequestMethod.GET)
