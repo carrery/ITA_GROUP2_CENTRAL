@@ -55,9 +55,9 @@
 	<beans:bean id="userSVC" class="com.oocl.kb.svc.impl.UserSVCImpl">
 		<beans:property name="userDAO" ref="userDAO"></beans:property>
 	</beans:bean>
-	
+
 	<beans:bean id="shpSVC" class="com.oocl.kb.svc.impl.ShipmentSVCImpl">
-		<beans:property name="shpDAO" ref="shpDAO"></beans:property>
+		<beans:property name="shipmentDAO" ref="shpDAO"></beans:property>
 	</beans:bean>
 
 	<!-- Beans for Data source connection -->
@@ -78,6 +78,10 @@
 			<beans:list>
 				<beans:value>com.oocl.kb.model.User</beans:value>
 				<beans:value>com.oocl.kb.model.Shipment</beans:value>
+				<beans:value>com.oocl.kb.model.Role</beans:value>
+				<beans:value>com.oocl.kb.model.Shipment</beans:value>
+				<beans:value>com.oocl.kb.model.ShipmentCargo</beans:value>
+				<beans:value>com.oocl.kb.model.ShipmentContainer</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">

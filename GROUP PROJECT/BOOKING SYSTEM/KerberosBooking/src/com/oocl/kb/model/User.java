@@ -90,7 +90,6 @@ public class User {
 	
 	public User(String username, String password, String role, String firstName, String lastName, String email,
 			String contactNo, int isDeleted) {
-		super();
 		this.username = username;
 		this.password = password;
 		this.role = role;
@@ -99,6 +98,9 @@ public class User {
 		this.email = email;
 		this.contactNo = contactNo;
 		this.isDeleted = isDeleted;
+	}
+	
+	public User() {
 	}
 	
 }

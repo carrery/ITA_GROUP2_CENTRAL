@@ -8,7 +8,7 @@ import com.oocl.kb.response.UserLoginResponse;
 public interface UserSVC {
 	public int validateUser(String username, String password);
 
-	public User getUserByEmailPassword(String email, String password);
+	public User getUserByUsernamePassword(String username, String password);
 
 	public UserLoginResponse getUserLoginResponse(String email, String password);
 

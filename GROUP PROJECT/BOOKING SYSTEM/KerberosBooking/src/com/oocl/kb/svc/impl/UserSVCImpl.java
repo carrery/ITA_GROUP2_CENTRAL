@@ -28,8 +28,8 @@ public class UserSVCImpl implements UserSVC{
 	}
 	
 	@Override
-	public User getUserByEmailPassword(String email, String password) {
-		return this.userDAO.getUserDetails(email, password);
+	public User getUserByUsernamePassword(String username, String password) {
+		return this.userDAO.getUserDetails(username, password);
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class UserSVCImpl implements UserSVC{
 		{			
 			userResponse.setIsUserValid(validateUser(username, password));
 			if(userResponse.getIsUserValid() == 1) {
-				User thisUser = getUserByEmailPassword(username,password);
+				User thisUser = getUserByUsernamePassword(username,password);
 				Role role = getRoleByUser(thisUser.getRole());
 				userResponse.setCanCreateBooking(role.getAccessCB());
 				userResponse.setCanViewBooking(role.getAccessFS());

@@ -9,7 +9,6 @@ import com.oocl.kb.model.Shipment;
 import com.oocl.kb.response.ServiceResponse;
 import org.json.JSONObject;
 
-import com.oocl.kb.response.UserLoginResponse;
 
 public interface ShipmentSVC {
 	public Long createShipment(String fromCity, String tocity, Date fromDate, Date toDate, String shipper, String consignee,
@@ -19,6 +18,13 @@ public interface ShipmentSVC {
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
 	
 	public void createShipmentContainer(JSONObject jsonShpCntr);
+	
+	public int removeShpContainersCargoes(String shpNum);
+	
+	public void createShipmentCargo(JSONObject jsonShpCgo);
 
-	List<Shipment> getAllShipments();
+	public List<Shipment> getAllShipments();
+
+	public ServiceResponse updateShipment(String shpNum, String fromCity, String toCity, Date fromDate, Date toDate,
+			String shipper, String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
 }
