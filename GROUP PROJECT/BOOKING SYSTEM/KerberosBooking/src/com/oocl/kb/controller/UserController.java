@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.oocl.kb.response.UpdateUserResponse;
 import com.oocl.kb.response.UserLoginResponse;
 import com.oocl.kb.svc.inf.UserSVC;
 
@@ -31,7 +32,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
-	public @ResponseBody int updateUser(@RequestParam("username") String username,
+	public @ResponseBody UpdateUserResponse updateUser(@RequestParam("username") String username,
 			@RequestParam("password") String password, @RequestParam("role") String role,
 			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
 			@RequestParam("email") String email, @RequestParam("contactNo") String contactNo,

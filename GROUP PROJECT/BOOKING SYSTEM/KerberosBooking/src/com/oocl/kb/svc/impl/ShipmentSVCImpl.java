@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
+import com.oocl.kb.response.CreateShipmentResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
@@ -25,6 +26,12 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
 		return shpDAO.createBooking(fromCity, tocity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+	}
+
+	@Override
+	public CreateShipmentResponse getUserLoginResponse(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

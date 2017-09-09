@@ -2,6 +2,7 @@ package com.oocl.kb.svc.inf;
 
 import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
+import com.oocl.kb.response.UpdateUserResponse;
 import com.oocl.kb.response.UserLoginResponse;
 
 public interface UserSVC {
@@ -18,11 +19,10 @@ public interface UserSVC {
 	public int createUser(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo, int isDeleted);
 
-	public int updateUser(String username, String password, String role, String firstName, String lastName, String email,
+	public UpdateUserResponse updateUser(String username, String password, String role, String firstName, String lastName, String email,
 			String contactNo, int isDeleted);
 
 	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo, int isDeleted);
-
 	
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
+import com.oocl.kb.response.UpdateUserResponse;
 import com.oocl.kb.response.UserLoginResponse;
 import com.oocl.kb.svc.inf.UserSVC;
 
@@ -42,6 +43,7 @@ public class UserSVCImpl implements UserSVC{
 		if (username.isEmpty() || password.isEmpty()) {
 			userResponse.setErrorMessage("Username or Password cannot be empty!");
 		}
+		
 		else
 		{			
 			userResponse.setIsUserValid(validateUser(username, password));
@@ -62,7 +64,9 @@ public class UserSVCImpl implements UserSVC{
 	@Override
 	public int deleteUser(String username) {
 		// TODO Auto-generated method stub
-		return this.userDAO.deleteUser(this.userDAO.getUser(username));
+		User user = this.userDAO.getUser(username);
+		user.setDeleted(1);
+		return this.userDAO.deleteUser(user);
 	}
 	
 	@Override
@@ -73,28 +77,37 @@ public class UserSVCImpl implements UserSVC{
 	}
 	
 	@Override
-	public int updateUser(String username, String password, String role, String firstName, String lastName,
+	public UpdateUserResponse updateUser(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo, int isDeleted) {
 		// TODO Auto-generated method stub
-		return this.userDAO.updateUserByUsername(setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted));
+		UpdateUserResponse response = new UpdateUserResponse();
+		
+		if(this.userDAO.getUser(username) == null) {
+			response.setErrorMesssage("No user found");
+		}
+		
+		User newUser = setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted);
+		response.setIsUpdateSuccess(this.userDAO.updateUserByUsername(newUser));	
+		
+		return response;
 	}
 
 	@Override
 	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo, int isDeleted) {
 		// TODO Auto-generated method stub
-		User thisUser = new User();
+		User user = new User();
 		
-		thisUser.setUsername(username);
-		thisUser.setPassword(password);
-		thisUser.setRole(role);
-		thisUser.setFirstName(firstName);
-		thisUser.setLastName(lastName);
-		thisUser.setEmail(email);
-		thisUser.setContactNo(contactNo);
-		thisUser.setDeleted(0);
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setRole(role);
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
+		user.setEmail(email);
+		user.setContactNo(contactNo);
+		user.setDeleted(0);
 		
-		return thisUser;
+		return user;
 	}
 	
 }
