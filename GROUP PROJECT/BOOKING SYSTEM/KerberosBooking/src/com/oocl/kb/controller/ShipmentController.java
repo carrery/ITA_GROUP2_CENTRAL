@@ -18,7 +18,8 @@ import com.oocl.kb.svc.inf.UserSVC;
 
 @RestController
 public class ShipmentController {
-	@Autowired(required = true)
+	
+	//@Autowired(required = true)
 	private ShipmentSVC shpSVC;
 
 	@RequestMapping(value = "/createBooking", method = RequestMethod.POST)
@@ -27,7 +28,7 @@ public class ShipmentController {
 			@RequestParam("consignee") String consignee, @RequestParam("approveDoc") int approveDoc, @RequestParam("validWeight") int validWeight,
 			@RequestParam("goodCustomer") int goodCustomer, @RequestParam("shipmentStatus") String shipmentStatus, HttpServletRequest request) {
 		
-		return null;
-		//return shpSVC.createShipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus)
-	}
+		//return null;
+		return shpSVC.getCreateShipmentResponse(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+		}
 }

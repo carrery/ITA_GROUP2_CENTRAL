@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
+import com.oocl.kb.response.CreateShipmentResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
@@ -21,10 +22,26 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public Long createShipment(String fromCity, String tocity, Date fromDate, Date toDate, String shipper,
+	public Long createShipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
-		return shpDAO.createBooking(fromCity, tocity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+		return shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
 	}
+
+	@Override
+	public CreateShipmentResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
+			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
+		// TODO Auto-generated method stub
+		CreateShipmentResponse createShipmentResponse = new CreateShipmentResponse();
+		if (fromCity.isEmpty() || toCity.isEmpty()) {
+			createShipmentResponse.setErrorMessage("Required fields must be filled");
+		} else {
+			shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+		}
+		
+		return createShipmentResponse;
+	}
+	
+	
 
 }

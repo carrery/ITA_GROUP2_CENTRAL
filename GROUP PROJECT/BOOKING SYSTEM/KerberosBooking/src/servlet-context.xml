@@ -9,7 +9,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
 
-	<!-- DispatcherServlet Context: defines the servlet's request-processing infrastructure -->
+	<!-- DispatcherServlet Context: defines the servlet's request-processing 
+		infrastructure -->
 	<context:component-scan base-package="com.oocl.kb.*" />
 
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -19,36 +20,44 @@
 		up static resources in the ${webappRoot}/resources directory -->
 
 	<!-- Replaces Home Controller class -->
-	<mvc:view-controller path="/" view-name="admin"/>
-	
-	<!-- Admin page -->
-	<mvc:resources mapping="/adminview/**" location="/admin/" /> <mvc:resources 
-		mapping="/app/**" location="/admin/app/" /> <mvc:resources mapping="/controller/**" 
-		location="/admin/app/controller/*.js" /> <mvc:resources mapping="/view/**" location="/admin/app/view/*.js" /> <mvc:resources 
-		mapping="/resources/img/**" location="/admin/resources/images/*.png" />
+	<mvc:view-controller path="/" view-name="admin" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- Admin page -->
+	<mvc:resources mapping="/adminview/**" location="/admin/" />
+	<mvc:resources mapping="/app/**" location="/admin/app/" />
+	<mvc:resources mapping="/controller/**" location="/admin/app/controller/*.js" />
+	<mvc:resources mapping="/view/**" location="/admin/app/view/*.js" />
+	<mvc:resources mapping="/resources/img/**" location="/admin/resources/images/*.png" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- Instead of creating beans by declaring it in the XML Configuration file, annotations will do this.  -->
+	<!-- Instead of creating beans by declaring it in the XML Configuration 
+		file, annotations will do this. -->
 	<tx:annotation-driven />
 
-	<!-- Beans for DAO Implementation-->
+	<!-- Beans for DAO Implementation -->
 	<beans:bean id="userDAO" class="com.oocl.kb.dao.impl.UserDAOImpl">
 		<beans:property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	
-	<!-- Beans for SVC Implementation-->
+
+	<beans:bean id="shpDAO" class="com.oocl.kb.dao.impl.ShipmentDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+
+	<!-- Beans for SVC Implementation -->
 	<beans:bean id="userService" class="com.oocl.kb.svc.impl.UserSVCImpl">
 		<beans:property name="userDAO" ref="userDAO"></beans:property>
 	</beans:bean>
 
-	<!-- Beans for Data source connection -->	
+	<!-- Beans for Data source connection -->
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
@@ -65,6 +74,7 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>com.oocl.kb.model.User</beans:value>
+				<beans:value>com.oocl.kb.model.Shipment</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">

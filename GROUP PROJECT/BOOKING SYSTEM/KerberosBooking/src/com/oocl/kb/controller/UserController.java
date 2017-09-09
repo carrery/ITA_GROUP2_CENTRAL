@@ -16,7 +16,7 @@ import com.oocl.kb.svc.inf.UserSVC;
 @RestController
 public class UserController {
 	
-	@Autowired(required = true)
+	//@Autowired(required = true)
 	private UserSVC userSVC;
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)

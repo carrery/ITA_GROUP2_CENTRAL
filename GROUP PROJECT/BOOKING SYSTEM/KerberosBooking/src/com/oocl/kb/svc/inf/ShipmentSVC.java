@@ -10,5 +10,6 @@ public interface ShipmentSVC {
 	public Long createShipment(String fromCity, String tocity, Date fromDate, Date toDate, String shipper, String consignee,
 			int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
 	
-	public CreateShipmentResponse getUserLoginResponse(String email, String password);
+	public CreateShipmentResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
+			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
 }
