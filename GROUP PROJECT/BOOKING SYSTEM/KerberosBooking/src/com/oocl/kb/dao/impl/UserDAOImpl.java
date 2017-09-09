@@ -83,13 +83,18 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public int deleteUser(User user) {
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		session.update(user);
-		tx.commit();
-		session.close();
-		return 0;
+	public String deleteUser(User user) {		
+		try {
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.update(user);
+			tx.commit();
+			session.close();
+			return "Success";
+		}
+		catch(Exception e) {
+			return "Fail";
+		}		
 	}
 	
 	@Override
@@ -107,35 +112,43 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public int updateUserByUsername(User user) {	
+	public String updateUser(User user) {	
 		// TODO Auto-generated method stub
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		session.update(user);
-		tx.commit();
-		session.close();
-		return 0;
+		try {
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.update(user);
+			tx.commit();
+			session.close();
+			return "Success";
+		}
+		catch(Exception e) {
+			return "Fail";
+		}
 	}
 
 	@Override
-	public int createUser(User user) {
+	public String createUser(User user) {
 		// TODO Auto-generated method stub
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM User WHERE username = ? OR (firstName = ? AND lastName = ?)");
-		query.setParameter(0, user.getUsername());
-		query.setParameter(1, user.getFirstName());
-		query.setParameter(2, user.getLastName());
-		
-		User ifExistingUser = (User) query.uniqueResult();
-		
-		if (ifExistingUser == null) {
-			session.save(user);
-			tx.commit();
-			return 1;
+		try {
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			Query query = session.createQuery("FROM User WHERE username = ? OR (firstName = ? AND lastName = ?)");
+			query.setParameter(0, user.getUsername());
+			query.setParameter(1, user.getFirstName());
+			query.setParameter(2, user.getLastName());
+			
+			User ifExistingUser = (User) query.uniqueResult();
+			
+			if (ifExistingUser == null) {
+				session.save(user);
+				tx.commit();
+			}else throw new Exception();			
+			session.close();
+			return "Success";
 		}
-		
-		session.close();
-		return 0;
+		catch(Exception e) {
+			return "Fail";
+		}	
 	}
 }

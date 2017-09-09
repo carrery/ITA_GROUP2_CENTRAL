@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
-import com.oocl.kb.response.UpdateUserResponse;
+import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.response.UserLoginResponse;
 import com.oocl.kb.svc.inf.UserSVC;
 
@@ -62,32 +62,36 @@ public class UserSVCImpl implements UserSVC{
 	}
 
 	@Override
-	public int deleteUser(String username) {
+	public ServiceResponse deleteUser(String username) {
 		// TODO Auto-generated method stub
+		ServiceResponse response = new ServiceResponse();
 		User user = this.userDAO.getUser(username);
 		user.setDeleted(1);
-		return this.userDAO.deleteUser(user);
+		response.setServiceResult(this.userDAO.deleteUser(user));
+		return response;
 	}
 	
 	@Override
-	public int createUser(String username, String password, String role, String firstName, String lastName,
+	public ServiceResponse createUser(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo) {
 		// TODO Auto-generated method stub
-		return this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo));
+		ServiceResponse response = new ServiceResponse();
+		response.setServiceResult(this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo)));
+		return response;
 	}
 	
 	@Override
-	public UpdateUserResponse updateUser(String username, String password, String role, String firstName, String lastName,
+	public ServiceResponse updateUser(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo) {
 		// TODO Auto-generated method stub
-		UpdateUserResponse response = new UpdateUserResponse();
+		ServiceResponse response = new ServiceResponse();
 		
 		if(this.userDAO.getUser(username) == null) {
-			response.setErrorMesssage("No user found");
+			response.setErrorMessage("No user found");
 		}
 		
 		User newUser = setupUserDetails(username,password,role,firstName,lastName,email,contactNo);
-		response.setIsUpdateSuccess(this.userDAO.updateUserByUsername(newUser));	
+		response.setServiceResult(this.userDAO.updateUser(newUser));	
 		
 		return response;
 	}

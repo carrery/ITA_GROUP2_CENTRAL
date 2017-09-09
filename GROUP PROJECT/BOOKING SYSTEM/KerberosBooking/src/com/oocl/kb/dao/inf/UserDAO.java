@@ -20,9 +20,9 @@ public interface UserDAO {
 	
 	public List<User> getAllUsersByUsername(String username);
 
-	public int deleteUser(User user);
+	public String deleteUser(User user);
 	
-	public int createUser(User user);
+	public String createUser(User user);
 	
-	public int updateUserByUsername(User user);
+	public String updateUser(User user);
 }
