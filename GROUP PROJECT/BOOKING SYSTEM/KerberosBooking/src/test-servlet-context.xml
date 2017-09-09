@@ -57,7 +57,7 @@
 	</beans:bean>
 	
 	<beans:bean id="shpSVC" class="com.oocl.kb.svc.impl.ShipmentSVCImpl">
-		<beans:property name="shpDAO" ref="shpDAO"></beans:property>
+		<beans:property name="shipmentDAO" ref="shpDAO"></beans:property>
 	</beans:bean>
 
 	<!-- Beans for Data source connection -->
