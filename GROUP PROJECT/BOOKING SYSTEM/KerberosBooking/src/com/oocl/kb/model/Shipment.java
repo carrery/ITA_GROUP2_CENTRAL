@@ -17,17 +17,19 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Filter;
 import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.FilterDefs;
 import org.hibernate.annotations.Filters;
 import org.hibernate.annotations.ParamDef;
 
 @Entity
 @Table(name = "SHP_SHIPMENT")
-@FilterDef(name="username", parameters={
-		@ParamDef( name="username", type="string" )
+@FilterDefs(value = {
+		@FilterDef(name="Customer", parameters={@ParamDef( name="username", type="string" )}),
+		@FilterDef(name="CSV", parameters={@ParamDef( name="username", type="string" )})
 })
 @Filters( {
     @Filter(name="Customer", condition="shipper = :username or consignee = :username"),
-    @Filter(name="CSV", condition="createBy = :username")
+    @Filter(name="CSV", condition="create_by = :username")
 } )
 public class Shipment {
 	

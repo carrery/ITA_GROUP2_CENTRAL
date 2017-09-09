@@ -39,6 +39,7 @@ public class ShipmentContainer {
 		this.wtUnit = wtUnit;
 	}
 	
+
 	public String getRefNum() {
 		return refNum;
 	}
