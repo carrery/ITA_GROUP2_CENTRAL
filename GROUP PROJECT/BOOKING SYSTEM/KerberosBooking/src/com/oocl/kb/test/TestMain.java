@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.oocl.kb.dao.impl.ShipmentDAOImpl;
 import com.oocl.kb.dao.impl.UserDAOImpl;
 import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
@@ -21,7 +22,8 @@ public class TestMain {
 		
 //		test_validateUser();
 //		test_getUserRole();
-		test_getAllUsersByUsername();
+//		test_getAllUsersByUsername();
+		test_createShipment();
 		
 	}
 	
@@ -44,6 +46,11 @@ public class TestMain {
 		for(User us : testList ) {
 			System.out.println(us.getFirstName() + " " + us.getLastName());
 		}
+	}
+	
+	static void test_createShipment() {
+		ShipmentDAOImpl shpDAO = (ShipmentDAOImpl) ctx.getBean("shpDAO");
+		System.out.println(shpDAO.createBooking("MNL", "SIN", null, null, "Jag", "Caloi", 0, 0, 0, "Pending"));
 	}
 
 }

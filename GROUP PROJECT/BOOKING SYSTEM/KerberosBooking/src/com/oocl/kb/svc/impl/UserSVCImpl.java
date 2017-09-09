@@ -98,12 +98,18 @@ public class UserSVCImpl implements UserSVC{
 		// TODO Auto-generated method stub
 		User user = new User();
 		
+		if(username != null) {
+			thisUser.setUsername(username.toUpperCase());
+		}
+		
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setRole(role);
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 		user.setEmail(email);
+		thisUser.setFirstName(firstName.toUpperCase());
+		thisUser.setLastName(lastName.toUpperCase());
 		user.setContactNo(contactNo);
 		user.setDeleted(0);
 		
