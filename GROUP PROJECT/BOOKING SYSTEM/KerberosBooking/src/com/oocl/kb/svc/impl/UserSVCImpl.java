@@ -71,14 +71,14 @@ public class UserSVCImpl implements UserSVC{
 	
 	@Override
 	public int createUser(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo, int isDeleted) {
+			String email, String contactNo) {
 		// TODO Auto-generated method stub
-		return this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted));
+		return this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo));
 	}
 	
 	@Override
 	public UpdateUserResponse updateUser(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo, int isDeleted) {
+			String email, String contactNo) {
 		// TODO Auto-generated method stub
 		UpdateUserResponse response = new UpdateUserResponse();
 		
@@ -86,7 +86,7 @@ public class UserSVCImpl implements UserSVC{
 			response.setErrorMesssage("No user found");
 		}
 		
-		User newUser = setupUserDetails(username,password,role,firstName,lastName,email,contactNo,isDeleted);
+		User newUser = setupUserDetails(username,password,role,firstName,lastName,email,contactNo);
 		response.setIsUpdateSuccess(this.userDAO.updateUserByUsername(newUser));	
 		
 		return response;
@@ -94,7 +94,7 @@ public class UserSVCImpl implements UserSVC{
 
 	@Override
 	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo, int isDeleted) {
+			String email, String contactNo) {
 		// TODO Auto-generated method stub
 		User user = new User();
 		

@@ -17,7 +17,7 @@ import com.oocl.kb.svc.inf.UserSVC;
 @RestController
 public class UserController {
 
-	//@Autowired(required = true)
+	// @Autowired(required = true)
 	private UserSVC userSVC;
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -37,6 +37,15 @@ public class UserController {
 			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
 			@RequestParam("email") String email, @RequestParam("contactNo") String contactNo,
 			@RequestParam("isDeleted") int isDeleted, HttpServletRequest request) {
-		return userSVC.updateUser(username,password,role,firstName,lastName,email,contactNo,isDeleted);
+		return userSVC.updateUser(username, password, role, firstName, lastName, email, contactNo);
+	}
+
+	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
+	public @ResponseBody int createUser(@RequestParam("username") String username,
+			@RequestParam("password") String password, @RequestParam("role") String role,
+			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
+			@RequestParam("email") String email, @RequestParam("contactNo") String contactNo,
+			HttpServletRequest request) {
+		return userSVC.createUser(username, password, role, firstName, lastName, email, contactNo);
 	}
 }
