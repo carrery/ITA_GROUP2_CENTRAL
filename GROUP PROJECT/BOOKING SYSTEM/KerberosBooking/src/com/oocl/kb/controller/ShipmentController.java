@@ -34,11 +34,22 @@ public class ShipmentController {
 		return shpSVC.getCreateShipmentResponse(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc,
 				validWeight, goodCustomer, shipmentStatus);
 	}
-	
+
 	@RequestMapping(value = "/getAllShipments", method = RequestMethod.POST)
 	public @ResponseBody List<Shipment> getAllShipments(@RequestParam("username") String username
 			, HttpServletRequest request) {
 		return shpSVC.getAllShipments(username);
+	}
+
+	@RequestMapping(value = "/updateShipment", method = RequestMethod.POST)
+	public @ResponseBody ServiceResponse updateShipment(@RequestParam("shpnum") String shpnum, @RequestParam("fromCity") String fromCity,
+			@RequestParam("toCity") String toCity, @RequestParam("fromDate") Date fromDate,
+			@RequestParam("toDate") Date toDate, @RequestParam("shipper") String shipper,
+			@RequestParam("consignee") String consignee, @RequestParam("approveDoc") int approveDoc,
+			@RequestParam("validWeight") int validWeight, @RequestParam("goodCustomer") int goodCustomer,
+			@RequestParam("shipmentStatus") String shipmentStatus, HttpServletRequest request) {
+		return shpSVC.updateShipment(shpnum,fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc,
+				validWeight, goodCustomer, shipmentStatus);
 	}
 	
 }

@@ -3,6 +3,7 @@ package com.oocl.kb.svc.impl;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,17 +20,15 @@ import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
-	
+
 	@Autowired
 	private ShipmentDAO shipmentDAO;
-	
+
 	@Autowired 
 	private UserDAO userDAO;
-	
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
 	}
-	
 	public void setShipmentDAO(ShipmentDAO shpDAO) {
 		this.shipmentDAO = shpDAO;
 	}
@@ -38,39 +37,68 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	public Long createShipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
-		return shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+		return shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
+				goodCustomer, shipmentStatus);
 	}
 
 	@Override
-	public ServiceResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
-			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
+	public ServiceResponse getCreateShipmentResponse(String fromCity, String toCity, Date fromDate, Date toDate,
+			String shipper, String consignee, int approveDoc, int validWeight, int goodCustomer,
+			String shipmentStatus) {
 		// TODO Auto-generated method stub
 		ServiceResponse createShipmentResponse = new ServiceResponse();
 		if (fromCity.isEmpty() || toCity.isEmpty()) {
 			createShipmentResponse.setErrorMessage("Required fields must be filled");
 		} else {
-			shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+			shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight,
+					goodCustomer, shipmentStatus);
 		}
-		
+
 		return createShipmentResponse;
 	}
 
 	@Override
-	public void createShipmentContainer(JSONObject jsonShpCntr) {
+	public int removeShpContainersCargoes(String shpNum) {
 		// TODO Auto-generated method stub
+		for (ShipmentContainer container : shpDAO.getAllContainersByShipment(shpNum)) {
+			for (ShipmentCargo cargo : shpDAO.getAllCargoByContainer(container.getRefNum())) {
+				shpDAO.deleteCargo(cargo);
+			}
+			shpDAO.deleteContainer(container);
+		}
+		return 0;
+	}
+
+	@Override
+	public void createShipmentContainer(JSONObject jsonShpCntr) {
 		ArrayList<ShipmentContainer> cntrList = new ArrayList<ShipmentContainer>();
 		JSONArray array = jsonShpCntr.getJSONArray("shp_container");
-		for(int i = 0 ; i < array.length() ; i++){
-			ShipmentContainer sc = new ShipmentContainer(null, array.getJSONObject(i).getString("cntr_num"), null, null, null);
-			//sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
+		for (int i = 0; i < array.length(); i++) {
+			ShipmentContainer sc = new ShipmentContainer(null, array.getJSONObject(i).getString("cntr_num"), null, null,
+					null);
+			// sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			cntrList.add(sc);
 		}
 		this.shipmentDAO.createShpContainer(cntrList);
 	}
-	
+
 	@Override
 	public List<Shipment> getAllShipments(String username){
 		return this.shipmentDAO.getAllShipments(username, this.userDAO.getUser(username).getRole());
+	}
+
+	@Override
+	public ServiceResponse updateShipment(String shpNum, String fromCity, String toCity, Date fromDate, Date toDate,
+			String shipper, String consignee, int approveDoc, int validWeight, int goodCustomer,
+			String shipmentStatus) {
+		// TODO Auto-generated method stub
+		ServiceResponse response = new ServiceResponse();
+		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+		response.setServiceResult("Update Shipment Details: " + this.shpDAO.updateShipment(newShp, shpNum));
+		removeShpContainersCargoes(shpNum);
+		//create containers and cargoes again
+
+		return response;
 	}
 
 	@Override
@@ -78,15 +106,14 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ArrayList<ShipmentCargo> cgoList = new ArrayList<ShipmentCargo>();
 		JSONArray array = jsonShpCgo.getJSONArray("shp_cargo");
-		for(int i = 0 ; i < array.length() ; i++){
-			//ShipmentCargo sc = new ShipmentCargo(null, array.getJSONObject(i).getString("cntr_num"), null, null, null);
-			//sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
-			//cgoList.add(sc);
+		for (int i = 0; i < array.length(); i++) {
+			// ShipmentCargo sc = new ShipmentCargo(null,
+			// array.getJSONObject(i).getString("cntr_num"), null, null, null);
+			// sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
+			// cgoList.add(sc);
 		}
 		this.shipmentDAO.createShpCargo(cgoList);
-		
+
 	}
-	
-	
 
 }

@@ -49,21 +49,63 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createShpContainer(ArrayList<ShipmentContainer> cntrList) {
+	public List<ShipmentContainer> getAllContainersByShipment(String shipmentNum) {
+
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		
 		tx = session.beginTransaction();
-		
-		for(ShipmentContainer shpCntr: cntrList) {
+		Query query = session.createQuery("FROM ShipmentContainer WHERE shipmentNum LIKE ?");
+		query.setParameter(0, "%" + shipmentNum + "%");
+		tx.commit();
+		List<ShipmentContainer> returnList = (ArrayList<ShipmentContainer>) query.list();
+		session.close();
+
+		return returnList;
+	}
+
+	@Override
+	public String deleteContainer(ShipmentContainer container) {
+		// TODO Auto-generated method stub
+		try {
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.delete(container);
+			tx.commit();
+			session.close();
+			return "Success";
+		} catch (Exception e) {
+			return "Fail";
+		}
+	}
+
+	@Override
+	public List<ShipmentCargo> getAllCargoByContainer(String refNum) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createQuery("FROM ShipmentCargo WHERE refNum LIKE ?");
+		query.setParameter(0, "%" + refNum + "%");
+		tx.commit();
+		List<ShipmentCargo> returnList = (ArrayList<ShipmentCargo>) query.list();
+		session.close();
+
+		return returnList;
+	}
+
+	@Override
+	public void createShpContainer(ArrayList<ShipmentContainer> cntrList) {
+		Transaction tx = null;
+
+		tx = session.beginTransaction();
+
+		for (ShipmentContainer shpCntr : cntrList) {
 			session.save(shpCntr);
 		}
-		
+
 		tx.commit();
 		session.close();
 	}
-	
+
 	@Override
 	public List<Shipment> getAllShipments (String username, String role){
 		 
@@ -75,7 +117,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		tx = session.beginTransaction();
 		Query query = session.createQuery("FROM Shipment");
 		tx.commit();
-		List<Shipment> shipments  = query.list();
+		List<Shipment> shipments = query.list();
 		session.close();
 		return shipments;
 	}
@@ -85,15 +127,58 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
-		
+
 		tx = session.beginTransaction();
-		
-		for(ShipmentCargo shpCgo: cgoList) {
+
+		for (ShipmentCargo shpCgo : cgoList) {
 			session.save(shpCgo);
 		}
-		
+
 		tx.commit();
 		session.close();
 	}
-	
+
+	@Override
+	public String deleteCargo(ShipmentCargo cargo) {
+		// TODO Auto-generated method stub
+		try {
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.delete(cargo);
+			tx.commit();
+			session.close();
+			return "Success";
+		} catch (Exception e) {
+			return "Fail";
+		}
+	}
+
+	@Override
+	public Shipment getShipmentById(String shpNum) {
+		// TODO Auto-generated method stub
+		Shipment shp = null;
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createQuery("FROM User WHERE shpNum = ?");
+		query.setParameter(0, shpNum);
+		tx.commit();
+		shp = (Shipment) query.uniqueResult();
+		session.close();
+		return shp;
+	}
+
+	@Override
+	public String updateShipment(Shipment shp, String shpNum) {
+		try {
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.update(shpNum, shp);
+			tx.commit();
+			session.close();
+			return "Success";
+		} catch (Exception e) {
+			return "Fail";
+		}
+	}
+
 }
