@@ -1,5 +1,6 @@
 package com.oocl.kb.dao.impl;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -25,7 +26,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public Long createBooking(String fromCity, String toCity, Timestamp fromDate, Timestamp toDate, String shipper,
+	public Long createBooking(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();

@@ -1,5 +1,8 @@
 package com.oocl.kb.svc.impl;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;

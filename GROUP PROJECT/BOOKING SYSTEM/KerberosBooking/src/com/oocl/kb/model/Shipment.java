@@ -1,5 +1,6 @@
 package com.oocl.kb.model;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -27,10 +28,10 @@ public class Shipment {
 	private String toCity;
 	
 	@Column(name="FROM_DATE")
-	private Timestamp fromDate;
+	private Date fromDate;
 	
 	@Column(name="DATE_TO")
-	private Timestamp toDate;
+	private Date toDate;
 	
 	@Column(name="SHIPPER")
 	private String shipper;
@@ -64,7 +65,7 @@ public class Shipment {
 	
 	
 
-	public Shipment(String fromCity, String toCity, Timestamp fromDate, Timestamp toDate, String shipper,
+	public Shipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {
 		super();
 		this.fromCity = fromCity;
@@ -103,19 +104,19 @@ public class Shipment {
 		this.toCity = toCity;
 	}
 
-	public Timestamp getFromDate() {
+	public Date getFromDate() {
 		return fromDate;
 	}
 
-	public void setFromDate(Timestamp fromDate) {
+	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 
-	public Timestamp getToDate() {
+	public Date getToDate() {
 		return toDate;
 	}
 
-	public void setToDate(Timestamp toDate) {
+	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
 
