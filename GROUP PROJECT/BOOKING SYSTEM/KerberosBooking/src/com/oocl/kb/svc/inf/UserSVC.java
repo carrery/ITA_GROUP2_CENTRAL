@@ -12,17 +12,17 @@ public interface UserSVC {
 	public UserLoginResponse getUserLoginResponse(String email, String password);
 
 	public int deleteUser(String username);
-
+	
 	public Role getRoleByUser(String role);
-
-	public int updateUser(String username);
 
 	public int createUser(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo, int isDeleted);
 
-	int updateUser(String username, String password, String role, String firstName, String lastName, String email,
+	public int updateUser(String username, String password, String role, String firstName, String lastName, String email,
 			String contactNo, int isDeleted);
 
 	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo, int isDeleted);
+
+	
 }
