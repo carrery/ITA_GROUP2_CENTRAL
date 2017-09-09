@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Filter;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -64,12 +65,17 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 	
 	@Override
-	public List<Shipment> getAllShipments (){
+	public List<Shipment> getAllShipments (String username, String role){
+		 
 		Session session = sessionFactory.openSession();
+		if (!role.equals("Admin")) {
+			Filter filter = session.enableFilter(role);
+			filter.setParameter("username", username);
+		}
 		tx = session.beginTransaction();
 		Query query = session.createQuery("FROM Shipment");
 		tx.commit();
-		List<Shipment> shipments  =query.list();
+		List<Shipment> shipments  = query.list();
 		session.close();
 		return shipments;
 	}

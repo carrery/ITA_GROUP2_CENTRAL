@@ -21,19 +21,24 @@ import com.oocl.kb.svc.inf.ShipmentSVC;
 public class ShipmentSVCImpl implements ShipmentSVC {
 	
 	@Autowired
-	private ShipmentDAO shpDAO;
+	private ShipmentDAO shipmentDAO;
 	
+	@Autowired 
+	private UserDAO userDAO;
 	
+	public void setUserDAO(UserDAO userDAO) {
+		this.userDAO = userDAO;
+	}
 	
-	public void setShpDAO(ShipmentDAO shpDAO) {
-		this.shpDAO = shpDAO;
+	public void setShipmentDAO(ShipmentDAO shpDAO) {
+		this.shipmentDAO = shpDAO;
 	}
 
 	@Override
 	public Long createShipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus) {
 		// TODO Auto-generated method stub
-		return shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+		return shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
 	}
 
 	@Override
@@ -44,7 +49,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		if (fromCity.isEmpty() || toCity.isEmpty()) {
 			createShipmentResponse.setErrorMessage("Required fields must be filled");
 		} else {
-			shpDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+			shipmentDAO.createBooking(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
 		}
 		
 		return createShipmentResponse;
@@ -60,12 +65,12 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 			//sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			cntrList.add(sc);
 		}
-		this.shpDAO.createShpContainer(cntrList);
+		this.shipmentDAO.createShpContainer(cntrList);
 	}
 	
 	@Override
-	public List<Shipment> getAllShipments(){
-		return this.shpDAO.getAllShipments();
+	public List<Shipment> getAllShipments(String username){
+		return this.shipmentDAO.getAllShipments(username, this.userDAO.getUser(username).getRole());
 	}
 
 	@Override
@@ -78,7 +83,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 			//sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			//cgoList.add(sc);
 		}
-		this.shpDAO.createShpCargo(cgoList);
+		this.shipmentDAO.createShpCargo(cgoList);
 		
 	}
 	

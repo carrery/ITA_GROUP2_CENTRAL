@@ -35,8 +35,10 @@ public class ShipmentController {
 				validWeight, goodCustomer, shipmentStatus);
 	}
 	
-	@RequestMapping(value = "/getAllShipments", method = RequestMethod.GET)
-	public @ResponseBody List<Shipment> getAllShipments() {
-		return shpSVC.getAllShipments();
+	@RequestMapping(value = "/getAllShipments", method = RequestMethod.POST)
+	public @ResponseBody List<Shipment> getAllShipments(@RequestParam("username") String username
+			, HttpServletRequest request) {
+		return shpSVC.getAllShipments(username);
 	}
+	
 }
