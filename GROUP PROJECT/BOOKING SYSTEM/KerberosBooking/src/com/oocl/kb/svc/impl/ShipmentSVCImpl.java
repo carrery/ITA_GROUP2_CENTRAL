@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
+import com.oocl.kb.model.ShipmentContainer;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
 
