@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.gson.Gson;
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Shipment;
@@ -21,6 +22,8 @@ import com.oocl.kb.svc.inf.ShipmentSVC;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
 
+	Gson gson = new Gson();
+	
 	@Autowired
 	private ShipmentDAO shipmentDAO;
 
@@ -36,7 +39,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	@Override
 	public Long createShipment(String json) {
 		// TODO Auto-generated method stub
-		Shipment shp = null;
+		Shipment shp = gson.fromJson(json, Shipment.class);
 		return shipmentDAO.createBooking(shp);
 	}
 
@@ -44,7 +47,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	public ServiceResponse getCreateShipmentResponse(String json) {
 		// TODO Auto-generated method stub
 		ServiceResponse createShipmentResponse = new ServiceResponse();
-		Shipment shp = null;
+		Shipment shp = gson.fromJson(json, Shipment.class);
 		shipmentDAO.createBooking(shp);
 		return createShipmentResponse;
 	}
