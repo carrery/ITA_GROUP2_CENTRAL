@@ -98,7 +98,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM User WHERE USERNAME LIKE ?");
+		Query query = session.createQuery("FROM User WHERE username LIKE ?");
 		query.setParameter(0, "%" + userName + "%");
 		tx.commit();
 		List<User> returnList = (ArrayList<User>) query.list();
@@ -123,9 +123,20 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();
-		session.save(user);
-		tx.commit();
+		Query query = session.createQuery("FROM User WHERE username = ? OR (firstName = ? AND lastName = ?)");
+		query.setParameter(0, user.getUsername());
+		query.setParameter(1, user.getFirstName());
+		query.setParameter(2, user.getLastName());
+		
+		User ifExistingUser = (User) query.uniqueResult();
+		
+		if (ifExistingUser == null) {
+			session.save(user);
+			tx.commit();
+			return 1;
+		}
+		
 		session.close();
-		return 1;
+		return 0;
 	}
 }
