@@ -13,6 +13,7 @@
         };
     </script>    
      <script src="adminview/resources/ext-all.js"></script>
+     <script src="adminview/resources/Ext.ux.Carousel.js"></script>
     <link rel="stylesheet" href="adminview/resources/KerberosBooking-all.css">
 
     

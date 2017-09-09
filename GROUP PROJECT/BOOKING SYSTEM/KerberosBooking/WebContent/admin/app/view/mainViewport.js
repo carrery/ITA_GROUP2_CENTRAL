@@ -36,24 +36,10 @@ Ext.define('KerberosBooking.view.mainViewport', {
     items: [
         {
             xtype: 'toolbar',
-            region: 'north',
-            height: 91,
-            items: [
-                {
-                    xtype: 'image',
-                    flex: 1,
-                    height: 56,
-                    width: 559,
-                    src: '/images/KerberosBanner.jpg'
-                }
-            ]
-        },
-        {
-            xtype: 'toolbar',
             margins: '0 0 0 0',
             region: 'north',
             dock: 'top',
-            height: 39,
+            height: 63,
             margin: '0 0 0 0',
             padding: 0,
             items: [
@@ -67,7 +53,6 @@ Ext.define('KerberosBooking.view.mainViewport', {
                 {
                     xtype: 'button',
                     margins: '',
-                    flex: 1,
                     id: 'kerberosBtn',
                     itemId: 'kerberosBtn',
                     margin: '0 0 0 0',
@@ -96,18 +81,25 @@ Ext.define('KerberosBooking.view.mainViewport', {
                     text: 'About'
                 },
                 {
-                    xtype: 'tbfill'
-                },
-                {
                     xtype: 'button',
                     margins: '0 0 0 0',
                     dock: 'bottom',
-                    flex: 1,
                     id: 'loginBtn',
                     itemId: 'loginBtn',
                     margin: '0 0 0 0',
                     scale: 'medium',
                     text: 'Login'
+                },
+                {
+                    xtype: 'tbfill'
+                },
+                {
+                    xtype: 'image',
+                    flex: 1,
+                    flex: 1,
+                    height: 31,
+                    width: 156,
+                    src: 'resources/img/KerberosBanner.png'
                 }
             ]
         },
@@ -128,8 +120,9 @@ Ext.define('KerberosBooking.view.mainViewport', {
         var mainPanel = Ext.ComponentQuery.query('MyPanel')[0];
 
         var view = Ext.create('MyPanel');
-
-        //center.remove(mainPanel);
+        Ext.getCmp('createBtn').hide();
+        Ext.getCmp('viewBtn').hide();
+        //viewBtn
         center.add(view);
 
     }

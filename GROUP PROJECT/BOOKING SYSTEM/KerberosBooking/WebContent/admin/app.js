@@ -21,14 +21,13 @@ Ext.Loader.setConfig({
 
 Ext.application({
     views: [
-    	'LoginForm',
+        'LoginForm',
         'RegisterForm',
-        'bookingGrid',
         'MyPanel',
         'mainViewport',
-        'myTabKer',
-        'kerberosPanel',
-        'createPanel'
+        'viewBookingPanel',
+        'myHomePanel',
+        'createBkgPanel'
     ],
     controllers: [
         'HomeController'

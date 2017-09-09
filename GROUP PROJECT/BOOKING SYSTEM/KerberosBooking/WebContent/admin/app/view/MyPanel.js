@@ -28,84 +28,270 @@ Ext.define('KerberosBooking.view.MyPanel', {
 
     id: 'MyPanel',
     itemId: 'MyPanel',
+    scrollable: true,
+    defaultListenerScope: true,
 
-    layout: {
-        type: 'vbox',
-        align: 'stretch'
-    },
+
     items: [
         {
             xtype: 'container',
             flex: 1,
+            height: 500,
+            id: 'carr',
+            itemId: 'carr',
+            layout: {
+                type: 'hbox',
+                align: 'middle',
+                pack: 'center'
+            }
+        ,
+            listeners: {
+                afterrender: 'onContainerAfterRender'
+            }
+        },
+        {
+            xtype: 'container',
+            padding: 10,
+            style: {
+                background: '#ffffff',
+                backgroundImage: 'url(resources/img/map.png)',
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'bottom left',
+                
+            },
             layout: {
                 type: 'hbox',
                 align: 'stretch'
             },
             items: [
                 {
-                    xtype: 'image',
-                    height: 138,
-                    width: 170,
-                    src: '/images/ship1.jpg'
-                },
-                {
                     xtype: 'container',
                     flex: 1,
+                    flex: 1,
+                    layout: {
+                        type: 'vbox',
+                        align: 'center',
+                        pack: 'center'
+                    },
                     items: [
                         {
-                            xtype: 'label',
-                            text: 'My Label'
+                            xtype: 'container',
+                            flex: 1,
+                            flex: 1,
+                            items: [
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img5',
+                                    itemId: 'img5',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/services.png',
+                                    listeners: {
+                                        afterrender: 'onImageAfterRender'
+                                    }
+                                },
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img6',
+                                    itemId: 'img6',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/schedules.png',
+                                    listeners: {
+                                        afterrender: 'onImg6AfterRender'
+                                    }
+                                },
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img7',
+                                    itemId: 'img7',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/vgminfo.png',
+                                    listeners: {
+                                        afterrender: 'onImg7AfterRender'
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            flex: 1,
+                            items: [
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img8',
+                                    itemId: 'img8',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/terminalinfo.png',
+                                    listeners: {
+                                        afterrender: 'onImg8AfterRender'
+                                    }
+                                },
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img9',
+                                    itemId: 'img9',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/vesselinfo.png',
+                                    listeners: {
+                                        afterrender: 'onImg9AfterRender'
+                                    }
+                                },
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img10',
+                                    itemId: 'img10',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/vesseltracking.png',
+                                    listeners: {
+                                        afterrender: 'onImg10AfterRender'
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            flex: 1,
+                            items: [
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img11',
+                                    itemId: 'img11',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/containerinfo.png',
+                                    listeners: {
+                                        afterrender: 'onImg11AfterRender'
+                                    }
+                                },
+                                {
+                                    xtype: 'image',
+                                    height: 132,
+                                    id: 'img12',
+                                    itemId: 'img12',
+                                    padding: 10,
+                                    width: 132,
+                                    src: 'resources/img/ratestariff.png',
+                                    listeners: {
+                                        afterrender: 'onImg12AfterRender'
+                                    }
+                                }
+                            ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            xtype: 'container',
-            flex: 1,
-            layout: {
-                type: 'hbox',
-                align: 'stretch'
-            },
-            items: [
-                {
-                    xtype: 'container',
-                    flex: 1
-                },
-                {
-                    xtype: 'image',
-                    height: 134,
-                    width: 169,
-                    src: '/images/ship1.jpg'
-                }
-            ]
-        },
-        {
-            xtype: 'container',
-            flex: 1,
-            layout: {
-                type: 'hbox',
-                align: 'stretch'
-            },
-            items: [
-                {
-                    xtype: 'image',
-                    height: 131,
-                    width: 173,
-                    src: '/images/ship3.jpg'
                 },
                 {
                     xtype: 'container',
                     flex: 1,
+                    flex: 1,
                     items: [
                         {
                             xtype: 'label',
-                            text: 'My Label'
+                            html: '<h2 style="font-size: 70px;color: #11428f;line-height: 1.2;text-align: left;font-family:Roboto;font-weight:100;font-style:normal" class="vc_custom_heading">quick<br /> access</h2><p><span style="color: #11428f;">Direct to the major features facilitating your shipments.</span></p>'
                         }
                     ]
                 }
             ]
         }
-    ]
+    ],
+
+    onContainerAfterRender: function(component, eOpts) {
+        var store = Ext.create('Ext.data.Store', {
+            fields: ['title', 'imgSrc'],
+            data: [
+                   {
+                       title: 'Cloud Forest',
+                       imgSrc: 'resources/img/headers.png'},
+                   {
+                       title: 'Cloud Forest 2',
+                       imgSrc: 'resources/img/terminalDefault.png'},
+                   {
+                       title: 'Cloud Forest',
+                       imgSrc: 'resources/img/cargoDefault.png'}]
+        });
+
+        //Define a customized carousel
+        Ext.define('MyCarousel', {
+            extend: 'Ext.ux.Carousel',
+            alias: 'widget.mycarousel',
+            template: '<img src="{imgSrc}" alt="{title}" style="width:1500px;height:500px" />',
+            store: store,
+            interval: 3000,
+            direction: 'left',
+            loop: true,
+            buttons: false,
+            puaseOnHover: true,
+            width: 2000,
+            height: 500,
+            flex: 1
+
+        });
+
+        var view = Ext.create('widget.mycarousel');
+
+
+        component.add(view);
+
+    },
+
+    onImageAfterRender: function(component, eOpts) {
+
+
+        component.el.on('mouseout', function() {Ext.getCmp('img5').setSrc('resources/img/services.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img5').setSrc('resources/img/readMore.png');});
+    },
+
+    onImg6AfterRender: function(component, eOpts) {
+
+
+        component.el.on('mouseout', function() {Ext.getCmp('img6').setSrc('resources/img/schedules.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img6').setSrc('resources/img/readMore.png');});
+    },
+
+    onImg7AfterRender: function(component, eOpts) {
+
+
+        component.el.on('mouseout', function() {Ext.getCmp('img7').setSrc('resources/img/vgminfo.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img7').setSrc('resources/img/readMore.png');});
+    },
+
+    onImg8AfterRender: function(component, eOpts) {
+
+
+        component.el.on('mouseout', function() {Ext.getCmp('img8').setSrc('resources/img/terminalinfo.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img8').setSrc('resources/img/readMore.png');});
+    },
+
+    onImg9AfterRender: function(component, eOpts) {
+        component.el.on('mouseout', function() {Ext.getCmp('img9').setSrc('resources/img/vesselinfo.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img9').setSrc('resources/img/readMore.png');});
+    },
+
+    onImg10AfterRender: function(component, eOpts) {
+        component.el.on('mouseout', function() {Ext.getCmp('img10').setSrc('resources/img/vesseltracking.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img10').setSrc('resources/img/readMore.png');});
+    },
+
+    onImg11AfterRender: function(component, eOpts) {
+        component.el.on('mouseout', function() {Ext.getCmp('img11').setSrc('resources/img/containerinfo.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img11').setSrc('resources/img/readMore.png');});
+    },
+
+    onImg12AfterRender: function(component, eOpts) {
+        component.el.on('mouseout', function() {Ext.getCmp('img12').setSrc('resources/img/ratestariff.png');});
+        component.el.on('mouseover', function() {Ext.getCmp('img12').setSrc('resources/img/readMore.png');});
+    }
 
 });

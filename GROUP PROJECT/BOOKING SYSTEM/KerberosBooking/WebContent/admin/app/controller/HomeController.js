@@ -20,14 +20,20 @@ Ext.define('KerberosBooking.controller.HomeController', {
         "#logBtn": {
             click: 'onLogBtnClick'
         },
-        "#kerberosBtn": {
-            click: 'onKerberosBtnClick'
-        },
         "#viewBtn": {
             click: 'onViewBtnClick'
         },
         "#loginBtn": {
             click: 'onLoginBtnClick'
+        },
+        "#homeBtn": {
+            click: 'onHomeBtnClick'
+        },
+        "#kerberosBtn": {
+            click: 'onKerberosBtnClick'
+        },
+        "#createBtn": {
+            click: 'onCreateBtnClick'
         }
     },
 
@@ -79,20 +85,22 @@ Ext.define('KerberosBooking.controller.HomeController', {
         Ext.getCmp('createBtn').hide();
     },
 
-    onKerberosBtnClick: function(button, e, eOpts) {
-
-    },
-
     onViewBtnClick: function(button, e, eOpts) {
-        console.log('view');
-        var viewport = Ext.ComponentQuery.query('mainViewport')[0];
-                                var center = viewport.down('[region=center]');
-                                var mainPanel = Ext.ComponentQuery.query('MyPanel')[0];
+        var viewport = Ext.ComponentQuery.query('mainViewport')[0],
+            center = viewport.down('[region=center]'),
+            mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
+            homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
+            createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
+        	//aboutPanel = Ext.ComponentQuery.query('')[0];
 
-                                var view = Ext.create('kerberosPanel');
+            view = Ext.create('viewBookingPanel');
 
-                                center.remove(mainPanel);
-                                center.add(view);
+        console.log(viewport);
+
+        center.remove(mainPanel);
+        center.remove(homePanel);
+        center.remove(createPanel);
+        center.add(view);
     },
 
     onLoginBtnClick: function(button, e, eOpts) {
@@ -102,6 +110,74 @@ Ext.define('KerberosBooking.controller.HomeController', {
         //login.show();
 
         Ext.create('KerberosBooking.view.LoginForm').show();
+    },
+
+    onHomeBtnClick: function(button, e, eOpts) {
+        // var viewport = Ext.ComponentQuery.query('mainViewport')[0],
+        //     center = viewport.down('[region=center]'),
+        //     viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+        //     homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
+        //     createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
+        // 	//aboutPanel = Ext.ComponentQuery.query('')[0];
+
+        //     view = Ext.create('MyPanel');
+
+        // //console.log(viewport);
+
+        // center.remove(viewPanel);
+        // center.remove(homePanel);
+        // center.remove(createPanel);
+        // center.add(view);
+
+
+        var viewport = Ext.ComponentQuery.query('mainViewport')[0];
+        var center = viewport.down('[region=center]'),
+            homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
+            viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+            createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
+
+        var view = Ext.create('MyPanel');
+
+        center.remove(homePanel);
+        center.remove(createPanel);
+        center.remove(viewPanel);
+        center.add(view);
+    },
+
+    onKerberosBtnClick: function(button, e, eOpts) {
+        var viewport = Ext.ComponentQuery.query('mainViewport')[0],
+            center = viewport.down('[region=center]'),
+            mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
+            viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+            createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
+        	//aboutPanel = Ext.ComponentQuery.query('')[0];
+
+            view = Ext.create('myHomePanel');
+
+        console.log(viewport);
+
+        center.remove(mainPanel);
+        center.remove(viewPanel);
+        center.remove(createPanel);
+        center.add(view);
+    },
+
+    onCreateBtnClick: function(button, e, eOpts) {
+        var viewport = Ext.ComponentQuery.query('mainViewport')[0],
+            center = viewport.down('[region=center]'),
+            mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
+            viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+            homePanel = Ext.ComponentQuery.query('myHomePanel')[0];
+        	//aboutPanel = Ext.ComponentQuery.query('')[0];
+
+            view = Ext.create('createBkgPanel');
+
+        console.log(viewport);
+
+        center.remove(mainPanel);
+        center.remove(viewPanel);
+        center.remove(homePanel);
+        center.add(view);
     }
 
 });
