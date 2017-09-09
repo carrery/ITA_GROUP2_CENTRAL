@@ -34,6 +34,15 @@ Ext.define('KerberosBooking.controller.HomeController', {
         },
         "#createBtn": {
             click: 'onCreateBtnClick'
+        },
+        "#aboutBtn": {
+            click: 'onAboutBtnClick'
+        },
+        "#validateResetBtn": {
+            click: 'onValidateResetBtnClick'
+        },
+        "#createResetBtn": {
+            click: 'onCreateResetBtnClick'
         }
     },
 
@@ -41,6 +50,8 @@ Ext.define('KerberosBooking.controller.HomeController', {
                 var username = Ext.getCmp('usernameTxt').getValue(); //get value of username
                 var password = Ext.getCmp('passwordTxt').getValue(); // get value of password
                 var loginView = Ext.getCmp('headerPanel');
+                var form = button.up('form'),				// Register form
+                formWindow = button.up('window');
 
                 //TODO: Login using server-side authentication service
                 Ext.Ajax.request({
@@ -52,26 +63,31 @@ Ext.define('KerberosBooking.controller.HomeController', {
                     },
                     callback: function(options, success, response) {
 
-                         console.log(response);
+                        // console.log(response.responseText);
 
-                        if(response.responseText === 'false'){
-                            --this.attempt;
+                         var data = Ext.decode(response.responseText),
+                         access = data.isUserValid + data.canCreateBooking + data.canViewBooking + data.canManageUsers;
+                         
+                         console.log(data.isUserValid);
+                        if(access == 4){
+                            console.log('admin');
 
-                        } else if (response.responseText === 'true'){
+                        } else if (access == 3){
                          formWindow.destroy();
                             Ext.Msg.alert("Login Success", "Logged In");
+                            Ext.getCmp('createBtn').show();
 
+                            Ext.getCmp('viewBtn').show();
+                            Ext.getCmp('loginBtn').hide();
 
+                        } else if(access == 2){
+                        	formWindow.destroy();
+                            Ext.Msg.alert("Login Success", "Logged In");
 
-                        var viewport = Ext.ComponentQuery.query('mainViewport')[0];
-                        var center = viewport.down('[region=center]');
-                        var mainPanel = Ext.ComponentQuery.query('MyPanel')[0];
-
-                        var view = Ext.create('MyPanel');
-
-                        center.add(view);
-                            Ext.getCmp('createBtn').hide();
-
+               Ext.getCmp('viewBtn').show();
+               Ext.getCmp('loginBtn').hide();
+                        } else{
+                        	console.log(access);
                         }
 
                     },
@@ -82,7 +98,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
                     }
                 });
 
-        Ext.getCmp('createBtn').hide();
+        //Ext.getCmp('createBtn').hide();
     },
 
     onViewBtnClick: function(button, e, eOpts) {
@@ -178,6 +194,21 @@ Ext.define('KerberosBooking.controller.HomeController', {
         center.remove(viewPanel);
         center.remove(homePanel);
         center.add(view);
-    }
+    },
+
+    onValidateResetBtnClick: function(button, e, eOpts) {
+        //var form = button.up('createBookingPanel'),
+          var forms = button.up('form'),
+       //values = form.getValues(),
+            value = forms.getValues();
+
+          var createBooking = Ext.encode(value);
+      //console.log(values);
+      console.log(createBooking);
+  },
+
+  onCreateResetBtnClick: function(button, e, eOpts) {
+
+  }
 
 });

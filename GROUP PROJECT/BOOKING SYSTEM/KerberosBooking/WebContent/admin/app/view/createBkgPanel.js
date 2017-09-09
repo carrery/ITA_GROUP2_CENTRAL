@@ -58,7 +58,7 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                     height: 201,
                     hidden: true,
                     width: 201,
-                    src: 'resources/img/englishmap.png'
+                    src: '%5Cimages%5Cbg%5Cenglishmap.jpg'
                 }
             ],
             listeners: {
@@ -98,14 +98,26 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                     xtype: 'textfield',
                                     flex: 1,
                                     disabled: true,
+                                    id: 'bookingNumber',
+                                    itemId: 'bookingNumber',
                                     padding: 10,
-                                    fieldLabel: 'Booking Number'
+                                    fieldLabel: 'Booking Number',
+                                    name: 'bookingNumber'
                                 },
                                 {
                                     xtype: 'combobox',
                                     flex: 1,
+                                    id: 'bookingOffice',
+                                    itemId: 'bookingOffice',
                                     padding: 10,
-                                    fieldLabel: 'Booking Office'
+                                    fieldLabel: 'Booking Office',
+                                    name: 'bookingOffice',
+                                    store: [
+                                        'MNL',
+                                        'HKG',
+                                        'ZHA',
+                                        'USA'
+                                    ]
                                 },
                                 {
                                     xtype: 'label',
@@ -132,15 +144,19 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                     items: [
                                         {
                                             xtype: 'textfield',
+                                            id: 'bookingShipper',
+                                            itemId: 'bookingShipper',
                                             padding: 10,
                                             fieldLabel: 'Shipper',
-                                            labelWidth: 120
+                                            labelWidth: 120,
+                                            name: 'bookingShipper'
                                         },
                                         {
                                             xtype: 'datefield',
                                             padding: 10,
-                                            fieldLabel: 'From City',
-                                            labelWidth: 120
+                                            fieldLabel: 'From Date',
+                                            labelWidth: 120,
+                                            name: 'bookingFromDate'
                                         }
                                     ]
                                 },
@@ -149,15 +165,19 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                     items: [
                                         {
                                             xtype: 'textfield',
+                                            id: 'bookingConsignee',
+                                            itemId: 'bookingConsignee',
                                             padding: 10,
                                             fieldLabel: 'Consignee',
-                                            labelWidth: 120
+                                            labelWidth: 120,
+                                            name: 'bookingConsignee'
                                         },
                                         {
                                             xtype: 'datefield',
                                             padding: 10,
-                                            fieldLabel: 'To City',
-                                            labelWidth: 120
+                                            fieldLabel: 'To Date',
+                                            labelWidth: 120,
+                                            name: 'bookingToDate'
                                         }
                                     ]
                                 }
@@ -187,21 +207,42 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             items: [
                                                 {
                                                     xtype: 'combobox',
+                                                    id: 'bookingFromCity',
+                                                    itemId: 'bookingFromCity',
                                                     padding: 10,
                                                     fieldLabel: 'From City',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    name: 'bookingFromCity',
+                                                    store: [
+                                                        'MNL',
+                                                        'HKG',
+                                                        'ZHA',
+                                                        'USA'
+                                                    ]
                                                 },
                                                 {
                                                     xtype: 'combobox',
+                                                    id: 'bookingCargoNature',
+                                                    itemId: 'bookingCargoNature',
                                                     padding: 10,
                                                     fieldLabel: 'Cargo Nature',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    name: 'bookingCargoNature',
+                                                    store: [
+                                                        'GP',
+                                                        'RF',
+                                                        'AWK',
+                                                        'DG'
+                                                    ]
                                                 },
                                                 {
                                                     xtype: 'textfield',
+                                                    id: 'bookingCargoDesc',
+                                                    itemId: 'bookingCargoDesc',
                                                     padding: 10,
                                                     fieldLabel: 'Cargo Description',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    name: 'bookingCargoDesc'
                                                 }
                                             ]
                                         },
@@ -211,21 +252,53 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             items: [
                                                 {
                                                     xtype: 'combobox',
+                                                    id: 'bookingToCity',
+                                                    itemId: 'bookingToCity',
                                                     padding: 10,
                                                     fieldLabel: 'To City',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    name: 'bookingToCity',
+                                                    store: [
+                                                        'MNL',
+                                                        'HKG',
+                                                        'ZHA',
+                                                        'USA'
+                                                    ]
                                                 },
                                                 {
                                                     xtype: 'combobox',
+                                                    id: 'bookingConQuantity',
+                                                    itemId: 'bookingConQuantity',
                                                     padding: 10,
                                                     fieldLabel: 'Quantity',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    name: 'bookingConQuatity',
+                                                    store: [
+                                                        '1',
+                                                        '2',
+                                                        '3',
+                                                        '4',
+                                                        '5',
+                                                        '6',
+                                                        '7',
+                                                        '8',
+                                                        '9'
+                                                    ]
                                                 },
                                                 {
                                                     xtype: 'combobox',
+                                                    id: 'bookingConHS',
+                                                    itemId: 'bookingConHS',
                                                     padding: 10,
                                                     fieldLabel: 'HS Code',
-                                                    labelWidth: 120
+                                                    labelWidth: 120,
+                                                    name: 'bookingConHS',
+                                                    store: [
+                                                        'MNL',
+                                                        'HKG',
+                                                        'ZHA',
+                                                        'USA'
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -242,12 +315,16 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     flex: 1,
+                                                    id: 'bookingConRef',
+                                                    itemId: 'bookingConRef',
                                                     dataIndex: 'string',
                                                     text: 'Reference Number'
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
                                                     flex: 1,
+                                                    id: 'bookingConNumber',
+                                                    itemId: 'bookingConNumber',
                                                     text: 'Container Number'
                                                 },
                                                 {
@@ -271,7 +348,11 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     flex: 1,
                                                     text: 'Weight Unit',
                                                     editor: {
-                                                        xtype: 'combobox'
+                                                        xtype: 'combobox',
+                                                        store: [
+                                                            'kg',
+                                                            'lbs'
+                                                        ]
                                                     }
                                                 }
                                             ],
@@ -307,15 +388,21 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     items: [
                                                         {
                                                             xtype: 'checkboxfield',
-                                                            boxLabel: 'Valid Weight'
+                                                            name: 'validWeight',
+                                                            boxLabel: 'Valid Weight',
+                                                            inputValue: '1'
                                                         },
                                                         {
                                                             xtype: 'checkboxfield',
-                                                            boxLabel: 'Valid Documents'
+                                                            name: 'validDocument',
+                                                            boxLabel: 'Valid Documents',
+                                                            inputValue: '1'
                                                         },
                                                         {
                                                             xtype: 'checkboxfield',
-                                                            boxLabel: 'Good Customer'
+                                                            name: 'goodCustomer',
+                                                            boxLabel: 'Good Customer',
+                                                            inputValue: '1'
                                                         }
                                                     ]
                                                 }
@@ -325,22 +412,28 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                 }
                             ]
                         }
-                    ]
-                },
-                {
-                    xtype: 'toolbar',
-                    dock: 'bottom',
-                    items: [
+                    ],
+                    dockedItems: [
                         {
-                            xtype: 'tbfill'
-                        },
-                        {
-                            xtype: 'button',
-                            text: 'Reset'
-                        },
-                        {
-                            xtype: 'button',
-                            text: 'Validate'
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            items: [
+                                {
+                                    xtype: 'tbfill'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'createResetBtn',
+                                    itemId: 'createResetBtn',
+                                    text: 'Reset'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'validateResetBtn',
+                                    itemId: 'validateResetBtn',
+                                    text: 'Validate'
+                                }
+                            ]
                         }
                     ]
                 }
