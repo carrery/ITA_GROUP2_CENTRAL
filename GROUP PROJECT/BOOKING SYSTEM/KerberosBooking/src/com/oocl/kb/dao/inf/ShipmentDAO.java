@@ -29,7 +29,7 @@ public interface ShipmentDAO {
     
     public void createShpCargo(ArrayList<com.oocl.kb.model.ShipmentCargo> cgoList);
 
-	public List<Shipment> getAllShipments();
+	public List<Shipment> getAllShipments(String username, String role);
   
 	public String deleteCargo(ShipmentCargo cargo);
 	

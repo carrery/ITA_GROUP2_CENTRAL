@@ -23,3 +23,15 @@ rebel-remote.xml
 *.iws
 .idea
 *.db
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/controller/UserController.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/dao/impl/UserDAOImpl.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/dao/inf/ShipmentDAO.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/dao/inf/UserDAO.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/model/ShipmentContainer.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/model/User.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/response/UserLoginResponse.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/svc/impl/UserSVCImpl.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/svc/inf/UserSVC.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/classes/com/oocl/kb/test/TestMain.class
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/m2e-wtp/web-resources/META-INF/maven/KerberosBooking/KerberosBooking/pom.properties
+GROUP PROJECT/BOOKING SYSTEM/KerberosBooking/target/m2e-wtp/web-resources/META-INF/maven/KerberosBooking/KerberosBooking/pom.xml

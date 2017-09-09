@@ -29,9 +29,10 @@ public class ShipmentController {
 		return shpSVC.getCreateShipmentResponse(json);
 	}
 
-	@RequestMapping(value = "/getAllShipments", method = RequestMethod.GET)
-	public @ResponseBody List<Shipment> getAllShipments() {
-		return shpSVC.getAllShipments();
+	@RequestMapping(value = "/getAllShipments", method = RequestMethod.POST)
+	public @ResponseBody List<Shipment> getAllShipments(@RequestParam("username") String username
+			, HttpServletRequest request) {
+		return shpSVC.getAllShipments(username);
 	}
 
 	@RequestMapping(value = "/updateShipment", method = RequestMethod.POST)
@@ -44,4 +45,5 @@ public class ShipmentController {
 		return shpSVC.updateShipment(shpnum,fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc,
 				validWeight, goodCustomer, shipmentStatus);
 	}
+	
 }

@@ -52,6 +52,7 @@ public class UserLoginResponse {
 	public int canCreateBooking;
 	
 	public int canManageUsers;
+
 	
 
 }
