@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
+import com.oocl.kb.model.Shipment;
+import com.oocl.kb.model.ShipmentContainer;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
 
@@ -22,7 +24,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	
 	
 	
-	public void setShipmentDAO(ShipmentDAO shpDAO) {
+	public void setShpDAO(ShipmentDAO shpDAO) {
 		this.shpDAO = shpDAO;
 	}
 
@@ -58,6 +60,11 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		    list.add(sc);
 		}
 		
+	}
+	
+	@Override
+	public List<Shipment> getAllShipments(){
+		return this.shpDAO.getAllShipments();
 	}
 	
 	

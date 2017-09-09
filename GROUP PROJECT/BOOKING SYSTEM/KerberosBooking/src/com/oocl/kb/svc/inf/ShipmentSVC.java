@@ -3,6 +3,9 @@ package com.oocl.kb.svc.inf;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
+
+import com.oocl.kb.model.Shipment;
 import com.oocl.kb.response.ServiceResponse;
 import org.json.JSONObject;
 
@@ -16,4 +19,6 @@ public interface ShipmentSVC {
 			String consignee, int approveDoc, int validWeight, int goodCustomer, String shipmentStatus);
 	
 	public void createShipmentContainer(JSONObject jsonShpCntr);
+
+	List<Shipment> getAllShipments();
 }
