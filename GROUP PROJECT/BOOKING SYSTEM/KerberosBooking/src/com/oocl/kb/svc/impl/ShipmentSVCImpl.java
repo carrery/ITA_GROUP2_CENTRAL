@@ -59,7 +59,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		shp.setShipmentStatus(shpStatus);
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
-		shipmentDAO.createBooking(shp);
+		Long shpNum = shipmentDAO.createBooking(shp);
 		createShipmentResponse.setServiceResult("1");
 		
 		JSONObject bkgObj = new JSONObject(json);
@@ -69,7 +69,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
                 new TypeToken<ArrayList<ShipmentContainer>>() {
                 }.getType());
 				
-		shipmentDAO.createShpContainer(cntrList, shp.getFromDate());
+		shipmentDAO.createShpContainer(cntrList, shp.getFromDate(), shpNum );
 		
 		return createShipmentResponse;
 	}

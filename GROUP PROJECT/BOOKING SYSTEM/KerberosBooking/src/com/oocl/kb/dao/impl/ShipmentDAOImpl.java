@@ -40,10 +40,10 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		tx = session.beginTransaction();
-		session.save(shp);
+		Long shpNum = (Long) session.save(shp);
 		tx.commit();
 		session.close();
-		return 1L;
+		return shpNum;
 
 	}
 
@@ -92,7 +92,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate) {
+	public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate, Long shpNum) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		tx = session.beginTransaction();
@@ -100,6 +100,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 			Long refNum = getRefNumSeq();
 			String cntrNum = getAvailableContainer(shpCntr.getCntrType(), bookingDate);
 			shpCntr.setRefNum(refNum);
+			shpCntr.setShipmentNum(shpNum);
 			shpCntr.setCntrNum(cntrNum);
 			session.save(shpCntr);
 		}

@@ -21,7 +21,7 @@ public class ShipmentContainer {
 	private Long refNum;
 	
 	@Column(name = "SHIPMENT_NUM")
-	private String shipmentNum;
+	private Long shipmentNum;
 	
 	@Column(name = "CNTR_NUM")
 	private String cntrNum;
@@ -38,7 +38,7 @@ public class ShipmentContainer {
 	@Column(name = "CNTR_TYPE")
 	private String cntrType;
 	
-	public ShipmentContainer(String shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit, String cntrType) {
+	public ShipmentContainer(Long shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit, String cntrType) {
 		this.shipmentNum = shipmentNum;
 		this.cntrNum = cntrNum;
 		this.grossWt = grossWt;
@@ -57,10 +57,10 @@ public class ShipmentContainer {
 	public void setRefNum(Long refNum) {
 		this.refNum = refNum;
 	}
-	public String getShipmentNum() {
+	public Long getShipmentNum() {
 		return shipmentNum;
 	}
-	public void setShipmentNum(String shipmentNum) {
+	public void setShipmentNum(Long shipmentNum) {
 		this.shipmentNum = shipmentNum;
 	}
 	public String getCntrNum() {
