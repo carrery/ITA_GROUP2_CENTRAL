@@ -29,57 +29,82 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public int validateUser(String username, String password) {
-		int validate = 0;
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		Query query = session.createQuery("SELECT COUNT(username) FROM User WHERE username = ? and password = ? ");
-		query.setParameter(0, username);
-		query.setParameter(1, password);
-		tx.commit();
-		validate = Integer.parseInt(query.uniqueResult().toString());
-		session.close();
-		return validate;
+	public int validateUser(String username, String password) {		
+		try {
+			int validate = 0;
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			Query query = session.createQuery("SELECT COUNT(username) FROM User WHERE username = ? and password = ? ");
+			query.setParameter(0, username);
+			query.setParameter(1, password);
+			tx.commit();
+			validate = Integer.parseInt(query.uniqueResult().toString());
+			session.close();
+			return validate;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
 	}
 
 	@Override
-	public User getUserDetails(String username, String password) {
-		User user = null;
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM User WHERE username = ? and password = ? ");
-		query.setParameter(0, username);
-		query.setParameter(1, password);
-		tx.commit();
-		user = (User) query.uniqueResult();
-		session.close();
-		return user;
+	public User getUserDetails(String username, String password) {		
+		try {
+			User user = null;
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			Query query = session.createQuery("FROM User WHERE username = ? and password = ? ");
+			query.setParameter(0, username);
+			query.setParameter(1, password);
+			tx.commit();
+			user = (User) query.uniqueResult();
+			session.close();
+			return user;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@Override
 	public User getUser(String username) {
-		User user = null;
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM User WHERE username = ?");
-		query.setParameter(0, username);
-		tx.commit();
-		user = (User) query.uniqueResult();
-		session.close();
-		return user;
+		
+		try {
+			User user = null;
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			Query query = session.createQuery("FROM User WHERE username = ?");
+			query.setParameter(0, username);
+			tx.commit();
+			user = (User) query.uniqueResult();
+			session.close();
+			return user;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
-	public Role getUserRole(String userRole) {
-		Role role = null;
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM Role WHERE role = ?");
-		query.setParameter(0, userRole);
-		tx.commit();
-		role = (Role) query.uniqueResult();
-		session.close();	
-		return role;
+	public Role getUserRole(String userRole) {		
+		try {
+			Role role = null;
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			Query query = session.createQuery("FROM Role WHERE role = ?");
+			query.setParameter(0, userRole);
+			tx.commit();
+			role = (Role) query.uniqueResult();
+			session.close();	
+			return role;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}		
 	}
 
 	@Override
@@ -93,6 +118,7 @@ public class UserDAOImpl implements UserDAO {
 			return "Success";
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			return "Fail";
 		}		
 	}
@@ -123,6 +149,7 @@ public class UserDAOImpl implements UserDAO {
 			return "Success";
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			return "Fail";
 		}
 	}
@@ -148,6 +175,7 @@ public class UserDAOImpl implements UserDAO {
 			return "Success";
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			return "Fail";
 		}	
 	}
