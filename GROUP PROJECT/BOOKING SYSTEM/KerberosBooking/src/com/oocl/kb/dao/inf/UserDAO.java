@@ -17,13 +17,13 @@ public interface UserDAO {
 	public Role getUserRole(String userRole);
 
 	public User getUser(String username);
-	
-	public List<User> getAllUsersByUsername(String username);
 
 	public String deleteUser(User user);
 	
 	public String createUser(User user);
 	
 	public String updateUser(User user);
+
+	List<User> getAllUsers(String userName, String fname, String lname, String role);
 
 }

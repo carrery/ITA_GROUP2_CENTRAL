@@ -1,5 +1,8 @@
 package com.oocl.kb.test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -26,9 +29,17 @@ public class TestMain {
 
 		// test_validateUser();
 		// test_getUserRole();
-		// test_getAllUsersByUsername();
+		 //test_getAllUsersByUsername();
 //		test_createShipment();
-		test_updateShp();
+//		test_updateShp();
+		
+		try {
+			Date date = new SimpleDateFormat("yyyy/MM/dd").parse("1999/01/12");
+			System.out.println(new SimpleDateFormat("dd-MMM-yy").format(date).toUpperCase());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -46,11 +57,11 @@ public class TestMain {
 	}
 
 	static void test_getAllUsersByUsername() {
-		// UserDAOImpl userDAO = (UserDAOImpl) ctx.getBean("userDAO");
-		// List<User> testList = userDAO.getAllUsersByUsername("");
-		// for(User us : testList ) {
-		// System.out.println(us.getFirstName() + " " + us.getLastName());
-		// }
+		 UserDAOImpl userDAO = (UserDAOImpl) ctx.getBean("userDAO");
+		 List<User> testList = userDAO.getAllUsers("","","","");
+		 for(User us : testList ) {
+		 System.out.println(us.getFirstName() + " " + us.getLastName());
+		 }
 	}
 
 	static void test_createShipment() {

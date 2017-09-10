@@ -124,17 +124,25 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public List<User> getAllUsersByUsername(String userName) {
-		
-		Session session = sessionFactory.openSession();
-		tx = session.beginTransaction();
-		Query query = session.createQuery("FROM User WHERE username LIKE ?");
-		query.setParameter(0, "%" + userName + "%");
-		tx.commit();
-		List<User> returnList = (ArrayList<User>) query.list();
-		session.close();
-		
-		return returnList;
+	public List<User> getAllUsers(String userName,String fname,String lname,String role) {		
+		try {
+			Session session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			Query query = session.createQuery("FROM User WHERE username LIKE ? AND firstName LIKE ? AND lastName LIKE ? AND role LIKE ?");
+			query.setParameter(0, "%" + userName + "%");
+			query.setParameter(1, "%" + fname + "%");
+			query.setParameter(2, "%" + lname + "%");
+			query.setParameter(3, "%" + role + "%");
+			tx.commit();
+			List<User> returnList = (ArrayList<User>) query.list();
+			session.close();
+			
+			return returnList;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}	
 	}
 	
 	@Override

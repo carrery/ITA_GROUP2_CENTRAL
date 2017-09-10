@@ -42,5 +42,4 @@ public interface ShipmentDAO {
 	public Long getCgoidSeq();
 
 	public Long getRefNumSeq();
-
 }
