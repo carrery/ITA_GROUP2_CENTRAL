@@ -25,9 +25,9 @@ public interface ShipmentDAO {
 	
 	public String deleteContainer(ShipmentContainer container);
 	
-    public void createShpContainer(ArrayList<com.oocl.kb.model.ShipmentContainer> cntrList);
+    public void createShpContainer(ArrayList<ShipmentContainer> cntrList);
     
-    public void createShpCargo(ArrayList<com.oocl.kb.model.ShipmentCargo> cgoList);
+    public void createShpCargo(ArrayList<ShipmentCargo> cgoList);
 
 	public List<Shipment> getAllShipments(String username, String role);
   
@@ -36,5 +36,6 @@ public interface ShipmentDAO {
 	public Shipment getShipmentById(String shpNum);
 
 	public String updateShipment(Shipment shipment, String  shpNum);
+
 
 }
