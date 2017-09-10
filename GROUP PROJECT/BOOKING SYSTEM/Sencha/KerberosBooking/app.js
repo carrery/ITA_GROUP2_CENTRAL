@@ -21,20 +21,29 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'createBooking'
+        'createBooking',
+        'userManagement'
     ],
     stores: [
-        'createBooking'
+        'createBooking',
+        'userManagement'
     ],
     views: [
         'LoginForm',
         'RegisterForm',
+        'bookingGrid',
         'MyPanel',
+        'mytabpanel',
         'mainViewport',
-        'viewBookingPanel',
+        'myTabKer',
+        'kerberosPanel',
         'myHomePanel',
+        'myTest',
         'createBkgPanel',
-		'adminPanel'
+        'adminPanel',
+        'viewUsersPanel',
+        'MyToolbar5',
+        'toolbarIcn'
     ],
     controllers: [
         'HomeController',
