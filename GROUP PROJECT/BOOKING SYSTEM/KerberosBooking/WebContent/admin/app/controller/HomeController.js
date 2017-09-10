@@ -43,8 +43,12 @@ Ext.define('KerberosBooking.controller.HomeController', {
         },
         "#createResetBtn": {
             click: 'onCreateResetBtnClick'
+        },
+        "#registerBtn": {
+            click: 'onRegisterBtnClick'
         }
     },
+
 
     onLogBtnClick: function(button, e, eOpts) {
                 var username = Ext.getCmp('usernameTxt').getValue(); //get value of username
@@ -197,18 +201,63 @@ Ext.define('KerberosBooking.controller.HomeController', {
     },
 
     onValidateResetBtnClick: function(button, e, eOpts) {
-        //var form = button.up('createBookingPanel'),
           var forms = button.up('form'),
-       //values = form.getValues(),
             value = forms.getValues();
 
-          var createBooking = Ext.encode(value);
-      //console.log(values);
-      console.log(createBooking);
+          var grid = Ext.getCmp('createContainer');
+          var containers = grid.getStore().data;
+          var arr = [];
+
+          for (var i =0; i < containers.length; ++i){
+              arr.push(containers.items[i].data);
+          }
+          
+          value['container'] = arr;
+          var container = Ext.encode(value);
+          var test1 = value + arr;
+
+      var createBooking = Ext.encode(value);
+      
+      console.log(container);
+      Ext.Ajax.request({
+          url: 'createBooking',
+          method: 'POST',
+          params:{
+              jsonString:   createBooking
+          },
+          callback: function(options, success, response) {
+        	  
+        	  console.log(response);
+        
+          },failure : function(response) {
+
+              console.log("response", response);
+
+          }
+          
+          });
+      
+ 
+
+  
   },
 
   onCreateResetBtnClick: function(button, e, eOpts) {
 
-  }
+  },
 
+  onRegisterBtnClick: function(button, e, eOpts) {
+            var form = button.up('form'),				// Register form
+                  formWindow = button.up('window'),		// Register form window
+                  values = form.getValues();				// Form values
+                 	// Panel shown when logged in
+
+              // Success
+
+              console.log(values);
+               Ext.Msg.alert("Registration Success", "Your account will be checked and verified by the admin.");
+
+              	// Close window
+                  formWindow.destroy();
+  }
 });

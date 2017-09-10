@@ -20,6 +20,12 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
+	models: [
+        'createBooking'
+    ],
+    stores: [
+        'createBooking'
+    ],
     views: [
         'LoginForm',
         'RegisterForm',
@@ -27,10 +33,13 @@ Ext.application({
         'mainViewport',
         'viewBookingPanel',
         'myHomePanel',
-        'createBkgPanel'
+        'createBkgPanel',
+		'adminPanel'
     ],
     controllers: [
-        'HomeController'
+        'HomeController',
+        'AdminController',
+        'createBooking'
     ],
     name: 'KerberosBooking',
 
