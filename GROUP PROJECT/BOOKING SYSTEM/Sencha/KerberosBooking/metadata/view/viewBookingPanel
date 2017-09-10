@@ -1,0 +1,621 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "viewBookingPanel"
+        ],
+        "container|align": "stretch",
+        "designer|userAlias": "viewBookingPanel",
+        "designer|userClassName": "viewBookingPanel",
+        "id": "viewBookingPanel",
+        "itemId": "viewBookingPanel",
+        "layout": "vbox",
+        "scrollable": true
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "scrollable": "boolean",
+        "alternateClassName": "typedarray",
+        "container|align": "string",
+        "id": "string",
+        "itemId": "string",
+        "layout": "string"
+    },
+    "name": "MyPanel1",
+    "designerId": "d0169788-e07f-4700-8917-2f02e784f040",
+    "viewControllerInstanceId": "3d3f2023-2730-4d44-925d-0edb9d8ab904",
+    "viewModelInstanceId": "e2dcb4c4-2e42-4cf0-b11a-7b3ec098d08c",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "layout|flex": "number"
+            },
+            "name": "MyContainer19",
+            "designerId": "b5fed668-2e6d-4137-9aa4-5964cc3264a2",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "height": 201,
+                        "src": "\\images\\bg\\englishmap.jpg",
+                        "width": 201
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "height": "auto",
+                        "src": "uri",
+                        "width": "auto"
+                    },
+                    "name": "MyImg13",
+                    "designerId": "8c3a0e61-ff52-437b-a631-103558b0c9cc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "html": [
+                    "<iframe",
+                    "  width=\"600\"",
+                    "  height=\"450\"",
+                    "  frameborder=\"0\" style=\"border:0\"",
+                    "  src=\"https://www.google.com.sg/maps/@1.3437459,103.8240449,11z?hl=en\" allowfullscreen>",
+                    "</iframe>"
+                ],
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "scrollable": "boolean",
+                "layout|flex": "number",
+                "flex": "number",
+                "html": "object"
+            },
+            "name": "MyContainer",
+            "designerId": "49437c37-bcda-4960-b0ae-f011242283b1",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "id": "kerberosHomePanel",
+                        "itemId": "kerberosHomePanel",
+                        "title": "Find Shipment"
+                    },
+                    "configAlternates": {
+                        "bodyPadding": "auto",
+                        "id": "string",
+                        "itemId": "string",
+                        "title": "string"
+                    },
+                    "name": "MyForm2",
+                    "designerId": "7f6082ae-66a1-4ac0-9f2c-5851dabd270d",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox"
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string"
+                            },
+                            "name": "MyContainer9",
+                            "designerId": "72866bbb-fb78-49ef-a566-4c19eb0d89c7",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 0,
+                                        "width": 343
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyContainer11",
+                                    "designerId": "a0db19db-26dd-4ef1-a130-070718c4cf9f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Booking Number",
+                                                "id": "viewBkgPanel",
+                                                "itemId": "viewBkgPanel",
+                                                "labelWidth": 120
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "id": "string",
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField6",
+                                            "designerId": "23f200d4-6f5c-4a7c-bd04-d69b1034a9f5"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "From City",
+                                                "labelWidth": 120
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number"
+                                            },
+                                            "name": "MyComboBox",
+                                            "designerId": "6714eaf1-1f36-4477-8bbd-3ae907e97fea"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "From Date",
+                                                "labelWidth": 120
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number"
+                                            },
+                                            "name": "MyDateField",
+                                            "designerId": "905d1719-959d-484d-8fde-9fa34478f159"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyContainer10",
+                                    "designerId": "9f6153ea-459a-4faa-975b-f910a79b5b22",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Container Number",
+                                                "labelWidth": 120
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number"
+                                            },
+                                            "name": "MyTextField7",
+                                            "designerId": "860a646c-8ffc-429d-9230-d85cbc7d9744"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "To City",
+                                                "labelWidth": 120
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number"
+                                            },
+                                            "name": "MyComboBox1",
+                                            "designerId": "c405fca5-a5da-42f4-9844-b254bc940a1e"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "To Date",
+                                                "labelWidth": 120
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number"
+                                            },
+                                            "name": "MyDateField1",
+                                            "designerId": "678c24e7-b805-4eee-9fe3-34c0fb295a7b"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|padding": 5,
+                                                "padding": ""
+                                            },
+                                            "configAlternates": {
+                                                "container|padding": "auto",
+                                                "padding": "auto"
+                                            },
+                                            "name": "MyToolbar",
+                                            "designerId": "cfcf79ef-39c4-4282-9358-e5641d6d24ea",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.toolbar.Fill",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": 1,
+                                                        "width": 235
+                                                    },
+                                                    "configAlternates": {
+                                                        "layout|flex": "number",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyFill1",
+                                                    "designerId": "33051301-f6a7-4ce8-a586-45cfe96bb0a5"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dock": "right",
+                                                        "layout|flex": null,
+                                                        "scale": "medium",
+                                                        "style": [
+                                                            "{",
+                                                            "background: '#FFFFFF'",
+                                                            "}"
+                                                        ],
+                                                        "text": "Submit"
+                                                    },
+                                                    "configAlternates": {
+                                                        "dock": "string",
+                                                        "layout|flex": "number",
+                                                        "style": "object",
+                                                        "text": "string",
+                                                        "scale": "string"
+                                                    },
+                                                    "name": "MyButton1",
+                                                    "designerId": "a9049728-a442-4c3a-9dd5-cf3c841e6c9e"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "flex": "number"
+            },
+            "name": "MyContainer8",
+            "designerId": "d4f0f48e-ff12-4488-8b2c-e6fd5a485104",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": "",
+                        "flex": 1,
+                        "padding": 10,
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "title": "string",
+                        "bodyPadding": "auto",
+                        "padding": "auto"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "f9907a5f-25fa-483f-a960-09fa3d17004f",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "string",
+                                "flex": 1,
+                                "text": "Booking Number"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "d79251ac-5cd2-43da-a327-faedaa50cc56"
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTable",
+                            "designerId": "a894846a-9ea6-49e2-9f5c-13f8b57ae021"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "text": "From City"
+                            },
+                            "configAlternates": {
+                                "flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "da0d12aa-19c4-4975-bd3a-18b434a49bc0"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "text": "To City"
+                            },
+                            "configAlternates": {
+                                "flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyColumn2",
+                            "designerId": "9c501e95-6931-4a7b-ae9d-1c33ae1f1560"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "text": "From Date"
+                            },
+                            "configAlternates": {
+                                "flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "aa8afca8-fc4f-4baf-846d-97fa015a83d9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "text": "To Date"
+                            },
+                            "configAlternates": {
+                                "flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "01e5a3a4-2ccf-4c8a-9820-ff69a512f3cf"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "text": "Shipper"
+                            },
+                            "configAlternates": {
+                                "flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyColumn5",
+                            "designerId": "215b3b14-d7d7-4d68-9126-38bb2b4603be"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "text": "Consignee"
+                            },
+                            "configAlternates": {
+                                "flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyColumn6",
+                            "designerId": "8efc4996-a6da-4371-9dc6-fd6d5e659fe5"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyCheckboxSelectionModel",
+                            "designerId": "32a1368c-4045-4e52-9d17-01991e107173"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "configAlternates": {
+                                "dock": "string"
+                            },
+                            "name": "MyToolbar3",
+                            "designerId": "05192ed3-d0c4-4dc8-99a5-a1444f5125c0",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "style": [
+                                            "{",
+                                            "background: '#FFFFFF'",
+                                            "}",
+                                            ""
+                                        ],
+                                        "text": "MyButton"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "style": "object",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton2",
+                                    "designerId": "bc571871-fea5-433a-8904-876a0b4e748f"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "style": [
+                                            "{",
+                                            "background: '#FFFFFF'",
+                                            "}",
+                                            ""
+                                        ],
+                                        "text": "MyButton"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "style": "object",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton7",
+                                    "designerId": "8b069086-90fd-4444-9456-f7e19ab750b2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

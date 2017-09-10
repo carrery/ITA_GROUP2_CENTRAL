@@ -1,0 +1,154 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "createBooking"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "0194c987-76b2-4fd5-9a06-e4de3bc42131",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#addCntr",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton11",
+                "fn": "onAddCntrClick",
+                "implHandler": [
+                    "var grid = Ext.getCmp('createContainer');",
+                    "    grid.getStore().add({",
+                    "    referenceNumber  : null,",
+                    "       containerNumber  : null,",
+                    "       grossWeight : null,",
+                    "       netWeight : null,",
+                    "       weightUnit : 'kg'",
+                    "",
+                    "           });",
+                    "",
+                    "",
+                    "      grid.getView().refresh();",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onAddCntrClick",
+            "designerId": "f52db646-314c-48cc-b1d2-bb08ef6c4bc6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#deleteCntr",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton5",
+                "fn": "onDeleteCntrClick",
+                "implHandler": [
+                    "var grid = Ext.getCmp('createContainer');",
+                    "var store = grid.getStore();",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "",
+                    "console.log(selection);",
+                    "        if (selection) {",
+                    "            store.remove(selection);",
+                    "        }"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onDeleteCntrClick",
+            "designerId": "50f56b83-6a2d-4466-85e3-02b180eaa01e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#copyCntr",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton10",
+                "fn": "onCopyCntrClick",
+                "implHandler": [
+                    "// copy the selected record",
+                    "var grid = Ext.getCmp('createContainer');",
+                    "var store = grid.getStore();",
+                    "var copy = grid.getSelectionModel().getSelection()[0];",
+                    "",
+                    "console.log(copy.data.containerNumber);",
+                    "// inserts the copied record at the end of the grid",
+                    "",
+                    "store.add({",
+                    "            referenceNumber  : copy.data.referenceNumber,",
+                    "               containerNumber  : copy.data.containerNumber,",
+                    "               grossWeight : copy.data.grossWeight,",
+                    "               netWeight : copy.data.netWeight,",
+                    "               weightUnit : copy.data.weightUnit});",
+                    "grid.getView().refresh();",
+                    "//grid.getStore().insert(grid.store.data.length, new grid.store.recordType(copy.data));"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onCopyCntrClick",
+            "designerId": "ba5f5c03-4123-4205-bd93-35b3ce690448"
+        }
+    ]
+}

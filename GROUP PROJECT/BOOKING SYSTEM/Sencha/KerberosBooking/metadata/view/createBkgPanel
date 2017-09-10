@@ -1,0 +1,1290 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "createBkgPanel"
+        ],
+        "designer|userAlias": "createBkgPanel",
+        "designer|userClassName": "createBkgPanel",
+        "id": "createBkgPanel",
+        "itemId": "createBkgPanel",
+        "scrollable": true
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "scrollable": "boolean",
+        "alternateClassName": "typedarray",
+        "container|align": "string",
+        "id": "string",
+        "itemId": "string",
+        "layout": "string"
+    },
+    "name": "kerberosPanel1",
+    "designerId": "7be56661-b5bf-425e-a32e-86cc880582be",
+    "viewControllerInstanceId": "3d3f2023-2730-4d44-925d-0edb9d8ab904",
+    "viewModelInstanceId": "e2dcb4c4-2e42-4cf0-b11a-7b3ec098d08c",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "flex": 1,
+                "height": 900,
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "flex": "number",
+                "height": "auto",
+                "layout": "string"
+            },
+            "name": "MyContainer17",
+            "designerId": "f6183f25-c38e-4c2c-acb5-533efacbb074",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "flex": 1,
+                        "height": 201,
+                        "hidden": true,
+                        "src": "\\images\\bg\\englishmap.jpg",
+                        "width": 201
+                    },
+                    "configAlternates": {
+                        "dock": "string",
+                        "flex": "number",
+                        "height": "auto",
+                        "src": "uri",
+                        "width": "auto",
+                        "hidden": "boolean"
+                    },
+                    "name": "MyImg2",
+                    "designerId": "ed44de35-70e2-4827-8d10-4a3b0aae0d29"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onContainerAfterRender",
+                        "implHandler": [
+                            "Ext.define('MyMap', {",
+                            "    extend: 'Ext.ux.Carousel',",
+                            "    alias: 'widget.mycarousel',",
+                            "                autoShow: true,",
+                            "                layout: 'fit',",
+                            "                title: 'GMap Window',",
+                            "                closeAction: 'hide',",
+                            "                width:450,",
+                            "                height:450,",
+                            "                border: false,",
+                            "                x: 40,",
+                            "                y: 60,",
+                            "                items: {",
+                            "                    xtype: 'gmappanel',",
+                            "                    center: {",
+                            "                        geoCodeAddr: '4 Yawkey Way, Boston, MA, 02215-3409, USA',",
+                            "                        marker: {title: 'Fenway Park'}",
+                            "                    },",
+                            "                    markers: [{",
+                            "                        lat: 42.339641,",
+                            "                        lng: -71.094224,",
+                            "                        title: 'Boston Museum of Fine Arts',",
+                            "                        listeners: {",
+                            "                            click: function(e){",
+                            "                                Ext.Msg.alert('It\\'s fine', 'and it\\'s art.');",
+                            "                            }",
+                            "                        }",
+                            "                    },{",
+                            "                        lat: 42.339419,",
+                            "                        lng: -71.09077,",
+                            "                        title: 'Northeastern University'",
+                            "                    }]",
+                            "                }",
+                            "            });"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onContainerAfterRender",
+                    "designerId": "78a32e88-4434-4af1-9d10-c57dca27c9a1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "scrollable": true
+            },
+            "configAlternates": {
+                "scrollable": "boolean",
+                "layout|flex": "number",
+                "container|align": "string",
+                "layout": "string"
+            },
+            "name": "MyContainer",
+            "designerId": "0c874183-d087-4ea6-884e-280dd1e09d0e",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "id": "createBookingPanel",
+                        "itemId": "createBookingPanel",
+                        "layout": "auto",
+                        "title": "Create Booking",
+                        "titleAlign": "left"
+                    },
+                    "configAlternates": {
+                        "bodyPadding": "auto",
+                        "designer|createAlias": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string",
+                        "titleAlign": "string"
+                    },
+                    "name": "MyForm",
+                    "designerId": "d291c4b6-cc4a-4965-9c47-e265e134f843",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|padding": 10,
+                                "flex": 1,
+                                "id": "bookingPanel",
+                                "itemId": "bookingPanel",
+                                "layout": "hbox",
+                                "padding": 10
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|padding": "auto",
+                                "flex": "number",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout": "string",
+                                "padding": "auto"
+                            },
+                            "name": "MyContainer2",
+                            "designerId": "5c476010-b3c1-406b-a100-d728bed0bc06",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "fieldLabel": "Booking Number",
+                                        "id": "bookingNumber",
+                                        "itemId": "bookingNumber",
+                                        "layout|flex": 1,
+                                        "name": "shipmentNumber",
+                                        "padding": 10
+                                    },
+                                    "configAlternates": {
+                                        "disabled": "boolean",
+                                        "fieldLabel": "string",
+                                        "layout|flex": "number",
+                                        "padding": "auto",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "name": "string"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "dcc883b8-7f07-4ee1-aaaf-cb764829db9e"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Booking Office",
+                                        "id": "bookingOffice",
+                                        "itemId": "bookingOffice",
+                                        "layout|flex": 1,
+                                        "name": "bookingOffice",
+                                        "padding": 10,
+                                        "store": [
+                                            "['MNL','HKG','ZHA', 'USA']"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|flex": "number",
+                                        "padding": "auto",
+                                        "store": "array",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "name": "string"
+                                    },
+                                    "name": "MyComboBox2",
+                                    "designerId": "6298dffe-1da0-4742-8254-59a2444179ba"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "padding": 10,
+                                        "text": "Booking Status"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "padding": "auto",
+                                        "text": "string"
+                                    },
+                                    "name": "MyLabel",
+                                    "designerId": "972a18db-1638-4bfa-b174-a4e08fe785d0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|padding": 10,
+                                "flex": 1,
+                                "id": "bookingInfoPanel",
+                                "itemId": "bookingInfoPanel",
+                                "layout": "hbox",
+                                "padding": 10
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|padding": "auto",
+                                "flex": "number",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout": "string",
+                                "padding": "auto"
+                            },
+                            "name": "MyContainer3",
+                            "designerId": "dd7cfe80-fe80-4116-b9c2-e4a49fc2e0ca",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyContainer4",
+                                    "designerId": "8ee6fbcc-684b-48cf-94f5-05509b8dbdc6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Shipper",
+                                                "id": "bookingShipper",
+                                                "itemId": "bookingShipper",
+                                                "labelWidth": 120,
+                                                "name": "shipper",
+                                                "padding": 10
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "padding": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "name": "string"
+                                            },
+                                            "name": "MyTextField1",
+                                            "designerId": "c855596c-2f54-4a5c-8f81-a603127cd8da"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "From Date",
+                                                "format": "Y-m-d",
+                                                "labelWidth": 120,
+                                                "name": "fromDate",
+                                                "padding": 10
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "padding": "auto",
+                                                "format": "string",
+                                                "name": "string"
+                                            },
+                                            "name": "MyDateField2",
+                                            "designerId": "9fd0dd92-1864-4af3-96c2-358a86dcdd62"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyContainer7",
+                                    "designerId": "461044cd-6060-4df2-b683-928634942bc2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Consignee",
+                                                "id": "bookingConsignee",
+                                                "itemId": "bookingConsignee",
+                                                "labelWidth": 120,
+                                                "name": "consignee",
+                                                "padding": 10
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "padding": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "name": "string"
+                                            },
+                                            "name": "MyTextField2",
+                                            "designerId": "68898d77-d7ed-4185-99ba-81fe35c3108f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "To Date",
+                                                "format": "Y-m-d",
+                                                "labelWidth": 120,
+                                                "name": "toDate",
+                                                "padding": 10
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "padding": "auto",
+                                                "format": "string",
+                                                "name": "string"
+                                            },
+                                            "name": "MyDateField3",
+                                            "designerId": "6a2645f0-fb92-4ea4-adb8-f606f49dfbe5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|padding": 10,
+                                "id": "containerPanel",
+                                "itemId": "containerPanel",
+                                "layout": "vbox",
+                                "padding": 10
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|padding": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout": "string",
+                                "padding": "auto"
+                            },
+                            "name": "MyContainer12",
+                            "designerId": "2daeb930-d31f-464d-98cd-747f27cc5c96",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "layout": "hbox",
+                                        "layout|flex": 1
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "layout": "string",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyContainer13",
+                                    "designerId": "2a192281-26e2-4d95-b6c3-c0395b0bfb05",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyContainer15",
+                                            "designerId": "a4ab373c-f32f-4e63-ac57-38b7a6fafad9",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "From City",
+                                                        "id": "bookingFromCity",
+                                                        "itemId": "bookingFromCity",
+                                                        "labelWidth": 120,
+                                                        "name": "fromCity",
+                                                        "padding": 10,
+                                                        "store": [
+                                                            "['MNL','HKG','ZHA', 'USA']"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "fieldLabel": "string",
+                                                        "labelWidth": "number",
+                                                        "padding": "auto",
+                                                        "store": "array",
+                                                        "id": "string",
+                                                        "itemId": "string",
+                                                        "name": "string"
+                                                    },
+                                                    "name": "MyComboBox3",
+                                                    "designerId": "be2cbbab-80a3-4111-beed-f5f1e53bdf11",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onBookingFromCityBlur",
+                                                                "implHandler": [
+                                                                    "var from = Ext.getCmp('bookingFromCity').getValue(),",
+                                                                    "    to = Ext.getCmp('bookingToCity').getValue();",
+                                                                    "",
+                                                                    "if (from == to){",
+                                                                    "    alert('From City should not be the same as To City! Please change');",
+                                                                    "}"
+                                                                ],
+                                                                "name": "blur",
+                                                                "scope": "me"
+                                                            },
+                                                            "configAlternates": {
+                                                                "fn": "string",
+                                                                "implHandler": "code",
+                                                                "name": "string",
+                                                                "scope": "string"
+                                                            },
+                                                            "name": "onBookingFromCityBlur",
+                                                            "designerId": "67230a33-7d3a-460b-b272-f1e39c0a1514"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Cargo Nature",
+                                                        "id": "bookingCargoNature",
+                                                        "itemId": "bookingCargoNature",
+                                                        "labelWidth": 120,
+                                                        "name": "cargoNature",
+                                                        "padding": 10,
+                                                        "store": [
+                                                            "['GC','RF','AWK','DG']"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "fieldLabel": "string",
+                                                        "labelWidth": "number",
+                                                        "padding": "auto",
+                                                        "store": "array",
+                                                        "id": "string",
+                                                        "itemId": "string",
+                                                        "name": "string"
+                                                    },
+                                                    "name": "MyComboBox5",
+                                                    "designerId": "bf627d59-6333-4404-b901-82a5a7ed9e16"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Cargo Description",
+                                                        "id": "bookingCargoDesc",
+                                                        "itemId": "bookingCargoDesc",
+                                                        "labelWidth": 120,
+                                                        "name": "cargoDesc",
+                                                        "padding": 10
+                                                    },
+                                                    "configAlternates": {
+                                                        "fieldLabel": "string",
+                                                        "labelWidth": "number",
+                                                        "padding": "auto",
+                                                        "id": "string",
+                                                        "itemId": "string",
+                                                        "name": "string"
+                                                    },
+                                                    "name": "MyTextField3",
+                                                    "designerId": "30a30864-0c07-44a1-aba6-f13a4371d061"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "padding": ""
+                                            },
+                                            "configAlternates": {
+                                                "layout|flex": "number",
+                                                "padding": "auto"
+                                            },
+                                            "name": "MyContainer16",
+                                            "designerId": "a1e0bee4-ec22-4eed-9324-a32e21f8b4b8",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "To City",
+                                                        "id": "bookingToCity",
+                                                        "itemId": "bookingToCity",
+                                                        "labelWidth": 120,
+                                                        "name": "toCity",
+                                                        "padding": 10,
+                                                        "store": [
+                                                            "['MNL','HKG','ZHA', 'USA']"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "fieldLabel": "string",
+                                                        "labelWidth": "number",
+                                                        "padding": "auto",
+                                                        "store": "array",
+                                                        "id": "string",
+                                                        "itemId": "string",
+                                                        "name": "string"
+                                                    },
+                                                    "name": "MyComboBox4",
+                                                    "designerId": "e686b9f0-2c49-4cba-9bda-a05c29c2bf06",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onBookingToCityBlur",
+                                                                "implHandler": [
+                                                                    "var from = Ext.getCmp('bookingFromCity').getValue(),",
+                                                                    "    to = Ext.getCmp('bookingToCity').getValue();",
+                                                                    "",
+                                                                    "if (from == to){",
+                                                                    "    alert('From City should not be the same as To City! Please change');",
+                                                                    "}"
+                                                                ],
+                                                                "name": "blur",
+                                                                "scope": "me"
+                                                            },
+                                                            "configAlternates": {
+                                                                "fn": "string",
+                                                                "implHandler": "code",
+                                                                "name": "string",
+                                                                "scope": "string"
+                                                            },
+                                                            "name": "onBookingToCityBlur",
+                                                            "designerId": "25082cb7-4187-4b23-869a-f3faa4c9c472"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "HS Code",
+                                                        "id": "bookingConHS",
+                                                        "itemId": "bookingConHS",
+                                                        "labelWidth": 120,
+                                                        "name": "containerHS",
+                                                        "padding": 10,
+                                                        "store": [
+                                                            "['MNL','HKG','ZHA', 'USA']"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "fieldLabel": "string",
+                                                        "labelWidth": "number",
+                                                        "padding": "auto",
+                                                        "store": "array",
+                                                        "id": "string",
+                                                        "itemId": "string",
+                                                        "name": "string"
+                                                    },
+                                                    "name": "MyComboBox7",
+                                                    "designerId": "4304fa23-1c92-4513-91d0-bb0229d2b2de"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyContainer14",
+                                    "designerId": "947c8f28-41f1-4b13-ade5-c9885693c492",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "flex": 1,
+                                                "height": 177,
+                                                "id": "createContainer",
+                                                "itemId": "createContainer",
+                                                "resizable": true,
+                                                "store": "createBooking",
+                                                "title": ""
+                                            },
+                                            "configAlternates": {
+                                                "title": "string",
+                                                "resizable": "boolean",
+                                                "flex": "number",
+                                                "height": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "store": "store"
+                                            },
+                                            "name": "MyGridPanel1",
+                                            "designerId": "2b674512-30a1-4020-a396-971997bf6df0",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.toolbar.Toolbar",
+                                                    "reference": {
+                                                        "name": "dockedItems",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dock": "top"
+                                                    },
+                                                    "configAlternates": {
+                                                        "dock": "string"
+                                                    },
+                                                    "name": "MyToolbar1",
+                                                    "designerId": "1fd56785-969c-4abf-8fe6-ed52b64172cb",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "id": "addCntr",
+                                                                "itemId": "addCntr",
+                                                                "layout|flex": null,
+                                                                "text": "Add"
+                                                            },
+                                                            "configAlternates": {
+                                                                "layout|flex": "number",
+                                                                "text": "string",
+                                                                "id": "string",
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyButton11",
+                                                            "designerId": "e0d36f8f-b704-4839-a1b1-5f967bdc90c4"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "id": "deleteCntr",
+                                                                "itemId": "deleteCntr",
+                                                                "layout|flex": null,
+                                                                "text": "Delete"
+                                                            },
+                                                            "configAlternates": {
+                                                                "layout|flex": "number",
+                                                                "text": "string",
+                                                                "id": "string",
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyButton5",
+                                                            "designerId": "a11d7926-5fbf-4be4-ad8a-5d6e7e265178"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "id": "copyCntr",
+                                                                "itemId": "copyCntr",
+                                                                "layout|flex": null,
+                                                                "text": "Copy"
+                                                            },
+                                                            "configAlternates": {
+                                                                "layout|flex": "number",
+                                                                "text": "string",
+                                                                "id": "string",
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyButton10",
+                                                            "designerId": "5b86e46a-2fe7-4ad8-83f6-54e5dcae71b5"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "referenceNumber",
+                                                        "designer|displayName": "refNum",
+                                                        "flex": 1,
+                                                        "id": "bookingConRef",
+                                                        "itemId": "bookingConRef",
+                                                        "text": "Reference Number"
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "flex": "number",
+                                                        "designer|displayName": "string",
+                                                        "id": "string",
+                                                        "itemId": "string"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "3468a6b5-4085-46a6-a1b1-75411cfa099d"
+                                                },
+                                                {
+                                                    "type": "Ext.view.Table",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyTable1",
+                                                    "designerId": "2810dcd6-55f0-4942-8a53-d555fab73f5b"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "containerNumber",
+                                                        "designer|displayName": "cntrNum",
+                                                        "flex": 1,
+                                                        "id": "bookingConNumber",
+                                                        "itemId": "bookingConNumber",
+                                                        "text": "Container Number"
+                                                    },
+                                                    "configAlternates": {
+                                                        "flex": "number",
+                                                        "text": "string",
+                                                        "dataIndex": "datafield",
+                                                        "designer|displayName": "string",
+                                                        "id": "string",
+                                                        "itemId": "string"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "39487090-766f-4f2d-93e1-26fb483d1385",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.ComboBox",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "name": "cntrType",
+                                                                "store": [
+                                                                    "['20GP', '40GP', '20HQ', '40HQ']"
+                                                                ]
+                                                            },
+                                                            "configAlternates": {
+                                                                "store": "array",
+                                                                "name": "string"
+                                                            },
+                                                            "name": "MyComboBox9",
+                                                            "designerId": "728e74db-344d-4811-bf85-22b7099941c5"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "grossWeight",
+                                                        "flex": 1,
+                                                        "text": "Gross Weight"
+                                                    },
+                                                    "configAlternates": {
+                                                        "flex": "number",
+                                                        "text": "string",
+                                                        "dataIndex": "datafield"
+                                                    },
+                                                    "name": "MyColumn9",
+                                                    "designerId": "c378e0a5-7163-4ae8-bca7-e157b5ac0352",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "name": "grossWt"
+                                                            },
+                                                            "configAlternates": {
+                                                                "name": "string"
+                                                            },
+                                                            "name": "MyTextField4",
+                                                            "designerId": "fa617bfe-b27b-4721-8508-d4fbeb17cc77"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "netWeight",
+                                                        "flex": 1,
+                                                        "text": "Net Weight"
+                                                    },
+                                                    "configAlternates": {
+                                                        "flex": "number",
+                                                        "text": "string",
+                                                        "dataIndex": "datafield"
+                                                    },
+                                                    "name": "MyColumn10",
+                                                    "designerId": "73dbd670-999f-4341-93a8-7b14ff033ab3",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "name": "netWt"
+                                                            },
+                                                            "configAlternates": {
+                                                                "name": "string"
+                                                            },
+                                                            "name": "MyTextField5",
+                                                            "designerId": "789251e4-7779-4048-839c-84ec736a6ec7"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "weightUnit",
+                                                        "flex": 1,
+                                                        "text": "Weight Unit"
+                                                    },
+                                                    "configAlternates": {
+                                                        "flex": "number",
+                                                        "text": "string",
+                                                        "dataIndex": "datafield"
+                                                    },
+                                                    "name": "MyColumn11",
+                                                    "designerId": "91ad57b1-79bf-45c1-9e92-3e8ba437bc6e",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.ComboBox",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "id": "wtUnit",
+                                                                "itemId": "wtUnit",
+                                                                "name": "wtUnit",
+                                                                "store": [
+                                                                    "['kg','ton']"
+                                                                ]
+                                                            },
+                                                            "configAlternates": {
+                                                                "store": "array",
+                                                                "id": "string",
+                                                                "itemId": "string",
+                                                                "name": "string"
+                                                            },
+                                                            "name": "MyComboBox8",
+                                                            "designerId": "6264f7fc-2c6e-4f70-b95c-7b6bf56e03aa"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.plugin.CellEditing",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyCellEditingPlugin",
+                                                    "designerId": "4484f548-1ffd-4c23-845a-1b7b9e1b9e3f"
+                                                },
+                                                {
+                                                    "type": "Ext.selection.CheckboxModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyCheckboxSelectionModel1",
+                                                    "designerId": "31768984-870f-4b0c-9d1a-79178749b974"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "flex": 1
+                                            },
+                                            "configAlternates": {
+                                                "flex": "number"
+                                            },
+                                            "name": "MyContainer18",
+                                            "designerId": "b10bfe2a-e79c-426d-bc46-ba1cf4b21453",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.CheckboxGroup",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "flex": 1,
+                                                        "width": 400
+                                                    },
+                                                    "configAlternates": {
+                                                        "flex": "number",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyCheckboxGroup",
+                                                    "designerId": "7f4163dd-c73a-413f-9175-cc9df908f883",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Checkbox",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "boxLabel": "Valid Weight",
+                                                                "fieldLabel": null,
+                                                                "inputValue": "1",
+                                                                "name": "validWt",
+                                                                "uncheckedValue": "0"
+                                                            },
+                                                            "configAlternates": {
+                                                                "boxLabel": "string",
+                                                                "fieldLabel": "string",
+                                                                "inputValue": "string",
+                                                                "name": "string",
+                                                                "uncheckedValue": "string"
+                                                            },
+                                                            "name": "MyCheckbox",
+                                                            "designerId": "791da22e-e3ff-4b61-9286-721e46c6aef6"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Checkbox",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "boxLabel": "Valid Documents",
+                                                                "fieldLabel": null,
+                                                                "inputValue": "1",
+                                                                "name": "approveDoc",
+                                                                "uncheckedValue": "0"
+                                                            },
+                                                            "configAlternates": {
+                                                                "boxLabel": "string",
+                                                                "fieldLabel": "string",
+                                                                "inputValue": "string",
+                                                                "name": "string",
+                                                                "uncheckedValue": "string"
+                                                            },
+                                                            "name": "MyCheckbox1",
+                                                            "designerId": "c59373fe-501e-467a-8b3a-2069a518c3d5"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Checkbox",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "boxLabel": "Good Customer",
+                                                                "inputValue": "1",
+                                                                "name": "goodCustomer",
+                                                                "uncheckedValue": "0"
+                                                            },
+                                                            "configAlternates": {
+                                                                "boxLabel": "string",
+                                                                "inputValue": "string",
+                                                                "name": "string",
+                                                                "uncheckedValue": "string"
+                                                            },
+                                                            "name": "MyCheckbox2",
+                                                            "designerId": "1eba1d31-9a07-49e2-a221-1d54fa8db9c2"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom"
+                            },
+                            "configAlternates": {
+                                "dock": "string"
+                            },
+                            "name": "MyToolbar4",
+                            "designerId": "691fc586-cfc3-4361-86d0-f16e526f3edc",
+                            "cn": [
+                                {
+                                    "type": "Ext.toolbar.Fill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyFill2",
+                                    "designerId": "5887f42f-a5ae-4ed6-9fae-dd69352e39ed"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "createResetBtn",
+                                        "itemId": "createResetBtn",
+                                        "layout|flex": null,
+                                        "text": "Reset"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyButton12",
+                                    "designerId": "ef72c149-0cec-4e43-ae7e-bcaedb7a8a79"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "validateResetBtn",
+                                        "itemId": "validateResetBtn",
+                                        "layout|flex": null,
+                                        "text": "Validate"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyButton13",
+                                    "designerId": "caeac650-ce91-488d-93e5-2cc48d6a2053"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
