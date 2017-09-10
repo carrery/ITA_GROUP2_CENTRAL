@@ -35,6 +35,6 @@ public interface ShipmentDAO {
 	
 	public Shipment getShipmentById(String shpNum);
 
-	public String updateShipment(Shipment shipment, String  shpNum);
+	public String updateShipment(Shipment shipment);
 
 }

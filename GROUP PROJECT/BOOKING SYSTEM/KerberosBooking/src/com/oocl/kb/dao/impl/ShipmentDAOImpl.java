@@ -167,15 +167,16 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public String updateShipment(Shipment shp, String shpNum) {
+	public String updateShipment(Shipment shp) {
 		try {
 			Session session = sessionFactory.openSession();
 			tx = session.beginTransaction();
-			session.update(shpNum, shp);
+			session.update(shp);
 			tx.commit();
 			session.close();
 			return "Success";
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "Fail";
 		}
 	}

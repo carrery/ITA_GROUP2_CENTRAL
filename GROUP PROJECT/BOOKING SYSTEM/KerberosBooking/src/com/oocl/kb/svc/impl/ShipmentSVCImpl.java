@@ -88,7 +88,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
-		this.shipmentDAO.updateShipment(shp, shpNum);
+		this.shipmentDAO.updateShipment(shp);
 		removeShpContainersCargoes(shpNum);
 //		shipmentDAO.createBooking(shp);
 //		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
