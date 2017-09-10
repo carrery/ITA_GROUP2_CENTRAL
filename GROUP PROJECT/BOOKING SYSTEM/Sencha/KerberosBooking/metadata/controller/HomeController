@@ -1,0 +1,517 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HomeController"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "4003994a-4a76-46fa-85ad-ec9f22d48871",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#logBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton3",
+                "fn": "onLogBtnClick",
+                "implHandler": [
+                    "        var username = Ext.getCmp('usernameTxt').getValue(); //get value of username",
+                    "        var password = Ext.getCmp('passwordTxt').getValue(); // get value of password",
+                    "        var loginView = Ext.getCmp('headerPanel');",
+                    "",
+                    "        //TODO: Login using server-side authentication service",
+                    "        Ext.Ajax.request({",
+                    "            url: 'login',",
+                    "            method: 'POST',",
+                    "            params:{",
+                    "                username:   username,",
+                    "                password:\tpassword",
+                    "            },",
+                    "            callback: function(options, success, response) {",
+                    "",
+                    "                 console.log(response);",
+                    "",
+                    "                if(response.responseText === 'false'){",
+                    "                    --this.attempt;",
+                    "",
+                    "                } else if (response.responseText === 'true'){",
+                    "                 formWindow.destroy();",
+                    "                    Ext.Msg.alert(\"Login Success\", \"Logged In\");",
+                    "",
+                    "",
+                    "",
+                    "                var viewport = Ext.ComponentQuery.query('mainViewport')[0];",
+                    "                var center = viewport.down('[region=center]');",
+                    "                var mainPanel = Ext.ComponentQuery.query('MyPanel')[0];",
+                    "",
+                    "                var view = Ext.create('MyPanel');",
+                    "",
+                    "                center.add(view);",
+                    "                    Ext.getCmp('createBtn').hide();",
+                    "",
+                    "                }",
+                    "",
+                    "            },",
+                    "            failure : function(response) {",
+                    "",
+                    "                console.log(\"response\", response);",
+                    "",
+                    "            }",
+                    "        });",
+                    "",
+                    "Ext.getCmp('createBtn').hide();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onLogBtnClick",
+            "designerId": "a6a85b11-8f09-42a7-8066-0df79c95513a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#viewBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton4",
+                "fn": "onViewBtnClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('mainViewport')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0],",
+                    "    createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "\t//aboutPanel = Ext.ComponentQuery.query('')[0];",
+                    "",
+                    "    view = Ext.create('viewBookingPanel');",
+                    "",
+                    "console.log(viewport);",
+                    "",
+                    "center.remove(mainPanel);",
+                    "center.remove(homePanel);",
+                    "center.remove(createPanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onViewBtnClick",
+            "designerId": "bc9d9538-92a6-4c3c-9205-b52045af7c98"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#loginBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton3",
+                "fn": "onLoginBtnClick",
+                "implHandler": [
+                    "//var login = Ext.create('widget.loginform', {});",
+                    "",
+                    "// Show window",
+                    "//login.show();",
+                    "",
+                    "Ext.create('KerberosBooking.view.LoginForm').show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onLoginBtnClick",
+            "designerId": "02d18b18-ee90-4b78-a253-909a3da0994c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#homeBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton",
+                "fn": "onHomeBtnClick",
+                "implHandler": [
+                    "// var viewport = Ext.ComponentQuery.query('mainViewport')[0],",
+                    "//     center = viewport.down('[region=center]'),",
+                    "//     viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "//     homePanel = Ext.ComponentQuery.query('myHomePanel')[0],",
+                    "//     createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "// \t//aboutPanel = Ext.ComponentQuery.query('')[0];",
+                    "",
+                    "//     view = Ext.create('MyPanel');",
+                    "",
+                    "// //console.log(viewport);",
+                    "",
+                    "// center.remove(viewPanel);",
+                    "// center.remove(homePanel);",
+                    "// center.remove(createPanel);",
+                    "// center.add(view);",
+                    "",
+                    "",
+                    "var viewport = Ext.ComponentQuery.query('mainViewport')[0];",
+                    "var center = viewport.down('[region=center]'),",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "",
+                    "var view = Ext.create('myPanel');",
+                    "",
+                    "center.remove(homePanel);",
+                    "center.remove(createPanel);",
+                    "center.remove(viewPanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onHomeBtnClick",
+            "designerId": "ea2426e1-a848-4ab8-b046-786152bfdbb5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#kerberosBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton6",
+                "fn": "onKerberosBtnClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('mainViewport')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "\t//aboutPanel = Ext.ComponentQuery.query('')[0];",
+                    "",
+                    "    view = Ext.create('myHomePanel');",
+                    "",
+                    "console.log(viewport);",
+                    "",
+                    "center.remove(mainPanel);",
+                    "center.remove(viewPanel);",
+                    "center.remove(createPanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onKerberosBtnClick",
+            "designerId": "fe201bb5-65c9-4dda-bcb3-cdb3c91a43cb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#createBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton8",
+                "fn": "onCreateBtnClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('mainViewport')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0];",
+                    "\t//aboutPanel = Ext.ComponentQuery.query('')[0];",
+                    "",
+                    "    view = Ext.create('createBkgPanel');",
+                    "",
+                    "console.log(viewport);",
+                    "",
+                    "center.remove(mainPanel);",
+                    "center.remove(viewPanel);",
+                    "center.remove(homePanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onCreateBtnClick",
+            "designerId": "e5787e4a-e64e-4197-b9d2-7153c6d7b6cf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#aboutBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton9",
+                "fn": "onAboutBtnClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('mainViewport')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0];",
+                    "    createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "\t//aboutPanel = Ext.ComponentQuery.query('')[0];",
+                    "",
+                    "    view = Ext.create('adminPanel');",
+                    "",
+                    "console.log(viewport);",
+                    "",
+                    "Ext.getCmp('homeToolbar').hide();",
+                    "",
+                    "center.remove(createPanel);",
+                    "center.remove(mainPanel);",
+                    "center.remove(viewPanel);",
+                    "center.remove(homePanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onAboutBtnClick",
+            "designerId": "82e8e2d4-857a-466e-9dcd-8f7a9ee4ce32"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#validateResetBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton13",
+                "fn": "onValidateResetBtnClick",
+                "implHandler": [
+                    "  //var form = button.up('createBookingPanel'),",
+                    "    var forms = button.up('form'),",
+                    " //values = form.getValues(),",
+                    "      value = forms.getValues();",
+                    "var grid = Ext.getCmp('createContainer');",
+                    "//console.log(values);",
+                    "var containers = grid.getStore().data;",
+                    "//grid.getStore().data.items[0].data",
+                    "var arr = [];",
+                    "",
+                    "for (var i =0; i < containers.length; ++i){",
+                    "    console.log(containers.items[i].data);",
+                    "    arr.push(containers.items[i].data);",
+                    "}",
+                    "",
+                    "console.log(arr);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onValidateResetBtnClick",
+            "designerId": "a707fbdd-c37a-40d8-8ca3-8eef5e384241"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#createResetBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton12",
+                "fn": "onCreateResetBtnClick",
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onCreateResetBtnClick",
+            "designerId": "b9622774-a26e-43e1-9d0c-dcbda3715699"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#registerBtn",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton5",
+                "fn": "onRegisterBtnClick",
+                "implHandler": [
+                    "      var form = button.up('form'),\t\t\t\t// Register form",
+                    "            formWindow = button.up('window'),\t\t// Register form window",
+                    "            values = form.getValues();\t\t\t\t// Form values",
+                    "           \t// Panel shown when logged in",
+                    "",
+                    "        // Success",
+                    "",
+                    "        console.log(values);",
+                    "         Ext.Msg.alert(\"Registration Success\", \"Your account will be checked and verified by the admin.\");",
+                    "",
+                    "        \t// Close window",
+                    "            formWindow.destroy();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onRegisterBtnClick",
+            "designerId": "d04eefcf-33df-4b26-8b99-b8776de56962"
+        }
+    ]
+}

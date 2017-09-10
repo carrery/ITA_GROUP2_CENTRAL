@@ -1,0 +1,713 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "myPanel"
+        ],
+        "designer|userAlias": "MyPanel",
+        "designer|userClassName": "MyPanel",
+        "id": "MyPanel",
+        "itemId": "MyPanel",
+        "scrollable": true
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "scrollable": "boolean",
+        "alternateClassName": "typedarray",
+        "container|align": "string",
+        "id": "string",
+        "itemId": "string",
+        "layout": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "9973612a-9b56-4c18-87cc-1e97eb95b54f",
+    "viewModelInstanceId": "fd5599ab-8565-4d1f-bfe8-d980f67208fb",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "middle",
+                "container|pack": "center",
+                "dock": null,
+                "flex": 1,
+                "height": 500,
+                "id": "carr",
+                "itemId": "carr",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "padding": "auto",
+                "container|pack": "string",
+                "dock": "string",
+                "flex": "number",
+                "height": "auto",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyContainer2",
+            "designerId": "a9218b52-c9ad-4037-8178-ed21295dce48",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onContainerAfterRender",
+                        "implHandler": [
+                            "var store = Ext.create('Ext.data.Store', {",
+                            "    fields: ['title', 'imgSrc'],",
+                            "    data: [",
+                            "           {",
+                            "               title: 'Cloud Forest',",
+                            "               imgSrc: '/images/bg/header.png'},",
+                            "           {",
+                            "               title: 'Cloud Forest 2',",
+                            "               imgSrc: '/images/bg/terminalDefault.jpg'},",
+                            "           {",
+                            "               title: 'Cloud Forest',",
+                            "               imgSrc: '/images/bg/cargoDefault.jpg'}]",
+                            "});",
+                            "",
+                            "//Define a customized carousel",
+                            "Ext.define('MyCarousel', {",
+                            "    extend: 'Ext.ux.Carousel',",
+                            "    alias: 'widget.mycarousel',",
+                            "    template: '<img src=\"{imgSrc}\" alt=\"{title}\" style=\"width:1500px;height:500px\" />',",
+                            "    store: store,",
+                            "    interval: 3000,",
+                            "    direction: 'left',",
+                            "    loop: true,",
+                            "    buttons: false,",
+                            "    puaseOnHover: true,",
+                            "    width: 2000,",
+                            "    height: 500,",
+                            "    flex: 1",
+                            "",
+                            "});",
+                            "",
+                            "var view = Ext.create('widget.mycarousel');",
+                            "",
+                            "",
+                            "component.add(view);",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onContainerAfterRender",
+                    "designerId": "3b2b03b7-b228-4c05-b287-f84b5ecbd503"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "hbox",
+                "padding": 10,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/bg/map.PNG)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "padding": "auto",
+                "style": "object"
+            },
+            "name": "MyContainer3",
+            "designerId": "5e6ea148-04fc-4a23-8842-8718fb5b3cf5",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "flex": 1,
+                        "layout": "vbox",
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string",
+                        "flex": "number"
+                    },
+                    "name": "MyContainer6",
+                    "designerId": "056e7413-efdc-49f4-8ed2-68de49de913a",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "layout|flex": 1
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "flex": "number"
+                            },
+                            "name": "MyContainer10",
+                            "designerId": "e4c44e79-6046-4654-92ab-098d018e5393",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img5",
+                                        "itemId": "img5",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\services.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg5",
+                                    "designerId": "bf17afb7-2a78-492d-b56a-950f8f305be1",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImageAfterRender",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img5').setSrc('/images/settings/services.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img5').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImageAfterRender",
+                                            "designerId": "9a080199-7876-41fc-8581-11d3cfe655bd"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img6",
+                                        "itemId": "img6",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\schedules.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg6",
+                                    "designerId": "85885db2-9d43-438e-8284-0e57a249b03c",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImg6AfterRender",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img6').setSrc('/images/settings/schedules.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img6').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImg6AfterRender",
+                                            "designerId": "6663641a-77ed-4993-959c-51b97e915dc0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img7",
+                                        "itemId": "img7",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\vgminfo.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg7",
+                                    "designerId": "0d53dc8c-a80e-407d-b3e8-846dcd29121a",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImg7AfterRender",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img7').setSrc('/images/settings/vgminfo.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img7').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImg7AfterRender",
+                                            "designerId": "40957174-cf60-4e50-90af-b9f889a61ae2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyContainer5",
+                            "designerId": "b8de6ff5-4c91-4291-b642-5ecc39c2077e",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img8",
+                                        "itemId": "img8",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\terminalinfo.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg8",
+                                    "designerId": "170cb29f-1b1f-474b-8536-1b55d6bb73d2",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImg8AfterRender",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img8').setSrc('/images/settings/schedules.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img8').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImg8AfterRender",
+                                            "designerId": "6cb6346f-4e3e-4fa3-b1e6-f75c49a8138e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img9",
+                                        "itemId": "img9",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\vesselinfo.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg9",
+                                    "designerId": "b701cf21-4b8d-4a7e-b047-ccb13059da1c",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImg9AfterRender",
+                                                "implHandler": [
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img9').setSrc('/images/settings/schedules.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img9').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImg9AfterRender",
+                                            "designerId": "1fad5bb3-7e8e-4675-8fb0-94759526d259"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img10",
+                                        "itemId": "img10",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\vesseltracking.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg10",
+                                    "designerId": "bad31d9c-ee91-43db-b002-4ce400d1333a",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImg10AfterRender",
+                                                "implHandler": [
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img10').setSrc('/images/settings/schedules.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img10').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImg10AfterRender",
+                                            "designerId": "7f201bab-a595-402b-836a-2fb96d6ac7db"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyContainer12",
+                            "designerId": "b9b7ae05-85f6-4e65-a13f-bab3974c37d2",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img11",
+                                        "itemId": "img11",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\containerinfo.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg11",
+                                    "designerId": "f0e29184-40a6-45ca-9d58-087e3ad1e979",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImg11AfterRender",
+                                                "implHandler": [
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img11').setSrc('/images/settings/schedules.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img11').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImg11AfterRender",
+                                            "designerId": "bc53a175-f408-4bae-b3ec-314f9b134e4d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 132,
+                                        "id": "img12",
+                                        "itemId": "img12",
+                                        "padding": 10,
+                                        "src": "\\images\\settings\\ratestariff.png",
+                                        "width": 132
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "padding": "auto",
+                                        "src": "uri",
+                                        "width": "auto",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyImg12",
+                                    "designerId": "0749c00a-4f3f-40b9-9865-1f146be2f1ed",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onImg12AfterRender",
+                                                "implHandler": [
+                                                    "component.el.on('mouseout', function() {Ext.getCmp('img12').setSrc('/images/settings/schedules.png');});",
+                                                    "component.el.on('mouseover', function() {Ext.getCmp('img12').setSrc('/images/readMore.png');});"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onImg12AfterRender",
+                                            "designerId": "e47d8f66-b3dc-4e5e-a177-5845cfa484e4"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "flex": "number"
+                    },
+                    "name": "MyContainer11",
+                    "designerId": "ad0d817c-748d-4376-99f3-67bfe89af8fe",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<h2 style=\"font-size: 70px;color: #11428f;line-height: 1.2;text-align: left;font-family:Roboto;font-weight:100;font-style:normal\" class=\"vc_custom_heading\">quick<br /> access</h2><p><span style=\"color: #11428f;\">Direct to the major features facilitating your shipments.</span></p>"
+                            },
+                            "configAlternates": {
+                                "html": "string"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "ed889499-6cb0-4ef3-9b2f-3c640b135a2b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

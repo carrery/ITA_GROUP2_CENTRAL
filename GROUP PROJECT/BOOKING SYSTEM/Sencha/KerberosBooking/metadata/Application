@@ -1,0 +1,50 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "HomeController",
+            "AdminController",
+            "createBooking"
+        ],
+        "models": [
+            "createBooking"
+        ],
+        "name": "KerberosBooking",
+        "requires": [
+            "Ext.window.MessageBox"
+        ],
+        "stores": [
+            "createBooking"
+        ],
+        "views": [
+            "LoginForm",
+            "RegisterForm",
+            "bookingGrid",
+            "MyPanel",
+            "mytabpanel",
+            "mainViewport",
+            "myTabKer",
+            "kerberosPanel",
+            "myHomePanel",
+            "myTest",
+            "createBkgPanel",
+            "adminPanel",
+            "viewUsersPanel"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "requires": "typedarray",
+        "views": "typedarray",
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

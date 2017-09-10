@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -12,6 +13,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Shipment;
@@ -22,7 +24,7 @@ import com.oocl.kb.svc.inf.ShipmentSVC;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
 
-	Gson gson = new Gson();
+	Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 	
 	@Autowired
 	private ShipmentDAO shipmentDAO;
@@ -48,6 +50,11 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse createShipmentResponse = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
+		String shpStatus = shp.getApproveDoc() != 1 && shp.getGoodCustomer() != 1 
+				&& shp.getValidWt() != 1 ? "Pending" :  "Confirmed";
+		shp.setShipmentStatus(shpStatus);
+		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
+		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		shipmentDAO.createBooking(shp);
 		return createShipmentResponse;
 	}
@@ -83,14 +90,16 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public ServiceResponse updateShipment(String shpNum, String fromCity, String toCity, Date fromDate, Date toDate,
-			String shipper, String consignee, int approveDoc, int validWeight, int goodCustomer,
-			String shipmentStatus) {
+	public ServiceResponse updateShipment(String json, String shpNum) {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
-		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
-		response.setServiceResult("Update Shipment Details: " + this.shipmentDAO.updateShipment(newShp, shpNum));
+		Shipment shp = gson.fromJson(json, Shipment.class);
+		this.shipmentDAO.updateShipment(shp, shpNum);
 		removeShpContainersCargoes(shpNum);
+//		shipmentDAO.createBooking(shp);
+//		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+//		response.setServiceResult("Update Shipment Details: " + this.shipmentDAO.updateShipment(newShp, shpNum));
+//		removeShpContainersCargoes(shpNum);
 		//create containers and cargoes again
 
 		return response;
