@@ -18,15 +18,10 @@ public interface UserSVC {
 	public ServiceResponse deleteUser(String username);
 	
 	public Role getRoleByUser(String role);
+	
+	public ServiceResponse createUser(String json);
 
-	public ServiceResponse createUser(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo);
-
-	public ServiceResponse updateUser(String username, String password, String role, String firstName, String lastName, String email,
-			String contactNo);
-
-	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo);
+	public ServiceResponse updateUser(String json);
 	
 	public UserMgtResponse searchUser(String username, String fname, String lname, String role);
 }

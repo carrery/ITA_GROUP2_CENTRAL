@@ -34,23 +34,17 @@ public class UserController {
 	public @ResponseBody ServiceResponse deleteUser(@RequestParam("username") String username, HttpServletRequest request) {
 		return userSVC.deleteUser(username);
 	}
-
+	
 	@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
-	public @ResponseBody ServiceResponse updateUser(@RequestParam("username") String username,
-			@RequestParam("password") String password, @RequestParam("role") String role,
-			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
-			@RequestParam("email") String email, @RequestParam("contactNo") String contactNo,
-			@RequestParam("isDeleted") int isDeleted, HttpServletRequest request) {
-		return userSVC.updateUser(username, password, role, firstName, lastName, email, contactNo);
-	}
-
-	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
-	public @ResponseBody ServiceResponse createUser(@RequestParam("username") String username,
-			@RequestParam("password") String password, @RequestParam("role") String role,
-			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
-			@RequestParam("email") String email, @RequestParam("contactNo") String contactNo,
+	public @ResponseBody ServiceResponse updateUser(@RequestParam("json") String json,
 			HttpServletRequest request) {
-		return userSVC.createUser(username, password, role, firstName, lastName, email, contactNo);
+		return userSVC.updateUser(json);
+	}
+	
+	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
+	public @ResponseBody ServiceResponse createUser(@RequestParam("json") String json,
+			HttpServletRequest request) {
+		return userSVC.createUser(json);
 	}
 	
 	@RequestMapping(value = "/searchUser", method = RequestMethod.POST)

@@ -310,16 +310,16 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     flex: 1,
                                                     id: 'bookingConRef',
                                                     itemId: 'bookingConRef',
-                                                    dataIndex: 'referenceNumber',
+                                                    dataIndex: 'refNum',
                                                     text: 'Reference Number'
                                                 },
                                                 {
                                                 	xtype: 'gridcolumn',
-                                                    dataIndex: 'containerNumber',
+                                                    dataIndex: 'cntrType',
                                                     flex: 1,
                                                     id: 'bookingConNumber',
                                                     itemId: 'bookingConNumber',
-                                                    text: 'Container Number',
+                                                    text: 'Container Type',
                                                     editor: {
                                                         xtype: 'combobox',
                                                         name: 'cntrType',
@@ -334,7 +334,7 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                 {
                                                 	xtype: 'gridcolumn',
                                                     flex: 1,
-                                                    dataIndex: 'grossWeight',
+                                                    dataIndex: 'grossWt',
                                                     text: 'Gross Weight',
                                                     editor: {
                                                         xtype: 'textfield',
@@ -344,7 +344,7 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                 {
                                                 	xtype: 'gridcolumn',
                                                     flex: 1,
-                                                    dataIndex: 'netWeight',
+                                                    dataIndex: 'netWt',
                                                     text: 'Net Weight',
                                                     editor: {
                                                         xtype: 'textfield',
@@ -354,7 +354,7 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                 {
                                                 	 xtype: 'gridcolumn',
                                                      flex: 1,
-                                                     dataIndex: 'weightUnit',
+                                                     dataIndex: 'wtUnit',
                                                      text: 'Weight Unit',
                                                      editor: {
                                                          xtype: 'combobox',
