@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import com.oocl.kb.model.Shipment;
 import com.oocl.kb.model.ShipmentCargo;
 import com.oocl.kb.model.ShipmentContainer;
+import com.oocl.kb.util.SearchShipmentCriteria;
 
 
 
@@ -29,13 +30,15 @@ public interface ShipmentDAO {
     
     public void createShpCargo(ArrayList<ShipmentCargo> cgoList);
 
-	public List<Shipment> getAllShipments(String username, String role);
+	public List<Shipment> getAllShipments(String username, String role, SearchShipmentCriteria shpCriteria);
   
 	public String deleteCargo(ShipmentCargo cargo);
 	
 	public Shipment getShipmentById(String shpNum);
 
 	public String updateShipment(Shipment shipment, String  shpNum);
+
+	public List<String> getShpNumByCntrNum(String cntrNum);
 
 
 }

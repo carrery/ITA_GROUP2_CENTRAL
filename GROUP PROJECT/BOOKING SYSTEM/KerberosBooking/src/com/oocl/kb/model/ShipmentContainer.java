@@ -43,6 +43,10 @@ public class ShipmentContainer {
 		this.wtUnit = wtUnit;
 	}
 	
+	public ShipmentContainer() {
+		
+	}
+	
 	public Long getRefNum() {
 		return refNum;
 	}

@@ -21,7 +21,7 @@ public interface ShipmentSVC {
 	
 	public void createShipmentCargo(JSONObject jsonShpCgo);
 
-	public List<Shipment> getAllShipments(String username);
+	public List<Shipment> getAllShipments(String username, String json);
 
 	public ServiceResponse updateShipment(String shpNum, String fromCity);
 }

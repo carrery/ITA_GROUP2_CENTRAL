@@ -21,6 +21,7 @@ import com.oocl.kb.model.ShipmentCargo;
 import com.oocl.kb.model.ShipmentContainer;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
+import com.oocl.kb.util.SearchShipmentCriteria;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
 
@@ -85,8 +86,9 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public List<Shipment> getAllShipments(String username){
-		return this.shipmentDAO.getAllShipments(username, this.userDAO.getUser(username).getRole());
+	public List<Shipment> getAllShipments(String username, String json){
+		SearchShipmentCriteria shpCriteria = new Gson().fromJson(json, SearchShipmentCriteria.class);
+		return this.shipmentDAO.getAllShipments(username, this.userDAO.getUser(username).getRole(), shpCriteria);
 	}
 
 	@Override
