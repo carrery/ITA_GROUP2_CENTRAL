@@ -58,8 +58,9 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		shp.setShipmentStatus(shpStatus);
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
-		createShipmentResponse.setServiceResult(String.valueOf(shipmentDAO.createBooking(shp)));
-				
+		shipmentDAO.createBooking(shp);
+		createShipmentResponse.setServiceResult("1");
+		
 		JsonObject jsonObj = gson.fromJson(json, JsonObject.class);
 		JsonArray array = jsonObj.get("container").getAsJsonArray();
 		
@@ -67,9 +68,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
                 new TypeToken<ArrayList<ShipmentContainer>>() {
                 }.getType());
 		
-		
 		shipmentDAO.createShpContainer(cntrList, shp.getFromDate());
-		
 		
 		return createShipmentResponse;
 	}
