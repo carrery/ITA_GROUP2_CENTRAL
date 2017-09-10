@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -49,6 +50,11 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse createShipmentResponse = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
+		String shpStatus = shp.getApproveDoc() != 1 && shp.getGoodCustomer() != 1 
+				&& shp.getValidWt() != 1 ? "Pending" :  "Confirmed";
+		shp.setShipmentStatus(shpStatus);
+		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
+		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		shipmentDAO.createBooking(shp);
 		return createShipmentResponse;
 	}
