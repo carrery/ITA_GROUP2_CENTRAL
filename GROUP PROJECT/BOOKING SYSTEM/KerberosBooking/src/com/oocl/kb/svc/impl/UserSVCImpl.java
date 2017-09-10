@@ -1,5 +1,6 @@
 package com.oocl.kb.svc.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.response.UserLoginResponse;
+import com.oocl.kb.response.UserMgtResponse;
+import com.oocl.kb.response.UserReturn;
 import com.oocl.kb.svc.inf.UserSVC;
 
 @Component
@@ -113,9 +116,19 @@ public class UserSVCImpl implements UserSVC{
 	}
 
 	@Override
-	public List<User> searchUser(String username, String fname, String lname, String role) {
+	public UserMgtResponse searchUser(String username, String fname, String lname, String role) {
 		// TODO Auto-generated method stub		
-		return userDAO.getAllUsers(username,fname,lname,role);
+		UserMgtResponse response = new UserMgtResponse();
+		List<User> users = userDAO.getAllUsers(username,fname,lname,role);
+		UserReturn userRet = new UserReturn();
+		
+		for(User user : users) {
+			userRet.setRole(getRoleByUser(user.getRole()));
+			userRet.setUser(user);
+			response.getUsers().add(userRet);
+		}
+		
+		return response;
 	}
 	
 }
