@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.google.gson.Gson;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Role;
+import com.oocl.kb.model.Shipment;
 import com.oocl.kb.model.User;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.response.UserLoginResponse;
@@ -21,7 +23,7 @@ public class UserSVCImpl implements UserSVC{
 	@Autowired
 	private UserDAO userDAO;
 	
-	
+	Gson gson = new Gson();
 	
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
@@ -77,42 +79,16 @@ public class UserSVCImpl implements UserSVC{
 	}
 	
 	@Override
-	public ServiceResponse createUser(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo) {
+	public ServiceResponse updateUser(String json) {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
-		response.setServiceResult(this.userDAO.createUser(setupUserDetails(username,password,role,firstName,lastName,email,contactNo)));
-		return response;
-	}
-	
-	@Override
-	public ServiceResponse updateUser(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo) {
-		// TODO Auto-generated method stub
-		ServiceResponse response = new ServiceResponse();
-		
-		if(this.userDAO.getUser(username) == null) {
+		User usr = gson.fromJson(json, User.class);
+		if(this.userDAO.getUser(usr.getUsername()) == null) 
 			response.setErrorMessage("No user found");
-		}
 		
-		User newUser = setupUserDetails(username,password,role,firstName,lastName,email,contactNo);
-		response.setServiceResult(this.userDAO.updateUser(newUser));	
+		response.setServiceResult(this.userDAO.updateUser(usr));	
 		
 		return response;
-	}
-
-	@Override
-	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
-			String email, String contactNo) {
-		// TODO Auto-generated method stub
-		
-		User user = new User(null, password, role, firstName.toUpperCase(), lastName.toUpperCase(), email, contactNo, 0);
-		
-		if(username != null) {
-			user.setUsername(username.toUpperCase());
-		}
-		
-		return user;
 	}
 
 	@Override
@@ -128,6 +104,15 @@ public class UserSVCImpl implements UserSVC{
 			response.getUsers().add(userRet);
 		}
 		
+		return response;
+	}
+
+	@Override
+	public ServiceResponse createUser(String json) {
+		// TODO Auto-generated method stub
+		User usr = gson.fromJson(json, User.class);
+		ServiceResponse response = new ServiceResponse();		
+		response.setServiceResult(userDAO.createUser(usr));
 		return response;
 	}
 	
