@@ -47,6 +47,10 @@ public class ShipmentContainer {
 		this.cntrType  = cntrType;
 	}
 
+	public ShipmentContainer() {
+		
+	}
+	
 	public Long getRefNum() {
 		return refNum;
 	}

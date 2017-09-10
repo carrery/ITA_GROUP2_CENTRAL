@@ -20,6 +20,7 @@ import com.oocl.kb.model.Shipment;
 import com.oocl.kb.model.ShipmentCargo;
 import com.oocl.kb.model.ShipmentContainer;
 import com.oocl.kb.model.User;
+import com.oocl.kb.util.SearchShipmentCriteria;
 
 public class ShipmentDAOImpl implements ShipmentDAO {
 
@@ -111,12 +112,31 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public List<Shipment> getAllShipments (String username, String role){
+	public List<Shipment> getAllShipments (String username, String role, SearchShipmentCriteria shpCriteria){
 		 
 		Session session = sessionFactory.openSession();
+		Filter filter = null;
 		if (!role.equals("Admin")) {
-			Filter filter = session.enableFilter(role);
+			filter = session.enableFilter(role);
 			filter.setParameter("username", username);
+		}
+		if (!shpCriteria.equals(null)) {
+			if(shpCriteria.getBkgNum() != null) {
+				filter = session.enableFilter("searchByBkgNum");
+				filter.setParameter("shipment_num", shpCriteria.getBkgNum());
+			}
+			if(shpCriteria.getFromCity() != null) {
+				filter = session.enableFilter("searchByFromCity");
+				filter.setParameter("from_city", shpCriteria.getFromCity());
+			}
+			if(shpCriteria.getToCity() != null) {
+				filter = session.enableFilter("searchByToCity");
+				filter.setParameter("to_city", shpCriteria.getToCity());
+			}
+			if(shpCriteria.getCntrNum() != null) {
+				filter = session.enableFilter("searchByCntrNum");
+				filter.setParameter("cntr_num", shpCriteria.getCntrNum());
+			}
 		}
 		tx = session.beginTransaction();
 		Query query = session.createQuery("FROM Shipment");
@@ -184,6 +204,20 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 			e.printStackTrace();
 			return "Fail";
 		}
+	}
+	
+	@Override
+	public List<String> getShpNumByCntrNum(String cntrNum) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createQuery("SELECT shipmentNum FROM ShipmentCargo WHERE cntrNum LIKE ?");
+		query.setParameter(0, "%" + cntrNum + "%");
+		tx.commit();
+		List<String> returnList = (ArrayList<String>) query.list();
+		session.close();
+
+		return returnList;
 	}
 
 	@Override
