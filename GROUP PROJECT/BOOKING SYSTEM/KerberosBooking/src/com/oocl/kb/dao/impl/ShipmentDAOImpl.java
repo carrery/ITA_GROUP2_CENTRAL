@@ -10,6 +10,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.type.StandardBasicTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
@@ -179,5 +180,37 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 			return "Fail";
 		}
 	}
+
+	@Override
+	public Long getRefNumSeq() {
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createSQLQuery("SELECT REF_NUM_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
+		Long refNum = (Long) query.uniqueResult();
+		return refNum;
+	}
+
+	@Override
+	public Long getCgoidSeq() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createSQLQuery("SELECT CGO_ID_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
+		Long cgoid = (Long) query.uniqueResult();
+		return cgoid;
+	}
+
+	@Override
+	public String getAvailableContainer(String cntrType, Date bookingDate) {
+		// TODO Auto-generated method stub
+		tx = session.beginTransaction();
+		Query query = session.createSQLQuery("SELECT CNTR_NUM FROM CNTR_AVAIL WHERE CNTR_TYPE = ? AND (LASTDATE <= ? OR LASTDATE IS NULL) AND ROWNUM = 1");
+		query.setParameter(0, cntrType);
+		query.setParameter(1, bookingDate);
+		String cntrNum = (String) query.uniqueResult();
+		return cntrNum;
+	}
+	
+	
 
 }
