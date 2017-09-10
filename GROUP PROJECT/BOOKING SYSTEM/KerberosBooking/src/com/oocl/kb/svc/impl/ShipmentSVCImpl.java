@@ -55,7 +55,8 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		shp.setShipmentStatus(shpStatus);
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
-		shipmentDAO.createBooking(shp);
+		//shipmentDAO.createBooking(shp);
+		createShipmentResponse.setServiceResult(String.valueOf(shipmentDAO.createBooking(shp)));
 		return createShipmentResponse;
 	}
 

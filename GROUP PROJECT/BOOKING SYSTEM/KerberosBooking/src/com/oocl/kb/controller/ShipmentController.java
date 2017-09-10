@@ -24,8 +24,6 @@ public class ShipmentController {
 
 	@RequestMapping(value = "/createBooking", method = RequestMethod.POST)
 	public @ResponseBody ServiceResponse createShp(@RequestParam("jsonString") String json, HttpServletRequest request) {
-
-		// return null;
 		return shpSVC.getCreateShipmentResponse(json);
 	}
 
