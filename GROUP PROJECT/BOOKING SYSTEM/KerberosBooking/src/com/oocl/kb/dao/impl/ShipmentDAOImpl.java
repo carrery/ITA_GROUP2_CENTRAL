@@ -2,6 +2,8 @@ package com.oocl.kb.dao.impl;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -206,12 +208,22 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public String getAvailableContainer(String cntrType, Date bookingDate) {
+	public String getAvailableContainer(String cntrType, Date bookingDate){
 		// TODO Auto-generated method stub
 		tx = session.beginTransaction();
+		
+		String newBkgDate = bookingDate.toString();
+		java.util.Date date = null;
+		try {
+			date = new SimpleDateFormat("yyyy/MM/dd").parse(newBkgDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		Query query = session.createSQLQuery("SELECT CNTR_NUM FROM CNTR_AVAIL WHERE CNTR_TYPE = ? AND (LASTDATE <= ? OR LASTDATE IS NULL) AND ROWNUM = 1");
 		query.setParameter(0, cntrType);
-		query.setParameter(1, bookingDate);
+		query.setParameter(1, date);
 		String cntrNum = (String) query.uniqueResult();
 		return cntrNum;
 	}
