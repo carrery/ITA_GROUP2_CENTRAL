@@ -104,7 +104,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                     itemId: 'bookingNumber',
                                     padding: 10,
                                     fieldLabel: 'Booking Number',
-                                    name: 'shipmentNumber'
+                                    name: 'shipmentNumber',
+                                    allowBlank: false
                                 },
                                 {
                                     xtype: 'combobox',
@@ -114,6 +115,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                     padding: 10,
                                     fieldLabel: 'Booking Office',
                                     name: 'bookingOffice',
+                                    allowBlank: false,
+                                    validateBlank: true,
                                     store: [
                                         'MNL',
                                         'HKG',
@@ -124,8 +127,17 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                 {
                                     xtype: 'label',
                                     flex: 1,
+                                    html: '',
                                     padding: 10,
+                                    width: 147,
                                     text: 'Booking Status'
+                                },
+                                {
+                                    xtype: 'label',
+                                    flex: 1,
+                                    html: '<span style="color:red;font-weight:bold">Pending</span>',
+                                    padding: 10,
+                                    width: 147
                                 }
                             ]
                         },
@@ -151,15 +163,24 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             padding: 10,
                                             fieldLabel: 'Shipper',
                                             labelWidth: 120,
-                                            name: 'shipper'
+                                            name: 'shipper',
+                                            allowBlank: false,
+                                            validateBlank: true
                                         },
                                         {
                                             xtype: 'datefield',
+                                            id: 'fromdate',
+                                            itemId: 'fromdate',
                                             padding: 10,
                                             fieldLabel: 'From Date',
                                             labelWidth: 120,
                                             name: 'fromDate',
-                                            format: 'Y-m-d'
+                                            allowBlank: false,
+                                            validateBlank: true,
+                                            format: 'Y-m-d',
+                                            listeners: {
+                                                blur: 'onFromdateBlur'
+                                            }
                                         }
                                     ]
                                 },
@@ -173,15 +194,24 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             padding: 10,
                                             fieldLabel: 'Consignee',
                                             labelWidth: 120,
-                                            name: 'consignee'
+                                            name: 'consignee',
+                                            allowBlank: false,
+                                            validateBlank: true
                                         },
                                         {
                                             xtype: 'datefield',
+                                            id: 'toDate',
+                                            itemId: 'toDate',
                                             padding: 10,
                                             fieldLabel: 'To Date',
                                             labelWidth: 120,
                                             name: 'toDate',
-                                            format: 'Y-m-d'
+                                            allowBlank: false,
+                                            validateBlank: true,
+                                            format: 'Y-m-d',
+                                            listeners: {
+                                                blur: 'onToDateBlur'
+                                            }
                                         }
                                     ]
                                 }
@@ -217,11 +247,16 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     fieldLabel: 'From City',
                                                     labelWidth: 120,
                                                     name: 'fromCity',
+                                                    allowBlank: false,
+                                                    allowOnlyWhitespace: false,
+                                                    validateBlank: true,
                                                     store: [
-                                                        'MNL',
                                                         'HKG',
-                                                        'ZHA',
-                                                        'USA'
+                                                        'LGB',
+                                                        'MNL',
+                                                        'SIN',
+                                                        'PUS',
+                                                        'RTM'
                                                     ],
                                                     listeners: {
                                                         blur: 'onBookingFromCityBlur'
@@ -235,6 +270,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     fieldLabel: 'Cargo Nature',
                                                     labelWidth: 120,
                                                     name: 'cargoNature',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     store: [
                                                         'GC',
                                                         'RF',
@@ -249,7 +286,9 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     padding: 10,
                                                     fieldLabel: 'Cargo Description',
                                                     labelWidth: 120,
-                                                    name: 'cargoDesc'
+                                                    name: 'cargoDesc',
+                                                    allowBlank: false,
+                                                    validateBlank: true
                                                 }
                                             ]
                                         },
@@ -265,11 +304,15 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     fieldLabel: 'To City',
                                                     labelWidth: 120,
                                                     name: 'toCity',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     store: [
-                                                        'MNL',
                                                         'HKG',
-                                                        'ZHA',
-                                                        'USA'
+                                                        'LGB',
+                                                        'MNL',
+                                                        'SIN',
+                                                        'PUS',
+                                                        'RTM'
                                                     ],
                                                     listeners: {
                                                         blur: 'onBookingToCityBlur'
@@ -283,6 +326,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     fieldLabel: 'HS Code',
                                                     labelWidth: 120,
                                                     name: 'containerHS',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     store: [
                                                         'MNL',
                                                         'HKG',
@@ -352,11 +397,14 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     editor: {
                                                         xtype: 'combobox',
                                                         name: 'cntrType',
+                                                        allowBlank: false,
+                                                        validateBlank: true,
                                                         store: [
                                                             '20GP',
                                                             '40GP',
                                                             '20HQ',
-                                                            '40HQ'
+                                                            '40HQ',
+                                                            '4HQ'
                                                         ]
                                                     }
                                                 },
@@ -367,7 +415,11 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     text: 'Gross Weight',
                                                     editor: {
                                                         xtype: 'textfield',
-                                                        name: 'grossWt'
+                                                        id: 'grossWt',
+                                                        itemId: 'grossWt',
+                                                        name: 'grossWt',
+                                                        allowBlank: false,
+                                                        validateBlank: true
                                                     }
                                                 },
                                                 {
@@ -377,7 +429,11 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     text: 'Net Weight',
                                                     editor: {
                                                         xtype: 'textfield',
-                                                        name: 'netWt'
+                                                        id: 'netWt',
+                                                        itemId: 'netWt',
+                                                        name: 'netWt',
+                                                        allowBlank: false,
+                                                        validateBlank: true
                                                     }
                                                 },
                                                 {
@@ -390,10 +446,16 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                         id: 'wtUnit',
                                                         itemId: 'wtUnit',
                                                         name: 'wtUnit',
+                                                        allowBlank: false,
+                                                        validateBlank: true,
                                                         store: [
                                                             'kg',
-                                                            'ton'
-                                                        ]
+                                                            'ton',
+                                                            'lbs'
+                                                        ],
+                                                        listeners: {
+                                                            change: 'onWtUnitChange'
+                                                        }
                                                     }
                                                 }
                                             ],
@@ -510,13 +572,33 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                     });
     },
 
+    onFromdateBlur: function(component, event, eOpts) {
+        if (Ext.getCmp('fromDate').getValue() > Ext.getCmp('toDate').getValue()){
+            alert('From date should be later than To Date');
+            conponent.setValue('');
+            Ext.getCmp('toDate').setValue('');
+        }
+    },
+
+    onToDateBlur: function(component, event, eOpts) {
+        if (Ext.getCmp('toDate').getValue() < Ext.getCmp('fromDate').getValue()){
+            alert('From date should be later than To Date');
+            conponent.setValue('');
+            Ext.getCmp('fromDate').setValue('');
+        }
+    },
+
     onBookingFromCityBlur: function(component, event, eOpts) {
         var from = Ext.getCmp('bookingFromCity').getValue(),
             to = Ext.getCmp('bookingToCity').getValue();
 
         if (from == to){
             alert('From City should not be the same as To City! Please change');
+        Ext.getCmp('bookingFromCity').setValue('');
+        Ext.getCmp('bookingToCity').setValue('');
         }
+
+
     },
 
     onBookingToCityBlur: function(component, event, eOpts) {
@@ -525,7 +607,62 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
 
         if (from == to){
             alert('From City should not be the same as To City! Please change');
+        Ext.getCmp('bookingFromCity').setValue('');
+        Ext.getCmp('bookingToCity').setValue('');
+
         }
+
+    },
+
+    onWtUnitChange: function(field, newValue, oldValue, eOpts) {
+
+        var    gross = Ext.getCmp('netWt').getValue(),
+            net = Ext.getCmp('grossWt').getValue();
+
+        console.log(oldValue);
+        console.log(newValue);
+        if(oldValue == 'kg'){
+            if(newValue == 'lbs'){
+                 Ext.getCmp('netWt').setValue(net*2.20462);
+                 Ext.getCmp('grossWt').setValue(gross*2.20462);
+            } else if (newValue == 'ton'){
+
+                 Ext.getCmp('netWt').setValue(net/907.185);
+                 Ext.getCmp('grossWt').setValue(gross/907.185);
+
+            }
+
+        } else if(oldValue == 'lbs'){
+            if(newValue == 'kg'){
+
+                 Ext.getCmp('netWt').setValue(net/0.453592);
+                 Ext.getCmp('grossWt').setValue(gross/0.453592);
+
+            } else if (newValue == 'ton'){
+
+                Ext.getCmp('netWt').setValue(net/0.000453592);
+                 Ext.getCmp('grossWt').setValue(gross/0.000453592);
+            }
+
+        } else if(oldValue == 'ton'){
+            if(newValue == 'lbs'){
+
+                Ext.getCmp('netWt').setValue(net*2204.62);
+                 Ext.getCmp('grossWt').setValue(gross*2204.62);
+
+            } else if (newValue == 'kg'){
+                Ext.getCmp('netWt').setValue(net*1000);
+                 Ext.getCmp('grossWt').setValue(gross*1000);
+
+            }
+
+        }
+
+        console.log(net);
+
+
+
+
     }
 
 });

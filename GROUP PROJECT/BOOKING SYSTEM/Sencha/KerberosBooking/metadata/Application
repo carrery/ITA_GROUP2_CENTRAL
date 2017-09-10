@@ -12,14 +12,16 @@
             "createBooking"
         ],
         "models": [
-            "createBooking"
+            "createBooking",
+            "userManagement"
         ],
         "name": "KerberosBooking",
         "requires": [
             "Ext.window.MessageBox"
         ],
         "stores": [
-            "createBooking"
+            "createBooking",
+            "userManagement"
         ],
         "views": [
             "LoginForm",
@@ -34,7 +36,9 @@
             "myTest",
             "createBkgPanel",
             "adminPanel",
-            "viewUsersPanel"
+            "viewUsersPanel",
+            "MyToolbar5",
+            "toolbarIcn"
         ]
     },
     "configAlternates": {

@@ -1,0 +1,263 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "adminToolbar",
+        "designer|userClassName": "adminToolbar",
+        "height": 69,
+        "id": "adminToolbar",
+        "itemId": "adminToolbar"
+    },
+    "configAlternates": {
+        "dock": "string",
+        "height": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "id": "string",
+        "itemId": "string"
+    },
+    "name": "MyToolbar5",
+    "designerId": "fb616910-dc63-4ae2-9904-3184abe2240e",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 59,
+                "layout|flex": null,
+                "src": "/images/Kerberos.png",
+                "width": 95
+            },
+            "configAlternates": {
+                "height": "auto",
+                "layout|flex": "number",
+                "src": "uri",
+                "width": "auto"
+            },
+            "name": "MyImg2",
+            "designerId": "c697cd75-ae9b-44b2-a38b-11f41d68e271"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "menuBtn1",
+                "itemId": "menuBtn",
+                "layout|flex": null,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/tools/menu.png)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "style": "object"
+            },
+            "name": "MyButton13",
+            "designerId": "c0f4eeb5-80b9-4d0b-bba7-b7c3efd20cba",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMenuBtnClick1",
+                        "implHandler": [
+                            "",
+                            "if(Ext.getCmp('home').text == 'Home'){",
+                            "",
+                            "Ext.getCmp('home').setStyle({",
+                            "        background:'#ffffff',",
+                            "        backgroundImage: 'url(images/tools/home.png)',",
+                            "        backgroundSize: '100% 100%',",
+                            "        backgroundRepeat: 'no-repeat',",
+                            "        backgroundPosition: 'bottom left',",
+                            "});",
+                            "Ext.getCmp('home').setText('');",
+                            "",
+                            "Ext.getCmp('kerberos').setStyle({",
+                            "        background:'#ffffff',",
+                            "        backgroundImage: 'url(images/tools/building.png)',",
+                            "        backgroundSize: '100% 100%',",
+                            "        backgroundRepeat: 'no-repeat',",
+                            "        backgroundPosition: 'bottom left',",
+                            "});",
+                            "Ext.getCmp('kerberos').setText('');",
+                            "",
+                            "Ext.getCmp('create').setStyle({",
+                            "        background:'#ffffff',",
+                            "        backgroundImage: 'url(images/tools/create.png)',",
+                            "        backgroundSize: '100% 100%',",
+                            "        backgroundRepeat: 'no-repeat',",
+                            "        backgroundPosition: 'bottom left',",
+                            "});",
+                            "Ext.getCmp('create').setText('');",
+                            "",
+                            "Ext.getCmp('search').setStyle({",
+                            "        background:'#ffffff',",
+                            "        backgroundImage: 'url(images/tools/search.png)',",
+                            "        backgroundSize: '100% 100%',",
+                            "        backgroundRepeat: 'no-repeat',",
+                            "        backgroundPosition: 'bottom left',",
+                            "});",
+                            "Ext.getCmp('search').setText('');",
+                            "",
+                            "Ext.getCmp('users').setStyle({",
+                            "        background:'#ffffff',",
+                            "        backgroundImage: 'url(images/tools/users.png)',",
+                            "        backgroundSize: '100% 100%',",
+                            "        backgroundRepeat: 'no-repeat',",
+                            "        backgroundPosition: 'bottom left',",
+                            "});",
+                            "Ext.getCmp('users').setText('');",
+                            "",
+                            "Ext.getCmp('about').setStyle({",
+                            "        background:'#ffffff',",
+                            "        backgroundImage: 'url(images/tools/about.png)',",
+                            "        backgroundSize: '100% 100%',",
+                            "        backgroundRepeat: 'no-repeat',",
+                            "        backgroundPosition: 'bottom left',",
+                            "});",
+                            "Ext.getCmp('about').setText('');",
+                            "",
+                            "",
+                            "} else{",
+                            "    Ext.getCmp('home').setStyle({background:'#ffffff'});",
+                            "    Ext.getCmp('home').setText('Home');",
+                            "    Ext.getCmp('kerberos').setStyle({background:'#ffffff'});",
+                            "    Ext.getCmp('kerberos').setText('Kerberos Booking');",
+                            "    Ext.getCmp('create').setStyle({background:'#ffffff'});",
+                            "    Ext.getCmp('create').setText('Create Booking');",
+                            "     Ext.getCmp('search').setStyle({background:'#ffffff'});",
+                            "    Ext.getCmp('search').setText('Search Booking');",
+                            "     Ext.getCmp('users').setStyle({background:'#ffffff'});",
+                            "    Ext.getCmp('users').setText('User Management');",
+                            "    Ext.getCmp('about').setStyle({background:'#ffffff'});",
+                            "    Ext.getCmp('about').setText('About');",
+                            "",
+                            "",
+                            "}",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onMenuBtnClick1",
+                    "designerId": "6969e5bd-fe06-4397-9fc7-95bf9be5e92f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Fill",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "configAlternates": {
+                "layout|flex": "number"
+            },
+            "name": "MyFill2",
+            "designerId": "2a2b7490-5f71-4a8b-8c77-4dc2f97408fb"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "text": "MyButton"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "text": "string"
+            },
+            "name": "MyButton14",
+            "designerId": "9e00ebf1-869a-4520-a9d3-7744ab0c27f4",
+            "cn": [
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "menu",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyMenu",
+                    "designerId": "67a8dce2-b565-46e0-9300-b08caa1ecfdf",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Account"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyMenuItem1",
+                            "designerId": "27325cbd-ab52-45f4-b930-2e0c20bf2e44"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Logout"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyMenuItem",
+                            "designerId": "5cd173a0-e7cc-49fc-b0af-37e3b3a13b63"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

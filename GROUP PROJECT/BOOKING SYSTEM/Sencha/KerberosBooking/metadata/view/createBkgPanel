@@ -222,6 +222,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "allowBlank": false,
                                         "disabled": true,
                                         "fieldLabel": "Booking Number",
                                         "id": "bookingNumber",
@@ -235,6 +236,7 @@
                                         "fieldLabel": "string",
                                         "layout|flex": "number",
                                         "padding": "auto",
+                                        "allowBlank": "boolean",
                                         "id": "string",
                                         "itemId": "string",
                                         "name": "string"
@@ -250,6 +252,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "allowBlank": false,
                                         "fieldLabel": "Booking Office",
                                         "id": "bookingOffice",
                                         "itemId": "bookingOffice",
@@ -258,16 +261,19 @@
                                         "padding": 10,
                                         "store": [
                                             "['MNL','HKG','ZHA', 'USA']"
-                                        ]
+                                        ],
+                                        "validateBlank": true
                                     },
                                     "configAlternates": {
                                         "fieldLabel": "string",
                                         "layout|flex": "number",
                                         "padding": "auto",
                                         "store": "array",
+                                        "allowBlank": "boolean",
                                         "id": "string",
                                         "itemId": "string",
-                                        "name": "string"
+                                        "name": "string",
+                                        "validateBlank": "boolean"
                                     },
                                     "name": "MyComboBox2",
                                     "designerId": "6298dffe-1da0-4742-8254-59a2444179ba"
@@ -280,17 +286,44 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "html": "",
                                         "layout|flex": 1,
                                         "padding": 10,
-                                        "text": "Booking Status"
+                                        "text": "Booking Status",
+                                        "width": 147
                                     },
                                     "configAlternates": {
                                         "layout|flex": "number",
                                         "padding": "auto",
-                                        "text": "string"
+                                        "text": "string",
+                                        "html": "string",
+                                        "width": "auto"
                                     },
                                     "name": "MyLabel",
                                     "designerId": "972a18db-1638-4bfa-b174-a4e08fe785d0"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "<span style=\"color:red;font-weight:bold\">Pending</span>",
+                                        "layout|flex": 1,
+                                        "padding": 10,
+                                        "width": 147
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "padding": "auto",
+                                        "text": "string",
+                                        "html": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyLabel2",
+                                    "designerId": "41aa5aa7-02d3-45a3-9702-c73f06edeea1"
                                 }
                             ]
                         },
@@ -340,20 +373,24 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
                                                 "fieldLabel": "Shipper",
                                                 "id": "bookingShipper",
                                                 "itemId": "bookingShipper",
                                                 "labelWidth": 120,
                                                 "name": "shipper",
-                                                "padding": 10
+                                                "padding": 10,
+                                                "validateBlank": true
                                             },
                                             "configAlternates": {
                                                 "fieldLabel": "string",
                                                 "labelWidth": "number",
                                                 "padding": "auto",
+                                                "allowBlank": "boolean",
                                                 "id": "string",
                                                 "itemId": "string",
-                                                "name": "string"
+                                                "name": "string",
+                                                "validateBlank": "boolean"
                                             },
                                             "name": "MyTextField1",
                                             "designerId": "c855596c-2f54-4a5c-8f81-a603127cd8da"
@@ -366,21 +403,59 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
                                                 "fieldLabel": "From Date",
                                                 "format": "Y-m-d",
+                                                "id": "fromdate",
+                                                "itemId": "fromdate",
                                                 "labelWidth": 120,
                                                 "name": "fromDate",
-                                                "padding": 10
+                                                "padding": 10,
+                                                "validateBlank": true
                                             },
                                             "configAlternates": {
                                                 "fieldLabel": "string",
                                                 "labelWidth": "number",
                                                 "padding": "auto",
+                                                "allowBlank": "boolean",
                                                 "format": "string",
-                                                "name": "string"
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "name": "string",
+                                                "validateBlank": "boolean"
                                             },
                                             "name": "MyDateField2",
-                                            "designerId": "9fd0dd92-1864-4af3-96c2-358a86dcdd62"
+                                            "designerId": "9fd0dd92-1864-4af3-96c2-358a86dcdd62",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onFromdateBlur",
+                                                        "implHandler": [
+                                                            "if (Ext.getCmp('fromDate').getValue() > Ext.getCmp('toDate').getValue()){",
+                                                            "    alert('From date should be later than To Date');",
+                                                            "    conponent.setValue('');",
+                                                            "    Ext.getCmp('toDate').setValue('');",
+                                                            "}"
+                                                        ],
+                                                        "name": "blur",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onFromdateBlur",
+                                                    "designerId": "5869bfcb-253b-419f-ba05-6b470d06a569"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -402,20 +477,24 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
                                                 "fieldLabel": "Consignee",
                                                 "id": "bookingConsignee",
                                                 "itemId": "bookingConsignee",
                                                 "labelWidth": 120,
                                                 "name": "consignee",
-                                                "padding": 10
+                                                "padding": 10,
+                                                "validateBlank": true
                                             },
                                             "configAlternates": {
                                                 "fieldLabel": "string",
                                                 "labelWidth": "number",
                                                 "padding": "auto",
+                                                "allowBlank": "boolean",
                                                 "id": "string",
                                                 "itemId": "string",
-                                                "name": "string"
+                                                "name": "string",
+                                                "validateBlank": "boolean"
                                             },
                                             "name": "MyTextField2",
                                             "designerId": "68898d77-d7ed-4185-99ba-81fe35c3108f"
@@ -428,21 +507,59 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
                                                 "fieldLabel": "To Date",
                                                 "format": "Y-m-d",
+                                                "id": "toDate",
+                                                "itemId": "toDate",
                                                 "labelWidth": 120,
                                                 "name": "toDate",
-                                                "padding": 10
+                                                "padding": 10,
+                                                "validateBlank": true
                                             },
                                             "configAlternates": {
                                                 "fieldLabel": "string",
                                                 "labelWidth": "number",
                                                 "padding": "auto",
+                                                "allowBlank": "boolean",
                                                 "format": "string",
-                                                "name": "string"
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "name": "string",
+                                                "validateBlank": "boolean"
                                             },
                                             "name": "MyDateField3",
-                                            "designerId": "6a2645f0-fb92-4ea4-adb8-f606f49dfbe5"
+                                            "designerId": "6a2645f0-fb92-4ea4-adb8-f606f49dfbe5",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onToDateBlur",
+                                                        "implHandler": [
+                                                            "if (Ext.getCmp('toDate').getValue() < Ext.getCmp('fromDate').getValue()){",
+                                                            "    alert('From date should be later than To Date');",
+                                                            "    conponent.setValue('');",
+                                                            "    Ext.getCmp('fromDate').setValue('');",
+                                                            "}"
+                                                        ],
+                                                        "name": "blur",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onToDateBlur",
+                                                    "designerId": "f588e842-97f2-44ee-aed2-f2a246f8cd06"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -512,6 +629,8 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
+                                                        "allowOnlyWhitespace": false,
                                                         "fieldLabel": "From City",
                                                         "id": "bookingFromCity",
                                                         "itemId": "bookingFromCity",
@@ -519,17 +638,21 @@
                                                         "name": "fromCity",
                                                         "padding": 10,
                                                         "store": [
-                                                            "['MNL','HKG','ZHA', 'USA']"
-                                                        ]
+                                                            "['HKG', 'LGB', 'MNL', 'SIN', 'PUS', 'RTM']"
+                                                        ],
+                                                        "validateBlank": true
                                                     },
                                                     "configAlternates": {
                                                         "fieldLabel": "string",
                                                         "labelWidth": "number",
                                                         "padding": "auto",
                                                         "store": "array",
+                                                        "allowBlank": "boolean",
+                                                        "allowOnlyWhitespace": "boolean",
                                                         "id": "string",
                                                         "itemId": "string",
-                                                        "name": "string"
+                                                        "name": "string",
+                                                        "validateBlank": "boolean"
                                                     },
                                                     "name": "MyComboBox3",
                                                     "designerId": "be2cbbab-80a3-4111-beed-f5f1e53bdf11",
@@ -549,7 +672,11 @@
                                                                     "",
                                                                     "if (from == to){",
                                                                     "    alert('From City should not be the same as To City! Please change');",
-                                                                    "}"
+                                                                    "Ext.getCmp('bookingFromCity').setValue('');",
+                                                                    "Ext.getCmp('bookingToCity').setValue('');",
+                                                                    "}",
+                                                                    "",
+                                                                    ""
                                                                 ],
                                                                 "name": "blur",
                                                                 "scope": "me"
@@ -573,6 +700,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "Cargo Nature",
                                                         "id": "bookingCargoNature",
                                                         "itemId": "bookingCargoNature",
@@ -581,16 +709,19 @@
                                                         "padding": 10,
                                                         "store": [
                                                             "['GC','RF','AWK','DG']"
-                                                        ]
+                                                        ],
+                                                        "validateBlank": true
                                                     },
                                                     "configAlternates": {
                                                         "fieldLabel": "string",
                                                         "labelWidth": "number",
                                                         "padding": "auto",
                                                         "store": "array",
+                                                        "allowBlank": "boolean",
                                                         "id": "string",
                                                         "itemId": "string",
-                                                        "name": "string"
+                                                        "name": "string",
+                                                        "validateBlank": "boolean"
                                                     },
                                                     "name": "MyComboBox5",
                                                     "designerId": "bf627d59-6333-4404-b901-82a5a7ed9e16"
@@ -603,20 +734,24 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "Cargo Description",
                                                         "id": "bookingCargoDesc",
                                                         "itemId": "bookingCargoDesc",
                                                         "labelWidth": 120,
                                                         "name": "cargoDesc",
-                                                        "padding": 10
+                                                        "padding": 10,
+                                                        "validateBlank": true
                                                     },
                                                     "configAlternates": {
                                                         "fieldLabel": "string",
                                                         "labelWidth": "number",
                                                         "padding": "auto",
+                                                        "allowBlank": "boolean",
                                                         "id": "string",
                                                         "itemId": "string",
-                                                        "name": "string"
+                                                        "name": "string",
+                                                        "validateBlank": "boolean"
                                                     },
                                                     "name": "MyTextField3",
                                                     "designerId": "30a30864-0c07-44a1-aba6-f13a4371d061"
@@ -649,6 +784,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "To City",
                                                         "id": "bookingToCity",
                                                         "itemId": "bookingToCity",
@@ -656,17 +792,20 @@
                                                         "name": "toCity",
                                                         "padding": 10,
                                                         "store": [
-                                                            "['MNL','HKG','ZHA', 'USA']"
-                                                        ]
+                                                            "['HKG', 'LGB', 'MNL', 'SIN', 'PUS', 'RTM']"
+                                                        ],
+                                                        "validateBlank": true
                                                     },
                                                     "configAlternates": {
                                                         "fieldLabel": "string",
                                                         "labelWidth": "number",
                                                         "padding": "auto",
                                                         "store": "array",
+                                                        "allowBlank": "boolean",
                                                         "id": "string",
                                                         "itemId": "string",
-                                                        "name": "string"
+                                                        "name": "string",
+                                                        "validateBlank": "boolean"
                                                     },
                                                     "name": "MyComboBox4",
                                                     "designerId": "e686b9f0-2c49-4cba-9bda-a05c29c2bf06",
@@ -686,7 +825,11 @@
                                                                     "",
                                                                     "if (from == to){",
                                                                     "    alert('From City should not be the same as To City! Please change');",
-                                                                    "}"
+                                                                    "Ext.getCmp('bookingFromCity').setValue('');",
+                                                                    "Ext.getCmp('bookingToCity').setValue('');",
+                                                                    "",
+                                                                    "}",
+                                                                    ""
                                                                 ],
                                                                 "name": "blur",
                                                                 "scope": "me"
@@ -710,6 +853,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "HS Code",
                                                         "id": "bookingConHS",
                                                         "itemId": "bookingConHS",
@@ -718,16 +862,19 @@
                                                         "padding": 10,
                                                         "store": [
                                                             "['MNL','HKG','ZHA', 'USA']"
-                                                        ]
+                                                        ],
+                                                        "validateBlank": true
                                                     },
                                                     "configAlternates": {
                                                         "fieldLabel": "string",
                                                         "labelWidth": "number",
                                                         "padding": "auto",
                                                         "store": "array",
+                                                        "allowBlank": "boolean",
                                                         "id": "string",
                                                         "itemId": "string",
-                                                        "name": "string"
+                                                        "name": "string",
+                                                        "validateBlank": "boolean"
                                                     },
                                                     "name": "MyComboBox7",
                                                     "designerId": "4304fa23-1c92-4513-91d0-bb0229d2b2de"
@@ -934,14 +1081,18 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "allowBlank": false,
                                                                 "name": "cntrType",
                                                                 "store": [
-                                                                    "['20GP', '40GP', '20HQ', '40HQ']"
-                                                                ]
+                                                                    "['20GP', '40GP', '20HQ', '40HQ', '4HQ']"
+                                                                ],
+                                                                "validateBlank": true
                                                             },
                                                             "configAlternates": {
                                                                 "store": "array",
-                                                                "name": "string"
+                                                                "allowBlank": "boolean",
+                                                                "name": "string",
+                                                                "validateBlank": "boolean"
                                                             },
                                                             "name": "MyComboBox9",
                                                             "designerId": "728e74db-344d-4811-bf85-22b7099941c5"
@@ -976,10 +1127,18 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "name": "grossWt"
+                                                                "allowBlank": false,
+                                                                "id": "grossWt",
+                                                                "itemId": "grossWt",
+                                                                "name": "grossWt",
+                                                                "validateBlank": true
                                                             },
                                                             "configAlternates": {
-                                                                "name": "string"
+                                                                "allowBlank": "boolean",
+                                                                "id": "string",
+                                                                "itemId": "string",
+                                                                "name": "string",
+                                                                "validateBlank": "boolean"
                                                             },
                                                             "name": "MyTextField4",
                                                             "designerId": "fa617bfe-b27b-4721-8508-d4fbeb17cc77"
@@ -1014,10 +1173,18 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "name": "netWt"
+                                                                "allowBlank": false,
+                                                                "id": "netWt",
+                                                                "itemId": "netWt",
+                                                                "name": "netWt",
+                                                                "validateBlank": true
                                                             },
                                                             "configAlternates": {
-                                                                "name": "string"
+                                                                "allowBlank": "boolean",
+                                                                "id": "string",
+                                                                "itemId": "string",
+                                                                "name": "string",
+                                                                "validateBlank": "boolean"
                                                             },
                                                             "name": "MyTextField5",
                                                             "designerId": "789251e4-7779-4048-839c-84ec736a6ec7"
@@ -1052,21 +1219,98 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "allowBlank": false,
                                                                 "id": "wtUnit",
                                                                 "itemId": "wtUnit",
                                                                 "name": "wtUnit",
                                                                 "store": [
-                                                                    "['kg','ton']"
-                                                                ]
+                                                                    "['kg','ton', 'lbs']"
+                                                                ],
+                                                                "validateBlank": true
                                                             },
                                                             "configAlternates": {
                                                                 "store": "array",
+                                                                "allowBlank": "boolean",
                                                                 "id": "string",
                                                                 "itemId": "string",
-                                                                "name": "string"
+                                                                "name": "string",
+                                                                "validateBlank": "boolean"
                                                             },
                                                             "name": "MyComboBox8",
-                                                            "designerId": "6264f7fc-2c6e-4f70-b95c-7b6bf56e03aa"
+                                                            "designerId": "6264f7fc-2c6e-4f70-b95c-7b6bf56e03aa",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "basiceventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onWtUnitChange",
+                                                                        "implHandler": [
+                                                                            "",
+                                                                            "var    gross = Ext.getCmp('netWt').getValue(),",
+                                                                            "    net = Ext.getCmp('grossWt').getValue();",
+                                                                            "",
+                                                                            "console.log(oldValue);",
+                                                                            "console.log(newValue);",
+                                                                            "if(oldValue == 'kg'){",
+                                                                            "    if(newValue == 'lbs'){",
+                                                                            "         Ext.getCmp('netWt').setValue(net*2.20462);",
+                                                                            "         Ext.getCmp('grossWt').setValue(gross*2.20462);",
+                                                                            "    } else if (newValue == 'ton'){",
+                                                                            "",
+                                                                            "         Ext.getCmp('netWt').setValue(net/907.185);",
+                                                                            "         Ext.getCmp('grossWt').setValue(gross/907.185);",
+                                                                            "",
+                                                                            "    }",
+                                                                            "",
+                                                                            "} else if(oldValue == 'lbs'){",
+                                                                            "    if(newValue == 'kg'){",
+                                                                            "",
+                                                                            "         Ext.getCmp('netWt').setValue(net/0.453592);",
+                                                                            "         Ext.getCmp('grossWt').setValue(gross/0.453592);",
+                                                                            "",
+                                                                            "    } else if (newValue == 'ton'){",
+                                                                            "",
+                                                                            "        Ext.getCmp('netWt').setValue(net/0.000453592);",
+                                                                            "         Ext.getCmp('grossWt').setValue(gross/0.000453592);",
+                                                                            "    }",
+                                                                            "",
+                                                                            "} else if(oldValue == 'ton'){",
+                                                                            "    if(newValue == 'lbs'){",
+                                                                            "",
+                                                                            "        Ext.getCmp('netWt').setValue(net*2204.62);",
+                                                                            "         Ext.getCmp('grossWt').setValue(gross*2204.62);",
+                                                                            "",
+                                                                            "    } else if (newValue == 'kg'){",
+                                                                            "        Ext.getCmp('netWt').setValue(net*1000);",
+                                                                            "         Ext.getCmp('grossWt').setValue(gross*1000);",
+                                                                            "",
+                                                                            "    }",
+                                                                            "",
+                                                                            "}",
+                                                                            "",
+                                                                            "console.log(net);",
+                                                                            "",
+                                                                            "",
+                                                                            "",
+                                                                            ""
+                                                                        ],
+                                                                        "name": "change",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onWtUnitChange",
+                                                                    "designerId": "8e54da7a-147d-4a81-9ef9-80a5dd9f1712"
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 },

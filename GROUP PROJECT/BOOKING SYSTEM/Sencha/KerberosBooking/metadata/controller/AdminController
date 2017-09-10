@@ -12,5 +12,282 @@
         "designer|userClassName": "string"
     },
     "name": "MyController",
-    "designerId": "0f25b61b-7f4a-414b-83f2-de4cae551015"
+    "designerId": "0f25b61b-7f4a-414b-83f2-de4cae551015",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#home",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton1",
+                "fn": "onHomeClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('adminPanel')[0];",
+                    "var center = viewport.down('[region=center]'),",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "userPanel = Ext.ComponentQuery.query('viewUsersPanel')[0];",
+                    "",
+                    "",
+                    "",
+                    "var view = Ext.create('myPanel');",
+                    "",
+                    "center.remove(userPanel);",
+                    "center.remove(homePanel);",
+                    "center.remove(createPanel);",
+                    "center.remove(viewPanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onHomeClick",
+            "designerId": "52ba0a70-7cb7-40e9-b124-6c28a5166b35"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#kerberos",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton2",
+                "fn": "onKerberosClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('adminPanel')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "userPanel = Ext.ComponentQuery.query('viewUsersPanel')[0];",
+                    "\t//aboutPanel = Ext.ComponentQuery.query('')[0];",
+                    "",
+                    "    view = Ext.create('myHomePanel');",
+                    "",
+                    "console.log(viewport);",
+                    "",
+                    "center.remove(userPanel);",
+                    "center.remove(mainPanel);",
+                    "center.remove(viewPanel);",
+                    "center.remove(createPanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onKerberosClick",
+            "designerId": "ba423c6a-fa5c-45a2-8abd-41012c9bf4fd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#search",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton10",
+                "fn": "onSearchClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('adminPanel')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0],",
+                    "    createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "\t//aboutPanel = Ext.ComponentQuery.query('')[0];",
+                    "    userPanel = Ext.ComponentQuery.query('viewUsersPanel')[0];",
+                    "",
+                    "    view = Ext.create('viewBookingPanel');",
+                    "",
+                    "console.log(viewport);",
+                    "",
+                    "center.remove(userPanel);",
+                    "center.remove(mainPanel);",
+                    "center.remove(homePanel);",
+                    "center.remove(createPanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onSearchClick",
+            "designerId": "7295f755-c4ec-4ab0-b5af-c29dec6937dc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#create",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton7",
+                "fn": "onCreateClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('adminPanel')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0];",
+                    "\tuserPanel = Ext.ComponentQuery.query('viewUsersPanel')[0];",
+                    "",
+                    "    view = Ext.create('createBkgPanel');",
+                    "",
+                    "console.log(viewport);",
+                    "center.remove(userPanel);",
+                    "center.remove(mainPanel);",
+                    "center.remove(viewPanel);",
+                    "center.remove(homePanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onCreateClick",
+            "designerId": "385fc2ab-de99-4bc0-b658-eedf97b923e1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#users",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton11",
+                "fn": "onUsersClick",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('adminPanel')[0],",
+                    "    center = viewport.down('[region=center]'),",
+                    "    mainPanel = Ext.ComponentQuery.query('MyPanel')[0],",
+                    "    viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],",
+                    "    homePanel = Ext.ComponentQuery.query('myHomePanel')[0];",
+                    "\tuserPanel = Ext.ComponentQuery.query('createBkgPanel')[0];",
+                    "",
+                    "    view = Ext.create('viewUsersPanel');",
+                    "",
+                    "console.log(viewport);",
+                    "center.remove(userPanel);",
+                    "center.remove(mainPanel);",
+                    "center.remove(viewPanel);",
+                    "center.remove(homePanel);",
+                    "center.add(view);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onUsersClick",
+            "designerId": "f4160366-3220-464d-8b59-aff7d351ce3e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#about",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton12",
+                "fn": "onAboutClick",
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onAboutClick",
+            "designerId": "f2a94b77-1657-4b8a-8f90-a29a9cc6d115"
+        }
+    ]
 }

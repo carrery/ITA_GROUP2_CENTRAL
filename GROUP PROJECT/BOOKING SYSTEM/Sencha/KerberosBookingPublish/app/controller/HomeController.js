@@ -207,11 +207,13 @@ Ext.define('KerberosBooking.controller.HomeController', {
 
         Ext.getCmp('homeToolbar').hide();
 
-        center.remove(createPanel);
-        center.remove(mainPanel);
-        center.remove(viewPanel);
-        center.remove(homePanel);
-        center.add(view);
+         center.remove(createPanel);
+         center.remove(mainPanel);
+         center.remove(viewPanel);
+         center.remove(homePanel);
+         center.add(view);
+
+
     },
 
     onValidateResetBtnClick: function(button, e, eOpts) {

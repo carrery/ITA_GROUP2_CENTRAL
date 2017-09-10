@@ -1,0 +1,351 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "toolbarIcn",
+        "designer|userClassName": "toolbarIcn",
+        "id": "toolbarIcn",
+        "itemId": "toolbarIcn"
+    },
+    "configAlternates": {
+        "dock": "string",
+        "id": "string",
+        "itemId": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyToolbar6",
+    "designerId": "5635876e-4673-4ff4-b45a-592138c6cb68",
+    "viewControllerInstanceId": "388ddea3-5744-4567-88ee-1f5611a0202e",
+    "viewModelInstanceId": "6fc0d89b-0702-4757-9a8d-76e2682d2927",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "height": 59,
+                "id": "home1",
+                "itemId": "home",
+                "layout|flex": null,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/tools/home.png)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ],
+                "width": 78
+            },
+            "configAlternates": {
+                "flex": "number",
+                "height": "auto",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "style": "object",
+                "width": "auto"
+            },
+            "name": "MyButton1",
+            "designerId": "8cd47c85-6120-484e-978e-41fb21440993"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "id": "kerberos1",
+                "itemId": "kerberos",
+                "layout|flex": null,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/tools/building.png)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "flex": "number",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "style": "object"
+            },
+            "name": "MyButton2",
+            "designerId": "ccb1f4e4-76a2-4744-ac05-87643329002c",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onKerberosClick1",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onKerberosClick1",
+                    "designerId": "cf98b68a-57cf-4a37-a146-5013cb3454ce"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "id": "create1",
+                "itemId": "create",
+                "layout|flex": null,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/tools/create.png)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "flex": "number",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "style": "object"
+            },
+            "name": "MyButton7",
+            "designerId": "5a0285ee-6e45-4c02-af0a-83e516e591b3",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCreateClick1",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onCreateClick1",
+                    "designerId": "3c436d0e-9ac6-4ec7-9eff-60136ae116bc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "id": "search1",
+                "itemId": "search",
+                "layout|flex": null,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/tools/search.png)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "flex": "number",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "style": "object"
+            },
+            "name": "MyButton10",
+            "designerId": "873974bc-f4ab-4015-889c-7f449d7803ff",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onSearchClick1",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onSearchClick1",
+                    "designerId": "e6cda378-20bd-496b-8e43-871c0b72ccae"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "id": "users1",
+                "itemId": "users",
+                "layout|flex": null,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/tools/users.png)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "flex": "number",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "style": "object"
+            },
+            "name": "MyButton11",
+            "designerId": "f4ef4dde-754b-40c6-8f00-50d00eade971",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onUsersClick1",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onUsersClick1",
+                    "designerId": "7d32bd83-0f7c-4fe3-9541-a03aa2aa338a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "id": "about1",
+                "itemId": "about",
+                "layout|flex": null,
+                "style": [
+                    "{",
+                    "        background:'#ffffff',",
+                    "        backgroundImage: 'url(images/tools/about.png)',",
+                    "        backgroundSize: '100% 100%',",
+                    "        backgroundRepeat: 'no-repeat',",
+                    "        backgroundPosition: 'bottom left',",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "flex": "number",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "style": "object"
+            },
+            "name": "MyButton12",
+            "designerId": "bdbecfa1-148c-4fab-b990-67830d223103",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAboutClick1",
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onAboutClick1",
+                    "designerId": "ca02d98d-e6c9-428f-9490-c0f1e2f75bb4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "layout|flex": null
+            },
+            "configAlternates": {
+                "flex": "number",
+                "layout|flex": "number"
+            },
+            "name": "MySpacer",
+            "designerId": "949e2467-d076-4c64-98a0-90ee59fe5cb5"
+        }
+    ]
+}

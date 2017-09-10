@@ -23,14 +23,13 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
     requires: [
         'Ext.Img',
         'Ext.form.Panel',
-        'Ext.form.field.ComboBox',
-        'Ext.form.field.Date',
+        'Ext.form.field.Text',
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
         'Ext.button.Button',
         'Ext.grid.Panel',
-        'Ext.grid.column.Column',
         'Ext.view.Table',
+        'Ext.grid.column.Column',
         'Ext.selection.CheckboxModel'
     ],
 
@@ -38,36 +37,40 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
     itemId: 'viewUsersPanel',
     scrollable: true,
 
-    layout: {
-        type: 'vbox',
-        align: 'stretch'
-    },
     items: [
         {
             xtype: 'container',
             flex: 1,
+            height: 500,
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            },
             items: [
                 {
                     xtype: 'image',
                     flex: 1,
-                    height: 201,
+                    flex: 1,
                     width: 201,
-                    src: '%5Cimages%5Cbg%5Cenglishmap.jpg'
+                    src: '%5Cimages%5Cbg%5Ccustomer.jpg'
                 }
             ]
         },
         {
             xtype: 'container',
-            flex: 1,
-            flex: 1,
+            height: 200,
             html: '<iframe\n  width="600"\n  height="450"\n  frameborder="0" style="border:0"\n  src="https://www.google.com.sg/maps/@1.3437459,103.8240449,11z?hl=en" allowfullscreen>\n</iframe>',
+            layout: {
+                type: 'vbox',
+                align: 'stretch'
+            },
             items: [
                 {
                     xtype: 'form',
-                    id: 'kerberosHomePanel1',
-                    itemId: 'kerberosHomePanel',
+                    id: 'searchUsersPanel',
+                    itemId: 'searchUsersPanel',
                     bodyPadding: 10,
-                    title: 'Find Shipment',
+                    title: 'User Management',
                     items: [
                         {
                             xtype: 'container',
@@ -85,37 +88,17 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                                             xtype: 'textfield',
                                             id: 'viewBkgPanel1',
                                             itemId: 'viewBkgPanel',
-                                            fieldLabel: 'Booking Number',
+                                            fieldLabel: 'Username',
                                             labelWidth: 120
                                         },
-                                        {
-                                            xtype: 'combobox',
-                                            fieldLabel: 'From City',
-                                            labelWidth: 120
-                                        },
-                                        {
-                                            xtype: 'datefield',
-                                            fieldLabel: 'From Date',
-                                            labelWidth: 120
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'container',
-                                    items: [
                                         {
                                             xtype: 'textfield',
-                                            fieldLabel: 'Container Number',
+                                            fieldLabel: 'First Name',
                                             labelWidth: 120
                                         },
                                         {
-                                            xtype: 'combobox',
-                                            fieldLabel: 'To City',
-                                            labelWidth: 120
-                                        },
-                                        {
-                                            xtype: 'datefield',
-                                            fieldLabel: 'To Date',
+                                            xtype: 'textfield',
+                                            fieldLabel: 'Last Name',
                                             labelWidth: 120
                                         },
                                         {
@@ -139,6 +122,11 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                                                     },
                                                     scale: 'medium',
                                                     text: 'Submit'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    scale: 'medium',
+                                                    text: 'Reset'
                                                 }
                                             ]
                                         }
@@ -153,50 +141,52 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
         {
             xtype: 'container',
             flex: 1,
-            flex: 1,
             items: [
                 {
                     xtype: 'gridpanel',
                     flex: 1,
+                    height: 300,
                     padding: 10,
+                    resizable: true,
                     bodyPadding: '',
                     title: '',
+                    store: 'userManagement',
                     columns: [
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            dataIndex: 'string',
-                            text: 'Booking Number'
+                            dataIndex: 'username',
+                            text: 'Username'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            text: 'From City'
+                            dataIndex: 'firstname',
+                            text: 'First Name'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            text: 'To City'
+                            dataIndex: 'lastname',
+                            text: 'Last Name'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            text: 'From Date'
+                            dataIndex: 'role',
+                            text: 'Role'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            text: 'To Date'
+                            dataIndex: 'email',
+                            text: 'Email'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            text: 'Shipper'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            flex: 1,
-                            text: 'Consignee'
+                            dataIndex: 'contactnumber',
+                            text: 'Contact Number'
                         }
                     ],
                     selModel: {
@@ -212,14 +202,18 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'MyButton'
+                                    text: 'Add'
                                 },
                                 {
                                     xtype: 'button',
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'MyButton'
+                                    text: 'Edit'
+                                },
+                                {
+                                    xtype: 'button',
+                                    text: 'Delete'
                                 }
                             ]
                         }

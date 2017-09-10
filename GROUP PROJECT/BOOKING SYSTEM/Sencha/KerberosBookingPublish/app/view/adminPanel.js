@@ -104,18 +104,17 @@ Ext.define('KerberosBooking.view.adminPanel', {
                 {
                     xtype: 'button',
                     flex: 1,
-                    height: 59,
                     id: 'home',
                     itemId: 'home',
                     style: {
                         background: '#ffffff',
                         backgroundImage: 'url(images/tools/home.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     },
-                    width: 78
+                    width: 40
                 },
                 {
                     xtype: 'button',
@@ -125,9 +124,9 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     style: {
                         background: '#ffffff',
                         backgroundImage: 'url(images/tools/building.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -139,9 +138,9 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     style: {
                         background: '#ffffff',
                         backgroundImage: 'url(images/tools/create.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -153,9 +152,9 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     style: {
                         background: '#ffffff',
                         backgroundImage: 'url(images/tools/search.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -167,9 +166,9 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     style: {
                         background: '#ffffff',
                         backgroundImage: 'url(images/tools/users.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -181,9 +180,9 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     style: {
                         background: '#ffffff',
                         backgroundImage: 'url(images/tools/about.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -192,51 +191,11 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     flex: 1
                 }
             ]
-        },
-        {
-            xtype: 'toolbar',
-            dock: 'left',
-            hidden: true,
-            id: 'toolbarWords',
-            itemId: 'toolbarWords',
-            items: [
-                {
-                    xtype: 'button',
-                    flex: 1,
-                    text: 'Home'
-                },
-                {
-                    xtype: 'button',
-                    flex: 1,
-                    text: 'Keberos'
-                },
-                {
-                    xtype: 'button',
-                    flex: 1,
-                    text: 'Create Booking'
-                },
-                {
-                    xtype: 'button',
-                    flex: 1,
-                    text: 'Search Booking'
-                },
-                {
-                    xtype: 'button',
-                    flex: 1,
-                    text: 'Manage Users'
-                },
-                {
-                    xtype: 'button',
-                    flex: 1,
-                    text: 'About'
-                },
-                {
-                    xtype: 'tbspacer',
-                    flex: 1
-                }
-            ]
         }
     ],
+    listeners: {
+        afterrender: 'onAdminPanelAfterRender'
+    },
 
     onMenuBtnClick: function(button, e, eOpts) {
 
@@ -299,7 +258,17 @@ Ext.define('KerberosBooking.view.adminPanel', {
 
         } else{
             Ext.getCmp('home').setStyle({background:'#ffffff'});
-        Ext.getCmp('home').setText('Home');
+            Ext.getCmp('home').setText('Home');
+            Ext.getCmp('kerberos').setStyle({background:'#ffffff'});
+            Ext.getCmp('kerberos').setText('Kerberos Booking');
+            Ext.getCmp('create').setStyle({background:'#ffffff'});
+            Ext.getCmp('create').setText('Create Booking');
+             Ext.getCmp('search').setStyle({background:'#ffffff'});
+            Ext.getCmp('search').setText('Search Booking');
+             Ext.getCmp('users').setStyle({background:'#ffffff'});
+            Ext.getCmp('users').setText('User Management');
+            Ext.getCmp('about').setStyle({background:'#ffffff'});
+            Ext.getCmp('about').setText('About');
 
 
         }
@@ -308,6 +277,15 @@ Ext.define('KerberosBooking.view.adminPanel', {
 
 
 
+    },
+
+    onAdminPanelAfterRender: function(component, eOpts) {
+        var viewport = Ext.ComponentQuery.query('adminPanel')[0];
+        var center = viewport.down('[region=center]');
+
+        var view = Ext.create('myPanel');
+
+        center.add(view);
     }
 
 });

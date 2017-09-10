@@ -162,7 +162,7 @@
                                     "        backgroundPosition: 'bottom left',",
                                     "});",
                                     "Ext.getCmp('create').setText('');",
-                                    "    ",
+                                    "",
                                     "Ext.getCmp('search').setStyle({",
                                     "        background:'#ffffff',",
                                     "        backgroundImage: 'url(images/tools/search.png)',",
@@ -171,7 +171,7 @@
                                     "        backgroundPosition: 'bottom left',",
                                     "});",
                                     "Ext.getCmp('search').setText('');",
-                                    "    ",
+                                    "",
                                     "Ext.getCmp('users').setStyle({",
                                     "        background:'#ffffff',",
                                     "        backgroundImage: 'url(images/tools/users.png)',",
@@ -180,7 +180,7 @@
                                     "        backgroundPosition: 'bottom left',",
                                     "});",
                                     "Ext.getCmp('users').setText('');",
-                                    "    ",
+                                    "",
                                     "Ext.getCmp('about').setStyle({",
                                     "        background:'#ffffff',",
                                     "        backgroundImage: 'url(images/tools/about.png)',",
@@ -193,7 +193,17 @@
                                     "",
                                     "} else{",
                                     "    Ext.getCmp('home').setStyle({background:'#ffffff'});",
-                                    "Ext.getCmp('home').setText('Home');",
+                                    "    Ext.getCmp('home').setText('Home');",
+                                    "    Ext.getCmp('kerberos').setStyle({background:'#ffffff'});",
+                                    "    Ext.getCmp('kerberos').setText('Kerberos Booking');",
+                                    "    Ext.getCmp('create').setStyle({background:'#ffffff'});",
+                                    "    Ext.getCmp('create').setText('Create Booking');",
+                                    "     Ext.getCmp('search').setStyle({background:'#ffffff'});",
+                                    "    Ext.getCmp('search').setText('Search Booking');",
+                                    "     Ext.getCmp('users').setStyle({background:'#ffffff'});",
+                                    "    Ext.getCmp('users').setText('User Management');",
+                                    "    Ext.getCmp('about').setStyle({background:'#ffffff'});",
+                                    "    Ext.getCmp('about').setText('About');",
                                     "",
                                     "",
                                     "}",
@@ -536,166 +546,33 @@
             ]
         },
         {
-            "type": "Ext.toolbar.Toolbar",
+            "type": "basiceventbinding",
             "reference": {
-                "name": "dockedItems",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "left",
-                "hidden": true,
-                "id": "toolbarWords",
-                "itemId": "toolbarWords"
+                "fn": "onAdminPanelAfterRender",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('adminPanel')[0];",
+                    "var center = viewport.down('[region=center]');",
+                    "",
+                    "var view = Ext.create('myPanel');",
+                    "",
+                    "center.add(view);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
             },
             "configAlternates": {
-                "dock": "string",
-                "hidden": "boolean",
-                "id": "string",
-                "itemId": "string"
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
             },
-            "name": "MyToolbar3",
-            "designerId": "6c011904-70f7-46b2-b4a3-b9c951d83526",
-            "cn": [
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "flex": 1,
-                        "layout|flex": null,
-                        "text": "Home"
-                    },
-                    "configAlternates": {
-                        "flex": "number",
-                        "layout|flex": "number",
-                        "text": "string"
-                    },
-                    "name": "MyButton1",
-                    "designerId": "af9a4049-f4a3-4226-9b50-7dbc8f298494"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "flex": 1,
-                        "layout|flex": null,
-                        "text": "Keberos"
-                    },
-                    "configAlternates": {
-                        "flex": "number",
-                        "layout|flex": "number",
-                        "text": "string"
-                    },
-                    "name": "MyButton2",
-                    "designerId": "e35e975e-58a3-4011-8a6a-8eed037ae1a0"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "flex": 1,
-                        "layout|flex": null,
-                        "text": "Create Booking"
-                    },
-                    "configAlternates": {
-                        "flex": "number",
-                        "layout|flex": "number",
-                        "text": "string"
-                    },
-                    "name": "MyButton7",
-                    "designerId": "a3495bc8-77c7-4779-b32f-64597acbfb30"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "flex": 1,
-                        "layout|flex": null,
-                        "text": "Search Booking"
-                    },
-                    "configAlternates": {
-                        "flex": "number",
-                        "layout|flex": "number",
-                        "text": "string"
-                    },
-                    "name": "MyButton10",
-                    "designerId": "478c5dc8-351d-421d-9ed7-880d55541b66"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "flex": 1,
-                        "layout|flex": null,
-                        "text": "Manage Users"
-                    },
-                    "configAlternates": {
-                        "flex": "number",
-                        "layout|flex": "number",
-                        "text": "string"
-                    },
-                    "name": "MyButton11",
-                    "designerId": "c0e6096a-1825-4069-99a7-15de1d40a6e4"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "flex": 1,
-                        "layout|flex": null,
-                        "text": "About"
-                    },
-                    "configAlternates": {
-                        "flex": "number",
-                        "layout|flex": "number",
-                        "text": "string"
-                    },
-                    "name": "MyButton12",
-                    "designerId": "4ed2861e-7d61-4ff2-b7b6-1c909014b8bc"
-                },
-                {
-                    "type": "Ext.toolbar.Spacer",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "flex": 1,
-                        "layout|flex": null
-                    },
-                    "configAlternates": {
-                        "flex": "number",
-                        "layout|flex": "number"
-                    },
-                    "name": "MySpacer",
-                    "designerId": "c8c4608d-5eae-4097-a0bd-c5b49775de42"
-                }
-            ]
+            "name": "onAdminPanelAfterRender",
+            "designerId": "134262ee-9a8e-4bb7-aae4-8049600fed2b"
         }
     ]
 }

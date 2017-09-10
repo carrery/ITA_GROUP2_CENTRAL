@@ -45,21 +45,20 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
     items: [
         {
             xtype: 'container',
-            flex: 1,
+            height: 600,
             items: [
                 {
                     xtype: 'image',
                     flex: 1,
-                    height: 201,
-                    width: 201,
+                    height: 600,
+                    width: 600,
                     src: '%5Cimages%5Cbg%5Cenglishmap.jpg'
                 }
             ]
         },
         {
             xtype: 'container',
-            flex: 1,
-            flex: 1,
+            height: 200,
             html: '<iframe\n  width="600"\n  height="450"\n  frameborder="0" style="border:0"\n  src="https://www.google.com.sg/maps/@1.3437459,103.8240449,11z?hl=en" allowfullscreen>\n</iframe>',
             items: [
                 {
@@ -152,50 +151,57 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
         },
         {
             xtype: 'container',
-            flex: 1,
-            flex: 1,
             items: [
                 {
                     xtype: 'gridpanel',
                     flex: 1,
+                    height: 155,
+                    id: 'searchShipment',
+                    itemId: 'searchShipment',
                     padding: 10,
                     bodyPadding: '',
                     title: '',
+                    store: 'AllBookingStore',
                     columns: [
                         {
                             xtype: 'gridcolumn',
-                            flex: 1,
-                            dataIndex: 'string',
+                            dataIndex: 'shipmentNum',
                             text: 'Booking Number'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'fromCity',
                             text: 'From City'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'toCity',
                             text: 'To City'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'fromDate',
                             text: 'From Date'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'toDate',
                             text: 'To Date'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'shipper',
                             text: 'Shipper'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'consignee',
                             text: 'Consignee'
                         }
                     ],
