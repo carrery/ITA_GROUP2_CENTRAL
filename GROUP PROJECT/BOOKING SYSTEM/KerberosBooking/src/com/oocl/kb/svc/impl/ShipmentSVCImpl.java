@@ -14,6 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Shipment;
@@ -55,8 +58,19 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		shp.setShipmentStatus(shpStatus);
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
-		//shipmentDAO.createBooking(shp);
 		createShipmentResponse.setServiceResult(String.valueOf(shipmentDAO.createBooking(shp)));
+				
+		JsonObject jsonObj = gson.fromJson(json, JsonObject.class);
+		JsonArray array = jsonObj.get("container").getAsJsonArray();
+		
+		ArrayList<ShipmentContainer> cntrList = (ArrayList<ShipmentContainer>) gson.fromJson(array,
+                new TypeToken<ArrayList<ShipmentContainer>>() {
+                }.getType());
+		
+		
+		shipmentDAO.createShpContainer(cntrList, shp.getFromDate());
+		
+		
 		return createShipmentResponse;
 	}
 
@@ -78,11 +92,11 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		JSONArray array = jsonShpCntr.getJSONArray("shp_container");
 		for (int i = 0; i < array.length(); i++) {
 			ShipmentContainer sc = new ShipmentContainer(null, array.getJSONObject(i).getString("cntr_num"), null, null,
-					null);
+					null, null);
 			// sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			cntrList.add(sc);
 		}
-		this.shipmentDAO.createShpContainer(cntrList);
+		//this.shipmentDAO.createShpContainer(cntrList);
 	}
 
 	@Override

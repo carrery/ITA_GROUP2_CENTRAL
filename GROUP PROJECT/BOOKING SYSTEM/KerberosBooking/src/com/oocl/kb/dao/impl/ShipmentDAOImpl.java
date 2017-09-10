@@ -93,12 +93,16 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createShpContainer(ArrayList<ShipmentContainer> cntrList) {
+	public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate) {
 		Transaction tx = null;
 
 		tx = session.beginTransaction();
 
 		for (ShipmentContainer shpCntr : cntrList) {
+			Long refNum = getRefNumSeq();
+			String cntrNum = getAvailableContainer(shpCntr.getCntrType(), bookingDate);
+			shpCntr.setRefNum(refNum);
+			shpCntr.setCntrNum(cntrNum);
 			session.save(shpCntr);
 		}
 

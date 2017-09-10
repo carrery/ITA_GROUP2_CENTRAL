@@ -35,14 +35,18 @@ public class ShipmentContainer {
 	@Column(name = "WT_UNIT")
 	private String wtUnit;
 	
-	public ShipmentContainer(String shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit) {
+	@Column(name = "CNTR_TYPE")
+	private String cntrType;
+	
+	public ShipmentContainer(String shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit, String cntrType) {
 		this.shipmentNum = shipmentNum;
 		this.cntrNum = cntrNum;
 		this.grossWt = grossWt;
 		this.netWt = netWt;
 		this.wtUnit = wtUnit;
+		this.cntrType  = cntrType;
 	}
-	
+
 	public Long getRefNum() {
 		return refNum;
 	}
@@ -79,6 +83,16 @@ public class ShipmentContainer {
 	public void setWtUnit(String wtUnit) {
 		this.wtUnit = wtUnit;
 	}
+
+	public String getCntrType() {
+		return cntrType;
+	}
+
+	public void setCntrType(String cntrType) {
+		this.cntrType = cntrType;
+	}
+	
+	
 	
 
 }
