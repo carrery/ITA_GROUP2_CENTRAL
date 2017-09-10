@@ -26,7 +26,7 @@ public interface ShipmentDAO {
 	
 	public String deleteContainer(ShipmentContainer container);
 	
-    public void createShpContainer(ArrayList<ShipmentContainer> cntrList);
+    public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate);
     
     public void createShpCargo(ArrayList<ShipmentCargo> cgoList);
 
@@ -36,9 +36,13 @@ public interface ShipmentDAO {
 	
 	public Shipment getShipmentById(String shpNum);
 
-	public String updateShipment(Shipment shipment, String  shpNum);
+	public String updateShipment(Shipment shipment);
 
 	public List<String> getShpNumByCntrNum(String cntrNum);
 
+	public String getAvailableContainer(String cntrType, Date bookingDate);
 
+	public Long getCgoidSeq();
+
+	public Long getRefNumSeq();
 }

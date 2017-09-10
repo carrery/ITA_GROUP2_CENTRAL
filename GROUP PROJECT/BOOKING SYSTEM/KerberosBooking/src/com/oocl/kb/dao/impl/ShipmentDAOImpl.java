@@ -2,6 +2,8 @@ package com.oocl.kb.dao.impl;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.type.StandardBasicTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.oocl.kb.dao.inf.ShipmentDAO;
@@ -93,12 +96,16 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createShpContainer(ArrayList<ShipmentContainer> cntrList) {
+	public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate) {
 		Transaction tx = null;
 
 		tx = session.beginTransaction();
 
 		for (ShipmentContainer shpCntr : cntrList) {
+			Long refNum = getRefNumSeq();
+			String cntrNum = getAvailableContainer(shpCntr.getCntrType(), bookingDate);
+			shpCntr.setRefNum(refNum);
+			shpCntr.setCntrNum(cntrNum);
 			session.save(shpCntr);
 		}
 
@@ -187,15 +194,16 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public String updateShipment(Shipment shp, String shpNum) {
+	public String updateShipment(Shipment shp) {
 		try {
 			Session session = sessionFactory.openSession();
 			tx = session.beginTransaction();
-			session.update(shpNum, shp);
+			session.update(shp);
 			tx.commit();
 			session.close();
 			return "Success";
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "Fail";
 		}
 	}
@@ -213,5 +221,41 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 
 		return returnList;
 	}
+
+	@Override
+	public Long getRefNumSeq() {
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createSQLQuery("SELECT REF_NUM_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
+		Long refNum = (Long) query.uniqueResult();
+		return refNum;
+	}
+
+	@Override
+	public Long getCgoidSeq() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		Query query = session.createSQLQuery("SELECT CGO_ID_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
+		Long cgoid = (Long) query.uniqueResult();
+		return cgoid;
+	}
+
+	@Override
+	public String getAvailableContainer(String cntrType, Date bookingDate){
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		tx = session.beginTransaction();
+		
+		String newBkgDate = bookingDate.toString();
+
+		Query query = session.createSQLQuery("SELECT CNTR_NUM FROM CNTR_AVAIL WHERE CNTR_TYPE = ? AND (LASTDATE <= ? OR LASTDATE IS NULL) AND ROWNUM = 1");
+		query.setParameter(0, cntrType);
+		query.setParameter(1, newBkgDate);
+		String cntrNum = (String) query.uniqueResult();
+		return cntrNum;
+	}
+	
+	
 
 }

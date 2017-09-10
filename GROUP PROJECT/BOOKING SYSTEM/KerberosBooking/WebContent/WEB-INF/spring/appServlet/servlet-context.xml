@@ -29,6 +29,8 @@
 	<mvc:resources mapping="/model/**" location="/admin/app/model/*.js" />
 	<mvc:resources mapping="/store/**" location="/admin/app/store/*.js" />
 	<mvc:resources mapping="/view/**" location="/admin/app/view/*.js" />
+	<mvc:resources mapping="/store/**" location="/admin/app/store/*.js" />
+	<mvc:resources mapping="/model/**" location="/admin/app/model/*.js" />
 	<mvc:resources mapping="/resources/img/**" location="/admin/resources/images/*.png" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
