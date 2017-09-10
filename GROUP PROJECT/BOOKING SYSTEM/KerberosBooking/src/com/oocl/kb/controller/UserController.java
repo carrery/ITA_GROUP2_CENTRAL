@@ -1,5 +1,7 @@
 package com.oocl.kb.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.oocl.kb.model.User;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.response.UserLoginResponse;
+import com.oocl.kb.response.UserMgtResponse;
 import com.oocl.kb.svc.inf.UserSVC;
 
 @RestController
@@ -47,5 +51,12 @@ public class UserController {
 			@RequestParam("email") String email, @RequestParam("contactNo") String contactNo,
 			HttpServletRequest request) {
 		return userSVC.createUser(username, password, role, firstName, lastName, email, contactNo);
+	}
+	
+	@RequestMapping(value = "/searchUser", method = RequestMethod.POST)
+	public @ResponseBody UserMgtResponse searchUser(@RequestParam("username") String username,
+			@RequestParam("fname") String fname, @RequestParam("lname") String lname,
+			@RequestParam("role") String role, HttpServletRequest request) {
+		return userSVC.searchUser(username, fname, lname, role);
 	}
 }

@@ -24,15 +24,13 @@ public class ShipmentController {
 
 	@RequestMapping(value = "/createBooking", method = RequestMethod.POST)
 	public @ResponseBody ServiceResponse createShp(@RequestParam("jsonString") String json, HttpServletRequest request) {
-
-		// return null;
 		return shpSVC.getCreateShipmentResponse(json);
 	}
 
 	@RequestMapping(value = "/getAllShipments", method = RequestMethod.POST)
-	public @ResponseBody List<Shipment> getAllShipments(@RequestParam("username") String username
-			, HttpServletRequest request) {
-		return shpSVC.getAllShipments(username);
+	public @ResponseBody List<Shipment> getAllShipments(@RequestParam("username") String username, 
+			@RequestParam("jsonString") String json, HttpServletRequest request) {
+		return shpSVC.getAllShipments(username, json);
 	}
 
 //	@RequestMapping(value = "/updateShipment", method = RequestMethod.POST)

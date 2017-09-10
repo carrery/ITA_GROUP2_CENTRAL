@@ -5,31 +5,48 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 
 import org.hibernate.annotations.Filter;
 import org.hibernate.annotations.FilterDef;
 import org.hibernate.annotations.FilterDefs;
+import org.hibernate.annotations.FilterJoinTable;
 import org.hibernate.annotations.Filters;
+import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.ParamDef;
 
 @Entity
 @Table(name = "SHP_SHIPMENT")
 @FilterDefs(value = {
 		@FilterDef(name="Customer", parameters={@ParamDef( name="username", type="string" )}),
-		@FilterDef(name="CSV", parameters={@ParamDef( name="username", type="string" )})
+		@FilterDef(name="CSV", parameters={@ParamDef( name="username", type="string" )}),
+		@FilterDef(name="searchByBkgNum", parameters={@ParamDef( name="shipment_num", type="string" )}),
+		@FilterDef(name="searchByFromCity", parameters={@ParamDef( name="from_city", type="string" )}),
+		@FilterDef(name="searchByToCity", parameters={@ParamDef( name="to_city", type="string" )}),
+//		@FilterDef(name="searchByBkgNums", parameters={@ParamDef( name="shipment_nums", type = "string[]")}),
+		@FilterDef(name="searchByCntrNum", parameters={@ParamDef( name="cntr_num", type = "string")})
 })
 @Filters( {
     @Filter(name="Customer", condition="shipper = :username or consignee = :username"),
-    @Filter(name="CSV", condition="create_by = :username")
+    @Filter(name="CSV", condition="create_by = :username"),
+    @Filter(name="searchByBkgNum", condition="shipment_num = :shipment_num"),
+    @Filter(name="searchByFromCity", condition="from_city = :from_city"),
+    @Filter(name="searchByToCity", condition="to_city = :to_city"),
+    @Filter(name="searchByBkgNums", condition="shipment_num in {:shipment_nums}")
 } )
 public class Shipment {
 	
@@ -84,7 +101,20 @@ public class Shipment {
 	@Column(name="UPDATE_DATE")
 	private Timestamp updateDate;
 	
+//	@ManyToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinTable(name="SHP_CONTAINER", joinColumns={@JoinColumn(name ="shipment_num")},
+//				inverseJoinColumns={@JoinColumn(name ="ref_num")})
+//	@FilterJoinTable(name="searchByCntrNum", condition="cntr_num = :cntr_num")
+//	private List<ShipmentContainer> containers;
 	
+	
+//	public List<ShipmentContainer> getContainers() {
+//		return containers;
+//	}
+//
+//	public void setContainers(List<ShipmentContainer> containers) {
+//		this.containers = containers;
+//	}
 
 	public Shipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {

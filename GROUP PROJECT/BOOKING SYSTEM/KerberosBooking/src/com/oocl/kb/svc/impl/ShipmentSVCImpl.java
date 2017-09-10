@@ -14,6 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.oocl.kb.dao.inf.ShipmentDAO;
 import com.oocl.kb.dao.inf.UserDAO;
 import com.oocl.kb.model.Shipment;
@@ -21,6 +24,7 @@ import com.oocl.kb.model.ShipmentCargo;
 import com.oocl.kb.model.ShipmentContainer;
 import com.oocl.kb.response.ServiceResponse;
 import com.oocl.kb.svc.inf.ShipmentSVC;
+import com.oocl.kb.util.SearchShipmentCriteria;
 
 public class ShipmentSVCImpl implements ShipmentSVC {
 
@@ -56,6 +60,20 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		shipmentDAO.createBooking(shp);
+		createShipmentResponse.setServiceResult("1");
+		
+//		JsonObject jsonObj = gson.fromJson(json, JsonObject.class);
+//		JsonArray array = jsonObj.get("container").getAsJsonArray();
+		
+		JSONObject obj = new JSONObject(json);
+		JSONArray container= obj.getJSONArray("container");
+
+		ArrayList<ShipmentContainer> cntrList = (ArrayList<ShipmentContainer>) gson.fromJson(container.toString(),
+                new TypeToken<ArrayList<ShipmentContainer>>() {
+                }.getType());
+		
+		shipmentDAO.createShpContainer(cntrList, shp.getFromDate());
+		
 		return createShipmentResponse;
 	}
 
@@ -77,16 +95,17 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		JSONArray array = jsonShpCntr.getJSONArray("shp_container");
 		for (int i = 0; i < array.length(); i++) {
 			ShipmentContainer sc = new ShipmentContainer(null, array.getJSONObject(i).getString("cntr_num"), null, null,
-					null);
+					null, null);
 			// sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			cntrList.add(sc);
 		}
-		this.shipmentDAO.createShpContainer(cntrList);
+		//this.shipmentDAO.createShpContainer(cntrList);
 	}
 
 	@Override
-	public List<Shipment> getAllShipments(String username){
-		return this.shipmentDAO.getAllShipments(username, this.userDAO.getUser(username).getRole());
+	public List<Shipment> getAllShipments(String username, String json){
+		SearchShipmentCriteria shpCriteria = new Gson().fromJson(json, SearchShipmentCriteria.class);
+		return this.shipmentDAO.getAllShipments(username, this.userDAO.getUser(username).getRole(), shpCriteria);
 	}
 
 	@Override
@@ -94,7 +113,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
-		this.shipmentDAO.updateShipment(shp, shpNum);
+		this.shipmentDAO.updateShipment(shp);
 		removeShpContainersCargoes(shpNum);
 //		shipmentDAO.createBooking(shp);
 //		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);

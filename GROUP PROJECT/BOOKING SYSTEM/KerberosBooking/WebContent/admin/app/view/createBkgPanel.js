@@ -27,10 +27,12 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
         'Ext.form.Label',
         'Ext.form.field.Date',
         'Ext.grid.Panel',
-        'Ext.grid.column.Column',
-        'Ext.view.Table',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
+        'Ext.grid.column.Column',
+        'Ext.view.Table',
+        'Ext.grid.plugin.CellEditing',
+        'Ext.selection.CheckboxModel',
         'Ext.form.CheckboxGroup',
         'Ext.form.field.Checkbox',
         'Ext.toolbar.Fill'
@@ -58,7 +60,7 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                     height: 201,
                     hidden: true,
                     width: 201,
-                    src: '%5Cimages%5Cbg%5Cenglishmap.jpg'
+                    src: 'resources/images/englishmap.png'
                 }
             ],
             listeners: {
@@ -149,14 +151,15 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             padding: 10,
                                             fieldLabel: 'Shipper',
                                             labelWidth: 120,
-                                            name: 'bookingShipper'
+                                            name: 'shipper'
                                         },
                                         {
                                             xtype: 'datefield',
                                             padding: 10,
                                             fieldLabel: 'From Date',
                                             labelWidth: 120,
-                                            name: 'bookingFromDate'
+                                            format: 'Y-m-d',
+                                            name: 'fromDate'
                                         }
                                     ]
                                 },
@@ -170,14 +173,15 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             padding: 10,
                                             fieldLabel: 'Consignee',
                                             labelWidth: 120,
-                                            name: 'bookingConsignee'
+                                            name: 'consignee'
                                         },
                                         {
                                             xtype: 'datefield',
                                             padding: 10,
                                             fieldLabel: 'To Date',
                                             labelWidth: 120,
-                                            name: 'bookingToDate'
+                                            format: 'Y-m-d',
+                                            name: 'toDate'
                                         }
                                     ]
                                 }
@@ -212,13 +216,16 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     padding: 10,
                                                     fieldLabel: 'From City',
                                                     labelWidth: 120,
-                                                    name: 'bookingFromCity',
+                                                    name: 'fromCity',
                                                     store: [
                                                         'MNL',
                                                         'HKG',
                                                         'ZHA',
                                                         'USA'
-                                                    ]
+                                                    ],
+                                                    listeners: {
+                                                        blur: 'onBookingFromCityBlur'
+                                                    }
                                                 },
                                                 {
                                                     xtype: 'combobox',
@@ -227,11 +234,11 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     padding: 10,
                                                     fieldLabel: 'Cargo Nature',
                                                     labelWidth: 120,
-                                                    name: 'bookingCargoNature',
+                                                    name: 'cargoNature',
                                                     store: [
-                                                        'GP',
+                                                        'GC',
                                                         'RF',
-                                                        'AWK',
+                                                        'AW',
                                                         'DG'
                                                     ]
                                                 },
@@ -242,7 +249,7 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     padding: 10,
                                                     fieldLabel: 'Cargo Description',
                                                     labelWidth: 120,
-                                                    name: 'bookingCargoDesc'
+                                                    name: 'cargoDesc'
                                                 }
                                             ]
                                         },
@@ -257,33 +264,16 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     padding: 10,
                                                     fieldLabel: 'To City',
                                                     labelWidth: 120,
-                                                    name: 'bookingToCity',
+                                                    name:'toCity',
                                                     store: [
                                                         'MNL',
                                                         'HKG',
                                                         'ZHA',
                                                         'USA'
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: 'combobox',
-                                                    id: 'bookingConQuantity',
-                                                    itemId: 'bookingConQuantity',
-                                                    padding: 10,
-                                                    fieldLabel: 'Quantity',
-                                                    labelWidth: 120,
-                                                    name: 'bookingConQuatity',
-                                                    store: [
-                                                        '1',
-                                                        '2',
-                                                        '3',
-                                                        '4',
-                                                        '5',
-                                                        '6',
-                                                        '7',
-                                                        '8',
-                                                        '9'
-                                                    ]
+                                                    ],
+                                                    listeners: {
+                                                        blur: 'onBookingToCityBlur'
+                                                    }
                                                 },
                                                 {
                                                     xtype: 'combobox',
@@ -292,7 +282,7 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     padding: 10,
                                                     fieldLabel: 'HS Code',
                                                     labelWidth: 120,
-                                                    name: 'bookingConHS',
+                                                    name: 'containerHS',
                                                     store: [
                                                         'MNL',
                                                         'HKG',
@@ -311,71 +301,107 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                         {
                                             xtype: 'gridpanel',
                                             title: '',
+                                            height: 177,
+                                            id: 'createContainer',
+                                            store: 'createBooking',
                                             columns: [
                                                 {
-                                                    xtype: 'gridcolumn',
+                                                	xtype: 'gridcolumn',
                                                     flex: 1,
                                                     id: 'bookingConRef',
                                                     itemId: 'bookingConRef',
-                                                    dataIndex: 'string',
+                                                    dataIndex: 'referenceNumber',
                                                     text: 'Reference Number'
                                                 },
                                                 {
-                                                    xtype: 'gridcolumn',
+                                                	xtype: 'gridcolumn',
+                                                    dataIndex: 'containerNumber',
                                                     flex: 1,
                                                     id: 'bookingConNumber',
                                                     itemId: 'bookingConNumber',
-                                                    text: 'Container Number'
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    flex: 1,
-                                                    text: 'Gross Weight',
-                                                    editor: {
-                                                        xtype: 'textfield'
-                                                    }
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    flex: 1,
-                                                    text: 'Net Weight',
-                                                    editor: {
-                                                        xtype: 'textfield'
-                                                    }
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
-                                                    flex: 1,
-                                                    text: 'Weight Unit',
+                                                    text: 'Container Number',
                                                     editor: {
                                                         xtype: 'combobox',
+                                                        name: 'cntrType',
                                                         store: [
-                                                            'kg',
-                                                            'lbs'
+                                                            '20GP',
+                                                            '40GP',
+                                                            '20HQ',
+                                                            '40HQ'
                                                         ]
                                                     }
+                                                },
+                                                {
+                                                	xtype: 'gridcolumn',
+                                                    flex: 1,
+                                                    dataIndex: 'grossWeight',
+                                                    text: 'Gross Weight',
+                                                    editor: {
+                                                        xtype: 'textfield',
+                                                        name: 'grossWt'
+                                                    }
+                                                },
+                                                {
+                                                	xtype: 'gridcolumn',
+                                                    flex: 1,
+                                                    dataIndex: 'netWeight',
+                                                    text: 'Net Weight',
+                                                    editor: {
+                                                        xtype: 'textfield',
+                                                        name: 'netWt'
+                                                    }
+                                                },
+                                                {
+                                                	 xtype: 'gridcolumn',
+                                                     flex: 1,
+                                                     dataIndex: 'weightUnit',
+                                                     text: 'Weight Unit',
+                                                     editor: {
+                                                         xtype: 'combobox',
+                                                         id: 'wtUnit',
+                                                         itemId: 'wtUnit',
+                                                         name: 'wtUnit',
+                                                         store: [
+                                                             'kg',
+                                                             'ton'
+                                                         ]
+                                                     }
                                                 }
                                             ],
                                             dockedItems: [
                                                 {
-                                                    xtype: 'toolbar',
+                                                	xtype: 'toolbar',
                                                     dock: 'top',
                                                     items: [
                                                         {
                                                             xtype: 'button',
+                                                            id: 'addCntr',
+                                                            itemId: 'addCntr',
                                                             text: 'Add'
                                                         },
                                                         {
                                                             xtype: 'button',
+                                                            id: 'deleteCntr',
+                                                            itemId: 'deleteCntr',
                                                             text: 'Delete'
                                                         },
                                                         {
                                                             xtype: 'button',
+                                                            id: 'copyCntr',
+                                                            itemId: 'copyCntr',
                                                             text: 'Copy'
                                                         }
                                                     ]
+                                                    
                                                 }
-                                            ]
+                                            ],plugins: [
+                                                {
+                                                    ptype: 'cellediting'
+                                                }
+                                            ],
+                                            selModel: {
+                                                selType: 'checkboxmodel'
+                                            }
                                         },
                                         {
                                             xtype: 'container',
@@ -476,6 +502,24 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                             }]
                         }
                     });
+    },
+
+    onBookingFromCityBlur: function(component, event, eOpts) {
+        var from = Ext.getCmp('bookingFromCity').getValue(),
+            to = Ext.getCmp('bookingToCity').getValue();
+
+        if (from == to){
+            alert('From City should not be the same as To City! Please change');
+        }
+    },
+
+    onBookingToCityBlur: function(component, event, eOpts) {
+        var from = Ext.getCmp('bookingFromCity').getValue(),
+            to = Ext.getCmp('bookingToCity').getValue();
+
+        if (from == to){
+            alert('From City should not be the same as To City! Please change');
+        }
     }
 
 });

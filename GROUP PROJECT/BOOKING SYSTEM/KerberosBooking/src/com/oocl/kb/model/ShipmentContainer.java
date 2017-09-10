@@ -15,8 +15,8 @@ import javax.persistence.Table;
 public class ShipmentContainer {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="refNumSeq")
-	@SequenceGenerator(name="refNumSeq", sequenceName="REF_NUM_SEQ",allocationSize=1)
+	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="refNumSeq")
+	//@SequenceGenerator(name="refNumSeq", sequenceName="REF_NUM_SEQ",allocationSize=1)
 	@Column(name = "REF_NUM")
 	private Long refNum;
 	
@@ -35,12 +35,20 @@ public class ShipmentContainer {
 	@Column(name = "WT_UNIT")
 	private String wtUnit;
 	
-	public ShipmentContainer(String shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit) {
+	@Column(name = "CNTR_TYPE")
+	private String cntrType;
+	
+	public ShipmentContainer(String shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit, String cntrType) {
 		this.shipmentNum = shipmentNum;
 		this.cntrNum = cntrNum;
 		this.grossWt = grossWt;
 		this.netWt = netWt;
 		this.wtUnit = wtUnit;
+		this.cntrType  = cntrType;
+	}
+
+	public ShipmentContainer() {
+		
 	}
 	
 	public Long getRefNum() {
@@ -79,6 +87,16 @@ public class ShipmentContainer {
 	public void setWtUnit(String wtUnit) {
 		this.wtUnit = wtUnit;
 	}
+
+	public String getCntrType() {
+		return cntrType;
+	}
+
+	public void setCntrType(String cntrType) {
+		this.cntrType = cntrType;
+	}
+	
+	
 	
 
 }

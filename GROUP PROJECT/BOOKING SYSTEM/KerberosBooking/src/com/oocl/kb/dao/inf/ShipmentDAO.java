@@ -2,6 +2,7 @@ package com.oocl.kb.dao.inf;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +12,11 @@ import org.hibernate.SessionFactory;
 import com.oocl.kb.model.Shipment;
 import com.oocl.kb.model.ShipmentCargo;
 import com.oocl.kb.model.ShipmentContainer;
+import com.oocl.kb.util.SearchShipmentCriteria;
 
 
 
-public interface ShipmentDAO {
+public interface ShipmentDAO  {
 	public void setSessionFactory(SessionFactory sessionFactory);
 	
 	public Long createBooking(Shipment shp);
@@ -25,17 +27,23 @@ public interface ShipmentDAO {
 	
 	public String deleteContainer(ShipmentContainer container);
 	
-    public void createShpContainer(ArrayList<ShipmentContainer> cntrList);
+    public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate);
     
     public void createShpCargo(ArrayList<ShipmentCargo> cgoList);
 
-	public List<Shipment> getAllShipments(String username, String role);
+	public List<Shipment> getAllShipments(String username, String role, SearchShipmentCriteria shpCriteria);
   
 	public String deleteCargo(ShipmentCargo cargo);
 	
 	public Shipment getShipmentById(String shpNum);
 
-	public String updateShipment(Shipment shipment, String  shpNum);
+	public String updateShipment(Shipment shipment);
 
+	public List<String> getShpNumByCntrNum(String cntrNum);
 
+	public String getAvailableContainer(String cntrType, Date bookingDate);
+
+	public Long getCgoidSeq();
+
+	public Long getRefNumSeq();
 }
