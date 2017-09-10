@@ -90,14 +90,16 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public ServiceResponse updateShipment(String shpNum, String fromCity, String toCity, Date fromDate, Date toDate,
-			String shipper, String consignee, int approveDoc, int validWeight, int goodCustomer,
-			String shipmentStatus) {
+	public ServiceResponse updateShipment(String json, String shpNum) {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
-		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
-		response.setServiceResult("Update Shipment Details: " + this.shipmentDAO.updateShipment(newShp, shpNum));
+		Shipment shp = gson.fromJson(json, Shipment.class);
+		this.shipmentDAO.updateShipment(shp, shpNum);
 		removeShpContainersCargoes(shpNum);
+//		shipmentDAO.createBooking(shp);
+//		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
+//		response.setServiceResult("Update Shipment Details: " + this.shipmentDAO.updateShipment(newShp, shpNum));
+//		removeShpContainersCargoes(shpNum);
 		//create containers and cargoes again
 
 		return response;
