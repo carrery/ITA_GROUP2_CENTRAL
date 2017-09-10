@@ -46,6 +46,9 @@ Ext.define('KerberosBooking.controller.HomeController', {
         },
         "#registerBtn": {
             click: 'onRegisterBtnClick'
+        },
+        "#registerButton": {
+            click: 'onRegisterButtonClick'
         }
     },
 
@@ -240,12 +243,17 @@ Ext.define('KerberosBooking.controller.HomeController', {
     },
 
     onRegisterBtnClick: function(button, e, eOpts) {
-              var form = button.up('form'),				// Register form
-                    formWindow = button.up('window'),		// Register form window
-                    values = form.getValues();				// Form values
-                   	// Panel shown when logged in
 
-                // Success
+
+        Ext.create('KerberosBooking.view.RegisterForm').show();
+    },
+
+    onRegisterButtonClick: function(button, e, eOpts) {
+        var view = this.getView(),
+            form = button.up('form'),
+            formWindow = button.up('window'),
+            values = form.getValues();
+
 
                 console.log(values);
                  Ext.Msg.alert("Registration Success", "Your account will be checked and verified by the admin.");

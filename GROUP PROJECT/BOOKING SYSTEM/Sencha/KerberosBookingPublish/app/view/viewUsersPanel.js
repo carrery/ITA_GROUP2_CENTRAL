@@ -29,13 +29,15 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
         'Ext.button.Button',
         'Ext.grid.Panel',
         'Ext.view.Table',
-        'Ext.grid.column.Column',
-        'Ext.selection.CheckboxModel'
+        'Ext.selection.CheckboxModel',
+        'Ext.grid.column.Boolean',
+        'Ext.form.field.Checkbox'
     ],
 
     id: 'viewUsersPanel',
     itemId: 'viewUsersPanel',
     scrollable: true,
+    defaultListenerScope: true,
 
     items: [
         {
@@ -187,6 +189,29 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                             flex: 1,
                             dataIndex: 'contactnumber',
                             text: 'Contact Number'
+                        },
+                        {
+                            xtype: 'booleancolumn',
+                            flex: 1,
+                            text: 'canViewBooking',
+                            editor: {
+                                xtype: 'checkboxfield'
+                            }
+                        },
+                        {
+                            xtype: 'booleancolumn',
+                            flex: 1,
+                            text: 'canCreateBooking',
+                            editor: {
+                                xtype: 'checkboxfield'
+                            }
+                        },
+                        {
+                            xtype: 'booleancolumn',
+                            text: 'canManageUsers',
+                            editor: {
+                                xtype: 'checkboxfield'
+                            }
                         }
                     ],
                     selModel: {
@@ -199,10 +224,15 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    id: 'addUser',
+                                    itemId: 'addUser',
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'Add'
+                                    text: 'Add',
+                                    listeners: {
+                                        click: 'onAddUserClick'
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -221,6 +251,10 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                 }
             ]
         }
-    ]
+    ],
+
+    onAddUserClick: function(button, e, eOpts) {
+        Ext.create('KerberosBooking.view.RegisterForm').show();
+    }
 
 });

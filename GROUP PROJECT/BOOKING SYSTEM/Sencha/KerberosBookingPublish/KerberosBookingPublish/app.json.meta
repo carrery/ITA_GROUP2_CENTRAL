@@ -1,1 +1,0 @@
-{"_comment":"Please don't edit. This is Architect data.","name":"KerberosBooking","resources":[],"requires":[],"theme":"ext-theme-crisp-26d99958-d154-45f0-a7bd-df74b0c5b714","classpath":"${app.dir}/app,${app.dir}//resources/","css":[],"js":[{"path":"/resources/Ext.ux.Carousel.js","includeInBundle":true},{"path":"/resources/Ext.ux.GMapPanel.js","includeInBundle":true}]}

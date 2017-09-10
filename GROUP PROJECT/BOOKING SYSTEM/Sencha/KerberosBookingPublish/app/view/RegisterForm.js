@@ -24,7 +24,7 @@ Ext.define('KerberosBooking.view.RegisterForm', {
     ],
 
     modal: true,
-    height: 250,
+    height: 343,
     itemId: 'registerForm',
     width: 400,
     title: 'Register',
@@ -39,10 +39,21 @@ Ext.define('KerberosBooking.view.RegisterForm', {
                     xtype: 'textfield',
                     anchor: '100%',
                     margin: '0 0 10 0',
-                    fieldLabel: 'Name',
+                    fieldLabel: 'First Name',
                     labelAlign: 'right',
                     msgTarget: 'title',
-                    name: 'name',
+                    name: 'firstName',
+                    allowBlank: false,
+                    blankText: 'Enter your full name.'
+                },
+                {
+                    xtype: 'textfield',
+                    anchor: '100%',
+                    margin: '0 0 10 0',
+                    fieldLabel: 'First Name',
+                    labelAlign: 'right',
+                    msgTarget: 'title',
+                    name: 'lastName',
                     allowBlank: false,
                     blankText: 'Enter your full name.'
                 },
@@ -72,22 +83,32 @@ Ext.define('KerberosBooking.view.RegisterForm', {
                     xtype: 'textfield',
                     anchor: '100%',
                     margin: '0 0 10 0',
+                    fieldLabel: 'Contact Number',
+                    labelAlign: 'right',
+                    msgTarget: 'title',
+                    name: 'contactNumber',
+                    allowBlank: false,
+                    blankText: 'Enter Contact'
+                },
+                {
+                    xtype: 'textfield',
+                    anchor: '100%',
+                    margin: '0 0 10 0',
                     fieldLabel: 'Password',
                     labelAlign: 'right',
                     msgTarget: 'title',
                     name: 'password',
+                    inputType: 'password',
                     allowBlank: false,
                     blankText: 'Choose a password.'
                 },
                 {
                     xtype: 'button',
                     formBind: true,
+                    id: 'registerButton',
                     itemId: 'registerButton',
                     scale: 'medium',
-                    text: 'Register',
-                    listeners: {
-                        click: 'onRegisterButtonClick'
-                    }
+                    text: 'Register'
                 }
             ]
         }
