@@ -1,5 +1,7 @@
 package com.oocl.kb.svc.inf;
 
+import java.util.List;
+
 import com.oocl.kb.model.Role;
 import com.oocl.kb.model.User;
 import com.oocl.kb.response.ServiceResponse;
@@ -25,4 +27,5 @@ public interface UserSVC {
 	public User setupUserDetails(String username, String password, String role, String firstName, String lastName,
 			String email, String contactNo);
 	
+	public List<User> searchUser(String username, String fname, String lname, String role);
 }

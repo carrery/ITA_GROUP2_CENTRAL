@@ -26,9 +26,9 @@ public class TestMain {
 
 		// test_validateUser();
 		// test_getUserRole();
-		// test_getAllUsersByUsername();
+		 test_getAllUsersByUsername();
 //		test_createShipment();
-		test_updateShp();
+//		test_updateShp();
 
 	}
 
@@ -46,11 +46,11 @@ public class TestMain {
 	}
 
 	static void test_getAllUsersByUsername() {
-		// UserDAOImpl userDAO = (UserDAOImpl) ctx.getBean("userDAO");
-		// List<User> testList = userDAO.getAllUsersByUsername("");
-		// for(User us : testList ) {
-		// System.out.println(us.getFirstName() + " " + us.getLastName());
-		// }
+		 UserDAOImpl userDAO = (UserDAOImpl) ctx.getBean("userDAO");
+		 List<User> testList = userDAO.getAllUsers("","","","");
+		 for(User us : testList ) {
+		 System.out.println(us.getFirstName() + " " + us.getLastName());
+		 }
 	}
 
 	static void test_createShipment() {
