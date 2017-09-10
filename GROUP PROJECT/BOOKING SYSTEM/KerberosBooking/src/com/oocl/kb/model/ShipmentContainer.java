@@ -15,8 +15,8 @@ import javax.persistence.Table;
 public class ShipmentContainer {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="refNumSeq")
-	@SequenceGenerator(name="refNumSeq", sequenceName="REF_NUM_SEQ",allocationSize=1)
+	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="refNumSeq")
+	//@SequenceGenerator(name="refNumSeq", sequenceName="REF_NUM_SEQ",allocationSize=1)
 	@Column(name = "REF_NUM")
 	private Long refNum;
 	

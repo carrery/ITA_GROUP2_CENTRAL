@@ -101,20 +101,20 @@ public class Shipment {
 	@Column(name="UPDATE_DATE")
 	private Timestamp updateDate;
 	
-	@ManyToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinTable(name="SHP_CONTAINER", joinColumns={@JoinColumn(name ="shipment_num")},
-				inverseJoinColumns={@JoinColumn(name ="ref_num")})
-	@FilterJoinTable(name="searchByCntrNum", condition="cntr_num = :cntr_num")
-	private List<ShipmentContainer> containers;
+//	@ManyToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinTable(name="SHP_CONTAINER", joinColumns={@JoinColumn(name ="shipment_num")},
+//				inverseJoinColumns={@JoinColumn(name ="ref_num")})
+//	@FilterJoinTable(name="searchByCntrNum", condition="cntr_num = :cntr_num")
+//	private List<ShipmentContainer> containers;
 	
 	
-	public List<ShipmentContainer> getContainers() {
-		return containers;
-	}
-
-	public void setContainers(List<ShipmentContainer> containers) {
-		this.containers = containers;
-	}
+//	public List<ShipmentContainer> getContainers() {
+//		return containers;
+//	}
+//
+//	public void setContainers(List<ShipmentContainer> containers) {
+//		this.containers = containers;
+//	}
 
 	public Shipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {
