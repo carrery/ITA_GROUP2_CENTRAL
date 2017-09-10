@@ -42,14 +42,4 @@ public interface ShipmentDAO {
 	public Long getCgoidSeq();
 
 	public Long getRefNumSeq();
-
-	public Long getRefNumSeq();
-	
-	public Long getCgoidSeq();
-	
-	public String getAvailableContainer(String cntrType, Date bookingDate);
-	
-	
-	
-
 }
