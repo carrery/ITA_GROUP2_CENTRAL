@@ -40,8 +40,6 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		tx = session.beginTransaction();
-		//Shipment newShp = new Shipment(fromCity, toCity, null, null, shipper, consignee, 0, 0, 0, shipmentStatus);
-		//Long shpNum = (Long) session.save(shp);
 		session.save(shp);
 		tx.commit();
 		session.close();
@@ -105,7 +103,6 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 			shpCntr.setCntrNum(cntrNum);
 			session.save(shpCntr);
 		}
-
 		tx.commit();
 		session.close();
 	}
@@ -222,6 +219,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	@Override
 	public Long getRefNumSeq() {
 		Session session = sessionFactory.openSession();
+		Transaction tx = null;
 		tx = session.beginTransaction();
 		Query query = session.createSQLQuery("SELECT REF_NUM_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
 		Long refNum = (Long) query.uniqueResult();
@@ -233,6 +231,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	public Long getCgoidSeq() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
+		Transaction tx = null;
 		tx = session.beginTransaction();
 		Query query = session.createSQLQuery("SELECT CGO_ID_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
 		Long cgoid = (Long) query.uniqueResult();
@@ -244,6 +243,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	public String getAvailableContainer(String cntrType, Date bookingDate){
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
+		Transaction tx = null;
 		tx = session.beginTransaction();
 		
 		String newBkgDate = bookingDate.toString();
