@@ -95,10 +95,9 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 
 	@Override
 	public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate) {
+		Session session = sessionFactory.openSession();
 		Transaction tx = null;
-
 		tx = session.beginTransaction();
-
 		for (ShipmentContainer shpCntr : cntrList) {
 			Long refNum = getRefNumSeq();
 			String cntrNum = getAvailableContainer(shpCntr.getCntrType(), bookingDate);
@@ -226,6 +225,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		tx = session.beginTransaction();
 		Query query = session.createSQLQuery("SELECT REF_NUM_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
 		Long refNum = (Long) query.uniqueResult();
+		session.close();
 		return refNum;
 	}
 
@@ -236,6 +236,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		tx = session.beginTransaction();
 		Query query = session.createSQLQuery("SELECT CGO_ID_SEQ.NEXTVAL as seq FROM DUAL").addScalar("seq", StandardBasicTypes.LONG);
 		Long cgoid = (Long) query.uniqueResult();
+		session.close();
 		return cgoid;
 	}
 
@@ -251,6 +252,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		query.setParameter(0, cntrType);
 		query.setParameter(1, newBkgDate);
 		String cntrNum = (String) query.uniqueResult();
+		session.close();
 		return cntrNum;
 	}
 	
