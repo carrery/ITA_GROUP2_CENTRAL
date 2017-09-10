@@ -1,5 +1,7 @@
 package com.oocl.kb.svc.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -108,6 +110,12 @@ public class UserSVCImpl implements UserSVC{
 		}
 		
 		return user;
+	}
+
+	@Override
+	public List<User> searchUser(String username, String fname, String lname, String role) {
+		// TODO Auto-generated method stub		
+		return userDAO.getAllUsers(username,fname,lname,role);
 	}
 	
 }
