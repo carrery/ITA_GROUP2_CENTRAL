@@ -210,20 +210,14 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	@Override
 	public String getAvailableContainer(String cntrType, Date bookingDate){
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
 		tx = session.beginTransaction();
 		
 		String newBkgDate = bookingDate.toString();
-		java.util.Date date = null;
-		try {
-			date = new SimpleDateFormat("yyyy/MM/dd").parse(newBkgDate);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
 		Query query = session.createSQLQuery("SELECT CNTR_NUM FROM CNTR_AVAIL WHERE CNTR_TYPE = ? AND (LASTDATE <= ? OR LASTDATE IS NULL) AND ROWNUM = 1");
 		query.setParameter(0, cntrType);
-		query.setParameter(1, date);
+		query.setParameter(1, newBkgDate);
 		String cntrNum = (String) query.uniqueResult();
 		return cntrNum;
 	}
