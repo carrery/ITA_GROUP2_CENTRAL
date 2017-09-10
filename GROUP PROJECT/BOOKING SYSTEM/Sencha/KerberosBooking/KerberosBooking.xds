@@ -1,0 +1,73 @@
+{
+    "name": "KerberosBooking",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.1.240",
+            "frameworkVersion": "5.1.4.338"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:50493/",
+        "exportPath": "C:/Users/hanna/Desktop/Project/Kerberos/KerberosBookingPublish",
+        "lockUrlPrefix": true,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "sdkPath": "",
+        "displayfield-ExtBox1-1259-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1313-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1121-inputEl": "a new version of the framework is available"
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "af0e876a-ec58-4697-bddc-8668f44977fc",
+            "d5160550-a745-4763-910a-cd2a336c487c",
+            "9973612a-9b56-4c18-87cc-1e97eb95b54f",
+            "0ada237c-8fd6-4d59-bc4a-1e430498c788",
+            "583d2c8d-a734-4e3c-aabe-df5c35929f07",
+            "021753d5-020c-4971-88b5-49fe1e01adbe",
+            "d0169788-e07f-4700-8917-2f02e784f040",
+            "0fbf2026-9d13-4a37-baf9-8bbe118d20e7",
+            "7be56661-b5bf-425e-a32e-86cc880582be",
+            "91cc8495-33c4-4b98-855b-39b580704862",
+            "acb128f3-cfc8-45f0-9061-7a9628bab079"
+        ],
+        "store": [
+            "01765c6b-cbbe-4acf-b4ec-c697b3aa8318"
+        ],
+        "controller": [
+            "4003994a-4a76-46fa-85ad-ec9f22d48871",
+            "0f25b61b-7f4a-414b-83f2-de4cae551015",
+            "0194c987-76b2-4fd5-9a06-e4de3bc42131"
+        ],
+        "model": [
+            "63381616-0a41-45c3-af09-f2235931b3fe"
+        ],
+        "resource": [
+            "21d39171-39d0-4171-bbaf-901980656599",
+            "26d99958-d154-45f0-a7bd-df74b0c5b714",
+            "78ebde37-5a77-4ef7-be94-8ad048374811",
+            "fea6a819-c93d-4dc0-95af-92002be7f7aa"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

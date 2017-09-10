@@ -1,0 +1,318 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "mainViewport"
+        ],
+        "designer|initialView": true,
+        "designer|userAlias": "mainViewport",
+        "designer|userClassName": "mainViewport",
+        "id": "mainViewport",
+        "itemId": "mainViewport",
+        "layout": "border",
+        "scrollable": true
+    },
+    "configAlternates": {
+        "scrollable": "boolean",
+        "alternateClassName": "typedarray",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "id": "string",
+        "itemId": "string",
+        "layout": "string"
+    },
+    "name": "MyViewport1",
+    "designerId": "acb128f3-cfc8-45f0-9061-7a9628bab079",
+    "viewControllerInstanceId": "8a347cb2-9170-4c28-8463-f81536f5493b",
+    "viewModelInstanceId": "a060c5e5-283e-4ffa-9fd3-ad88510c4e7d",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "height": 63,
+                "id": "homeToolbar",
+                "itemId": "homeToolbar",
+                "layout|margins": "0 0 0 0",
+                "layout|region": "north",
+                "margin": "0 0 0 0",
+                "padding": 0
+            },
+            "configAlternates": {
+                "dock": "string",
+                "height": "auto",
+                "layout|margins": "string",
+                "layout|region": "string",
+                "margin": "auto",
+                "padding": "auto",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyToolbar2",
+            "designerId": "c7c74eaf-b24e-4f22-a712-acf5a9529e84",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "homeBtn",
+                        "itemId": "homeBtn",
+                        "layout|flex": null,
+                        "scale": "medium",
+                        "text": "Home"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "scale": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "2847b0ed-f894-4d2e-a99f-72028f8ddfa8"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "kerberosBtn",
+                        "itemId": "kerberosBtn",
+                        "layout|flex": null,
+                        "layout|margins": "",
+                        "margin": "0 0 0 0",
+                        "scale": "medium",
+                        "text": "Kerberos Shipping"
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "layout|margins": "string",
+                        "margin": "auto",
+                        "scale": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton6",
+                    "designerId": "900c8d0c-80c7-4f42-84b5-f24a63bc2560"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "createBtn",
+                        "itemId": "createBtn",
+                        "layout|flex": null,
+                        "scale": "medium",
+                        "text": "Create Booking"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "scale": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton8",
+                    "designerId": "d62e11d3-5975-4104-a3f9-036e130f82fd"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "viewBtn",
+                        "itemId": "viewBtn",
+                        "layout|flex": null,
+                        "scale": "medium",
+                        "text": "View Booking"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "scale": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "e976b81d-a406-4277-ace3-786018ea00b6"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "aboutBtn",
+                        "itemId": "aboutBtn",
+                        "layout|flex": null,
+                        "scale": "medium",
+                        "text": "About"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "scale": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton9",
+                    "designerId": "737ca427-e47e-46d8-8b2c-997f70ef0505"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "id": "loginBtn",
+                        "itemId": "loginBtn",
+                        "layout|flex": null,
+                        "layout|margins": "0 0 0 0",
+                        "margin": "0 0 0 0",
+                        "scale": "medium",
+                        "text": "Login"
+                    },
+                    "configAlternates": {
+                        "dock": "string",
+                        "flex": "number",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "layout|margins": "string",
+                        "margin": "auto",
+                        "scale": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "04d60ec5-efba-427c-999c-99ef19615cc6"
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "3de03d89-ec94-4766-b933-1556ca9e86e7"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "flex": 1,
+                        "height": 31,
+                        "layout|flex": 1,
+                        "src": "\\images\\KerberosBanner.jpg",
+                        "width": 156
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "height": "auto",
+                        "layout|flex": "number",
+                        "src": "uri",
+                        "width": "auto"
+                    },
+                    "name": "MyImg1",
+                    "designerId": "dd48b60a-0b30-4a23-99ae-313180a647eb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "mainContainer",
+                "itemId": "mainContainer",
+                "layout": "card",
+                "layout|flex": 1,
+                "layout|region": "center"
+            },
+            "configAlternates": {
+                "layout": "string",
+                "layout|flex": "number",
+                "layout|region": "string",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyContainer1",
+            "designerId": "5d4f344b-b3f1-4a2c-8017-8aaf9b16dd08"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainViewportAfterRender",
+                "implHandler": [
+                    "var viewport = Ext.ComponentQuery.query('mainViewport')[0];",
+                    "var center = viewport.down('[region=center]');",
+                    "",
+                    "var view = Ext.create('myPanel');",
+                    "",
+                    "center.add(view);",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onMainViewportAfterRender",
+            "designerId": "ca3776bc-02bc-4f25-9b5d-ecb627053e56"
+        }
+    ]
+}
