@@ -23,5 +23,5 @@ public interface ShipmentSVC {
 
 	public List<Shipment> getAllShipments(String username, String json);
 
-	public ServiceResponse updateShipment(String shpNum, String fromCity);
+	public ServiceResponse updateShipment(String shpNum);
 }

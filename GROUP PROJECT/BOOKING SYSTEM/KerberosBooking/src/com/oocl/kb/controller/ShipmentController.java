@@ -32,21 +32,10 @@ public class ShipmentController {
 			@RequestParam("jsonString") String json, HttpServletRequest request) {
 		return shpSVC.getAllShipments(username, json);
 	}
-
-//	@RequestMapping(value = "/updateShipment", method = RequestMethod.POST)
-//	public @ResponseBody ServiceResponse updateShipment(@RequestParam("shpnum") String shpnum, @RequestParam("fromCity") String fromCity,
-//			@RequestParam("toCity") String toCity, @RequestParam("fromDate") Date fromDate,
-//			@RequestParam("toDate") Date toDate, @RequestParam("shipper") String shipper,
-//			@RequestParam("consignee") String consignee, @RequestParam("approveDoc") int approveDoc,
-//			@RequestParam("validWeight") int validWeight, @RequestParam("goodCustomer") int goodCustomer,
-//			@RequestParam("shipmentStatus") String shipmentStatus, HttpServletRequest request) {
-//		return shpSVC.updateShipment(shpnum,fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc,
-//				validWeight, goodCustomer, shipmentStatus);
-//	}
 	
 	@RequestMapping(value = "/updateShipment", method = RequestMethod.POST)
-	public @ResponseBody ServiceResponse updateShipment(@RequestParam("jsonString") String json,@RequestParam("shpnum") String shpnum,  HttpServletRequest request) {
-		return shpSVC.updateShipment(json, shpnum);
+	public @ResponseBody ServiceResponse updateShipment(@RequestParam("jsonString") String json,  HttpServletRequest request) {
+		return shpSVC.updateShipment(json);
 	}
 	
 }

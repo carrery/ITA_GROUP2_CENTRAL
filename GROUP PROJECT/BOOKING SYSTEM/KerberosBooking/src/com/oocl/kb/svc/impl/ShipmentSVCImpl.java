@@ -106,16 +106,27 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 	}
 
 	@Override
-	public ServiceResponse updateShipment(String json, String shpNum) {
+	public ServiceResponse updateShipment(String json) {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
+		String shpStatus = shp.getApproveDoc() != 1 && shp.getGoodCustomer() != 1 
+				&& shp.getValidWt() != 1 ? "Pending" :  "Confirmed";
+		shp.setShipmentStatus(shpStatus);
+		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
+		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		this.shipmentDAO.updateShipment(shp);
-		removeShpContainersCargoes(shpNum);
-//		shipmentDAO.createBooking(shp);
-//		Shipment newShp = new Shipment(fromCity, toCity, fromDate, toDate, shipper, consignee, approveDoc, validWeight, goodCustomer, shipmentStatus);
-//		response.setServiceResult("Update Shipment Details: " + this.shipmentDAO.updateShipment(newShp, shpNum));
-//		removeShpContainersCargoes(shpNum);
+		removeShpContainersCargoes(shp.getShipmentNum().toString());
+		
+		JSONObject bkgObj = new JSONObject(json);
+		JSONArray cntrs = bkgObj.getJSONArray("container");
+		
+		ArrayList<ShipmentContainer> cntrList = (ArrayList<ShipmentContainer>) gson.fromJson(cntrs.toString(),
+                new TypeToken<ArrayList<ShipmentContainer>>() {
+                }.getType());
+				
+		shipmentDAO.createShpContainer(cntrList, shp.getFromDate(), shp.getShipmentNum());
+		
 		//create containers and cargoes again
 
 		return response;
