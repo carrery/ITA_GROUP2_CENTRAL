@@ -45,7 +45,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		session.save(shp);
 		tx.commit();
 		session.close();
-		return (Long) session.save(shp);
+		return 1L;
 
 	}
 
