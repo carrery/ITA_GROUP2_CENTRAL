@@ -15,12 +15,12 @@ public class TestJson {
 
 		List<ShipmentContainer> list = new ArrayList<ShipmentContainer>();
 		JSONArray array = obj.getJSONArray("shp_container");
-		for(int i = 0 ; i < array.length() ; i++){
-			ShipmentContainer sc = new ShipmentContainer(null, null, null, null, null);
-			sc.setCntrNum(array.getJSONObject(i).getString("cntr_num"));
-			sc.setRefNum(Long.parseLong(array.getJSONObject(i).getString("ref_num")));
-		    list.add(sc);
-		}
+//		for(int i = 0 ; i < array.length() ; i++){
+//			ShipmentContainer sc = new ShipmentContainer(null, null, null, null, null);
+//			sc.setCntrNum(array.getJSONObject(i).getString("cntr_num"));
+//			sc.setRefNum(Long.parseLong(array.getJSONObject(i).getString("ref_num")));
+//		    list.add(sc);
+//		}
 		
 		Long shp_num = obj.getLong("shp_num");
 		
