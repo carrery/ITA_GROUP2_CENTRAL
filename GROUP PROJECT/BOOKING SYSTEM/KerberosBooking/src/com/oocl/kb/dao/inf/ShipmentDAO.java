@@ -43,5 +43,13 @@ public interface ShipmentDAO {
 
 	public Long getRefNumSeq();
 
+	public Long getRefNumSeq();
+	
+	public Long getCgoidSeq();
+	
+	public String getAvailableContainer(String cntrType, Date bookingDate);
+	
+	
+	
 
 }
