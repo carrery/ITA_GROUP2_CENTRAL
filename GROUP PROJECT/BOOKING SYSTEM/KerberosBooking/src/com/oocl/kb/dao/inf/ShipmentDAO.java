@@ -2,6 +2,7 @@ package com.oocl.kb.dao.inf;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import com.oocl.kb.util.SearchShipmentCriteria;
 
 
 
-public interface ShipmentDAO {
+public interface ShipmentDAO  {
 	public void setSessionFactory(SessionFactory sessionFactory);
 	
 	public Long createBooking(Shipment shp);

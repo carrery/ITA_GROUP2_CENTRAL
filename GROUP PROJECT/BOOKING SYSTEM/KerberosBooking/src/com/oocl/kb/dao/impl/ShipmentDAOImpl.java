@@ -39,15 +39,13 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
-
 		tx = session.beginTransaction();
 		//Shipment newShp = new Shipment(fromCity, toCity, null, null, shipper, consignee, 0, 0, 0, shipmentStatus);
-		Long shpNum = (Long) session.save(shp);
+		//Long shpNum = (Long) session.save(shp);
+		session.save(shp);
 		tx.commit();
-
 		session.close();
-		System.out.println("Booking Created");
-		return shpNum;
+		return (Long) session.save(shp);
 
 	}
 
