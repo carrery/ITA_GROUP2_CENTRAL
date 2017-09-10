@@ -76,7 +76,7 @@
 
 	<!-- Bean for Session Factory -->
 	<beans:bean id="hibernate4AnnotatedSessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" scope="prototype">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
