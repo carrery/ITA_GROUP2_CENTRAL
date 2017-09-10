@@ -62,10 +62,13 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		shipmentDAO.createBooking(shp);
 		createShipmentResponse.setServiceResult("1");
 		
-		JsonObject jsonObj = gson.fromJson(json, JsonObject.class);
-		JsonArray array = jsonObj.get("container").getAsJsonArray();
+//		JsonObject jsonObj = gson.fromJson(json, JsonObject.class);
+//		JsonArray array = jsonObj.get("container").getAsJsonArray();
 		
-		ArrayList<ShipmentContainer> cntrList = (ArrayList<ShipmentContainer>) gson.fromJson(array,
+		JSONObject obj = new JSONObject(json);
+		JSONArray container= obj.getJSONArray("container");
+
+		ArrayList<ShipmentContainer> cntrList = (ArrayList<ShipmentContainer>) gson.fromJson(container.toString(),
                 new TypeToken<ArrayList<ShipmentContainer>>() {
                 }.getType());
 		
