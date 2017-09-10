@@ -23,19 +23,19 @@ Ext.define('KerberosBooking.model.createBooking', {
 
     fields: [
         {
-            name: 'referenceNumber'
+            name: 'refNum'
         },
         {
-            name: 'containerNumber'
+            name: 'cntrType'
         },
         {
-            name: 'grossWeight'
+            name: 'grossWt'
         },
         {
-            name: 'netWeight'
+            name: 'netWt'
         },
         {
-            name: 'weightUnit'
+            name: 'wtUnit'
         }
     ]
 });
