@@ -153,10 +153,12 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		tx = session.beginTransaction();
 
 		for (ShipmentContainer shpCntr : cntrList) {
+			ShipmentCargo newShpCgo = new ShipmentCargo();
+			newShpCgo = shpCgo;
 			Long cgoId = getCgoidSeq();
-			shpCgo.setCargoId(cgoId);
-			shpCgo.setRefNum(shpCntr.getRefNum());
-			session.save(shpCgo);
+			newShpCgo.setCargoId(cgoId);
+			newShpCgo.setRefNum(shpCntr.getRefNum());
+			session.save(newShpCgo);
 		}
 
 		tx.commit();
@@ -260,7 +262,21 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		session.close();
 		return cntrNum;
 	}
-	
-	
+
+	@Override
+	public void createShpCargo(ArrayList<ShipmentCargo> cgoList) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		Transaction tx = null;
+
+		tx = session.beginTransaction();
+
+		for (ShipmentCargo shpCgo : cgoList) {
+			session.save(shpCgo);
+		}
+
+		tx.commit();
+		session.close();
+	}
 
 }
