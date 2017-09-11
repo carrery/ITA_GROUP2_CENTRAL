@@ -107,13 +107,13 @@ public class Shipment {
 	@FilterJoinTable(name="searchByCntrNum", condition="cntr_num = :cntr_num")
 	private List<ShipmentContainer> containers;
 	
-//	public List<ShipmentContainer> getContainers() {
-//		return containers;
-//	}
-//
-//	public void setContainers(List<ShipmentContainer> containers) {
-//		this.containers = containers;
-//	}
+	public List<ShipmentContainer> getContainers() {
+		return containers;
+	}
+
+	public void setContainers(List<ShipmentContainer> containers) {
+		this.containers = containers;
+	}
 
 	public Shipment(String fromCity, String toCity, Date fromDate, Date toDate, String shipper,
 			String consignee, int approveDoc, int validWt, int goodCustomer, String shipmentStatus) {

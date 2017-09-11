@@ -33,7 +33,7 @@ Ext.application({
         'RegisterForm',
         'MyPanel',
         'mainViewport',
-        'viewBookingPanel',
+        'FindBookingPanel',
         'myHomePanel',
         'createBkgPanel',
 		'adminPanel'

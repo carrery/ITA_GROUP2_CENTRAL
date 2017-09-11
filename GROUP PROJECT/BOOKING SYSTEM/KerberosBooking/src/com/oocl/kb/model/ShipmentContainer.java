@@ -1,14 +1,23 @@
 package com.oocl.kb.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.FilterJoinTable;
 
 @Entity
 @Table(name = "SHP_CONTAINER")
@@ -38,6 +47,20 @@ public class ShipmentContainer {
 	@Column(name = "CNTR_TYPE")
 	private String cntrType;
 	
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinTable(name="SHP_CGO", joinColumns={@JoinColumn(name ="ref_num")},
+				inverseJoinColumns={@JoinColumn(name ="cgo_id")})
+//	@FilterJoinTable(name="searchByCntrNum", condition="cntr_num = :cntr_num")
+	private ShipmentCargo cargo;
+	
+	public ShipmentCargo getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(ShipmentCargo cargo) {
+		this.cargo = cargo;
+	}
+
 	public ShipmentContainer(Long shipmentNum, String cntrNum, BigDecimal grossWt, BigDecimal netWt, String wtUnit, String cntrType) {
 		this.shipmentNum = shipmentNum;
 		this.cntrNum = cntrNum;

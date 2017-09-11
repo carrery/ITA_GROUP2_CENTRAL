@@ -23,9 +23,9 @@ Ext.define('KerberosBooking.controller.FindBookingsController', {
 //        "#deleteCntr": {
 //            click: 'onDeleteCntrClick'
 //        },
-//        "#copyCntr": {
-//            click: 'onCopyCntrClick'
-//        }
+        "#viewBkgBtn": {
+            click: 'onViewBtnClick'
+        },
     	"#searchBkgBtn": {
           click: 'onSearchBkgBtnClick'
     	}
@@ -46,16 +46,21 @@ Ext.define('KerberosBooking.controller.FindBookingsController', {
 		});
     },
 
-//    onDeleteCntrClick: function(button, e, eOpts) {
-//        var grid = Ext.getCmp('createContainer');
-//        var store = grid.getStore();
-//        var selection = grid.getSelectionModel().getSelection()[0];
-//
-//        console.log(selection);
-//                if (selection) {
-//                    store.remove(selection);
-//                }
-//    },
+    onViewBtnClick: function(button, e, eOpts) {
+    	var forms = button.up('form'),
+        value = Ext.encode(forms.getValues()),
+        grid = Ext.getCmp('bkgGrid');
+    	var bookingNum = grid.getSelection()[0].data.shipmentNum;
+    	grid.getStore().reload({
+    		params:{
+    			username:localStorage.getItem('name'),
+    			jsonString: value
+			},
+			callback: function(){
+				grid.getView().refresh();
+			}
+		});
+    },
 //
 //    onCopyCntrClick: function(button, e, eOpts) {
 //        // copy the selected record

@@ -113,7 +113,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
             createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
         	//aboutPanel = Ext.ComponentQuery.query('')[0];
 
-            view = Ext.create('viewBookingPanel');
+            view = Ext.create('FindBookingPanel');
 
         console.log(viewport);
 
@@ -135,7 +135,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
     onHomeBtnClick: function(button, e, eOpts) {
         // var viewport = Ext.ComponentQuery.query('mainViewport')[0],
         //     center = viewport.down('[region=center]'),
-        //     viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+        //     viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
         //     homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
         //     createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
         // 	//aboutPanel = Ext.ComponentQuery.query('')[0];
@@ -153,7 +153,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
         var viewport = Ext.ComponentQuery.query('mainViewport')[0];
         var center = viewport.down('[region=center]'),
             homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
-            viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+            viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
             createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
 
         var view = Ext.create('MyPanel');
@@ -168,7 +168,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
         var viewport = Ext.ComponentQuery.query('mainViewport')[0],
             center = viewport.down('[region=center]'),
             mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
-            viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+            viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
             createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
         	//aboutPanel = Ext.ComponentQuery.query('')[0];
 
@@ -186,7 +186,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
         var viewport = Ext.ComponentQuery.query('mainViewport')[0],
             center = viewport.down('[region=center]'),
             mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
-            viewPanel = Ext.ComponentQuery.query('viewBookingPanel')[0],
+            viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
             homePanel = Ext.ComponentQuery.query('myHomePanel')[0];
         	//aboutPanel = Ext.ComponentQuery.query('')[0];
 

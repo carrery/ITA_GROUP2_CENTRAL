@@ -71,7 +71,7 @@ Ext.define('KerberosBooking.view.mainViewport', {
                     id: 'viewBtn',
                     itemId: 'viewBtn',
                     scale: 'medium',
-                    text: 'View Booking'
+                    text: 'Find Booking'
                 },
                 {
                     xtype: 'button',
