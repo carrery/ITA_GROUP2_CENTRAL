@@ -95,9 +95,16 @@ public class UserSVCImpl implements UserSVC{
 		// TODO Auto-generated method stub		
 		UserMgtResponse response = new UserMgtResponse();
 		List<UserReturn> users = new ArrayList<UserReturn>();
-		UserReturn userRet;
+		UserReturn userRet = new UserReturn();
 		for(User user : this.userDAO.getAllUsers(username,firstName,lastName,role)) {
-			userRet = (UserReturn)user;
+			userRet.setUsername(user.getUsername());
+			userRet.setPassword(user.getPassword());
+			userRet.setFirstName(user.getFirstName());
+			userRet.setLastName(user.getLastName());
+			userRet.setRole(user.getRole());
+			userRet.setContactNo(user.getContactNo());
+			userRet.setEmail(user.getEmail());
+			userRet.setDeleted(0);
 			userRet.setCanCreateBkg(getRoleByUser(user.getRole()).getAccessCB());
 			userRet.setCanManageUsers(getRoleByUser(user.getRole()).getAccessUM());
 			userRet.setCanViewBkg(getRoleByUser(user.getRole()).getAccessFS());
