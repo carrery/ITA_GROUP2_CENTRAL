@@ -119,19 +119,19 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 			filter.setParameter("username", username);
 		}
 		if (!shpCriteria.equals(null)) {
-			if(shpCriteria.getBkgNum() != null) {
+			if(shpCriteria.getBkgNum() != null && !shpCriteria.getBkgNum().equals("")) {
 				filter = session.enableFilter("searchByBkgNum");
 				filter.setParameter("shipment_num", shpCriteria.getBkgNum());
 			}
-			if(shpCriteria.getFromCity() != null) {
+			if(shpCriteria.getFromCity() != null && !shpCriteria.getFromCity().equals("")) {
 				filter = session.enableFilter("searchByFromCity");
 				filter.setParameter("from_city", shpCriteria.getFromCity());
 			}
-			if(shpCriteria.getToCity() != null) {
+			if(shpCriteria.getToCity() != null && !shpCriteria.getToCity().equals("")) {
 				filter = session.enableFilter("searchByToCity");
 				filter.setParameter("to_city", shpCriteria.getToCity());
 			}
-			if(shpCriteria.getCntrNum() != null) {
+			if(shpCriteria.getCntrNum() != null && !shpCriteria.getCntrNum().equals("")) {
 				filter = session.enableFilter("searchByCntrNum");
 				filter.setParameter("cntr_num", shpCriteria.getCntrNum());
 			}
