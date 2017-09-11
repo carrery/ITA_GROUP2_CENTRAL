@@ -57,10 +57,9 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                     xtype: 'image',
                     dock: 'top',
                     flex: 1,
-                    height: 201,
-                    hidden: true,
-                    width: 201,
-                    src: 'resources/images/englishmap.png'
+                    height: 500,
+                    width: 500,
+                    src: 'resources/img/englishmap.png'
                 }
             ],
             listeners: {
@@ -114,6 +113,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                     padding: 10,
                                     fieldLabel: 'Booking Office',
                                     name: 'bookingOffice',
+                                    allowBlank: false,
+                                    validateBlank: true,
                                     store: [
                                         'MNL',
                                         'HKG',
@@ -124,8 +125,17 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                 {
                                     xtype: 'label',
                                     flex: 1,
+                                    html: '',
                                     padding: 10,
+                                    width: 147,
                                     text: 'Booking Status'
+                                },
+                                {
+                                    xtype: 'label',
+                                    flex: 1,
+                                    html: '<span style="color:red;font-weight:bold">Pending</span>',
+                                    padding: 10,
+                                    width: 147
                                 }
                             ]
                         },
@@ -151,13 +161,17 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             padding: 10,
                                             fieldLabel: 'Shipper',
                                             labelWidth: 120,
-                                            name: 'shipper'
+                                            name: 'shipper',
+                                            allowBlank: false,
+                                            validateBlank: true
                                         },
                                         {
                                             xtype: 'datefield',
                                             padding: 10,
                                             fieldLabel: 'From Date',
                                             labelWidth: 120,
+                                            allowBlank: false,
+                                            validateBlank: true,
                                             format: 'Y-m-d',
                                             name: 'fromDate'
                                         }
@@ -170,6 +184,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             xtype: 'textfield',
                                             id: 'bookingConsignee',
                                             itemId: 'bookingConsignee',
+                                            allowBlank: false,
+                                            validateBlank: true,
                                             padding: 10,
                                             fieldLabel: 'Consignee',
                                             labelWidth: 120,
@@ -179,6 +195,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                             xtype: 'datefield',
                                             padding: 10,
                                             fieldLabel: 'To Date',
+                                            allowBlank: false,
+                                            validateBlank: true,
                                             labelWidth: 120,
                                             format: 'Y-m-d',
                                             name: 'toDate'
@@ -213,6 +231,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     xtype: 'combobox',
                                                     id: 'bookingFromCity',
                                                     itemId: 'bookingFromCity',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     padding: 10,
                                                     fieldLabel: 'From City',
                                                     labelWidth: 120,
@@ -235,6 +255,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     xtype: 'combobox',
                                                     id: 'bookingCargoNature',
                                                     itemId: 'bookingCargoNature',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     padding: 10,
                                                     fieldLabel: 'Cargo Nature',
                                                     labelWidth: 120,
@@ -250,6 +272,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     xtype: 'textfield',
                                                     id: 'bookingCargoDesc',
                                                     itemId: 'bookingCargoDesc',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     padding: 10,
                                                     fieldLabel: 'Cargo Description',
                                                     labelWidth: 120,
@@ -265,6 +289,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     xtype: 'combobox',
                                                     id: 'bookingToCity',
                                                     itemId: 'bookingToCity',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     padding: 10,
                                                     fieldLabel: 'To City',
                                                     labelWidth: 120,
@@ -289,12 +315,26 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     itemId: 'bookingConHS',
                                                     padding: 10,
                                                     fieldLabel: 'HS Code',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     labelWidth: 120,
                                                     name: 'containerHS',
                                                     store: [
                                                         '10 - Cereal Grains',
                                                         '50 - Silk & Silk Fabrics'
                                                     ]
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    id: 'usernameLog',
+                                                    itemId: 'usernameLog',
+                                                    readOnly: true,
+                                                    allowBlank: false,
+                                                    validateBlank: true,
+                                                    padding: 10,
+                                                    fieldLabel: 'createBy',
+                                                    labelWidth: 120,
+                                                    name: 'createBy'
                                                 }
                                             ]
                                         }
@@ -326,6 +366,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     id: 'bookingConNumber',
                                                     itemId: 'bookingConNumber',
                                                     text: 'Container Type',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     editor: {
                                                         xtype: 'combobox',
                                                         name: 'cntrType',
@@ -343,25 +385,31 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     flex: 1,
                                                     dataIndex: 'grossWt',
                                                     text: 'Gross Weight',
-                                                    editor: {
+                                                    editor: new Ext.form.NumberField({
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                         xtype: 'textfield',
                                                         name: 'grossWt'
-                                                    }
+                                                    })
                                                 },
                                                 {
                                                 	xtype: 'gridcolumn',
                                                     flex: 1,
                                                     dataIndex: 'netWt',
+                                                    allowBlank: false,
+                                                    validateBlank: true,
                                                     text: 'Net Weight',
-                                                    editor: {
+                                                    editor: new Ext.form.NumberField({
                                                         xtype: 'textfield',
                                                         name: 'netWt'
-                                                    }
+                                                    })
                                                 },
                                                 {
                                                 	 xtype: 'gridcolumn',
                                                      flex: 1,
                                                      dataIndex: 'wtUnit',
+                                                     allowBlank: false,
+                                                     validateBlank: true,
                                                      text: 'Weight Unit',
                                                      editor: {
                                                          xtype: 'combobox',

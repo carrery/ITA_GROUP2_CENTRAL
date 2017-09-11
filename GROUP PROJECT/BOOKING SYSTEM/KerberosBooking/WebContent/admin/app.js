@@ -22,10 +22,12 @@ Ext.Loader.setConfig({
 Ext.application({
 	models: [
         'createBooking',
+        'userManagement',
         'AllBookingsModel'
     ],
     stores: [
         'createBooking',
+        'userManagement',
         'AllBookingsStore'
     ],
     views: [
@@ -37,7 +39,8 @@ Ext.application({
         'ViewBookingPanel',
         'myHomePanel',
         'createBkgPanel',
-		'adminPanel'
+		'adminPanel',
+		'viewUsersPanel'
     ],
     controllers: [
         'HomeController',
