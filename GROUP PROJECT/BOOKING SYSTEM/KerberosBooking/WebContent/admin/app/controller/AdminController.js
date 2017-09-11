@@ -37,9 +37,25 @@ Ext.define('KerberosBooking.controller.AdminController', {
         },
         "#submitSearchBtn": {
         	click: 'onSubmitSearchBtn'
+        },
+        "#adminLogout": {
+        	click: 'onAdminLogout'
+        },
+        "#deleteUser": {
+        	click: 'onDeleteUser'
+        },
+        "#editUser": {
+        	click: 'onEditUser'
+        },
+        "#resetSearchBtn": {
+        	click: 'onResetSearchBtn'
         }
+        
+        
+        
     },
 
+    
     onHomeClick: function(button, e, eOpts) {
         var viewport = Ext.ComponentQuery.query('adminPanel')[0];
         var center = viewport.down('[region=center]'),
@@ -160,31 +176,112 @@ Ext.define('KerberosBooking.controller.AdminController', {
     onSubmitSearchBtn: function(button, e, eOpts) {
     	
     	
-
-    	 var form = button.up('form'),	
-          values = form.getValues();
+    	var forms = Ext.getCmp('searchUsersPanel');
+    	var val = forms.getValues(),
+        value = Ext.encode(forms.getValues()),
+        grid = Ext.getCmp('userGrid');
+    	grid.getStore().reload({
+    		  params:{
+           	   username: val.username, 
+           	   firstName: val.fname ,
+           	   lastName: val.lname,
+           	   role:""
+             },
+			callback: function(){
+				grid.getView().refresh();
+			}
+		});
     	
-    	   Ext.Ajax.request({
-               url: 'searchUser',
-               method: 'POST',
-               params:{
-                   username:   values.username,
-                   firstName:	values.fname,
-                   lastName: values.lname,
-                   role : ''
-               },
-               callback: function(options, success, response) {
-
-                console.log(response);
-               },
-               failure : function(response) {
-
-                   console.log("response", response);
-
-               }
-           });
-    	
-    	  // console.log(Ext.getCmp('userGrid').getStore());
+    	console.log(forms.getValues());
+    	grid.getView().refresh();
+    },
+    onAdminLogout: function(button, e, eOpts) {
+    	var user = localStorage.getItem('name');
+	  Ext.Msg.confirm("Confirmation", "Do you really want to logout " + user + " ?" , function(btnText){
+    	      if(btnText === "no"){
+    	    	  localStorage.setItem('name',username);
+    	      }
+    	      else if(btnText === "yes"){
+    	    	  localStorage.clear();
+    	          window.location.reload();
+    	    	  
+    	      }
+    	  }, this);
     }
+    
+    ,
+    onDeleteUser: function(button, e, eOpts) {
+    	
+        var grid = Ext.getCmp('userGrid');
+        var store = grid.getStore();
+        var selection = grid.getSelectionModel().getSelection()[0];
+        
+	  Ext.Msg.confirm("Confirmation", "Do you really want to delete user " + selection.data.username + " ?" , function(btnText){
+    	      if(btnText === "no"){
+    	    	  
+    	      }
+    	      else if(btnText === "yes"){
+    	    	  Ext.Ajax.request({
+    	              url: 'deleteUser',
+    	              method: 'POST',
+    	              params:{
+    	            	  username:   selection.data.username
+    	              },
+    	              callback: function(options, success, response) {
+    	            	      	  
+    	            	  alert('User has been deleted');
+    	            	  if (selection) {
+    	                      store.remove(selection);
+    	                  }
+    	            
+    	              },failure : function(response) {
+
+    	                  console.log("response", response);
+
+    	              }
+
+    	              });
+    	    	  
+    	      }
+    	  }, this);
+	  grid.getView().refresh();
+    },
+    
+    onEditUser: function(button, e, eOpts) {
+    	 Ext.create('KerberosBooking.view.RegisterForm').show();
+
+    	 Ext.getCmp('registerForm').setTitle('Update User');
+    	 
+    	 Ext.getCmp('registerButton').setText('Update');
+    	
+    	var grid = Ext.getCmp('userGrid');
+        var store = grid.getStore();
+        var selection = grid.getSelectionModel().getSelection()[0];
+        
+        Ext.getCmp('firstName').setValue(selection.data.firstName);
+        Ext.getCmp('lastName').setValue(selection.data.lastName);
+        Ext.getCmp('email').setValue(selection.data.email);
+        Ext.getCmp('password').setValue(selection.data.password);
+        Ext.getCmp('username').setValue(selection.data.username);
+        Ext.getCmp('contactNo').setValue(selection.data.contactNo);
+
+        
+        if(selection.data.role == 'Admin'){
+        	Ext.getCmp('radioAdminUser').setValue(selection.data.role)
+        } else if(selection.data.role == 'CSV'){
+        	Ext.getCmp('radioCSVUser').setValue(selection.data.role)
+        } else if(selection.data.role == 'Customer'){
+        	Ext.getCmp('radioCustomerUser').setValue(selection.data.role)
+        }
+        
+    	
+    },
+    
+    onResetSearchBtn: function(button, e, eOpts) {
+    	var forms = button.up('form');
+    	 forms.reset();
+    	 KerberosBooking.app.getController('AdminController').onSubmitSearchBtn();
+    }
+    
 
 });

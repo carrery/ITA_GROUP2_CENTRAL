@@ -44,8 +44,8 @@ Ext.define('KerberosBooking.controller.HomeController', {
         "#createResetBtn": {
             click: 'onCreateResetBtnClick'
         },
-        "#registerBtn": {
-            click: 'onRegisterBtnClick'
+        "#registerButton": {
+            click: 'onRegisterButtonClick'
         },
         "#logoutBtn": {
         	click: 'onLogoutBtnClick'
@@ -54,15 +54,13 @@ Ext.define('KerberosBooking.controller.HomeController', {
 
 
     onLogBtnClick: function(button, e, eOpts) {
-                var username = Ext.getCmp('usernameTxt').getValue(); //get value of username
-                var password = Ext.getCmp('passwordTxt').getValue(); // get value of password
+                var username = Ext.getCmp('usernameTxt').getValue();
+                var password = Ext.getCmp('passwordTxt').getValue(); 
                 var loginView = Ext.getCmp('headerPanel');
-                var form = button.up('form'),				// Register form
+                var form = button.up('form'),				
                 formWindow = button.up('window');
                 localStorage.setItem('name',username);
-                localStorage.setItem('name',username);
 
-                //TODO: Login using server-side authentication service
                 Ext.Ajax.request({
                     url: 'login',
                     method: 'POST',
@@ -72,14 +70,11 @@ Ext.define('KerberosBooking.controller.HomeController', {
                     },
                     callback: function(options, success, response) {
 
-                        // console.log(response.responseText);
-
                          var data = Ext.decode(response.responseText),
                          access = data.isUserValid + data.canCreateBooking + data.canViewBooking + data.canManageUsers;
                          
-                       //  console.log(data.isUserValid);
                         if(access == 4){
-                        	console.log('admin');
+                        
                         	formWindow.destroy();
                             Ext.Msg.alert("Login Success", "Logged In");
                             Ext.getCmp('hometoolbar').hide();
@@ -106,8 +101,6 @@ Ext.define('KerberosBooking.controller.HomeController', {
                         var view2 = Ext.create('MyPanel');
 
                         center2.add(view2);
-//                            Ext.getCmp('viewBtn').show();
-//                            Ext.getCmp('loginBtn').hide();
 
                         } else if (access == 3){
                          formWindow.destroy();
@@ -139,8 +132,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
                     }
                 });
 
-                var data = localStorage.getItem('name');
-                console.log(data);
+       
 
     },
 
@@ -287,25 +279,71 @@ Ext.define('KerberosBooking.controller.HomeController', {
 
   
   },
-  
-  testFunc: function(){
-	console.log('test function');  
-  },
+
 
   onCreateResetBtnClick: function(button, e, eOpts) {
-
+	  var forms = button.up('form'),
+      value = forms.getValues();
+	  forms.reset();
+	  grid.getStore().removeAll();
+	  grid.getStore().sync();
   },
 
-  onRegisterBtnClick: function(button, e, eOpts) {
-            var form = button.up('form'),				
-                  formWindow = button.up('window'),		
-                  values = form.getValues();			
+  onRegisterButtonClick: function(button, e, eOpts) {
 
-
-              console.log(values);
-               Ext.Msg.alert("Registration Success", "Please Update your grid");
-
+	  
+	  console.log(Ext.getCmp('registerButton').getText());
+	  
+	  
+	  if(Ext.getCmp('registerButton').getText() == 'Update'){
+		  var form = button.up('form'),				
+	      formWindow = button.up('window'),		
+	      values = form.getValues();	
+		  var   grid = Ext.getCmp('userGrid');
+		  var createUser = Ext.encode(values);
+		  Ext.Ajax.request({
+	          url: 'updateUser',
+	          method: 'POST',
+	          params:{
+	        	  json:   createUser
+	          },
+	          callback: function(options, success, response) {
+	        	  Ext.Msg.alert("Update Success");
+	        
+	          },failure : function(response) {
+	        	  Ext.Msg.alert("Update Failed");
+	          }
+	          
+	          });
+		  
+	  } else if (Ext.getCmp('registerButton').getText() == 'Register'){
+		  
+		  var form = button.up('form'),				
+	      formWindow = button.up('window'),		
+	      values = form.getValues();	
+		  var   grid = Ext.getCmp('userGrid');
+		  var createUser = Ext.encode(values);
+		  Ext.Ajax.request({
+	          url: 'createUser',
+	          method: 'POST',
+	          params:{
+	        	  json:   createUser
+	          },
+	          callback: function(options, success, response) {
+	        	  Ext.Msg.alert("Registration Success");
+	        
+	          },failure : function(response) {
+	        	  Ext.Msg.alert("Registration Failed");
+	          }
+	          
+	          });
+	  }
+	  
+		  grid.getView().refresh();
                   formWindow.destroy();
+                  KerberosBooking.app.getController('AdminController').onSubmitSearchBtn();
+
+                  
   },
   onLogoutBtnClick: function(button, e, eOpts) {
   

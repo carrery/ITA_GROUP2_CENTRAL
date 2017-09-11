@@ -55,7 +55,7 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     xtype: 'image',
                     height: 59,
                     width: 95,
-                    src: 'resources/img/KerberosBanner.png'
+                    src: 'resources/img/kerberos.png'
                 },
                 {
                     xtype: 'button',
@@ -78,7 +78,9 @@ Ext.define('KerberosBooking.view.adminPanel', {
                 },
                 {
                     xtype: 'button',
-                    text: 'MyButton',
+                    text: 'Admin',
+                    id : 'adminViewBtn',
+                    itemId: 'adminViewBtn',
                     menu: {
                         xtype: 'menu',
                         items: [
@@ -88,7 +90,9 @@ Ext.define('KerberosBooking.view.adminPanel', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Logout'
+                                text: 'Logout',
+                                id: 'adminLogout',
+                                itemId: 'adminLogout'
                             }
                         ]
                     }

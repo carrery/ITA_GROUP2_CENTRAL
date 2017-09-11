@@ -24,8 +24,9 @@ Ext.define('KerberosBooking.view.RegisterForm', {
     ],
 
     modal: true,
-    height: 250,
+    height: 450,
     itemId: 'registerForm',
+    id: 'registerForm',
     width: 400,
     title: 'Register',
 
@@ -39,13 +40,27 @@ Ext.define('KerberosBooking.view.RegisterForm', {
                     xtype: 'textfield',
                     anchor: '100%',
                     margin: '0 0 10 0',
-                    fieldLabel: 'Name',
+                    fieldLabel: 'First Name',
+                    labelAlign: 'right',
+                    id: 'firstName',
+                    msgTarget: 'title',
+                    name: 'firstName',
+                    allowBlank: false,
+                    blankText: 'Enter your first name.'
+                },
+                {
+                    xtype: 'textfield',
+                    anchor: '100%',
+                    margin: '0 0 10 0',
+                    fieldLabel: 'Last Name',
+                    id: 'lastName',
                     labelAlign: 'right',
                     msgTarget: 'title',
-                    name: 'name',
+                    name: 'lastName',
                     allowBlank: false,
-                    blankText: 'Enter your full name.'
-                },
+                    blankText: 'Enter your last name.'
+                }
+                ,
                 {
                     xtype: 'textfield',
                     anchor: '100%',
@@ -53,20 +68,33 @@ Ext.define('KerberosBooking.view.RegisterForm', {
                     fieldLabel: 'Email',
                     labelAlign: 'right',
                     msgTarget: 'title',
+                    id : 'email',
                     name: 'email',
                     allowBlank: false,
                     blankText: 'Enter your email.'
+                }, {
+                    xtype: 'textfield',
+                    anchor: '100%',
+                    margin: '0 0 10 0',
+                    fieldLabel: 'Contact Number',
+                    labelAlign: 'right',
+                    id: 'contactNo',
+                    msgTarget: 'title',
+                    name: 'contactNo',
+                    allowBlank: false,
+                    blankText: 'Enter your contact number.'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
                     margin: '0 0 10 0',
                     fieldLabel: 'Username',
+                    id: 'username',
                     labelAlign: 'right',
                     msgTarget: 'title',
                     name: 'username',
                     allowBlank: false,
-                    blankText: 'Choose a password.'
+                    blankText: 'Choose a username.'
                 },
                 {
                     xtype: 'textfield',
@@ -76,18 +104,51 @@ Ext.define('KerberosBooking.view.RegisterForm', {
                     labelAlign: 'right',
                     msgTarget: 'title',
                     name: 'password',
+                    id: 'password',
+                    inputType: 'password',
                     allowBlank: false,
                     blankText: 'Choose a password.'
+                },  {
+                    xtype: 'radiogroup',
+                    id: 'roleUser',
+                    itemId: 'roleUser',
+                    width: 400,
+                    fieldLabel: 'Role',
+                    items: [
+                        {
+                            xtype: 'radiofield',
+                            id: 'radioCustomerUser',
+                            itemId: 'radioCustomerUser',
+                            name: 'role',
+                            boxLabel: 'Customer',
+                            inputValue: 'Customer'
+                        },
+                        {
+                            xtype: 'radiofield',
+                            id: 'radioCSVUser',
+                            itemId: 'radioCSVUser',
+                            name: 'role',
+                            boxLabel: 'CSV',
+                            inputValue: 'CSV'
+                        },
+                        {
+                            xtype: 'radiofield',
+                            id: 'radioAdminUser',
+                            itemId: 'radioAdminUser',
+                            name: 'role',
+                            boxLabel: 'Admin',
+                            inputValue: 'Admin'
+                        }
+                    ]
                 },
                 {
                     xtype: 'button',
                     formBind: true,
+                    id: 'registerButton',
                     itemId: 'registerButton',
                     scale: 'medium',
-                    text: 'Register',
-                    listeners: {
-                        click: 'onRegisterButtonClick'
-                    }
+                    text: 'Register'
+                    
                 }
             ]
         }

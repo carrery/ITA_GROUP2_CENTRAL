@@ -47,7 +47,7 @@ Ext.define('KerberosBooking.view.myHomePanel', {
                     flex: 1,
                     dock: 'top',
                     flex: 1,
-                    src: '/images/bg/aboutus-vision.jpg'
+                    src: 'resources/img/aboutus-vision.jpg'
                 }
             ]
         },
@@ -61,18 +61,22 @@ Ext.define('KerberosBooking.view.myHomePanel', {
             items: [
                 {
                     xtype: 'container',
-                    flex: 1
+                    flex: 1,
+                    items: [
+                        {
+                            xtype: 'label',
+                            html: '<h1>COMMITMENT AND EXPERIENCE</h1> </br><h4>The company is commercially headquartered in Dubai and Hong Kong, two of the busiest container ports in the world.  Our strength is our strategic positioning in the dynamic markets of the Middle East, China, South East Asia, India and Africa. Our network and understanding of these key trading and commercial centers means that we can provide world class services to our customers.</h4>'
+                        }
+                    ]
                 },
                 {
                     xtype: 'image',
-                    height: 134,
+                    height: 300,
                     id: 'img3',
                     itemId: 'img3',
-                    width: 169,
-                    src: '/images/portHome.jpg',
-                    listeners: {
-                        afterrender: 'onImageAfterRender'
-                    }
+                    width: 300,
+                    src: 'resources/img/portHome.png'
+                    
                 }
             ]
         },
@@ -86,9 +90,9 @@ Ext.define('KerberosBooking.view.myHomePanel', {
             items: [
                 {
                     xtype: 'image',
-                    height: 131,
-                    width: 173,
-                    src: '/images/shipHome.jpeg'
+                    height: 300,
+                    width: 300,
+                    src: 'resources/img/shipHome.png'
                 },
                 {
                     xtype: 'container',
@@ -96,19 +100,13 @@ Ext.define('KerberosBooking.view.myHomePanel', {
                     items: [
                         {
                             xtype: 'label',
-                            text: 'My Label'
+                            padding: 10,
+                            html: '<h1>OUR TEAM</h1> </br><h4>Emirates Shipping Line has an extensive team of multinational and experienced shipping professionals in place, who are committed to individual customer solutions and ensuring quality in whatever we do.</h4>'
                         }
                     ]
                 }
             ]
         }
-    ],
-
-    onImageAfterRender: function(component, eOpts) {
-
-
-        component.el.on('mouseout', function() {Ext.getCmp('img3').setSrc('/images/portHome.jpg');});
-        component.el.on('mouseover', function() {Ext.getCmp('img3').setSrc('/images/KerberosBanner.jpg');});
-    }
+    ]
 
 });

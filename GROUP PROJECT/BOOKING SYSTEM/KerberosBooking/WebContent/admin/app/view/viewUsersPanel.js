@@ -54,7 +54,7 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                     flex: 1,
                     flex: 1,
                     width: 201,
-                    src: '%5Cimages%5Cbg%5Ccustomer.jpg'
+                    src: 'resources/img/customer.png'
                 }
             ]
         },
@@ -130,7 +130,9 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                                                 {
                                                     xtype: 'button',
                                                     scale: 'medium',
-                                                    text: 'Reset'
+                                                    text: 'Reset',
+                                                    id: 'resetSearchBtn',
+                                                    itemId: 'resetSearchBtn'
                                                 }
                                             ]
                                         }
@@ -174,7 +176,7 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            dataIndex: 'lastLame',
+                            dataIndex: 'lastName',
                             text: 'Last Name'
                         },
                         {
@@ -194,29 +196,6 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                             flex: 1,
                             dataIndex: 'contactNo',
                             text: 'Contact Number'
-                        },
-                        {
-                            xtype: 'booleancolumn',
-                            flex: 1,
-                            text: 'canViewBooking',
-                            editor: {
-                                xtype: 'checkboxfield'
-                            }
-                        },
-                        {
-                            xtype: 'booleancolumn',
-                            flex: 1,
-                            text: 'canCreateBooking',
-                            editor: {
-                                xtype: 'checkboxfield'
-                            }
-                        },
-                        {
-                            xtype: 'booleancolumn',
-                            text: 'canManageUsers',
-                            editor: {
-                                xtype: 'checkboxfield'
-                            }
                         }
                     ],
                     selModel: {
@@ -244,11 +223,15 @@ Ext.define('KerberosBooking.view.viewUsersPanel', {
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'Edit'
+                                    text: 'Edit',
+                                    itemId: 'editUser',
+                                    id: 'editUser'
                                 },
                                 {
                                     xtype: 'button',
-                                    text: 'Delete'
+                                    text: 'Delete',
+                                    itemId: 'deleteUser',
+                                    id: 'deleteUser'
                                 }
                             ]
                         }
