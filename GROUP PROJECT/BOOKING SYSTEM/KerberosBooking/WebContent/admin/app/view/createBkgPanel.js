@@ -369,8 +369,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                          itemId: 'wtUnit',
                                                          name: 'wtUnit',
                                                          store: [
-                                                             'kg',
-                                                             'ton'
+                                                             'KG',
+                                                             'TON'
                                                          ]
                                                      }
                                                 }

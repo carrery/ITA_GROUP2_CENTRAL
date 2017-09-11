@@ -35,7 +35,7 @@ Ext.define('KerberosBooking.controller.createBooking', {
             	cntrType  : null,
             	grossWt : null,
             	netWt : null,
-            	wtUnit : 'kg'
+            	wtUnit : 'KG'
 
                    });
 
