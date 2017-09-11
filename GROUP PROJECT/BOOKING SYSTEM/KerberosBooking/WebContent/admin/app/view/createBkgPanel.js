@@ -414,13 +414,13 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     items: [
                                                         {
                                                             xtype: 'checkboxfield',
-                                                            name: 'validWeight',
+                                                            name: 'validWt',
                                                             boxLabel: 'Valid Weight',
                                                             inputValue: '1'
                                                         },
                                                         {
                                                             xtype: 'checkboxfield',
-                                                            name: 'validDocument',
+                                                            name: 'approveDoc',
                                                             boxLabel: 'Valid Documents',
                                                             inputValue: '1'
                                                         },
