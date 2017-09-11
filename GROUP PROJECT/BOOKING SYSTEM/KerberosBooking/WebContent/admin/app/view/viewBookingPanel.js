@@ -228,14 +228,14 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'MyButton'
+                                    text: 'View'
                                 },
                                 {
                                     xtype: 'button',
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'MyButton'
+                                    text: 'Modify'
                                 }
                             ]
                         }

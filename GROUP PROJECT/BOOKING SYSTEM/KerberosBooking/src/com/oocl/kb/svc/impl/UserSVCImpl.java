@@ -20,7 +20,6 @@ import com.oocl.kb.svc.inf.UserSVC;
 @Component
 public class UserSVCImpl implements UserSVC{
 	
-	@Autowired
 	private UserDAO userDAO;
 	
 	Gson gson = new Gson();
@@ -92,18 +91,17 @@ public class UserSVCImpl implements UserSVC{
 	}
 
 	@Override
-	public UserMgtResponse searchUser(String username, String fname, String lname, String role) {
+	public UserMgtResponse searchUser(String username, String firstName, String lastName, String role) {
 		// TODO Auto-generated method stub		
 		UserMgtResponse response = new UserMgtResponse();
-		List<User> users = userDAO.getAllUsers(username,fname,lname,role);
+		List<UserReturn> users = new ArrayList<UserReturn>();
 		UserReturn userRet = new UserReturn();
-		
-		for(User user : users) {
+		for(User user : this.userDAO.getAllUsers(username,firstName,lastName,role)) {
 			userRet.setRole(getRoleByUser(user.getRole()));
 			userRet.setUser(user);
-			response.getUsers().add(userRet);
+			users.add(userRet);
 		}
-		
+		response.setUsers(users);
 		return response;
 	}
 

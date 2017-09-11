@@ -24,6 +24,6 @@ public interface UserDAO {
 	
 	public String updateUser(User user);
 
-	List<User> getAllUsers(String userName, String fname, String lname, String role);
+	public List<User> getAllUsers(String userName, String fname, String lname, String role);
 
 }

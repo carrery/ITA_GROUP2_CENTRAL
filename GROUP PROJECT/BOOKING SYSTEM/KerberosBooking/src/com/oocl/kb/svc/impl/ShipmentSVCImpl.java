@@ -56,8 +56,8 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse createShipmentResponse = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
-		String shpStatus = (shp.getApproveDoc() != 1 && shp.getGoodCustomer() != 1 && shp.getValidWt() != 1) ? "Pending"
-				: "Confirmed";
+		String shpStatus = (shp.getApproveDoc() == 1 && shp.getGoodCustomer() == 1 && shp.getValidWt() == 1) ? "Confirmed"
+				: "Pending";
 		shp.setShipmentStatus(shpStatus);
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));

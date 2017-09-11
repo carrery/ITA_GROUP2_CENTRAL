@@ -49,8 +49,8 @@ public class UserController {
 	
 	@RequestMapping(value = "/searchUser", method = RequestMethod.POST)
 	public @ResponseBody UserMgtResponse searchUser(@RequestParam("username") String username,
-			@RequestParam("fname") String fname, @RequestParam("lname") String lname,
+			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
 			@RequestParam("role") String role, HttpServletRequest request) {
-		return userSVC.searchUser(username, fname, lname, role);
+		return userSVC.searchUser(username, firstName, lastName, role);
 	}
 }
