@@ -419,7 +419,30 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                          store: [
                                                              'KG',
                                                              'TON'
-                                                         ]
+                                                         ],
+                                                         listeners: {
+                                                        	 change : function(field, newValue, o, e) {
+                                                        	        var weightUnit = field.value;
+                                                        	        console.log(weightUnit);
+                                                        	        var selectedModel = this.up('gridpanel').getSelectionModel().getSelection()[0];
+                                                        	        var netWeight = selectedModel.get('netWt');
+                                                        	        var grossWeight = selectedModel.get('grossWt');
+                                                        	        
+                                                        	    	if (weightUnit.toString() == 'KG') {
+                                                        	    		var kgNetWeight = parseFloat(netWeight) * 1000;
+                                                        	    		var kgGrossWeight = parseFloat(grossWeight) * 1000;
+                                                        	    		selectedModel.set('netWt', kgNetWeight);
+                                                        	    		selectedModel.set("grossWt",kgGrossWeight);
+	                                                                } else if (weightUnit.toString() == 'TON') {
+                                                        	    		var tonNetWeight = parseFloat(netWeight) / 1000;
+                                                        	    		var tonGrossWeight = parseFloat(grossWeight) / 1000;
+	                                                                	selectedModel.set('netWt', tonNetWeight);
+	                                                                	selectedModel.set('grossWt', tonGrossWeight);
+	                                                                }
+                                                        	        
+                                                        	    }
+                                                        	 
+                                                        	}
                                                      }
                                                 }
                                             ],
