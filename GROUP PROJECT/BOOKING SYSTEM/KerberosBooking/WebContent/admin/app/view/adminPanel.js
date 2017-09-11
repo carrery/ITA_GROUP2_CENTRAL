@@ -55,7 +55,7 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     xtype: 'image',
                     height: 59,
                     width: 95,
-                    src: '/images/Kerberos.png'
+                    src: 'resources/img/KerberosBanner.png'
                 },
                 {
                     xtype: 'button',
@@ -63,10 +63,10 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     itemId: 'menuBtn',
                     style: {
                         background: '#ffffff',
-                        backgroundImage: 'url(images/tools/menu.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundImage: 'url(resources/img/menu.png)',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     },
                     listeners: {
@@ -109,10 +109,10 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     itemId: 'home',
                     style: {
                         background: '#ffffff',
-                        backgroundImage: 'url(images/tools/home.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundImage: 'url(resources/img/home.png)',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     },
                     width: 78
@@ -124,10 +124,10 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     itemId: 'kerberos',
                     style: {
                         background: '#ffffff',
-                        backgroundImage: 'url(images/tools/building.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundImage: 'url(resources/img/building.png)',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -138,10 +138,10 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     itemId: 'create',
                     style: {
                         background: '#ffffff',
-                        backgroundImage: 'url(images/tools/create.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundImage: 'url(resources/img/create.png)',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -152,10 +152,10 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     itemId: 'search',
                     style: {
                         background: '#ffffff',
-                        backgroundImage: 'url(images/tools/search.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundImage: 'url(resources/img/search.png)',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -166,10 +166,10 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     itemId: 'users',
                     style: {
                         background: '#ffffff',
-                        backgroundImage: 'url(images/tools/users.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundImage: 'url(resources/img/users.png)',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -180,10 +180,10 @@ Ext.define('KerberosBooking.view.adminPanel', {
                     itemId: 'about',
                     style: {
                         background: '#ffffff',
-                        backgroundImage: 'url(images/tools/about.png)',
-                        backgroundSize: '100% 100%',
+                        backgroundImage: 'url(resources/img/about.png)',
+                        backgroundSize: '50% 50%',
                         backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'bottom left',
+                        backgroundPosition: 'center',
                         
                     }
                 },
@@ -244,62 +244,72 @@ Ext.define('KerberosBooking.view.adminPanel', {
 
         Ext.getCmp('home').setStyle({
                 background:'#ffffff',
-                backgroundImage: 'url(images/tools/home.png)',
-                backgroundSize: '100% 100%',
+                backgroundImage: 'url(resources/img/home.png)',
+                backgroundSize: '50% 50%',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'bottom left',
+                backgroundPosition: 'center',
         });
         Ext.getCmp('home').setText('');
 
         Ext.getCmp('kerberos').setStyle({
                 background:'#ffffff',
-                backgroundImage: 'url(images/tools/building.png)',
-                backgroundSize: '100% 100%',
+                backgroundImage: 'url(resources/img/building.png)',
+                backgroundSize: '50% 50%',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'bottom left',
+                backgroundPosition: 'center',
         });
         Ext.getCmp('kerberos').setText('');
 
         Ext.getCmp('create').setStyle({
                 background:'#ffffff',
-                backgroundImage: 'url(images/tools/create.png)',
-                backgroundSize: '100% 100%',
+                backgroundImage: 'url(resources/img/create.png)',
+                backgroundSize: '50% 50%',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'bottom left',
+                backgroundPosition: 'center',
         });
         Ext.getCmp('create').setText('');
 
         Ext.getCmp('search').setStyle({
                 background:'#ffffff',
-                backgroundImage: 'url(images/tools/search.png)',
-                backgroundSize: '100% 100%',
+                backgroundImage: 'url(resources/img/search.png)',
+                backgroundSize: '50% 50%',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'bottom left',
+                backgroundPosition: 'center',
         });
         Ext.getCmp('search').setText('');
 
         Ext.getCmp('users').setStyle({
                 background:'#ffffff',
-                backgroundImage: 'url(images/tools/users.png)',
-                backgroundSize: '100% 100%',
+                backgroundImage: 'url(resources/img/users.png)',
+                backgroundSize: '50% 50%',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'bottom left',
+                backgroundPosition: 'center',
         });
         Ext.getCmp('users').setText('');
 
         Ext.getCmp('about').setStyle({
                 background:'#ffffff',
-                backgroundImage: 'url(images/tools/about.png)',
-                backgroundSize: '100% 100%',
+                backgroundImage: 'url(resources/img/about.png)',
+                backgroundSize: '50% 50%',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'bottom left',
+                backgroundPosition: 'center',
         });
         Ext.getCmp('about').setText('');
 
 
         } else{
             Ext.getCmp('home').setStyle({background:'#ffffff'});
-        Ext.getCmp('home').setText('Home');
+            Ext.getCmp('home').setText('Home');
+            Ext.getCmp('kerberos').setStyle({background:'#ffffff'});
+            Ext.getCmp('kerberos').setText('Kerberos Booking');
+            Ext.getCmp('create').setStyle({background:'#ffffff'});
+            Ext.getCmp('create').setText('Create Booking');
+             Ext.getCmp('search').setStyle({background:'#ffffff'});
+            Ext.getCmp('search').setText('Search Booking');
+             Ext.getCmp('users').setStyle({background:'#ffffff'});
+            Ext.getCmp('users').setText('User Management');
+            Ext.getCmp('about').setStyle({background:'#ffffff'});
+            Ext.getCmp('about').setText('About');
 
 
         }
