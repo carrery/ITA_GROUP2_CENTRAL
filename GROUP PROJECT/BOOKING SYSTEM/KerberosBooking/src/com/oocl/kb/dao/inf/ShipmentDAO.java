@@ -30,6 +30,8 @@ public interface ShipmentDAO  {
     public ArrayList<ShipmentContainer> createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate, Long shpNum);
     
     public void createShpCargo(ArrayList<ShipmentContainer> cntrList, ShipmentCargo shpCgo);
+    
+    public void createShpCargo(ArrayList<ShipmentCargo> cgoList);
 
 	public List<Shipment> getAllShipments(String username, String role, SearchShipmentCriteria shpCriteria);
   
