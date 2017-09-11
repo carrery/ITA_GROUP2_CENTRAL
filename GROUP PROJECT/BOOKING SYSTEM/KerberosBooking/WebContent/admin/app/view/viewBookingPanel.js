@@ -164,6 +164,7 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
                     xtype: 'gridpanel',
                     id: 'bkgGrid',
                     flex: 1,
+                    
                     padding: 10,
                     bodyPadding: '',
                     title: '',
@@ -214,7 +215,8 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
                         }
                     ],
                     selModel: {
-                        selType: 'checkboxmodel'
+//                        selType: 'checkboxmodel',
+//                        singleSelect:true
                     },
                     dockedItems: [
                         {
