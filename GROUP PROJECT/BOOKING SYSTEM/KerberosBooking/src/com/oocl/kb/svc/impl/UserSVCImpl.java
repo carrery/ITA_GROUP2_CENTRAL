@@ -95,10 +95,12 @@ public class UserSVCImpl implements UserSVC{
 		// TODO Auto-generated method stub		
 		UserMgtResponse response = new UserMgtResponse();
 		List<UserReturn> users = new ArrayList<UserReturn>();
-		UserReturn userRet = new UserReturn();
+		UserReturn userRet;
 		for(User user : this.userDAO.getAllUsers(username,firstName,lastName,role)) {
-			userRet.setRole(getRoleByUser(user.getRole()));
-			userRet.setUser(user);
+			userRet = (UserReturn)user;
+			userRet.setCanCreateBkg(getRoleByUser(user.getRole()).getAccessCB());
+			userRet.setCanManageUsers(getRoleByUser(user.getRole()).getAccessUM());
+			userRet.setCanViewBkg(getRoleByUser(user.getRole()).getAccessFS());
 			users.add(userRet);
 		}
 		response.setUsers(users);
