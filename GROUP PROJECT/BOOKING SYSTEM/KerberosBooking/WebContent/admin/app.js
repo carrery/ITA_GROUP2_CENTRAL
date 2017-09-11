@@ -28,7 +28,7 @@ Ext.application({
     stores: [
         'createBooking',
         'userManagement',
-        'AllBookingStore'
+        'AllBookingsStore'
     ],
     views: [
         'LoginForm',
@@ -39,8 +39,7 @@ Ext.application({
         'myHomePanel',
         'createBkgPanel',
 		'adminPanel',
-		'viewUsersPanel',
-		'RoleUpdate'
+		'viewUsersPanel'
     ],
     controllers: [
         'HomeController',
