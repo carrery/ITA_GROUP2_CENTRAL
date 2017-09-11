@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>1Administration Site</title>
+    <title>Kerberos Shipping</title>
     <script>
         var Ext = Ext || {};
         Ext.theme = {
