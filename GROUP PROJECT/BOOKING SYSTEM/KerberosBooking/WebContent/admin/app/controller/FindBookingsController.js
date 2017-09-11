@@ -47,19 +47,20 @@ Ext.define('KerberosBooking.controller.FindBookingsController', {
     },
 
     onViewBtnClick: function(button, e, eOpts) {
-    	var forms = button.up('form'),
-        value = Ext.encode(forms.getValues()),
-        grid = Ext.getCmp('bkgGrid');
+    	var grid = Ext.getCmp('bkgGrid');
     	var bookingNum = grid.getSelection()[0].data.shipmentNum;
-    	grid.getStore().reload({
-    		params:{
-    			username:localStorage.getItem('name'),
-    			jsonString: value
-			},
-			callback: function(){
-				grid.getView().refresh();
-			}
-		});
+    	
+        var viewport = Ext.ComponentQuery.query('mainViewport')[0],
+        center = viewport.down('[region=center]'),
+        viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0];
+//    	aboutPanel = Ext.ComponentQuery.query('')[0];
+
+	    console.log(viewport);
+	    center.remove(viewPanel);
+	    
+	    var view = Ext.create('ViewBookingPanel');
+	    center.add(view);
+	    view.setReadOnlyForAll();
     },
 //
 //    onCopyCntrClick: function(button, e, eOpts) {

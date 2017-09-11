@@ -16,14 +16,47 @@
 Ext.define('KerberosBooking.model.AllBookingsModel', {
     extend: 'Ext.data.Model',
     alias: 'model.AllBookingsModel',
-
+//    proxy: {
+//        type: 'ajax',
+//        url: 'contacts.json',
+//        reader: {
+//            type: 'json',
+//            rootProperty: 'data'
+//        }
+//    },
+    proxy: {
+        type: 'ajax',
+        url: 'getAllShipments',
+        method: 'POST',
+        extraParams:{
+                username: localStorage.getItem('name'),
+                jsonString: '{}'
+        },
+        reader: {
+            type: 'json',
+            idProperty: 'shipmentNum'
+        },
+        actionMethods: {
+            create : 'POST',
+            read   : 'POST', // by default GET
+            update : 'POST',
+            destroy: 'POST'
+        }
+    },
     requires: [
         'Ext.data.field.Integer',
         'Ext.data.field.String',
         'Ext.data.field.Number',
         'Ext.data.field.Field'
     ],
-
+    hasMany: [
+        {
+            model: 'KerberosBooking.model.ShipmentContainer',
+            associationKey: 'shipmentNum',
+            getterName: 'shipmentNum',
+            name: 'containers'
+        }
+    ],
     fields: [
         {
             type: 'int',

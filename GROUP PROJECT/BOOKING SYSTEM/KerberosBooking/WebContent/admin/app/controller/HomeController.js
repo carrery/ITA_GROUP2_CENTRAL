@@ -110,16 +110,19 @@ Ext.define('KerberosBooking.controller.HomeController', {
             center = viewport.down('[region=center]'),
             mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
             homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
+            viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
             createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
-        	//aboutPanel = Ext.ComponentQuery.query('')[0];
+//        	aboutPanel = Ext.ComponentQuery.query('')[0];
 
-            view = Ext.create('FindBookingPanel');
+            
 
         console.log(viewport);
-
         center.remove(mainPanel);
         center.remove(homePanel);
         center.remove(createPanel);
+        center.remove(viewPanel);
+        
+        var view = Ext.create('FindBookingPanel');
         center.add(view);
     },
 
@@ -150,29 +153,34 @@ Ext.define('KerberosBooking.controller.HomeController', {
         // center.add(view);
 
 
-        var viewport = Ext.ComponentQuery.query('mainViewport')[0];
-        var center = viewport.down('[region=center]'),
-            homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
-            viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
-            createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
+        var viewport = Ext.ComponentQuery.query('mainViewport')[0],
+        center = viewport.down('[region=center]'),
+        mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
+        homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
+        viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
+        createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
 
-        var view = Ext.create('MyPanel');
+        
 
         center.remove(homePanel);
         center.remove(createPanel);
         center.remove(viewPanel);
+        center.remove(mainPanel);
+        
+        var view = Ext.create('MyPanel');
         center.add(view);
     },
 
     onKerberosBtnClick: function(button, e, eOpts) {
         var viewport = Ext.ComponentQuery.query('mainViewport')[0],
-            center = viewport.down('[region=center]'),
-            mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
-            viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
-            createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
-        	//aboutPanel = Ext.ComponentQuery.query('')[0];
+        center = viewport.down('[region=center]'),
+        mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
+        homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
+        viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
+        createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];a
+    	//aboutPanel = Ext.ComponentQuery.query('')[0];
 
-            view = Ext.create('myHomePanel');
+        view = Ext.create('myHomePanel');
 
         console.log(viewport);
 
@@ -184,19 +192,23 @@ Ext.define('KerberosBooking.controller.HomeController', {
 
     onCreateBtnClick: function(button, e, eOpts) {
         var viewport = Ext.ComponentQuery.query('mainViewport')[0],
-            center = viewport.down('[region=center]'),
-            mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
-            viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
-            homePanel = Ext.ComponentQuery.query('myHomePanel')[0];
+        center = viewport.down('[region=center]'),
+        mainPanel = Ext.ComponentQuery.query('MyPanel')[0],
+        homePanel = Ext.ComponentQuery.query('myHomePanel')[0],
+        viewPanel = Ext.ComponentQuery.query('FindBookingPanel')[0],
+        createPanel = Ext.ComponentQuery.query('createBkgPanel')[0];
         	//aboutPanel = Ext.ComponentQuery.query('')[0];
 
-            view = Ext.create('createBkgPanel');
+            
 
         console.log(viewport);
 
         center.remove(mainPanel);
         center.remove(viewPanel);
         center.remove(homePanel);
+        center.remove(createPanel);
+        
+        var view = Ext.create('createBkgPanel');
         center.add(view);
     },
 

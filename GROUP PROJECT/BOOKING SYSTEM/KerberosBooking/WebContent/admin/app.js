@@ -34,6 +34,7 @@ Ext.application({
         'MyPanel',
         'mainViewport',
         'FindBookingPanel',
+        'ViewBookingPanel',
         'myHomePanel',
         'createBkgPanel',
 		'adminPanel'
