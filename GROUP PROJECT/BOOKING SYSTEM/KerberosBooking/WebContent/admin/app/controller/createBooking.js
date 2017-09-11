@@ -31,11 +31,11 @@ Ext.define('KerberosBooking.controller.createBooking', {
     onAddCntrClick: function(button, e, eOpts) {
         var grid = Ext.getCmp('createContainer');
             grid.getStore().add({
-            referenceNumber  : null,
-               containerNumber  : null,
-               grossWeight : null,
-               netWeight : null,
-               weightUnit : 'kg'
+            	refNum  : null,
+            	cntrType  : null,
+            	grossWt : null,
+            	netWt : null,
+            	wtUnit : 'kg'
 
                    });
 
@@ -65,11 +65,11 @@ Ext.define('KerberosBooking.controller.createBooking', {
         // inserts the copied record at the end of the grid
 
         store.add({
-                    referenceNumber  : copy.data.referenceNumber,
-                       containerNumber  : copy.data.containerNumber,
-                       grossWeight : copy.data.grossWeight,
-                       netWeight : copy.data.netWeight,
-                       weightUnit : copy.data.weightUnit});
+        	refNum  : copy.data.refNum,
+        	cntrType  : copy.data.cntrType,
+        	grossWt : copy.data.grossWt,
+        	netWt : copy.data.netWt,
+        	wtUnit : copy.data.wtUnit});
         grid.getView().refresh();
         //grid.getStore().insert(grid.store.data.length, new grid.store.recordType(copy.data));
     }
