@@ -92,7 +92,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate, Long shpNum) {
+	public ArrayList<ShipmentContainer> createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate, Long shpNum) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		tx = session.beginTransaction();
@@ -106,6 +106,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		}
 		tx.commit();
 		session.close();
+		return cntrList;
 	}
 
 	@Override
@@ -144,14 +145,17 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createShpCargo(ArrayList<ShipmentCargo> cgoList) {
+	public void createShpCargo(ArrayList<ShipmentContainer> cntrList, ShipmentCargo shpCgo) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 
 		tx = session.beginTransaction();
 
-		for (ShipmentCargo shpCgo : cgoList) {
+		for (ShipmentContainer shpCntr : cntrList) {
+			Long cgoId = getCgoidSeq();
+			shpCgo.setCargoId(cgoId);
+			shpCgo.setRefNum(shpCntr.getRefNum());
 			session.save(shpCgo);
 		}
 
@@ -249,7 +253,7 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		
 		String newBkgDate = bookingDate.toString();
 
-		Query query = session.createSQLQuery("SELECT CNTR_NUM FROM CNTR_AVAIL WHERE CNTR_TYPE = ? AND (LASTDATE <= ? OR LASTDATE IS NULL) AND ROWNUM = 1");
+		Query query = session.createSQLQuery("SELECT CNTR_NUM FROM CNTR_AVAIL WHERE CNTR_TYPE = ? AND (LASTDATE <= TO_CHAR(TO_DATE(?,'YYYY-MM-DD'), 'DD-MON-YY') OR LASTDATE IS NULL) AND ROWNUM = 1");
 		query.setParameter(0, cntrType);
 		query.setParameter(1, newBkgDate);
 		String cntrNum = (String) query.uniqueResult();

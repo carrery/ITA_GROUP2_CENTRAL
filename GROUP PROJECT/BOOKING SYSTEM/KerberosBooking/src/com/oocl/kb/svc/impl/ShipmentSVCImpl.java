@@ -60,7 +60,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		Long shpNum = shipmentDAO.createBooking(shp);
-		createShipmentResponse.setServiceResult("1");
+		createShipmentResponse.setServiceResult(String.valueOf(shpNum));
 		
 		JSONObject bkgObj = new JSONObject(json);
 		JSONArray cntrs = bkgObj.getJSONArray("container");
@@ -70,6 +70,14 @@ public class ShipmentSVCImpl implements ShipmentSVC {
                 }.getType());
 				
 		shipmentDAO.createShpContainer(cntrList, shp.getFromDate(), shpNum );
+		
+		ShipmentCargo shpCgo = gson.fromJson(json, ShipmentCargo.class);
+				
+		shipmentDAO.createShpCargo(cntrList, shpCgo);
+		
+		
+		
+		
 		
 		return createShipmentResponse;
 	}
@@ -143,7 +151,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 			// sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			// cgoList.add(sc);
 		}
-		this.shipmentDAO.createShpCargo(cgoList);
+		//this.shipmentDAO.createShpCargo(cgoList);
 
 	}
 

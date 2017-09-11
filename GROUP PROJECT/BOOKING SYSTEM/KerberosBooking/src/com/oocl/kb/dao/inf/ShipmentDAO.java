@@ -27,9 +27,9 @@ public interface ShipmentDAO  {
 	
 	public String deleteContainer(ShipmentContainer container);
 	
-    public void createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate, Long shpNum);
+    public ArrayList<ShipmentContainer> createShpContainer(ArrayList<ShipmentContainer> cntrList, Date bookingDate, Long shpNum);
     
-    public void createShpCargo(ArrayList<ShipmentCargo> cgoList);
+    public void createShpCargo(ArrayList<ShipmentContainer> cntrList, ShipmentCargo shpCgo);
 
 	public List<Shipment> getAllShipments(String username, String role, SearchShipmentCriteria shpCriteria);
   
