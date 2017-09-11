@@ -39,6 +39,8 @@ Ext.define('KerberosBooking.view.mainViewport', {
             margins: '0 0 0 0',
             region: 'north',
             dock: 'top',
+            id: 'hometoolbar',
+            itemId: 'hometoolbar',
             height: 63,
             margin: '0 0 0 0',
             padding: 0,
@@ -91,6 +93,16 @@ Ext.define('KerberosBooking.view.mainViewport', {
                     text: 'Login'
                 },
                 {
+                    xtype: 'button',
+                    margins: '0 0 0 0',
+                    dock: 'bottom',
+                    id: 'logoutBtn',
+                    itemId: 'logoutBtn',
+                    margin: '0 0 0 0',
+                    scale: 'medium',
+                    text: 'Logout'
+                },
+                {
                     xtype: 'tbfill'
                 },
                 {
@@ -122,6 +134,7 @@ Ext.define('KerberosBooking.view.mainViewport', {
         var view = Ext.create('MyPanel');
         Ext.getCmp('createBtn').hide();
         Ext.getCmp('viewBtn').hide();
+        Ext.getCmp('logoutBtn').hide();
         //viewBtn
         center.add(view);
 
