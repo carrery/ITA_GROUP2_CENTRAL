@@ -145,27 +145,6 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 	}
 
 	@Override
-	public void createShpCargo(ArrayList<ShipmentContainer> cntrList, ShipmentCargo shpCgo) {
-		// TODO Auto-generated method stub
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-
-		tx = session.beginTransaction();
-
-		for (ShipmentContainer shpCntr : cntrList) {
-			ShipmentCargo newShpCgo = new ShipmentCargo();
-			newShpCgo = shpCgo;
-			Long cgoId = getCgoidSeq();
-			newShpCgo.setCargoId(cgoId);
-			newShpCgo.setRefNum(shpCntr.getRefNum());
-			session.save(newShpCgo);
-		}
-
-		tx.commit();
-		session.close();
-	}
-
-	@Override
 	public String deleteCargo(ShipmentCargo cargo) {
 		// TODO Auto-generated method stub
 		try {

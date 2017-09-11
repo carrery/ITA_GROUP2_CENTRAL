@@ -73,8 +73,6 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 
 		shipmentDAO.createShpContainer(cntrList, shp.getFromDate(), shpNum);
 
-		//ShipmentCargo shpCgo = gson.fromJson(json, ShipmentCargo.class);
-
 		ArrayList<ShipmentCargo> cgoList = new ArrayList<ShipmentCargo>();
 		
 		for (ShipmentContainer shpCntr : cntrList) {
