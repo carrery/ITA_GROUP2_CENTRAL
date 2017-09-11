@@ -343,20 +343,20 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     flex: 1,
                                                     dataIndex: 'grossWt',
                                                     text: 'Gross Weight',
-                                                    editor: {
+                                                    editor: new Ext.form.NumberField({
                                                         xtype: 'textfield',
                                                         name: 'grossWt'
-                                                    }
+                                                    })
                                                 },
                                                 {
                                                 	xtype: 'gridcolumn',
                                                     flex: 1,
                                                     dataIndex: 'netWt',
                                                     text: 'Net Weight',
-                                                    editor: {
+                                                    editor: new Ext.form.NumberField({
                                                         xtype: 'textfield',
                                                         name: 'netWt'
-                                                    }
+                                                    })
                                                 },
                                                 {
                                                 	 xtype: 'gridcolumn',
