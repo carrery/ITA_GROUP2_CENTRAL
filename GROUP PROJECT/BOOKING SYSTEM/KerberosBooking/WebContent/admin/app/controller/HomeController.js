@@ -56,7 +56,7 @@ Ext.define('KerberosBooking.controller.HomeController', {
                 var loginView = Ext.getCmp('headerPanel');
                 var form = button.up('form'),				// Register form
                 formWindow = button.up('window');
-
+                localStorage.setItem('name',username);
                 //TODO: Login using server-side authentication service
                 Ext.Ajax.request({
                     url: 'login',

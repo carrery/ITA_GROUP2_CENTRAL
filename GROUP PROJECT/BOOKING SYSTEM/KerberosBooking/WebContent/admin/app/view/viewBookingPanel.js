@@ -21,6 +21,7 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
         'viewBookingPanel'
     ],
     requires: [
+    	'KerberosBooking.model.AllBookingsModel',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Date',
@@ -68,15 +69,23 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
                                     width: 343,
                                     items: [
                                         {
-                                            xtype: 'textfield',
+                                        	xtype: 'numberfield',
                                             id: 'viewBkgPanel',
                                             itemId: 'viewBkgPanel',
                                             fieldLabel: 'Booking Number',
+                                            name:'bkgNum',
                                             labelWidth: 120
                                         },
                                         {
                                             xtype: 'combobox',
                                             fieldLabel: 'From City',
+                                            name:'fromCity',
+                                            store: [
+                                                'MNL',
+                                                'HKG',
+                                                'ZHA',
+                                                'USA'
+                                            ],
                                             labelWidth: 120
                                         },
                                         {
@@ -92,11 +101,19 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
                                         {
                                             xtype: 'textfield',
                                             fieldLabel: 'Container Number',
+                                            name:'cntrNum',
                                             labelWidth: 120
                                         },
                                         {
                                             xtype: 'combobox',
                                             fieldLabel: 'To City',
+                                            name:'toCity',
+                                            store: [
+                                                'MNL',
+                                                'HKG',
+                                                'ZHA',
+                                                'USA'
+                                            ],
                                             labelWidth: 120
                                         },
                                         {
@@ -124,7 +141,9 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
                                                         background: '#FFFFFF'
                                                     },
                                                     scale: 'medium',
-                                                    text: 'Submit'
+                                                    text: 'Search',
+                                                    id: 'searchBkgBtn',
+                                                    itemId: 'searchBkgBtn'
                                                 }
                                             ]
                                         }
@@ -143,45 +162,54 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    id: 'bkgGrid',
                     flex: 1,
                     padding: 10,
                     bodyPadding: '',
                     title: '',
+                    store: 'AllBookingsStore',
+                    autoLoad: true,
                     columns: [
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            dataIndex: 'string',
+                            dataIndex: 'shipmentNum',
                             text: 'Booking Number'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'fromCity',
                             text: 'From City'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'toCity',
                             text: 'To City'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'fromDate',
                             text: 'From Date'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'toDate',
                             text: 'To Date'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'shipper',
                             text: 'Shipper'
                         },
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
+                            dataIndex: 'consignee',
                             text: 'Consignee'
                         }
                     ],
@@ -198,14 +226,14 @@ Ext.define('KerberosBooking.view.viewBookingPanel', {
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'MyButton'
+                                    text: 'View'
                                 },
                                 {
                                     xtype: 'button',
                                     style: {
                                         background: '#FFFFFF'
                                     },
-                                    text: 'MyButton'
+                                    text: 'Modify'
                                 }
                             ]
                         }

@@ -29,15 +29,17 @@ import com.oocl.kb.util.SearchShipmentCriteria;
 public class ShipmentSVCImpl implements ShipmentSVC {
 
 	Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
-	
+
 	@Autowired
 	private ShipmentDAO shipmentDAO;
 
-	@Autowired 
+	@Autowired
 	private UserDAO userDAO;
+
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
 	}
+
 	public void setShipmentDAO(ShipmentDAO shipmentDAO) {
 		this.shipmentDAO = shipmentDAO;
 	}
@@ -54,31 +56,37 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse createShipmentResponse = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
-		String shpStatus = shp.getApproveDoc() != 1 && shp.getGoodCustomer() != 1 
-				&& shp.getValidWt() != 1 ? "Pending" :  "Confirmed";
+		String shpStatus = (shp.getApproveDoc() == 1 && shp.getGoodCustomer() == 1 && shp.getValidWt() == 1) ? "Confirmed"
+				: "Pending";
 		shp.setShipmentStatus(shpStatus);
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		Long shpNum = shipmentDAO.createBooking(shp);
 		createShipmentResponse.setServiceResult(String.valueOf(shpNum));
-		
+
 		JSONObject bkgObj = new JSONObject(json);
 		JSONArray cntrs = bkgObj.getJSONArray("container");
-		
+
 		ArrayList<ShipmentContainer> cntrList = (ArrayList<ShipmentContainer>) gson.fromJson(cntrs.toString(),
-                new TypeToken<ArrayList<ShipmentContainer>>() {
-                }.getType());
-				
-		shipmentDAO.createShpContainer(cntrList, shp.getFromDate(), shpNum );
+				new TypeToken<ArrayList<ShipmentContainer>>() {
+				}.getType());
+
+		shipmentDAO.createShpContainer(cntrList, shp.getFromDate(), shpNum);
+
+		ArrayList<ShipmentCargo> cgoList = new ArrayList<ShipmentCargo>();
 		
-		ShipmentCargo shpCgo = gson.fromJson(json, ShipmentCargo.class);
-				
-		shipmentDAO.createShpCargo(cntrList, shpCgo);
+		for (ShipmentContainer shpCntr : cntrList) {
+			ShipmentCargo shpCgo = new ShipmentCargo();
+			shpCgo = gson.fromJson(json, ShipmentCargo.class);
+			Long cgoId = shipmentDAO.getCgoidSeq();
+			shpCgo.setCargoId(cgoId);
+			shpCgo.setRefNum(shpCntr.getRefNum());
+			cgoList.add(shpCgo);
+		}
 		
 		
-		
-		
-		
+		shipmentDAO.createShpCargo(cgoList);
+
 		return createShipmentResponse;
 	}
 
@@ -104,11 +112,11 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 			// sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			cntrList.add(sc);
 		}
-		//this.shipmentDAO.createShpContainer(cntrList);
+		// this.shipmentDAO.createShpContainer(cntrList);
 	}
 
 	@Override
-	public List<Shipment> getAllShipments(String username, String json){
+	public List<Shipment> getAllShipments(String username, String json) {
 		SearchShipmentCriteria shpCriteria = new Gson().fromJson(json, SearchShipmentCriteria.class);
 		return this.shipmentDAO.getAllShipments(username, this.userDAO.getUser(username).getRole(), shpCriteria);
 	}
@@ -118,24 +126,24 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 		// TODO Auto-generated method stub
 		ServiceResponse response = new ServiceResponse();
 		Shipment shp = gson.fromJson(json, Shipment.class);
-		String shpStatus = shp.getApproveDoc() != 1 && shp.getGoodCustomer() != 1 
-				&& shp.getValidWt() != 1 ? "Pending" :  "Confirmed";
+		String shpStatus = shp.getApproveDoc() != 1 && shp.getGoodCustomer() != 1 && shp.getValidWt() != 1 ? "Pending"
+				: "Confirmed";
 		shp.setShipmentStatus(shpStatus);
 		shp.setCreateDate(new Timestamp(System.currentTimeMillis()));
 		shp.setUpdateDate(new Timestamp(System.currentTimeMillis()));
 		this.shipmentDAO.updateShipment(shp);
 		removeShpContainersCargoes(shp.getShipmentNum().toString());
-		
+
 		JSONObject bkgObj = new JSONObject(json);
 		JSONArray cntrs = bkgObj.getJSONArray("container");
-		
+
 		ArrayList<ShipmentContainer> cntrList = (ArrayList<ShipmentContainer>) gson.fromJson(cntrs.toString(),
-                new TypeToken<ArrayList<ShipmentContainer>>() {
-                }.getType());
-				
+				new TypeToken<ArrayList<ShipmentContainer>>() {
+				}.getType());
+
 		shipmentDAO.createShpContainer(cntrList, shp.getFromDate(), shp.getShipmentNum());
-		
-		//create containers and cargoes again
+
+		// create containers and cargoes again
 
 		return response;
 	}
@@ -151,7 +159,7 @@ public class ShipmentSVCImpl implements ShipmentSVC {
 			// sc.setRefNum(array.getJSONObject(i).getString("ref_num"));
 			// cgoList.add(sc);
 		}
-		//this.shipmentDAO.createShpCargo(cgoList);
+		// this.shipmentDAO.createShpCargo(cgoList);
 
 	}
 

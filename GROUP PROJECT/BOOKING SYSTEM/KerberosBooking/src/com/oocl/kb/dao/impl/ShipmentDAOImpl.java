@@ -119,19 +119,19 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 			filter.setParameter("username", username);
 		}
 		if (!shpCriteria.equals(null)) {
-			if(shpCriteria.getBkgNum() != null) {
+			if(shpCriteria.getBkgNum() != null && !shpCriteria.getBkgNum().equals("")) {
 				filter = session.enableFilter("searchByBkgNum");
 				filter.setParameter("shipment_num", shpCriteria.getBkgNum());
 			}
-			if(shpCriteria.getFromCity() != null) {
+			if(shpCriteria.getFromCity() != null && !shpCriteria.getFromCity().equals("")) {
 				filter = session.enableFilter("searchByFromCity");
 				filter.setParameter("from_city", shpCriteria.getFromCity());
 			}
-			if(shpCriteria.getToCity() != null) {
+			if(shpCriteria.getToCity() != null && !shpCriteria.getToCity().equals("")) {
 				filter = session.enableFilter("searchByToCity");
 				filter.setParameter("to_city", shpCriteria.getToCity());
 			}
-			if(shpCriteria.getCntrNum() != null) {
+			if(shpCriteria.getCntrNum() != null && !shpCriteria.getCntrNum().equals("")) {
 				filter = session.enableFilter("searchByCntrNum");
 				filter.setParameter("cntr_num", shpCriteria.getCntrNum());
 			}
@@ -142,25 +142,6 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		List<Shipment> shipments = query.list();
 		session.close();
 		return shipments;
-	}
-
-	@Override
-	public void createShpCargo(ArrayList<ShipmentContainer> cntrList, ShipmentCargo shpCgo) {
-		// TODO Auto-generated method stub
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-
-		tx = session.beginTransaction();
-
-		for (ShipmentContainer shpCntr : cntrList) {
-			Long cgoId = getCgoidSeq();
-			shpCgo.setCargoId(cgoId);
-			shpCgo.setRefNum(shpCntr.getRefNum());
-			session.save(shpCgo);
-		}
-
-		tx.commit();
-		session.close();
 	}
 
 	@Override
@@ -260,7 +241,21 @@ public class ShipmentDAOImpl implements ShipmentDAO {
 		session.close();
 		return cntrNum;
 	}
-	
-	
+
+	@Override
+	public void createShpCargo(ArrayList<ShipmentCargo> cgoList) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		Transaction tx = null;
+
+		tx = session.beginTransaction();
+
+		for (ShipmentCargo shpCgo : cgoList) {
+			session.save(shpCgo);
+		}
+
+		tx.commit();
+		session.close();
+	}
 
 }

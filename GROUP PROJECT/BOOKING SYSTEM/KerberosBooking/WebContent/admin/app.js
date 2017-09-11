@@ -21,10 +21,12 @@ Ext.Loader.setConfig({
 
 Ext.application({
 	models: [
-        'createBooking'
+        'createBooking',
+        'AllBookingsModel'
     ],
     stores: [
-        'createBooking'
+        'createBooking',
+        'AllBookingsStore'
     ],
     views: [
         'LoginForm',
@@ -39,7 +41,8 @@ Ext.application({
     controllers: [
         'HomeController',
         'AdminController',
-        'createBooking'
+        'createBooking',
+        'FindBookingsController'
     ],
     name: 'KerberosBooking',
 
