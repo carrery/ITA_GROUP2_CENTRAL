@@ -128,7 +128,7 @@ public class UserDAOImpl implements UserDAO {
 		try {
 			Session session = sessionFactory.openSession();
 			tx = session.beginTransaction();
-			Query query = session.createQuery("FROM User WHERE username LIKE ? AND firstName LIKE ? AND lastName LIKE ? AND role LIKE ?");
+			Query query = session.createQuery("FROM User WHERE username LIKE ? AND firstName LIKE ? AND lastName LIKE ? AND role LIKE ? AND isDeleted = 0");
 			query.setParameter(0, "%" + userName + "%");
 			query.setParameter(1, "%" + fname + "%");
 			query.setParameter(2, "%" + lname + "%");
