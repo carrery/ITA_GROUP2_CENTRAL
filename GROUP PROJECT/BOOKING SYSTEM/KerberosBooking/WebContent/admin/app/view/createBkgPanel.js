@@ -221,7 +221,11 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                         'MNL',
                                                         'HKG',
                                                         'ZHA',
-                                                        'USA'
+                                                        'USA',
+                                                        'LGB',
+                                                        'SIN',
+                                                        'PUS',
+                                                        'RTM'
                                                     ],
                                                     listeners: {
                                                         blur: 'onBookingFromCityBlur'
@@ -269,7 +273,11 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                         'MNL',
                                                         'HKG',
                                                         'ZHA',
-                                                        'USA'
+                                                        'USA',
+                                                        'LGB',
+                                                        'SIN',
+                                                        'PUS',
+                                                        'RTM'
                                                     ],
                                                     listeners: {
                                                         blur: 'onBookingToCityBlur'
@@ -284,10 +292,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                     labelWidth: 120,
                                                     name: 'containerHS',
                                                     store: [
-                                                        'MNL',
-                                                        'HKG',
-                                                        'ZHA',
-                                                        'USA'
+                                                        '10 - Cereal Grains',
+                                                        '50 - Silk & Silk Fabrics'
                                                     ]
                                                 }
                                             ]
@@ -327,7 +333,8 @@ Ext.define('KerberosBooking.view.createBkgPanel', {
                                                             '20GP',
                                                             '40GP',
                                                             '20HQ',
-                                                            '40HQ'
+                                                            '40HQ',
+                                                            '45HQ'
                                                         ]
                                                     }
                                                 },
