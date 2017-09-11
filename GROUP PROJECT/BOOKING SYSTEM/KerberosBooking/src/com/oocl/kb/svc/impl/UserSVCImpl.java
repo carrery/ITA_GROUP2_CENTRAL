@@ -95,8 +95,10 @@ public class UserSVCImpl implements UserSVC{
 		// TODO Auto-generated method stub		
 		UserMgtResponse response = new UserMgtResponse();
 		List<UserReturn> users = new ArrayList<UserReturn>();
+		List<User> userr = this.userDAO.getAllUsers(username,firstName,lastName,role);
 		UserReturn userRet = new UserReturn();
-		for(User user : this.userDAO.getAllUsers(username,firstName,lastName,role)) {
+		for(User user : userr) {
+			userRet = new UserReturn();
 			userRet.setUsername(user.getUsername());
 			userRet.setPassword(user.getPassword());
 			userRet.setFirstName(user.getFirstName());
