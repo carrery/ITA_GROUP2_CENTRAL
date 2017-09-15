@@ -74,6 +74,7 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
                             dataIndex: 'id',
                             text: 'Timeslot'
                         }
+
                     ]
                 }
 	            ],
@@ -233,14 +234,15 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
 
                     // Some optional CalendarPanel configs to experiment with:
                     readOnly: true,
+                    activeItem: 0,
                     showDayView: false,
                     showMultiDayView: false,
-                    showWeekView: false,
+                    showWeekView: true,
                     showMultiWeekView: false,
+                    showNavJump: false,
+                    showNavNextPrev: false,
+                    todayText: '',
                     //showMonthView: false,
-                    // showNavBar: false,
-                    //showTodayText: false,
-                    //showTime: false,
                     //editModal: true,
                     //enableEditDetails: false,
                     //title: 'My Calendar', // the header of the calendar, could be a subtitle for the app
