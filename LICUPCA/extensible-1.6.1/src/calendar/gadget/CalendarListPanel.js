@@ -18,7 +18,7 @@ Ext.define('Extensible.calendar.gadget.CalendarListPanel', {
         'Extensible.calendar.gadget.CalendarListMenu'
     ],
     
-    title: 'Calendars',
+    title: 'Courts',
     collapsible: true,
     autoHeight: true,
     layout: 'fit',
