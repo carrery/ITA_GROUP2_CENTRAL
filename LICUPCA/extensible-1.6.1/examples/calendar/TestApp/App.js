@@ -28,6 +28,7 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
 
     constructor : function() {
 	    var CPanel = Extensible.calendar.CalendarPanel;
+        var ACalendar = Extensible.calendar.view.AbstractCalendar;
 	    var courts = Ext.create('Ext.data.Store', {
 		    fields: ['id', 'title'],
 		    data : Extensible.example.calendar.data.Courts.getData().calendars
@@ -95,6 +96,10 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
 	            }]
 	        });
 	    });
+
+        Ext.override(ACalendar, {
+            enableDD: false
+        });
 	    
 	    Ext.override(CPanel, {
 	    
@@ -144,7 +149,7 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
 	    });
 	    
 
-        var startDay = 0; // The 0-based index for the day on which the calendar week begins (0=Sunday)
+        var startDay = 1; // The 0-based index for the day on which the calendar week begins (0=Sunday)
 
         // This is an example calendar store that enables event color-coding
         this.calendarStore = Ext.create('Extensible.calendar.data.MemoryCalendarStore', {
@@ -236,16 +241,17 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
                     // readOnly: true,
                     activeItem: 0,
                     showDayView: false,
-                    showMultiDayView: false,
+                    // showMultiDayView: false,
                     showWeekView: true,
-                    showMultiWeekView: false,
-                    showNavJump: false,
-                    showMonthView: true,
+                    // showMultiWeekView: false,
+                    // showNavJump: false,
+                    // showMonthView: false,
                     showNavNextPrev: false,
+                    showNavBar: false,
                     todayText: '',
                     // showTodayText: false,
-                    // editModal: true,
-                    //enableEditDetails: false,
+                    editModal: true,
+                    enableEditDetails: false,
                     //title: 'My Calendar', // the header of the calendar, could be a subtitle for the app
 
                     listeners: {
