@@ -65,7 +65,7 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
                     // padding: 10,
                     bodyPadding: '',
                     title: 'Taken Timeslots',
-                    // store: 'AllBookingsStore',
+                    // store: 'Timeslots',
                     // autoLoad: true,
                     columns: [
                         {
@@ -195,8 +195,8 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
                         xtype: 'extensible.calendarlist',
                         store: this.calendarStore,
                         border: false,
-                        width: 178
-                        // text: 'Courts'
+                        width: 178,
+                        title: 'Courts'
                     }]
                 },{
                     xtype: 'extensible.calendarpanel',
@@ -232,16 +232,16 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
                     },
 
                     // Some optional CalendarPanel configs to experiment with:
-                    readOnly: true,
+                    // readOnly: true,
                     showDayView: false,
                     showMultiDayView: false,
-                    showWeekView: false,
+                    showWeekView: true,
                     showMultiWeekView: false,
-                    //showMonthView: false,
+                    showMonthView: true,
                     // showNavBar: false,
-                    //showTodayText: false,
+                    // showTodayText: false,
                     //showTime: false,
-                    //editModal: true,
+                    // editModal: true,
                     //enableEditDetails: false,
                     //title: 'My Calendar', // the header of the calendar, could be a subtitle for the app
 
@@ -357,6 +357,11 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
             p.setTitle(fmt(startDt, 'F j, Y') + ' - ' + fmt(endDt, 'F j, Y'));
         }
     },
+    updateTitle: function(){
+        var p = Ext.getCmp('app-center');
+        p.setTitle('Calendar');
+
+    },
 
     // Handle event moves or copies generically
     onEventCopyOrMove: function(rec, mode) {
@@ -384,14 +389,14 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
 
 Ext.onReady(function() {
     Ext.create('Extensible.example.calendar.TestApp.App');
-    var cp = Ext.getCmp('app-calendar');
-	// This could be anywhere within the UI, but we'll just stick
-	// it onto the end of the toolbar for convenience
-	cp.getDockedItems('toolbar')[0].add({
-		    text: 'Reservation Form',
-		    handler: function() {
-		        this.showAdminForm();
-		    },
-		    scope: cp
-	});
+ //    var cp = Ext.getCmp('app-calendar');
+	// // This could be anywhere within the UI, but we'll just stick
+	// // it onto the end of the toolbar for convenience
+	// cp.getDockedItems('toolbar')[0].add({
+	// 	    text: 'Reservation Form',
+	// 	    handler: function() {
+	// 	        this.showAdminForm();
+	// 	    },
+	// 	    scope: cp
+	// });
 });

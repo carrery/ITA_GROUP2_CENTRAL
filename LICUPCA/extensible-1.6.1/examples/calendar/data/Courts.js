@@ -39,7 +39,7 @@ Ext.define('Extensible.example.calendar.data.Courts', {
                 },{
                     "id"    : 8,
                     "title" : "Court 8",
-                    "color" : 26
+                    "color" : 4
                 }]
             };
         }
