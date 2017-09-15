@@ -23,14 +23,14 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
         'Extensible.calendar.data.MemoryCalendarStore',
         'Extensible.calendar.data.MemoryEventStore',
         'Extensible.example.calendar.data.Events',
-        'Extensible.example.calendar.data.Calendars'
+        'Extensible.example.calendar.data.Courts'
     ],
 
     constructor : function() {
 	    var CPanel = Extensible.calendar.CalendarPanel;
 	    var courts = Ext.create('Ext.data.Store', {
 		    fields: ['id', 'title'],
-		    data : Extensible.example.calendar.data.Calendars.getData().calendars
+		    data : Extensible.example.calendar.data.Courts.getData().calendars
 			});
 	    CPanel.prototype.initComponent = Ext.Function.createSequence(CPanel.prototype.initComponent, function() {
 	        this.add({
@@ -59,19 +59,19 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
 	                anchor: '90%'
 	            },{
 	            	xtype: 'gridpanel',
-                    id: 'bkgGrid',
+                    id: 'timeSlotPanel',
                     flex: 1,
                     anchor: '90%',
                     // padding: 10,
                     bodyPadding: '',
-                    title: '',
+                    title: 'Taken Timeslots',
                     // store: 'AllBookingsStore',
                     // autoLoad: true,
                     columns: [
                         {
                             xtype: 'gridcolumn',
                             flex: 1,
-                            dataIndex: 'shipmentNum',
+                            dataIndex: 'id',
                             text: 'Timeslot'
                         }
                     ]
@@ -148,7 +148,7 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
         // This is an example calendar store that enables event color-coding
         this.calendarStore = Ext.create('Extensible.calendar.data.MemoryCalendarStore', {
             // defined in ../data/Calendars.js
-            data: Extensible.example.calendar.data.Calendars.getData()
+            data: Extensible.example.calendar.data.Courts.getData()
         });
 
         // A sample event store that loads static JSON from a local file. Obviously a real
@@ -192,23 +192,11 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
                     width: 179,
                     border: false,
                     items: [{
-                        xtype: 'datepicker',
-                        id: 'app-nav-picker',
-                        cls: 'ext-cal-nav-picker',
-                        startDay: startDay,
-                        listeners: {
-                            'select': {
-                                fn: function(dp, dt){
-                                    Ext.getCmp('app-calendar').setStartDate(dt);
-                                },
-                                scope: this
-                            }
-                        }
-                    },{
                         xtype: 'extensible.calendarlist',
                         store: this.calendarStore,
                         border: false,
                         width: 178
+                        // text: 'Courts'
                     }]
                 },{
                     xtype: 'extensible.calendarpanel',
@@ -233,9 +221,10 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
                     // View options specific to a certain view (if the same options exist in viewConfig
                     // they will be overridden by the view-specific config):
                     monthViewCfg: {
-                        showHeader: true,
-                        showWeekLinks: true,
-                        showWeekNumbers: true
+                        showHeader: true
+                        // text: 'Calendar'
+                        // showWeekLinks: true,
+                        // showWeekNumbers: false
                     },
 
                     multiWeekViewCfg: {
@@ -244,12 +233,12 @@ Ext.define('Extensible.example.calendar.TestApp.App', {
 
                     // Some optional CalendarPanel configs to experiment with:
                     readOnly: true,
-                    //showDayView: false,
-                    //showMultiDayView: true,
-                    //showWeekView: false,
-                    //showMultiWeekView: false,
+                    showDayView: false,
+                    showMultiDayView: false,
+                    showWeekView: false,
+                    showMultiWeekView: false,
                     //showMonthView: false,
-                    //showNavBar: false,
+                    // showNavBar: false,
                     //showTodayText: false,
                     //showTime: false,
                     //editModal: true,
@@ -399,7 +388,7 @@ Ext.onReady(function() {
 	// This could be anywhere within the UI, but we'll just stick
 	// it onto the end of the toolbar for convenience
 	cp.getDockedItems('toolbar')[0].add({
-		    text: 'Admin',
+		    text: 'Reservation Form',
 		    handler: function() {
 		        this.showAdminForm();
 		    },

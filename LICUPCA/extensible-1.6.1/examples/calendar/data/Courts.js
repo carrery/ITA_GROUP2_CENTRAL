@@ -4,7 +4,7 @@
  * licensing@ext.ensible.com
  * http://ext.ensible.com
  */
-Ext.define('Extensible.example.calendar.data.Calendars', {
+Ext.define('Extensible.example.calendar.data.Courts', {
     statics: {
         getData: function() {
             return {
@@ -27,15 +27,15 @@ Ext.define('Extensible.example.calendar.data.Calendars', {
                 },{
                     "id"    : 5,
                     "title" : "Court 5",
-                    "color" : 2
+                    "color" : 16
                 },{
                     "id"    : 6,
                     "title" : "Court 6",
-                    "color" : 22
+                    "color" : 6
                 },{
                     "id"    : 7,
                     "title" : "Court 7",
-                    "color" : 7
+                    "color" : 24
                 },{
                     "id"    : 8,
                     "title" : "Court 8",
